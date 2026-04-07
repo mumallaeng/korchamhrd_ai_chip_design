@@ -1,0 +1,32 @@
+digraph G {
+  graph [rankdir=LR];
+  node [shape=box, style="rounded,filled", fillcolor="#f8f9fb", color="#5b6b7a", fontname="Arial"];
+  "n_t1mIC5yygEkDqqAOm0CT_10" [label="b[3:0]"];
+  "n_t1mIC5yygEkDqqAOm0CT_14" [label="w_sum[3:0]\n(bin[3:0])"];
+  "n_t1mIC5yygEkDqqAOm0CT_16" [label="led"];
+  "n_t1mIC5yygEkDqqAOm0CT_18" [label="carry"];
+  "n_t1mIC5yygEkDqqAOm0CT_19" [label="fnd_data[7:0]"];
+  "n_t1mIC5yygEkDqqAOm0CT_2" [label="adder_fnd Block Diagram"];
+  "n_t1mIC5yygEkDqqAOm0CT_22" [label="fnd_com[3:0]"];
+  "n_t1mIC5yygEkDqqAOm0CT_25" [label="(7-Segment Lines)"];
+  "n_t1mIC5yygEkDqqAOm0CT_26" [label="(Digit Select)"];
+  "n_t1mIC5yygEkDqqAOm0CT_27" [label="(Carry Out)"];
+  "n_t1mIC5yygEkDqqAOm0CT_28" [label="a[3:0]"];
+  "n_t1mIC5yygEkDqqAOm0CT_29" [label="b[3:0]"];
+  "n_t1mIC5yygEkDqqAOm0CT_3" [label="node_m0CT-3"];
+  "n_t1mIC5yygEkDqqAOm0CT_30" [label="sum[3:0]"];
+  "n_t1mIC5yygEkDqqAOm0CT_31" [label="carry"];
+  "n_t1mIC5yygEkDqqAOm0CT_32" [label="bin[3:0]"];
+  "n_t1mIC5yygEkDqqAOm0CT_33" [label="INPUTS"];
+  "n_t1mIC5yygEkDqqAOm0CT_34" [label="OUTPUTS"];
+  "n_t1mIC5yygEkDqqAOm0CT_36" [label="fnd_com[3:0]"];
+  "n_t1mIC5yygEkDqqAOm0CT_38" [label="fnd_data[7:0]"];
+  "n_t1mIC5yygEkDqqAOm0CT_4" [label="adder_fnd"];
+  "n_t1mIC5yygEkDqqAOm0CT_5" [label="full_adder_4bit\n4-bit Full Adder"];
+  "n_t1mIC5yygEkDqqAOm0CT_6" [label="fnd_controller\n4-bit to 7-Segment\nDisplay Controller"];
+  "n_t1mIC5yygEkDqqAOm0CT_7" [label="a[3:0]"];
+  "n_t1mIC5yygEkDqqAOm0CT_7" -> "n_t1mIC5yygEkDqqAOm0CT_28";
+  "n_t1mIC5yygEkDqqAOm0CT_10" -> "n_t1mIC5yygEkDqqAOm0CT_29";
+  "n_t1mIC5yygEkDqqAOm0CT_30" -> "n_t1mIC5yygEkDqqAOm0CT_6";
+  "n_t1mIC5yygEkDqqAOm0CT_31" -> "n_t1mIC5yygEkDqqAOm0CT_16";
+}

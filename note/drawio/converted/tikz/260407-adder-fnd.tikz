@@ -1,0 +1,43 @@
+\definecolor{c0000cc}{HTML}{0000CC}
+\definecolor{c009900}{HTML}{009900}
+\definecolor{c333333}{HTML}{333333}
+\definecolor{c666666}{HTML}{666666}
+\definecolor{c6c8ebf}{HTML}{6C8EBF}
+\definecolor{c82b366}{HTML}{82B366}
+\definecolor{ccc0000}{HTML}{CC0000}
+\definecolor{cd5e8d4}{HTML}{D5E8D4}
+\definecolor{cdae8fc}{HTML}{DAE8FC}
+
+% Source: 260407-adder-fnd.drawio, page: fnd
+\begin{tikzpicture}[x=0.04cm,y=-0.04cm,>=Latex,line cap=round,line join=round]
+  \node[align=center, font=\scriptsize, minimum width=16.00cm, minimum height=1.60cm, text width=15.88cm] (nt1mIC5yygEkDqqAOm0CT_2) at (510.00,50.00) {adder\_fnd Block Diagram};
+  \node[draw, align=center, font=\scriptsize, dashed, draw=c333333, minimum width=28.80cm, minimum height=13.20cm, text width=28.68cm] (nt1mIC5yygEkDqqAOm0CT_3) at (510.00,255.00) {};
+  \node[align=center, font=\scriptsize, text=c333333, minimum width=6.00cm, minimum height=1.20cm, text width=5.88cm] (nt1mIC5yygEkDqqAOm0CT_4) at (235.00,110.00) {adder\_fnd};
+  \node[draw, align=center, font=\scriptsize, rounded corners=2pt, fill=cdae8fc!18, draw=c6c8ebf, minimum width=7.20cm, minimum height=4.80cm, text width=7.08cm] (nt1mIC5yygEkDqqAOm0CT_5) at (370.00,230.00) {full\_adder\_4bit\\4-bit Full Adder};
+  \node[draw, align=center, font=\scriptsize, rounded corners=2pt, fill=cd5e8d4!18, draw=c82b366, minimum width=8.00cm, minimum height=4.80cm, text width=7.88cm] (nt1mIC5yygEkDqqAOm0CT_6) at (670.00,230.00) {fnd\_controller\\4-bit to 7-Segment\\Display Controller};
+  \node[align=center, font=\scriptsize, text=c0000cc, minimum width=3.20cm, minimum height=1.20cm, text width=3.08cm] (nt1mIC5yygEkDqqAOm0CT_7) at (70.00,200.00) {a[3:0]};
+  \node[align=center, font=\scriptsize, text=c0000cc, minimum width=3.20cm, minimum height=1.20cm, text width=3.08cm] (nt1mIC5yygEkDqqAOm0CT_10) at (70.00,255.00) {b[3:0]};
+  \node[align=center, font=\scriptsize, text=ccc0000, minimum width=4.00cm, minimum height=1.60cm, text width=3.88cm] (nt1mIC5yygEkDqqAOm0CT_14) at (510.00,165.00) {w\_sum[3:0]\\(bin[3:0])};
+  \node[align=center, font=\scriptsize, text=c009900, minimum width=2.40cm, minimum height=1.20cm, text width=2.28cm] (nt1mIC5yygEkDqqAOm0CT_16) at (950.00,375.00) {led};
+  \node[align=center, font=\scriptsize, text=c009900, minimum width=2.40cm, minimum height=1.00cm, text width=2.28cm] (nt1mIC5yygEkDqqAOm0CT_18) at (460.00,362.50) {carry};
+  \node[align=center, font=\scriptsize, text=c009900, minimum width=5.20cm, minimum height=1.20cm, text width=5.08cm] (nt1mIC5yygEkDqqAOm0CT_19) at (984.00,210.00) {fnd\_data[7:0]};
+  \node[align=center, font=\scriptsize, text=c009900, minimum width=5.20cm, minimum height=1.20cm, text width=5.08cm] (nt1mIC5yygEkDqqAOm0CT_22) at (985.00,260.00) {fnd\_com[3:0]};
+  \node[align=center, font=\scriptsize, text=c666666, minimum width=5.20cm, minimum height=0.80cm, text width=5.08cm] (nt1mIC5yygEkDqqAOm0CT_25) at (984.00,221.00) {(7-Segment Lines)};
+  \node[align=center, font=\scriptsize, text=c666666, minimum width=5.20cm, minimum height=0.80cm, text width=5.08cm] (nt1mIC5yygEkDqqAOm0CT_26) at (985.00,275.00) {(Digit Select)};
+  \node[align=center, font=\scriptsize, text=c666666, minimum width=4.00cm, minimum height=0.80cm, text width=3.88cm] (nt1mIC5yygEkDqqAOm0CT_27) at (970.00,390.00) {(Carry Out)};
+  \node[align=center, font=\scriptsize, text=c333333, minimum width=2.00cm, minimum height=0.80cm, text width=1.88cm] (nt1mIC5yygEkDqqAOm0CT_28) at (310.00,200.00) {a[3:0]};
+  \node[align=center, font=\scriptsize, text=c333333, minimum width=2.00cm, minimum height=0.80cm, text width=1.88cm] (nt1mIC5yygEkDqqAOm0CT_29) at (310.00,255.00) {b[3:0]};
+  \node[align=center, font=\scriptsize, text=c333333, minimum width=2.40cm, minimum height=0.80cm, text width=2.28cm] (nt1mIC5yygEkDqqAOm0CT_30) at (425.00,191.00) {sum[3:0]};
+  \node[align=center, font=\scriptsize, text=c333333, minimum width=2.00cm, minimum height=0.80cm, text width=1.88cm] (nt1mIC5yygEkDqqAOm0CT_31) at (425.00,270.00) {carry};
+  \node[align=center, font=\scriptsize, text=c333333, minimum width=2.20cm, minimum height=0.80cm, text width=2.08cm] (nt1mIC5yygEkDqqAOm0CT_32) at (600.50,230.00) {bin[3:0]};
+  \node[align=center, font=\scriptsize, text=c0000cc, minimum width=2.80cm, minimum height=1.00cm, text width=2.68cm] (nt1mIC5yygEkDqqAOm0CT_33) at (85.00,102.50) {INPUTS};
+  \node[align=center, font=\scriptsize, text=c009900, minimum width=3.20cm, minimum height=1.00cm, text width=3.08cm] (nt1mIC5yygEkDqqAOm0CT_34) at (950.00,102.50) {OUTPUTS};
+  \node[align=center, font=\scriptsize, text=c333333, minimum width=2.40cm, minimum height=0.80cm, text width=2.28cm] (nt1mIC5yygEkDqqAOm0CT_36) at (740.00,260.00) {fnd\_com[3:0]};
+  \node[align=center, font=\scriptsize, text=c333333, minimum width=2.40cm, minimum height=0.80cm, text width=2.28cm] (nt1mIC5yygEkDqqAOm0CT_38) at (740.00,210.00) {fnd\_data[7:0]};
+  \draw[thick, draw=c0000cc, ->] (70.00,200.00) -- (310.00,200.00);
+  \draw[thick, draw=c0000cc, ->] (70.00,255.00) -- (160.00,255.00) -- (160.00,255.00) -- (310.00,255.00);
+  \draw[thick, draw=ccc0000, ->] (425.00,191.00) -- (670.00,230.00);
+  \draw[thick, draw=c009900, ->] (425.00,270.00) -- (437.00,375.00) -- (950.00,375.00);
+  \draw[thick, draw=c009900, ->] (770.00,209.00) -- (984.00,210.00);
+  \draw[thick, draw=c009900, ->] (770.00,260.00) -- (920.00,260.00) -- (985.00,260.00);
+\end{tikzpicture}
