@@ -1,0 +1,31 @@
+flowchart LR
+  n_0aHblqSL8U5U8nVjVGoB_1["counter_10000"]
+  n_0aHblqSL8U5U8nVjVGoB_10["digit_splitter"]
+  n_0aHblqSL8U5U8nVjVGoB_11["clk_div_1khz"]
+  n_0aHblqSL8U5U8nVjVGoB_12["counter_4"]
+  n_0aHblqSL8U5U8nVjVGoB_13["mux_4x1"]
+  n_0aHblqSL8U5U8nVjVGoB_14["decoder_2x4"]
+  n_0aHblqSL8U5U8nVjVGoB_15["bcd"]
+  n_0aHblqSL8U5U8nVjVGoB_2["clk"]
+  n_0aHblqSL8U5U8nVjVGoB_21["o_tick"]
+  n_0aHblqSL8U5U8nVjVGoB_3["rst"]
+  n_0aHblqSL8U5U8nVjVGoB_4["fnd_com[3:0]"]
+  n_0aHblqSL8U5U8nVjVGoB_5["fnd_data[7:0]"]
+  n_0aHblqSL8U5U8nVjVGoB_52["digit_sel[1:0]"]
+  n_0aHblqSL8U5U8nVjVGoB_58["o_tick_counter"]
+  n_0aHblqSL8U5U8nVjVGoB_6["datapath"]
+  n_0aHblqSL8U5U8nVjVGoB_60["clk, rst"]
+  n_0aHblqSL8U5U8nVjVGoB_7["clk_tick_gen"]
+  n_0aHblqSL8U5U8nVjVGoB_8["tick_counter"]
+  n_0aHblqSL8U5U8nVjVGoB_9["fnd_controller"]
+  n_0aHblqSL8U5U8nVjVGoB_3 --> n_0aHblqSL8U5U8nVjVGoB_7
+  n_0aHblqSL8U5U8nVjVGoB_8 --> n_0aHblqSL8U5U8nVjVGoB_11
+  n_0aHblqSL8U5U8nVjVGoB_10 --> n_0aHblqSL8U5U8nVjVGoB_13
+  n_0aHblqSL8U5U8nVjVGoB_12 --> n_0aHblqSL8U5U8nVjVGoB_13
+  n_0aHblqSL8U5U8nVjVGoB_12 --> n_0aHblqSL8U5U8nVjVGoB_14
+  n_0aHblqSL8U5U8nVjVGoB_13 --> n_0aHblqSL8U5U8nVjVGoB_15
+  n_0aHblqSL8U5U8nVjVGoB_14 --> n_0aHblqSL8U5U8nVjVGoB_4
+  n_0aHblqSL8U5U8nVjVGoB_15 --> n_0aHblqSL8U5U8nVjVGoB_5
+  n_0aHblqSL8U5U8nVjVGoB_7 --> n_0aHblqSL8U5U8nVjVGoB_8
+  n_0aHblqSL8U5U8nVjVGoB_2 --> n_0aHblqSL8U5U8nVjVGoB_7
+  n_0aHblqSL8U5U8nVjVGoB_8 --> n_0aHblqSL8U5U8nVjVGoB_10

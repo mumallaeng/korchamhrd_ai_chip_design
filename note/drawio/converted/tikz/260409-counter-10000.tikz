@@ -1,0 +1,48 @@
+\definecolor{c000000}{HTML}{000000}
+\definecolor{c333333}{HTML}{333333}
+\definecolor{c666666}{HTML}{666666}
+\definecolor{c6c8ebf}{HTML}{6C8EBF}
+\definecolor{c82b366}{HTML}{82B366}
+\definecolor{c9673a6}{HTML}{9673A6}
+\definecolor{cd5e8d4}{HTML}{D5E8D4}
+\definecolor{cd6b656}{HTML}{D6B656}
+\definecolor{cdae8fc}{HTML}{DAE8FC}
+\definecolor{ce1d5e7}{HTML}{E1D5E7}
+\definecolor{cfcfcfc}{HTML}{FCFCFC}
+\definecolor{cfff2cc}{HTML}{FFF2CC}
+\definecolor{cffffff}{HTML}{FFFFFF}
+
+% Source: 260409-counter-10000.drawio, page: counter_10000
+\begin{tikzpicture}[x=0.04cm,y=-0.04cm,>=Latex,line cap=round,line join=round]
+  \node[draw, align=center, font=\scriptsize, rounded corners=2pt, dashed, fill=cfcfcfc!18, draw=c666666, text=c333333, minimum width=37.60cm, minimum height=13.60cm, text width=37.48cm] (n0aHblqSL8U5U8nVjVGoB_1) at (670.00,294.00) {counter\_10000};
+  \node[draw, align=center, font=\scriptsize, rounded corners=2pt, fill=ce1d5e7!18, draw=c9673a6, minimum width=25.20cm, minimum height=10.40cm, text width=25.08cm] (n0aHblqSL8U5U8nVjVGoB_9) at (797.00,300.00) {fnd\_controller};
+  \node[draw, align=center, font=\scriptsize, fill=cd5e8d4!18, draw=c82b366, minimum width=3.20cm, minimum height=1.60cm, text width=3.08cm] (n0aHblqSL8U5U8nVjVGoB_2) at (130.00,210.00) {clk};
+  \node[draw, align=center, font=\scriptsize, fill=cd5e8d4!18, draw=c82b366, minimum width=3.20cm, minimum height=1.60cm, text width=3.08cm] (n0aHblqSL8U5U8nVjVGoB_3) at (130.00,280.00) {rst};
+  \node[draw, align=center, font=\scriptsize, fill=cfff2cc!18, draw=cd6b656, minimum width=4.80cm, minimum height=1.60cm, text width=4.68cm] (n0aHblqSL8U5U8nVjVGoB_4) at (1240.00,380.00) {fnd\_com[3:0]};
+  \node[draw, align=center, font=\scriptsize, fill=cfff2cc!18, draw=cd6b656, minimum width=4.80cm, minimum height=1.60cm, text width=4.68cm] (n0aHblqSL8U5U8nVjVGoB_5) at (1240.00,245.00) {fnd\_data[7:0]};
+  \node[draw, align=center, font=\scriptsize, rounded corners=2pt, fill=cdae8fc!18, draw=c6c8ebf, minimum width=8.00cm, minimum height=10.40cm, text width=7.88cm] (n0aHblqSL8U5U8nVjVGoB_6) at (330.00,300.00) {datapath};
+  \node[draw, align=center, font=\scriptsize, rounded corners=2pt, fill=cffffff!18, draw=c6c8ebf, minimum width=5.60cm, minimum height=2.00cm, text width=5.48cm] (n0aHblqSL8U5U8nVjVGoB_7) at (330.00,245.00) {clk\_tick\_gen};
+  \node[draw, align=center, font=\scriptsize, rounded corners=2pt, fill=cffffff!18, draw=c6c8ebf, minimum width=5.60cm, minimum height=2.00cm, text width=5.48cm] (n0aHblqSL8U5U8nVjVGoB_8) at (330.00,385.00) {tick\_counter};
+  \node[draw, align=center, font=\scriptsize, rounded corners=2pt, fill=cffffff!18, draw=c9673a6, minimum width=5.60cm, minimum height=2.00cm, text width=5.48cm] (n0aHblqSL8U5U8nVjVGoB_10) at (590.00,245.00) {digit\_splitter};
+  \node[draw, align=center, font=\scriptsize, rounded corners=2pt, fill=cffffff!18, draw=c9673a6, minimum width=5.60cm, minimum height=2.00cm, text width=5.48cm] (n0aHblqSL8U5U8nVjVGoB_11) at (590.00,385.00) {clk\_div\_1khz};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (n0aHblqSL8U5U8nVjVGoB_52) at (0.41,1.00) {digit\_sel[1:0]};
+  \node[draw, align=center, font=\scriptsize, rounded corners=2pt, fill=cffffff!18, draw=c9673a6, minimum width=5.60cm, minimum height=2.00cm, text width=5.48cm] (n0aHblqSL8U5U8nVjVGoB_12) at (590.00,315.00) {counter\_4};
+  \node[draw, align=center, font=\scriptsize, rounded corners=2pt, fill=cffffff!18, draw=c9673a6, minimum width=5.20cm, minimum height=2.00cm, text width=5.08cm] (n0aHblqSL8U5U8nVjVGoB_13) at (825.00,245.00) {mux\_4x1};
+  \node[draw, align=center, font=\scriptsize, rounded corners=2pt, fill=cffffff!18, draw=c9673a6, minimum width=5.20cm, minimum height=2.00cm, text width=5.08cm] (n0aHblqSL8U5U8nVjVGoB_14) at (825.00,380.00) {decoder\_2x4};
+  \node[draw, align=center, font=\scriptsize, rounded corners=2pt, fill=cffffff!18, draw=c9673a6, minimum width=4.00cm, minimum height=2.00cm, text width=3.88cm] (n0aHblqSL8U5U8nVjVGoB_15) at (1030.00,245.00) {bcd};
+  \node[draw, align=center, font=\scriptsize, text=c000000, minimum width=0.00cm, minimum height=0.00cm] (n0aHblqSL8U5U8nVjVGoB_21) at (-0.10,0.00) {o\_tick};
+  \node[draw, align=center, font=\scriptsize, text=c000000, minimum width=0.00cm, minimum height=0.00cm] (n0aHblqSL8U5U8nVjVGoB_58) at (460.00,300.00) {o\_tick\_counter};
+  \node[draw, align=center, font=\scriptsize, text=c000000, minimum width=0.00cm, minimum height=0.00cm] (n0aHblqSL8U5U8nVjVGoB_60) at (459.00,397.00) {clk, rst};
+  \draw[thick] (130.00,280.00) -- (180.00,280.00) -- (180.00,245.00) -- (330.00,245.00);
+  \draw[thick] (330.00,385.00) -- (590.00,385.00);
+  \draw[thick] (590.00,245.00) -- (825.00,245.00);
+  \draw[thick] (590.00,315.00) -- (825.00,245.00);
+  \draw[thick] (590.00,315.00) -- (825.00,380.00);
+  \draw[thick] (825.00,245.00) -- (1030.00,245.00);
+  \draw[thick] (825.00,380.00) -- (1240.00,380.00);
+  \draw[thick] (1030.00,245.00) -- (1240.00,245.00);
+  \draw[thick, draw=c333333] (330.00,245.00) -- (330.00,385.00);
+  \draw[thick, draw=c333333] (590.00,385.00) -- (590.00,340.00);
+  \draw[thick] (130.00,210.00) -- (180.00,210.00) -- (180.00,245.00) -- (330.00,245.00);
+  \draw[thick] (330.00,385.00) -- (460.00,372.00) -- (460.00,245.00) -- (590.00,245.00);
+\end{tikzpicture}
