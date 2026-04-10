@@ -1,0 +1,36 @@
+digraph G {
+  graph [rankdir=LR];
+  node [shape=box, style="rounded,filled", fillcolor="#f8f9fb", color="#5b6b7a", fontname="Arial"];
+  "n_0z9E0N_xJpJcTOEVbup4_10" [label="node_up4-10"];
+  "n_0z9E0N_xJpJcTOEVbup4_11" [label="control_unit"];
+  "n_0z9E0N_xJpJcTOEVbup4_12" [label="sw[2:0]"];
+  "n_0z9E0N_xJpJcTOEVbup4_13" [label="run_en"];
+  "n_0z9E0N_xJpJcTOEVbup4_14" [label="clear_en"];
+  "n_0z9E0N_xJpJcTOEVbup4_15" [label="down_mode"];
+  "n_0z9E0N_xJpJcTOEVbup4_20" [label="node_up4-20"];
+  "n_0z9E0N_xJpJcTOEVbup4_21" [label="datapath"];
+  "n_0z9E0N_xJpJcTOEVbup4_22" [label="node_up4-22"];
+  "n_0z9E0N_xJpJcTOEVbup4_23" [label="tick_gen"];
+  "n_0z9E0N_xJpJcTOEVbup4_24" [label="clk"];
+  "n_0z9E0N_xJpJcTOEVbup4_25" [label="rst"];
+  "n_0z9E0N_xJpJcTOEVbup4_26" [label="run_en"];
+  "n_0z9E0N_xJpJcTOEVbup4_27" [label="tick"];
+  "n_0z9E0N_xJpJcTOEVbup4_3" [label="clk"];
+  "n_0z9E0N_xJpJcTOEVbup4_32" [label="node_up4-32"];
+  "n_0z9E0N_xJpJcTOEVbup4_33" [label="tick_counter"];
+  "n_0z9E0N_xJpJcTOEVbup4_34" [label="clk"];
+  "n_0z9E0N_xJpJcTOEVbup4_35" [label="rst"];
+  "n_0z9E0N_xJpJcTOEVbup4_36" [label="tick"];
+  "n_0z9E0N_xJpJcTOEVbup4_37" [label="run_en"];
+  "n_0z9E0N_xJpJcTOEVbup4_38" [label="clear_en"];
+  "n_0z9E0N_xJpJcTOEVbup4_39" [label="down_mode"];
+  "n_0z9E0N_xJpJcTOEVbup4_49" [label="count_out[13:0]"];
+  "n_0z9E0N_xJpJcTOEVbup4_5" [label="rst"];
+  "n_0z9E0N_xJpJcTOEVbup4_7" [label="sw[2:0]"];
+  "n_0z9E0N_xJpJcTOEVbup4_22" -> "n_0z9E0N_xJpJcTOEVbup4_32";
+  "n_0z9E0N_xJpJcTOEVbup4_3" -> "n_0z9E0N_xJpJcTOEVbup4_24";
+  "n_0z9E0N_xJpJcTOEVbup4_5" -> "n_0z9E0N_xJpJcTOEVbup4_25";
+  "n_0z9E0N_xJpJcTOEVbup4_10" -> "n_0z9E0N_xJpJcTOEVbup4_32";
+  "n_0z9E0N_xJpJcTOEVbup4_7" -> "n_0z9E0N_xJpJcTOEVbup4_12";
+  "n_0z9E0N_xJpJcTOEVbup4_32" -> "n_0z9E0N_xJpJcTOEVbup4_49";
+}

@@ -1,0 +1,51 @@
+\definecolor{c0050ef}{HTML}{0050EF}
+\definecolor{c2e5fa1}{HTML}{2E5FA1}
+\definecolor{c6a3d7d}{HTML}{6A3D7D}
+\definecolor{c6c8ebf}{HTML}{6C8EBF}
+\definecolor{c7c6c0a}{HTML}{7C6C0A}
+\definecolor{c9673a6}{HTML}{9673A6}
+\definecolor{cabd0fc}{HTML}{ABD0FC}
+\definecolor{cb85450}{HTML}{B85450}
+\definecolor{ccda2be}{HTML}{CDA2BE}
+\definecolor{cd6b656}{HTML}{D6B656}
+\definecolor{cdae8fc}{HTML}{DAE8FC}
+\definecolor{ce1d5e7}{HTML}{E1D5E7}
+\definecolor{cf8cecc}{HTML}{F8CECC}
+\definecolor{cffe599}{HTML}{FFE599}
+\definecolor{cfff2cc}{HTML}{FFF2CC}
+
+% Source: 260410-control-unit.drawio, page: control_unit
+\begin{tikzpicture}[x=0.04cm,y=-0.04cm,>=Latex,line cap=round,line join=round]
+  \node[draw, align=center, font=\scriptsize, rounded corners=2pt, dashed, draw=c0050ef, minimum width=27.20cm, minimum height=12.40cm, text width=27.08cm] (n0z9E0N_xJpJcTOEVbup4_20) at (520.00,255.00) {};
+  \node[draw, align=center, font=\scriptsize, fill=cdae8fc!18, draw=c6c8ebf, minimum width=8.00cm, minimum height=7.20cm, text width=7.88cm] (n0z9E0N_xJpJcTOEVbup4_22) at (340.00,260.00) {};
+  \node[align=center, font=\scriptsize, fill=cf8cecc!18, draw=cb85450, minimum width=2.00cm, minimum height=0.80cm, text width=1.88cm] (n0z9E0N_xJpJcTOEVbup4_3) at (65.00,230.00) {clk};
+  \node[align=center, font=\scriptsize, fill=cf8cecc!18, draw=cb85450, minimum width=2.00cm, minimum height=0.80cm, text width=1.88cm] (n0z9E0N_xJpJcTOEVbup4_5) at (65.00,270.00) {rst};
+  \node[align=center, font=\scriptsize, fill=cf8cecc!18, draw=cb85450, minimum width=2.80cm, minimum height=0.80cm, text width=2.68cm] (n0z9E0N_xJpJcTOEVbup4_7) at (65.00,420.00) {sw[2:0]};
+  \node[draw, align=center, font=\scriptsize, fill=cfff2cc!18, draw=cd6b656, minimum width=8.80cm, minimum height=6.40cm, text width=8.68cm] (n0z9E0N_xJpJcTOEVbup4_10) at (350.00,520.00) {};
+  \node[align=center, font=\scriptsize, text=c7c6c0a, minimum width=7.20cm, minimum height=1.00cm, text width=7.08cm] (n0z9E0N_xJpJcTOEVbup4_11) at (350.00,462.50) {control\_unit};
+  \node[align=center, font=\scriptsize, fill=cffe599!18, draw=cd6b656, minimum width=2.80cm, minimum height=0.80cm, text width=2.68cm] (n0z9E0N_xJpJcTOEVbup4_12) at (295.00,530.00) {sw[2:0]};
+  \node[align=center, font=\scriptsize, fill=cffe599!18, draw=cd6b656, minimum width=2.80cm, minimum height=0.80cm, text width=2.68cm] (n0z9E0N_xJpJcTOEVbup4_13) at (410.00,500.00) {run\_en};
+  \node[align=center, font=\scriptsize, fill=cffe599!18, draw=cd6b656, minimum width=3.00cm, minimum height=0.80cm, text width=2.88cm] (n0z9E0N_xJpJcTOEVbup4_14) at (407.50,530.00) {clear\_en};
+  \node[align=center, font=\scriptsize, fill=cffe599!18, draw=cd6b656, minimum width=3.40cm, minimum height=0.80cm, text width=3.28cm] (n0z9E0N_xJpJcTOEVbup4_15) at (402.50,560.00) {down\_mode};
+  \node[align=center, font=\scriptsize, text=c0050ef, minimum width=4.80cm, minimum height=1.20cm, text width=4.68cm] (n0z9E0N_xJpJcTOEVbup4_21) at (247.00,115.00) {datapath};
+  \node[align=center, font=\scriptsize, text=c2e5fa1, minimum width=5.60cm, minimum height=1.00cm, text width=5.48cm] (n0z9E0N_xJpJcTOEVbup4_23) at (340.00,187.50) {tick\_gen};
+  \node[align=center, font=\scriptsize, fill=cabd0fc!18, draw=c6c8ebf, minimum width=2.20cm, minimum height=0.80cm, text width=2.08cm] (n0z9E0N_xJpJcTOEVbup4_24) at (342.50,230.00) {clk};
+  \node[align=center, font=\scriptsize, fill=cabd0fc!18, draw=c6c8ebf, minimum width=2.20cm, minimum height=0.80cm, text width=2.08cm] (n0z9E0N_xJpJcTOEVbup4_25) at (342.50,270.00) {rst};
+  \node[align=center, font=\scriptsize, fill=cabd0fc!18, draw=c6c8ebf, minimum width=2.60cm, minimum height=0.80cm, text width=2.48cm] (n0z9E0N_xJpJcTOEVbup4_26) at (347.50,307.00) {run\_en};
+  \node[align=center, font=\scriptsize, fill=cdae8fc!18, minimum width=1.20cm, minimum height=0.40cm, text width=1.08cm] (n0z9E0N_xJpJcTOEVbup4_27) at (485.00,260.00) {tick};
+  \node[draw, align=center, font=\scriptsize, fill=ce1d5e7!18, draw=c9673a6, minimum width=11.00cm, minimum height=9.60cm, text width=10.88cm] (n0z9E0N_xJpJcTOEVbup4_32) at (677.50,260.00) {};
+  \node[align=center, font=\scriptsize, text=c6a3d7d, minimum width=7.20cm, minimum height=1.00cm, text width=7.08cm] (n0z9E0N_xJpJcTOEVbup4_33) at (667.50,152.50) {tick\_counter};
+  \node[align=center, font=\scriptsize, fill=ccda2be!18, draw=c9673a6, minimum width=2.40cm, minimum height=0.80cm, text width=2.28cm] (n0z9E0N_xJpJcTOEVbup4_34) at (667.50,191.50) {clk};
+  \node[align=center, font=\scriptsize, fill=ccda2be!18, draw=c9673a6, minimum width=2.40cm, minimum height=0.80cm, text width=2.28cm] (n0z9E0N_xJpJcTOEVbup4_35) at (667.50,221.50) {rst};
+  \node[align=center, font=\scriptsize, fill=ccda2be!18, draw=c9673a6, minimum width=2.40cm, minimum height=0.80cm, text width=2.28cm] (n0z9E0N_xJpJcTOEVbup4_36) at (667.50,251.50) {tick};
+  \node[align=center, font=\scriptsize, fill=ccda2be!18, draw=c9673a6, minimum width=2.80cm, minimum height=0.80cm, text width=2.68cm] (n0z9E0N_xJpJcTOEVbup4_37) at (672.50,280.00) {run\_en};
+  \node[align=center, font=\scriptsize, fill=ccda2be!18, draw=c9673a6, minimum width=2.80cm, minimum height=0.80cm, text width=2.68cm] (n0z9E0N_xJpJcTOEVbup4_38) at (672.50,310.00) {clear\_en};
+  \node[align=center, font=\scriptsize, fill=ccda2be!18, draw=c9673a6, minimum width=3.20cm, minimum height=0.80cm, text width=3.08cm] (n0z9E0N_xJpJcTOEVbup4_39) at (677.50,340.00) {down\_mode};
+  \node[align=center, font=\scriptsize, fill=ce1d5e7!18, draw=c9673a6, minimum width=5.60cm, minimum height=1.20cm, text width=5.48cm] (n0z9E0N_xJpJcTOEVbup4_49) at (970.00,260.00) {count\_out[13:0]};
+  \draw[thick] (340.00,260.00) -- (677.50,260.00);
+  \draw[thick] (65.00,230.00) -- (342.50,230.00);
+  \draw[thick] (65.00,270.00) -- (342.50,270.00);
+  \draw[thick] (350.00,520.00) -- (677.50,260.00);
+  \draw[thick] (65.00,420.00) -- (150.00,420.00) -- (150.00,530.00) -- (295.00,530.00);
+  \draw[thick] (677.50,260.00) -- (970.00,260.00);
+\end{tikzpicture}
