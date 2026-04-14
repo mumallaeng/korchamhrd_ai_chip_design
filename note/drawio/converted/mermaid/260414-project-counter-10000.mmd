@@ -1,0 +1,79 @@
+flowchart LR
+  n_Gdv3_p0J4g2QtB7_2rpD_1["Btn_D"]
+  n_Gdv3_p0J4g2QtB7_2rpD_2["Btn_L"]
+  n_Gdv3_p0J4g2QtB7_2rpD_3["Btn_R"]
+  n_Gdv3_p0J4g2QtB7_2rpD_7["mode"]
+  n_Gdv3_p0J4g2QtB7_2rpD_8["clear"]
+  n_Gdv3_p0J4g2QtB7_2rpD_9["run_stop"]
+  n_adgLpoAnAb905ZfSkwzA_1["node_kwzA-1"]
+  n_adgLpoAnAb905ZfSkwzA_10["node_wzA-10"]
+  n_adgLpoAnAb905ZfSkwzA_11["control_unit"]
+  n_adgLpoAnAb905ZfSkwzA_13["run_en"]
+  n_adgLpoAnAb905ZfSkwzA_14["clear_en"]
+  n_adgLpoAnAb905ZfSkwzA_15["down_mode"]
+  n_adgLpoAnAb905ZfSkwzA_16["datapath"]
+  n_adgLpoAnAb905ZfSkwzA_17["tick_gen"]
+  n_adgLpoAnAb905ZfSkwzA_18["clk"]
+  n_adgLpoAnAb905ZfSkwzA_19["rst"]
+  n_adgLpoAnAb905ZfSkwzA_20["run_en"]
+  n_adgLpoAnAb905ZfSkwzA_21["tick"]
+  n_adgLpoAnAb905ZfSkwzA_22["node_wzA-22"]
+  n_adgLpoAnAb905ZfSkwzA_23["tick_counter"]
+  n_adgLpoAnAb905ZfSkwzA_24["clk"]
+  n_adgLpoAnAb905ZfSkwzA_25["rst"]
+  n_adgLpoAnAb905ZfSkwzA_26["tick"]
+  n_adgLpoAnAb905ZfSkwzA_27["run_en"]
+  n_adgLpoAnAb905ZfSkwzA_28["clear_en"]
+  n_adgLpoAnAb905ZfSkwzA_29["down_mode"]
+  n_adgLpoAnAb905ZfSkwzA_3["node_kwzA-3"]
+  n_adgLpoAnAb905ZfSkwzA_33["counter_10000"]
+  n_adgLpoAnAb905ZfSkwzA_34["fnd_controller"]
+  n_adgLpoAnAb905ZfSkwzA_38["fnd_com[3:0]"]
+  n_adgLpoAnAb905ZfSkwzA_39["fnd_data[7:0]"]
+  n_adgLpoAnAb905ZfSkwzA_40["datapath"]
+  n_adgLpoAnAb905ZfSkwzA_41["clk_tick_gen"]
+  n_adgLpoAnAb905ZfSkwzA_43["tick_counter"]
+  n_adgLpoAnAb905ZfSkwzA_45["digit_splitter"]
+  n_adgLpoAnAb905ZfSkwzA_46["clk_div_1khz"]
+  n_adgLpoAnAb905ZfSkwzA_49["digit_sel[1:0]"]
+  n_adgLpoAnAb905ZfSkwzA_5["clk"]
+  n_adgLpoAnAb905ZfSkwzA_50["counter_4"]
+  n_adgLpoAnAb905ZfSkwzA_52["mux_4x1"]
+  n_adgLpoAnAb905ZfSkwzA_54["decoder_2x4"]
+  n_adgLpoAnAb905ZfSkwzA_56["bcd"]
+  n_adgLpoAnAb905ZfSkwzA_58["o_tick"]
+  n_adgLpoAnAb905ZfSkwzA_62["o_tick_counter"]
+  n_adgLpoAnAb905ZfSkwzA_63["clk, rst"]
+  n_adgLpoAnAb905ZfSkwzA_7["rst"]
+  n_vGRKBN_a5CdBSBOYwats_11["MODE<br/>mode=~mode"]
+  n_vGRKBN_a5CdBSBOYwats_12["STARTrun_stop=0mode=0clear=0"]
+  n_vGRKBN_a5CdBSBOYwats_14["Btn_L==1"]
+  n_vGRKBN_a5CdBSBOYwats_15["Next Clock"]
+  n_vGRKBN_a5CdBSBOYwats_16["Btn_R==1"]
+  n_vGRKBN_a5CdBSBOYwats_17["Btn_R==1"]
+  n_vGRKBN_a5CdBSBOYwats_18["Next Clock"]
+  n_vGRKBN_a5CdBSBOYwats_19["Btn_D==1"]
+  n_vGRKBN_a5CdBSBOYwats_20["push==1pop==0"]
+  n_vGRKBN_a5CdBSBOYwats_3["STOP<br/>run_stop=0clear=0"]
+  n_vGRKBN_a5CdBSBOYwats_5["node_wats-5"]
+  n_vGRKBN_a5CdBSBOYwats_7["CLEARclear=1"]
+  n_vGRKBN_a5CdBSBOYwats_9["RUN<br/>run_stop=1"]
+  n_adgLpoAnAb905ZfSkwzA_3 --> n_adgLpoAnAb905ZfSkwzA_22
+  n_adgLpoAnAb905ZfSkwzA_5 --> n_adgLpoAnAb905ZfSkwzA_18
+  n_adgLpoAnAb905ZfSkwzA_7 --> n_adgLpoAnAb905ZfSkwzA_19
+  n_adgLpoAnAb905ZfSkwzA_10 --> n_adgLpoAnAb905ZfSkwzA_22
+  n_adgLpoAnAb905ZfSkwzA_43 --> n_adgLpoAnAb905ZfSkwzA_46
+  n_adgLpoAnAb905ZfSkwzA_45 --> n_adgLpoAnAb905ZfSkwzA_52
+  n_adgLpoAnAb905ZfSkwzA_50 --> n_adgLpoAnAb905ZfSkwzA_52
+  n_adgLpoAnAb905ZfSkwzA_50 --> n_adgLpoAnAb905ZfSkwzA_54
+  n_adgLpoAnAb905ZfSkwzA_52 --> n_adgLpoAnAb905ZfSkwzA_56
+  n_adgLpoAnAb905ZfSkwzA_54 --> n_adgLpoAnAb905ZfSkwzA_38
+  n_adgLpoAnAb905ZfSkwzA_56 --> n_adgLpoAnAb905ZfSkwzA_39
+  n_adgLpoAnAb905ZfSkwzA_41 --> n_adgLpoAnAb905ZfSkwzA_43
+  n_adgLpoAnAb905ZfSkwzA_43 --> n_adgLpoAnAb905ZfSkwzA_45
+  n_vGRKBN_a5CdBSBOYwats_3 --> n_vGRKBN_a5CdBSBOYwats_11
+  n_vGRKBN_a5CdBSBOYwats_3 --> n_vGRKBN_a5CdBSBOYwats_9
+  n_vGRKBN_a5CdBSBOYwats_5 --> n_vGRKBN_a5CdBSBOYwats_3
+  n_vGRKBN_a5CdBSBOYwats_7 --> n_vGRKBN_a5CdBSBOYwats_3
+  n_vGRKBN_a5CdBSBOYwats_9 --> n_vGRKBN_a5CdBSBOYwats_3
+  n_vGRKBN_a5CdBSBOYwats_11 --> n_vGRKBN_a5CdBSBOYwats_3

@@ -1,0 +1,57 @@
+\definecolor{c000000}{HTML}{000000}
+
+% Source: 260414-mealy-moore.drawio, page: mealy
+\begin{tikzpicture}[x=0.04cm,y=-0.04cm,>=Latex,line cap=round,line join=round]
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nL5CW1b4Si_8L8Gd6nkXg_13) at (-0.39,-3.00) {input==0output=0};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nWX8bb4Ay61HHlQuAzu0b_2) at (-0.39,-3.00) {input==1output=0};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nWX8bb4Ay61HHlQuAzu0b_3) at (-0.39,-3.00) {input==0output=0};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nWX8bb4Ay61HHlQuAzu0b_4) at (-0.39,-3.00) {input==1output=0};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nWX8bb4Ay61HHlQuAzu0b_6) at (-0.39,-3.00) {input==0output=1};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nWX8bb4Ay61HHlQuAzu0b_7) at (-0.39,-3.00) {input==1output=0};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nWX8bb4Ay61HHlQuAzu0b_8) at (-0.39,-3.00) {input==0output=0};
+  \node[draw, align=center, font=\scriptsize, minimum width=3.20cm, minimum height=3.20cm, text width=3.08cm] (nL5CW1b4Si_8L8Gd6nkXg_1) at (425.00,580.00) {A};
+  \node[draw, align=center, font=\scriptsize, fill=c000000!18, minimum width=1.20cm, minimum height=1.20cm, text width=1.08cm] (nL5CW1b4Si_8L8Gd6nkXg_2) at (425.00,475.00) {};
+  \node[draw, align=center, font=\scriptsize, minimum width=3.20cm, minimum height=3.20cm, text width=3.08cm] (nL5CW1b4Si_8L8Gd6nkXg_3) at (200.00,760.00) {B};
+  \node[draw, align=center, font=\scriptsize, minimum width=3.20cm, minimum height=3.20cm, text width=3.08cm] (nL5CW1b4Si_8L8Gd6nkXg_4) at (425.00,960.00) {C};
+  \node[draw, align=center, font=\scriptsize, minimum width=3.20cm, minimum height=3.20cm, text width=3.08cm] (nL5CW1b4Si_8L8Gd6nkXg_5) at (650.00,760.00) {D};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nWX8bb4Ay61HHlQuAzu0b_1) at (320.00,580.00) {input==1output=0};
+  \draw[thick, dashed] (425.00,960.00) -- (425.00,580.00);
+  \draw[thick, dashed] (650.00,760.00) -- (200.00,760.00);
+  \draw[thick] (425.00,960.00) -- (650.00,760.00);
+  \draw[thick] (200.00,760.00) -- (200.00,960.00) -- (425.00,960.00);
+  \draw[thick] (162.99,745.01) -- (155.99,745.01) -- (155.99,709.01) -- (172.99,709.01) -- (172.99,731.01);
+  \draw[thick] (650.00,760.00) -- (425.00,580.00);
+  \draw[thick] (425.00,580.00) -- (200.00,760.00);
+  \draw[thick] (425.00,580.00) -- (380.00,566.00) -- (380.00,530.00) -- (397.00,530.00) -- (425.00,580.00);
+  \draw[thick] (425.00,475.00) -- (425.00,580.00);
+\end{tikzpicture}
+% Source: 260414-mealy-moore.drawio, page: moore
+\begin{tikzpicture}[x=0.04cm,y=-0.04cm,>=Latex,line cap=round,line join=round]
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (ndymsDe6c_Ul1_7q9bfgP_4) at (-0.39,-3.00) {0};
+  \node[draw, align=center, font=\scriptsize, minimum width=3.20cm, minimum height=3.20cm, text width=3.08cm] (ndymsDe6c_Ul1_7q9bfgP_7) at (425.00,580.00) {A0};
+  \node[draw, align=center, font=\scriptsize, fill=c000000!18, minimum width=1.20cm, minimum height=1.20cm, text width=1.08cm] (ndymsDe6c_Ul1_7q9bfgP_9) at (425.00,475.00) {};
+  \node[draw, align=center, font=\scriptsize, minimum width=3.20cm, minimum height=3.20cm, text width=3.08cm] (ndymsDe6c_Ul1_7q9bfgP_11) at (425.00,741.00) {B0};
+  \node[draw, align=center, font=\scriptsize, minimum width=3.20cm, minimum height=3.20cm, text width=3.08cm] (ndymsDe6c_Ul1_7q9bfgP_15) at (250.00,940.00) {C0};
+  \node[draw, align=center, font=\scriptsize, minimum width=3.20cm, minimum height=3.20cm, text width=3.08cm] (ndymsDe6c_Ul1_7q9bfgP_17) at (425.00,940.00) {D0};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (ndymsDe6c_Ul1_7q9bfgP_20) at (-0.39,-3.00) {1};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (ndymsDe6c_Ul1_7q9bfgP_25) at (-0.39,-3.00) {1};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nca6LpFP6NE2KJj1RpuLm_2) at (-0.39,-3.00) {1};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nca6LpFP6NE2KJj1RpuLm_4) at (-0.39,-3.00) {0};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nca6LpFP6NE2KJj1RpuLm_6) at (-0.39,-3.00) {1};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nca6LpFP6NE2KJj1RpuLm_8) at (-0.39,-3.00) {0};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nca6LpFP6NE2KJj1RpuLm_10) at (-0.39,-3.00) {0};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nca6LpFP6NE2KJj1RpuLm_14) at (-0.39,-3.00) {1};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nca6LpFP6NE2KJj1RpuLm_15) at (-0.39,-3.00) {0};
+  \node[draw, align=center, font=\scriptsize, minimum width=3.20cm, minimum height=3.20cm, text width=3.08cm] (ndymsDe6c_Ul1_7q9bfgP_23) at (600.00,940.00) {E1};
+  \draw[thick] (600.00,940.00) -- (660.00,940.00) -- (660.00,580.00) -- (425.00,580.00);
+  \draw[thick] (425.00,580.00) -- (461.00,566.00) -- (470.00,566.00) -- (470.00,530.00) -- (453.00,530.00) -- (453.00,552.00) -- (425.00,580.00);
+  \draw[thick] (425.00,580.00) -- (425.00,741.00);
+  \draw[thick] (425.00,475.00) -- (425.00,580.00);
+  \draw[thick] (425.00,741.00) -- (250.00,940.00);
+  \draw[thick] (250.00,940.00) -- (425.00,940.00);
+  \draw[thick] (250.00,940.00) -- (190.00,940.00) -- (190.00,580.00) -- (425.00,580.00);
+  \draw[thick] (425.00,940.00) -- (425.00,741.00);
+  \draw[thick] (425.00,940.00) -- (600.00,940.00);
+  \draw[thick] (600.00,940.00) -- (425.00,741.00);
+  \draw[thick] (387.99,726.01) -- (380.99,726.01) -- (380.99,690.01) -- (397.99,690.01) -- (397.99,712.01);
+\end{tikzpicture}
