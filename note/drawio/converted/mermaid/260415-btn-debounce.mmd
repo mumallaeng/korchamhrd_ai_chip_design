@@ -1,0 +1,84 @@
+flowchart LR
+  n_JfB_RceYVCo8XynwxTDX_16["STOP<br/>run_stop=0clear=0"]
+  n_JfB_RceYVCo8XynwxTDX_18["node_TDX-18"]
+  n_JfB_RceYVCo8XynwxTDX_23["CLEARclear=1"]
+  n_JfB_RceYVCo8XynwxTDX_34["RUN<br/>run_stop=1"]
+  n_JfB_RceYVCo8XynwxTDX_36["MODE<br/>mode=~mode"]
+  n_JfB_RceYVCo8XynwxTDX_37["STARTrun_stop=0mode=0clear=0"]
+  n_JfB_RceYVCo8XynwxTDX_67["Btn_L==1"]
+  n_JfB_RceYVCo8XynwxTDX_68["Next Clock"]
+  n_JfB_RceYVCo8XynwxTDX_69["Btn_R==1"]
+  n_JfB_RceYVCo8XynwxTDX_70["Btn_R==1"]
+  n_JfB_RceYVCo8XynwxTDX_71["Next Clock"]
+  n_JfB_RceYVCo8XynwxTDX_72["Btn_D==1"]
+  n_JfB_RceYVCo8XynwxTDX_73["push==1pop==0"]
+  n_KXh9xaAsaYVUpem71158_1["counter_10000"]
+  n_KXh9xaAsaYVUpem71158_11["node_158-11"]
+  n_KXh9xaAsaYVUpem71158_12["control_unit"]
+  n_KXh9xaAsaYVUpem71158_13["run_en"]
+  n_KXh9xaAsaYVUpem71158_14["clear_en"]
+  n_KXh9xaAsaYVUpem71158_15["down_mode"]
+  n_KXh9xaAsaYVUpem71158_16["datapath"]
+  n_KXh9xaAsaYVUpem71158_17["tick_gen"]
+  n_KXh9xaAsaYVUpem71158_18["clk"]
+  n_KXh9xaAsaYVUpem71158_19["rst"]
+  n_KXh9xaAsaYVUpem71158_2["node_1158-2"]
+  n_KXh9xaAsaYVUpem71158_20["run_en"]
+  n_KXh9xaAsaYVUpem71158_21["tick"]
+  n_KXh9xaAsaYVUpem71158_22["node_158-22"]
+  n_KXh9xaAsaYVUpem71158_23["tick_counter"]
+  n_KXh9xaAsaYVUpem71158_24["clk"]
+  n_KXh9xaAsaYVUpem71158_25["rst"]
+  n_KXh9xaAsaYVUpem71158_26["tick"]
+  n_KXh9xaAsaYVUpem71158_27["run_en"]
+  n_KXh9xaAsaYVUpem71158_28["clear_en"]
+  n_KXh9xaAsaYVUpem71158_29["down_mode"]
+  n_KXh9xaAsaYVUpem71158_32["fnd_controller"]
+  n_KXh9xaAsaYVUpem71158_33["fnd_com[3:0]"]
+  n_KXh9xaAsaYVUpem71158_34["fnd_data[7:0]"]
+  n_KXh9xaAsaYVUpem71158_35["datapath"]
+  n_KXh9xaAsaYVUpem71158_36["clk_tick_gen"]
+  n_KXh9xaAsaYVUpem71158_38["tick_counter"]
+  n_KXh9xaAsaYVUpem71158_4["node_1158-4"]
+  n_KXh9xaAsaYVUpem71158_40["digit_splitter"]
+  n_KXh9xaAsaYVUpem71158_41["clk_div_1khz"]
+  n_KXh9xaAsaYVUpem71158_44["digit_sel[1:0]"]
+  n_KXh9xaAsaYVUpem71158_45["counter_4"]
+  n_KXh9xaAsaYVUpem71158_47["mux_4x1"]
+  n_KXh9xaAsaYVUpem71158_49["decoder_2x4"]
+  n_KXh9xaAsaYVUpem71158_51["bcd"]
+  n_KXh9xaAsaYVUpem71158_53["o_tick"]
+  n_KXh9xaAsaYVUpem71158_56["o_tick_counter"]
+  n_KXh9xaAsaYVUpem71158_57["clk, rst"]
+  n_KXh9xaAsaYVUpem71158_58["node_158-58"]
+  n_KXh9xaAsaYVUpem71158_6["clk"]
+  n_KXh9xaAsaYVUpem71158_61["mode"]
+  n_KXh9xaAsaYVUpem71158_63["node_158-63"]
+  n_KXh9xaAsaYVUpem71158_64["clear"]
+  n_KXh9xaAsaYVUpem71158_65["run_stop"]
+  n_KXh9xaAsaYVUpem71158_73["button_debounce"]
+  n_KXh9xaAsaYVUpem71158_74["node_158-74"]
+  n_KXh9xaAsaYVUpem71158_79["Btn_D"]
+  n_KXh9xaAsaYVUpem71158_8["rst"]
+  n_KXh9xaAsaYVUpem71158_86["Btn_L"]
+  n_KXh9xaAsaYVUpem71158_88["Btn_R"]
+  n_KXh9xaAsaYVUpem71158_4 --> n_KXh9xaAsaYVUpem71158_22
+  n_KXh9xaAsaYVUpem71158_6 --> n_KXh9xaAsaYVUpem71158_18
+  n_KXh9xaAsaYVUpem71158_8 --> n_KXh9xaAsaYVUpem71158_19
+  n_KXh9xaAsaYVUpem71158_11 --> n_KXh9xaAsaYVUpem71158_22
+  n_KXh9xaAsaYVUpem71158_38 --> n_KXh9xaAsaYVUpem71158_41
+  n_KXh9xaAsaYVUpem71158_40 --> n_KXh9xaAsaYVUpem71158_47
+  n_KXh9xaAsaYVUpem71158_45 --> n_KXh9xaAsaYVUpem71158_47
+  n_KXh9xaAsaYVUpem71158_45 --> n_KXh9xaAsaYVUpem71158_49
+  n_KXh9xaAsaYVUpem71158_47 --> n_KXh9xaAsaYVUpem71158_51
+  n_KXh9xaAsaYVUpem71158_49 --> n_KXh9xaAsaYVUpem71158_33
+  n_KXh9xaAsaYVUpem71158_51 --> n_KXh9xaAsaYVUpem71158_34
+  n_KXh9xaAsaYVUpem71158_36 --> n_KXh9xaAsaYVUpem71158_38
+  n_KXh9xaAsaYVUpem71158_38 --> n_KXh9xaAsaYVUpem71158_40
+  n_KXh9xaAsaYVUpem71158_65 --> n_KXh9xaAsaYVUpem71158_11
+  n_JfB_RceYVCo8XynwxTDX_16 --> n_JfB_RceYVCo8XynwxTDX_36
+  n_JfB_RceYVCo8XynwxTDX_16 --> n_JfB_RceYVCo8XynwxTDX_34
+  n_JfB_RceYVCo8XynwxTDX_18 --> n_JfB_RceYVCo8XynwxTDX_16
+  n_JfB_RceYVCo8XynwxTDX_23 --> n_JfB_RceYVCo8XynwxTDX_16
+  n_JfB_RceYVCo8XynwxTDX_34 --> n_JfB_RceYVCo8XynwxTDX_16
+  n_JfB_RceYVCo8XynwxTDX_36 --> n_JfB_RceYVCo8XynwxTDX_16
