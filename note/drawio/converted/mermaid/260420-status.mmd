@@ -1,0 +1,52 @@
+flowchart LR
+  n_NtYnNxRafVZCUhzqZuAG_12["UPDOWN<br/>updown=~updown"]
+  n_NtYnNxRafVZCUhzqZuAG_15["INITupdown=1 (UP)run_stop=0clear=0"]
+  n_NtYnNxRafVZCUhzqZuAG_18["RUN<br/>run_stop=1clear=0"]
+  n_NtYnNxRafVZCUhzqZuAG_2["Btn_D == 1"]
+  n_NtYnNxRafVZCUhzqZuAG_6["STOP<br/>run_stop=0clear=0"]
+  n_NtYnNxRafVZCUhzqZuAG_9["CLEARclear=1"]
+  n_fPqWIV3_2aiWo3gq1zi2_101["INCREMENTONESedit_target=ones"]
+  n_fPqWIV3_2aiWo3gq1zi2_102["INCREMENTTENSedit_target=tens"]
+  n_fPqWIV3_2aiWo3gq1zi2_104["INITtime_setting=0"]
+  n_fPqWIV3_2aiWo3gq1zi2_105["INDEXSHIFTposition_shift<br/>=next_unit"]
+  n_fPqWIV3_2aiWo3gq1zi2_106["DECREMENTONESedit_target=ones"]
+  n_fPqWIV3_2aiWo3gq1zi2_107["DECREMENTTENSedit_target=tens"]
+  n_fPqWIV3_2aiWo3gq1zi2_108["SETtime_setting=1"]
+  n_fPqWIV3_2aiWo3gq1zi2_123["next_clock"]
+  n_fPqWIV3_2aiWo3gq1zi2_88["BtnR_hold == 1"]
+  n_fPqWIV3_2aiWo3gq1zi2_89["VIEWtime_setting=0"]
+  n_fPqWIV3_2aiWo3gq1zi2_91["BtnL == 1"]
+  n_fPqWIV3_2aiWo3gq1zi2_93["BtnU_hold == 1"]
+  n_fPqWIV3_2aiWo3gq1zi2_95["BtnU == 1"]
+  n_fPqWIV3_2aiWo3gq1zi2_97["BtnD == 1"]
+  n_fPqWIV3_2aiWo3gq1zi2_99["BtnD_hold == 1"]
+  n_x6hel12YKlh6qTf4T9uN_1["BtnU==1"]
+  n_x6hel12YKlh6qTf4T9uN_2["BtnU==1"]
+  n_x6hel12YKlh6qTf4T9uN_3["previous_state == STOP"]
+  n_x6hel12YKlh6qTf4T9uN_4["previous_state == RUN"]
+  n_x6hel12YKlh6qTf4T9uN_5["previous_state == STOP"]
+  n_x6hel12YKlh6qTf4T9uN_6["previous_state == RUN"]
+  n_x6hel12YKlh6qTf4T9uN_7["BtnL==1"]
+  n_x6hel12YKlh6qTf4T9uN_8["BtnL==1"]
+  n_fPqWIV3_2aiWo3gq1zi2_89 --> n_fPqWIV3_2aiWo3gq1zi2_108
+  n_fPqWIV3_2aiWo3gq1zi2_108 --> n_fPqWIV3_2aiWo3gq1zi2_105
+  n_fPqWIV3_2aiWo3gq1zi2_108 --> n_fPqWIV3_2aiWo3gq1zi2_102
+  n_fPqWIV3_2aiWo3gq1zi2_108 --> n_fPqWIV3_2aiWo3gq1zi2_101
+  n_fPqWIV3_2aiWo3gq1zi2_108 --> n_fPqWIV3_2aiWo3gq1zi2_106
+  n_fPqWIV3_2aiWo3gq1zi2_108 --> n_fPqWIV3_2aiWo3gq1zi2_107
+  n_fPqWIV3_2aiWo3gq1zi2_101 --> n_fPqWIV3_2aiWo3gq1zi2_108
+  n_fPqWIV3_2aiWo3gq1zi2_102 --> n_fPqWIV3_2aiWo3gq1zi2_108
+  n_fPqWIV3_2aiWo3gq1zi2_104 --> n_fPqWIV3_2aiWo3gq1zi2_89
+  n_fPqWIV3_2aiWo3gq1zi2_105 --> n_fPqWIV3_2aiWo3gq1zi2_108
+  n_fPqWIV3_2aiWo3gq1zi2_106 --> n_fPqWIV3_2aiWo3gq1zi2_108
+  n_fPqWIV3_2aiWo3gq1zi2_107 --> n_fPqWIV3_2aiWo3gq1zi2_108
+  n_NtYnNxRafVZCUhzqZuAG_6 --> n_NtYnNxRafVZCUhzqZuAG_18
+  n_NtYnNxRafVZCUhzqZuAG_6 --> n_NtYnNxRafVZCUhzqZuAG_12
+  n_NtYnNxRafVZCUhzqZuAG_6 --> n_NtYnNxRafVZCUhzqZuAG_9
+  n_NtYnNxRafVZCUhzqZuAG_9 --> n_NtYnNxRafVZCUhzqZuAG_18
+  n_NtYnNxRafVZCUhzqZuAG_9 --> n_NtYnNxRafVZCUhzqZuAG_6
+  n_NtYnNxRafVZCUhzqZuAG_12 --> n_NtYnNxRafVZCUhzqZuAG_6
+  n_NtYnNxRafVZCUhzqZuAG_12 --> n_NtYnNxRafVZCUhzqZuAG_18
+  n_NtYnNxRafVZCUhzqZuAG_15 --> n_NtYnNxRafVZCUhzqZuAG_6
+  n_NtYnNxRafVZCUhzqZuAG_18 --> n_NtYnNxRafVZCUhzqZuAG_12
+  n_NtYnNxRafVZCUhzqZuAG_18 --> n_NtYnNxRafVZCUhzqZuAG_9

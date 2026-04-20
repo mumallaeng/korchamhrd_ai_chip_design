@@ -1,0 +1,33 @@
+digraph G {
+  graph [rankdir=LR];
+  node [shape=box, style="rounded,filled", fillcolor="#f8f9fb", color="#5b6b7a", fontname="Arial"];
+  "n_92uRnWJbhgCsGvkbSWAY_12" [label="rst"];
+  "n_92uRnWJbhgCsGvkbSWAY_14" [label="clk"];
+  "n_92uRnWJbhgCsGvkbSWAY_16" [label="clk_div_100kHz"];
+  "n_92uRnWJbhgCsGvkbSWAY_17" [label="node_WAY-17"];
+  "n_92uRnWJbhgCsGvkbSWAY_19" [label="clk"];
+  "n_92uRnWJbhgCsGvkbSWAY_21" [label="rst"];
+  "n_92uRnWJbhgCsGvkbSWAY_22" [label="node_WAY-22"];
+  "n_92uRnWJbhgCsGvkbSWAY_23" [label="node_WAY-23"];
+  "n_92uRnWJbhgCsGvkbSWAY_25" [label="clk_100kHz"];
+  "n_92uRnWJbhgCsGvkbSWAY_27" [label="shift_reg[7:0"];
+  "n_92uRnWJbhgCsGvkbSWAY_28" [label="node_WAY-28"];
+  "n_92uRnWJbhgCsGvkbSWAY_38" [label="node_WAY-38"];
+  "n_92uRnWJbhgCsGvkbSWAY_39" [label="d_ff"];
+  "n_92uRnWJbhgCsGvkbSWAY_43" [label="clk"];
+  "n_92uRnWJbhgCsGvkbSWAY_44" [label="node_WAY-44"];
+  "n_92uRnWJbhgCsGvkbSWAY_46" [label="w_debouncer"];
+  "n_92uRnWJbhgCsGvkbSWAY_53" [label="node_WAY-53"];
+  "n_92uRnWJbhgCsGvkbSWAY_57" [label="node_WAY-57"];
+  "n_92uRnWJbhgCsGvkbSWAY_59" [label="i_btn"];
+  "n_92uRnWJbhgCsGvkbSWAY_61" [label="1s_count_tick"];
+  "n_92uRnWJbhgCsGvkbSWAY_63" [label="clk"];
+  "n_92uRnWJbhgCsGvkbSWAY_64" [label="node_WAY-64"];
+  "n_92uRnWJbhgCsGvkbSWAY_70" [label="o_btn_hold"];
+  "n_92uRnWJbhgCsGvkbSWAY_71" [label="o_btn"];
+  "n_92uRnWJbhgCsGvkbSWAY_75" [label="rst"];
+  "n_92uRnWJbhgCsGvkbSWAY_77" [label="rst"];
+  "n_92uRnWJbhgCsGvkbSWAY_8" [label="node_SWAY-8"];
+  "n_92uRnWJbhgCsGvkbSWAY_81" [label="rst"];
+  "n_92uRnWJbhgCsGvkbSWAY_28" -> "n_92uRnWJbhgCsGvkbSWAY_39";
+}

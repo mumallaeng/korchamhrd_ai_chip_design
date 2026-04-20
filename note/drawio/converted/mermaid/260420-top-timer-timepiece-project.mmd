@@ -1,0 +1,46 @@
+flowchart LR
+  n_2trcLsQLmsmYuEsOdBA8_2["node_dBA8-2"]
+  n_2trcLsQLmsmYuEsOdBA8_3["node_dBA8-3"]
+  n_2trcLsQLmsmYuEsOdBA8_4["node_dBA8-4"]
+  n_3sv_IS42M_PzI3kGq3iH_1["node_q3iH-1"]
+  n_3sv_IS42M_PzI3kGq3iH_2["timer_unit"]
+  n_3sv_IS42M_PzI3kGq3iH_3["timepiece_unit"]
+  n_3sv_IS42M_PzI3kGq3iH_4["display_unit"]
+  n_e8PLG3kEcCTFos2G7Ypj_3["node_7Ypj-3"]
+  n_e8PLG3kEcCTFos2G7Ypj_4["node_7Ypj-4"]
+  n_e8PLG3kEcCTFos2G7Ypj_5["node_7Ypj-5"]
+  n_e8PLG3kEcCTFos2G7Ypj_6["node_7Ypj-6"]
+  n_e8PLG3kEcCTFos2G7Ypj_7["node_7Ypj-7"]
+  n_e8PLG3kEcCTFos2G7Ypj_8["node_7Ypj-8"]
+  n_nbyKZ8UsinEBuoknLQGr_14["timepiece_fsm"]
+  n_nbyKZ8UsinEBuoknLQGr_21["common_fsm"]
+  n_nbyKZ8UsinEBuoknLQGr_3["Bnt_L"]
+  n_nbyKZ8UsinEBuoknLQGr_4["timer_fsm"]
+  n_nbyKZ8UsinEBuoknLQGr_44["timepiece_datapath"]
+  n_nbyKZ8UsinEBuoknLQGr_5["Bnt_U"]
+  n_nbyKZ8UsinEBuoknLQGr_59["timer_datapath"]
+  n_nbyKZ8UsinEBuoknLQGr_6["Bnt_D"]
+  n_nbyKZ8UsinEBuoknLQGr_69["display_select_logic"]
+  n_nbyKZ8UsinEBuoknLQGr_7["Bnt_R"]
+  n_nbyKZ8UsinEBuoknLQGr_71["fnd_controller"]
+  n_nbyKZ8UsinEBuoknLQGr_88["node_QGr-88"]
+  n_nbyKZ8UsinEBuoknLQGr_90["input_conditioning"]
+  n_nbyKZ8UsinEBuoknLQGr_91["sw[0]"]
+  n_nbyKZ8UsinEBuoknLQGr_92["sw[15]"]
+  n_nbyKZ8UsinEBuoknLQGr_4 --> n_nbyKZ8UsinEBuoknLQGr_59
+  n_nbyKZ8UsinEBuoknLQGr_4 --> n_nbyKZ8UsinEBuoknLQGr_59
+  n_nbyKZ8UsinEBuoknLQGr_59 --> n_nbyKZ8UsinEBuoknLQGr_69
+  n_nbyKZ8UsinEBuoknLQGr_44 --> n_nbyKZ8UsinEBuoknLQGr_69
+  n_nbyKZ8UsinEBuoknLQGr_71 --> n_e8PLG3kEcCTFos2G7Ypj_4
+  n_nbyKZ8UsinEBuoknLQGr_71 --> n_e8PLG3kEcCTFos2G7Ypj_4
+  n_nbyKZ8UsinEBuoknLQGr_69 --> n_nbyKZ8UsinEBuoknLQGr_71
+  n_nbyKZ8UsinEBuoknLQGr_90 --> n_nbyKZ8UsinEBuoknLQGr_4
+  n_nbyKZ8UsinEBuoknLQGr_90 --> n_nbyKZ8UsinEBuoknLQGr_4
+  n_nbyKZ8UsinEBuoknLQGr_90 --> n_nbyKZ8UsinEBuoknLQGr_4
+  n_nbyKZ8UsinEBuoknLQGr_90 --> n_nbyKZ8UsinEBuoknLQGr_21
+  n_nbyKZ8UsinEBuoknLQGr_91 --> n_nbyKZ8UsinEBuoknLQGr_90
+  n_nbyKZ8UsinEBuoknLQGr_92 --> n_nbyKZ8UsinEBuoknLQGr_90
+  n_nbyKZ8UsinEBuoknLQGr_90 --> n_nbyKZ8UsinEBuoknLQGr_69
+  n_nbyKZ8UsinEBuoknLQGr_90 --> n_nbyKZ8UsinEBuoknLQGr_69
+  n_nbyKZ8UsinEBuoknLQGr_21 --> n_nbyKZ8UsinEBuoknLQGr_71
+  n_nbyKZ8UsinEBuoknLQGr_14 --> n_nbyKZ8UsinEBuoknLQGr_71

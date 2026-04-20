@@ -1,0 +1,38 @@
+% Source: 260420-input-conditioning.drawio, page: 페이지-1
+\begin{tikzpicture}[x=0.04cm,y=-0.04cm,>=Latex,line cap=round,line join=round]
+  \node[draw, align=center, font=\scriptsize, minimum width=9.20cm, minimum height=18.80cm, text width=9.08cm] (nk6zkxdQElb2d_6jz5bX1_9) at (295.00,505.00) {};
+  \node[draw, align=center, font=\scriptsize, minimum width=1.60cm, minimum height=1.60cm, text width=1.48cm] (nk6zkxdQElb2d_6jz5bX1_1) at (120.00,325.00) {BtnL};
+  \node[draw, align=center, font=\scriptsize, minimum width=1.60cm, minimum height=1.60cm, text width=1.48cm] (nk6zkxdQElb2d_6jz5bX1_2) at (120.00,415.00) {BtnU};
+  \node[draw, align=center, font=\scriptsize, minimum width=1.60cm, minimum height=1.60cm, text width=1.48cm] (nk6zkxdQElb2d_6jz5bX1_3) at (120.00,500.00) {BtnD};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nUfit_6sDCXz0J2qk3ZfJ_1) at (0.65,1.00) {o\_sw0};
+  \node[draw, align=center, font=\scriptsize, minimum width=1.60cm, minimum height=1.60cm, text width=1.48cm] (nk6zkxdQElb2d_6jz5bX1_11) at (120.00,656.00) {SW[0]};
+  \node[draw, align=center, font=\scriptsize, minimum width=1.60cm, minimum height=1.60cm, text width=1.48cm] (nk6zkxdQElb2d_6jz5bX1_12) at (120.00,708.00) {SW[15]};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nUfit_6sDCXz0J2qk3ZfJ_2) at (0.63,0.00) {o\_sw15};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nk6zkxdQElb2d_6jz5bX1_25) at (-0.05,1.00) {o\_btnL};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nk6zkxdQElb2d_6jz5bX1_26) at (-0.03,-1.00) {o\_btn\_\_hold};
+  \node[draw, align=center, font=\scriptsize, minimum width=2.80cm, minimum height=2.80cm, text width=2.68cm] (nk6zkxdQElb2d_6jz5bX1_14) at (255.00,325.00) {debouncer\_L};
+  \node[draw, align=center, font=\scriptsize, minimum width=2.80cm, minimum height=2.80cm, text width=2.68cm] (nk6zkxdQElb2d_6jz5bX1_16) at (255.00,415.00) {debouncer\_U};
+  \node[draw, align=center, font=\scriptsize, minimum width=2.80cm, minimum height=2.80cm, text width=2.68cm] (nk6zkxdQElb2d_6jz5bX1_17) at (255.00,505.00) {debouncer\_D};
+  \node[draw, align=center, font=\scriptsize, minimum width=2.80cm, minimum height=2.80cm, text width=2.68cm] (nk6zkxdQElb2d_6jz5bX1_18) at (255.00,595.00) {debouncer\_R};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nk6zkxdQElb2d_6jz5bX1_32) at (-0.05,1.00) {o\_btn\_};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nk6zkxdQElb2d_6jz5bX1_34) at (-0.03,-1.00) {o\_btn\_\_hold};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nk6zkxdQElb2d_6jz5bX1_36) at (-0.05,1.00) {o\_btn\_};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nk6zkxdQElb2d_6jz5bX1_38) at (-0.03,-1.00) {o\_btn\_\_hold};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nk6zkxdQElb2d_6jz5bX1_40) at (-0.05,1.00) {o\_btn\_};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nk6zkxdQElb2d_6jz5bX1_42) at (-0.03,-1.00) {o\_btn\_\_hold};
+  \node[draw, align=center, font=\scriptsize, minimum width=1.60cm, minimum height=1.60cm, text width=1.48cm] (nk6zkxdQElb2d_6jz5bX1_4) at (120.00,590.00) {BtnR};
+  \draw[thick, ->] (120.00,325.00) -- (140.00,325.00) -- (255.00,325.00);
+  \draw[thick, ->] (120.00,415.00) -- (150.00,415.00) -- (150.00,415.00) -- (255.00,415.00);
+  \draw[thick, ->] (210.00,655.76) -- (140.00,655.76) -- (420.00,656.00);
+  \draw[thick, ->] (120.00,708.00) -- (150.00,708.00) -- (150.00,708.00) -- (420.00,708.00);
+  \draw[thick, ->] (255.00,325.00) -- (290.00,310.00) -- (420.00,310.00) -- (420.00,310.00);
+  \draw[thick, ->] (255.00,325.00) -- (420.00,342.40);
+  \draw[thick, ->] (290.00,415.00) -- (290.00,400.00) -- (420.00,400.00) -- (420.00,400.00);
+  \draw[thick, ->] (290.00,433.00) -- (420.00,432.40);
+  \draw[thick, ->] (290.00,503.50) -- (290.00,488.50) -- (420.00,488.50) -- (420.00,488.50);
+  \draw[thick, ->] (290.00,521.50) -- (420.00,520.90);
+  \draw[thick, ->] (290.00,593.50) -- (290.00,578.50) -- (420.00,578.50) -- (420.00,578.50);
+  \draw[thick, ->] (290.00,611.50) -- (420.00,610.90);
+  \draw[thick, ->] (140.00,500.00) -- (140.00,500.00) -- (220.00,500.00);
+  \draw[thick, ->] (140.00,590.00) -- (150.00,590.00) -- (150.00,590.00) -- (220.00,590.00);
+\end{tikzpicture}

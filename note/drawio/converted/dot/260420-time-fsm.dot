@@ -1,0 +1,15 @@
+digraph G {
+  graph [rankdir=LR];
+  node [shape=box, style="rounded,filled", fillcolor="#f8f9fb", color="#5b6b7a", fontname="Arial"];
+  "n_PpjYwLhxrEH4BbogUr0x_1" [label="timer_fsm"];
+  "n_PpjYwLhxrEH4BbogUr0x_12" [label="i_btnL"];
+  "n_PpjYwLhxrEH4BbogUr0x_13" [label="i_btnU"];
+  "n_PpjYwLhxrEH4BbogUr0x_14" [label="i_btnD"];
+  "n_PpjYwLhxrEH4BbogUr0x_16" [label="i_sw0"];
+  "n_PpjYwLhxrEH4BbogUr0x_6" [label="o_clear"];
+  "n_PpjYwLhxrEH4BbogUr0x_7" [label="o_updown"];
+  "n_PpjYwLhxrEH4BbogUr0x_8" [label="o_runstop"];
+  "n_o4FoTvy3GKNA2CTONlQc_3" [label="clk"];
+  "n_o4FoTvy3GKNA2CTONlQc_4" [label="rst"];
+  "n_o4FoTvy3GKNA2CTONlQc_5" [label="node_NlQc-5"];
+}

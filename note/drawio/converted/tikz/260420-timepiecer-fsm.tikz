@@ -1,0 +1,35 @@
+% Source: 260420-timepiecer-fsm.drawio, page: 페이지-1
+\begin{tikzpicture}[x=0.04cm,y=-0.04cm,>=Latex,line cap=round,line join=round]
+  \node[draw, align=center, font=\scriptsize, minimum width=3.60cm, minimum height=11.20cm, text width=3.48cm] (ng0RLNKt16P9XedoZUAFf_1) at (295.02,430.00) {timepiece\_fsm};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (ng0RLNKt16P9XedoZUAFf_17) at (188.02,371.00) {i\_btnL};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (ng0RLNKt16P9XedoZUAFf_18) at (189.02,407.00) {i\_btnU};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (ng0RLNKt16P9XedoZUAFf_19) at (202.02,508.00) {i\_btnU\_hold};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (ng0RLNKt16P9XedoZUAFf_20) at (188.02,440.00) {i\_btnD};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (ng0RLNKt16P9XedoZUAFf_21) at (207.02,475.00) {i\_btnD\_hold};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (ng0RLNKt16P9XedoZUAFf_25) at (0.14,4.00) {i\_sw0};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (ng0RLNKt16P9XedoZUAFf_27) at (0.30,0.00) {o\_set\_index};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (ng0RLNKt16P9XedoZUAFf_29) at (0.25,-2.00) {o\_set\_mode};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (ng0RLNKt16P9XedoZUAFf_31) at (0.32,0.00) {o\_index\_shift};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (ng0RLNKt16P9XedoZUAFf_33) at (0.35,-1.00) {o\_decrement\_ones};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (ng0RLNKt16P9XedoZUAFf_35) at (0.35,1.00) {o\_increment\_ones};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (ng0RLNKt16P9XedoZUAFf_38) at (181.02,309.00) {clk};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (ng0RLNKt16P9XedoZUAFf_39) at (182.02,342.00) {rst};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.80cm, minimum height=0.80cm, text width=0.68cm] (ng0RLNKt16P9XedoZUAFf_40) at (260.01,322.00) {};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (ng0RLNKt16P9XedoZUAFf_44) at (0.35,-1.00) {o\_decrement\_tens};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (ng0RLNKt16P9XedoZUAFf_46) at (0.35,1.00) {o\_increment\_tens};
+  \draw[thick, ->] (190.02,418.00) -- (170.02,418.00) -- (250.02,418.00);
+  \draw[thick, ->] (190.02,450.00) -- (170.02,450.00) -- (250.02,450.00);
+  \draw[thick, ->] (190.00,384.00) -- (170.00,384.00) -- (250.00,384.00);
+  \draw[thick, ->] (190.04,485.00) -- (170.04,485.00) -- (250.04,485.00);
+  \draw[thick, ->] (190.04,518.00) -- (170.04,518.00) -- (250.04,518.00);
+  \draw[thick, ->] (190.02,549.00) -- (170.02,549.00) -- (250.02,549.00);
+  \draw[thick] (340.02,313.00) -- (461.04,313.00);
+  \draw[thick] (340.02,355.00) -- (460.04,355.00);
+  \draw[thick] (340.02,394.00) -- (460.04,394.00);
+  \draw[thick] (340.02,473.00) -- (463.00,473.00);
+  \draw[thick] (340.02,434.00) -- (463.04,434.00);
+  \draw[thick, ->] (190.02,353.00) -- (170.02,353.00) -- (250.02,353.00);
+  \draw[thick, ->] (190.00,322.00) -- (170.00,322.00) -- (250.00,322.00);
+  \draw[thick] (340.02,549.00) -- (463.00,549.00);
+  \draw[thick] (340.02,510.00) -- (463.04,510.00);
+\end{tikzpicture}

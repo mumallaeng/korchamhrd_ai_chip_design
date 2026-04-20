@@ -1,0 +1,22 @@
+% Source: 260420-display-select-logic-display.drawio, page: 페이지-1
+\begin{tikzpicture}[x=0.04cm,y=-0.04cm,>=Latex,line cap=round,line join=round]
+  \node[draw, align=center, font=\scriptsize, minimum width=11.20cm, minimum height=12.80cm, text width=11.08cm] (n5OUoBaIc3aSdbqGUoIOj_5) at (440.00,370.00) {};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nQh3KLExnjwxt7BLHPniv_5) at (-0.75,1.00) {o\_sw15};
+  \node[draw, align=center, font=\scriptsize, minimum width=4.40cm, minimum height=4.40cm, text width=4.28cm] (n5OUoBaIc3aSdbqGUoIOj_12) at (125.00,630.00) {input\_conditioning};
+  \node[draw, align=center, font=\scriptsize, minimum width=4.80cm, minimum height=6.40cm, text width=4.68cm] (n5OUoBaIc3aSdbqGUoIOj_1) at (120.00,460.00) {timepiece\_datapath};
+  \node[draw, align=center, font=\scriptsize, minimum width=4.80cm, minimum height=6.40cm, text width=4.68cm] (n5OUoBaIc3aSdbqGUoIOj_2) at (120.00,260.00) {timer\_datapath};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (n5OUoBaIc3aSdbqGUoIOj_7) at (0.33,0.00) {i\_timer\_value};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (n5OUoBaIc3aSdbqGUoIOj_8) at (0.46,1.00) {i\_timepiece\_value};
+  \node[align=center, font=\scriptsize, minimum width=2.40cm, minimum height=1.20cm, text width=2.28cm] (n5OUoBaIc3aSdbqGUoIOj_6) at (529.00,201.00) {display\_select\_logic};
+  \node[draw, align=center, font=\scriptsize, minimum width=3.20cm, minimum height=4.80cm, text width=3.08cm] (n5OUoBaIc3aSdbqGUoIOj_9) at (374.00,360.00) {mux};
+  \node[align=center, font=\scriptsize, minimum width=2.40cm, minimum height=1.20cm, text width=2.28cm] (n5OUoBaIc3aSdbqGUoIOj_10) at (200.00,590.00) {o\_sw0};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nQh3KLExnjwxt7BLHPniv_4) at (-0.30,0.00) {o\_display\_value};
+  \node[draw, align=center, font=\scriptsize, minimum width=4.00cm, minimum height=6.00cm, text width=3.88cm] (n5OUoBaIc3aSdbqGUoIOj_14) at (509.00,360.00) {hour\_fomat};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nQh3KLExnjwxt7BLHPniv_2) at (-0.31,0.00) {24};
+  \draw[thick] (125.00,630.00) -- (509.00,360.00);
+  \draw[thick, ->] (120.00,260.00) -- (210.00,300.00) -- (210.00,329.00) -- (374.00,360.00);
+  \draw[thick, ->] (120.00,460.00) -- (210.00,420.00) -- (210.00,380.00) -- (339.00,380.00) -- (374.00,360.00);
+  \draw[thick] (509.00,360.00) -- (590.00,360.04);
+  \draw[thick] (125.00,630.00) -- (374.00,360.00);
+  \draw[thick] (374.00,360.00) -- (509.00,360.00);
+\end{tikzpicture}
