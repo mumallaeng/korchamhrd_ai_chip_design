@@ -1,0 +1,49 @@
+flowchart LR
+  n_KnFHKVMMht0ZCSLNLWhT_100["i_btnD"]
+  n_KnFHKVMMht0ZCSLNLWhT_101["i_btnD_hold"]
+  n_KnFHKVMMht0ZCSLNLWhT_103["i_btnR_hold"]
+  n_KnFHKVMMht0ZCSLNLWhT_18["timepiece_datapath"]
+  n_KnFHKVMMht0ZCSLNLWhT_19["tick_gen _100hz"]
+  n_KnFHKVMMht0ZCSLNLWhT_20["msec_tick_count"]
+  n_KnFHKVMMht0ZCSLNLWhT_21["sec_tick_count"]
+  n_KnFHKVMMht0ZCSLNLWhT_25["min_tick_count"]
+  n_KnFHKVMMht0ZCSLNLWhT_26["hour_tick_count"]
+  n_KnFHKVMMht0ZCSLNLWhT_28["100Hz tick"]
+  n_KnFHKVMMht0ZCSLNLWhT_29["o_sec_tick"]
+  n_KnFHKVMMht0ZCSLNLWhT_30["i_tick"]
+  n_KnFHKVMMht0ZCSLNLWhT_31["o_hour_tick"]
+  n_KnFHKVMMht0ZCSLNLWhT_32["i_tick"]
+  n_KnFHKVMMht0ZCSLNLWhT_37["o_min_tick"]
+  n_KnFHKVMMht0ZCSLNLWhT_38["i_tick"]
+  n_KnFHKVMMht0ZCSLNLWhT_39["7"]
+  n_KnFHKVMMht0ZCSLNLWhT_4["timepiece_fsm"]
+  n_KnFHKVMMht0ZCSLNLWhT_40["6"]
+  n_KnFHKVMMht0ZCSLNLWhT_41["5"]
+  n_KnFHKVMMht0ZCSLNLWhT_5["node_LWhT-5"]
+  n_KnFHKVMMht0ZCSLNLWhT_64["24"]
+  n_KnFHKVMMht0ZCSLNLWhT_66["w_decrement"]
+  n_KnFHKVMMht0ZCSLNLWhT_67["w_increment"]
+  n_KnFHKVMMht0ZCSLNLWhT_68["w_index_shift"]
+  n_KnFHKVMMht0ZCSLNLWhT_69["w_set_mode"]
+  n_KnFHKVMMht0ZCSLNLWhT_70["w_set_index"]
+  n_KnFHKVMMht0ZCSLNLWhT_72["time_set_module"]
+  n_KnFHKVMMht0ZCSLNLWhT_74["w_set_msec"]
+  n_KnFHKVMMht0ZCSLNLWhT_76["w_set_sec"]
+  n_KnFHKVMMht0ZCSLNLWhT_78["w_set_min"]
+  n_KnFHKVMMht0ZCSLNLWhT_80["w_set_hour"]
+  n_KnFHKVMMht0ZCSLNLWhT_87["w_set_mode"]
+  n_KnFHKVMMht0ZCSLNLWhT_88["w_timepiiecer_value"]
+  n_KnFHKVMMht0ZCSLNLWhT_91["24"]
+  n_KnFHKVMMht0ZCSLNLWhT_92["o_timepiecer_value"]
+  n_KnFHKVMMht0ZCSLNLWhT_97["i_btnL"]
+  n_KnFHKVMMht0ZCSLNLWhT_98["i_btnU"]
+  n_KnFHKVMMht0ZCSLNLWhT_99["i_btnU_hold"]
+  n_aIL1LXi5LiADFW6FzjM5_2["i_sw0"]
+  n_KnFHKVMMht0ZCSLNLWhT_20 --> n_KnFHKVMMht0ZCSLNLWhT_21
+  n_KnFHKVMMht0ZCSLNLWhT_21 --> n_KnFHKVMMht0ZCSLNLWhT_25
+  n_KnFHKVMMht0ZCSLNLWhT_25 --> n_KnFHKVMMht0ZCSLNLWhT_26
+  n_KnFHKVMMht0ZCSLNLWhT_4 --> n_KnFHKVMMht0ZCSLNLWhT_72
+  n_KnFHKVMMht0ZCSLNLWhT_4 --> n_KnFHKVMMht0ZCSLNLWhT_72
+  n_KnFHKVMMht0ZCSLNLWhT_4 --> n_KnFHKVMMht0ZCSLNLWhT_72
+  n_KnFHKVMMht0ZCSLNLWhT_4 --> n_KnFHKVMMht0ZCSLNLWhT_72
+  n_KnFHKVMMht0ZCSLNLWhT_72 --> n_KnFHKVMMht0ZCSLNLWhT_26

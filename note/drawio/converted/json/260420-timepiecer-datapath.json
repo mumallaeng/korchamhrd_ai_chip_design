@@ -1,0 +1,1598 @@
+{
+  "source": "260420-timepiecer-datapath.drawio",
+  "generated_at": "2026-06-29T08:02:44",
+  "pages": [
+    {
+      "name": "페이지-1",
+      "id": "ZiSuSw9dIz8VkSqpP8H3",
+      "vertex_count": 37,
+      "edge_count": 24,
+      "bounds": {
+        "min_x": -0.8871,
+        "min_y": -2.0,
+        "max_x": 750.0,
+        "max_y": 480.0
+      }
+    }
+  ],
+  "cells": [
+    {
+      "id": "0",
+      "label": "",
+      "style": {},
+      "vertex": false,
+      "edge": false,
+      "source": null,
+      "target": null,
+      "geometry": null
+    },
+    {
+      "id": "1",
+      "label": "",
+      "style": {},
+      "vertex": false,
+      "edge": false,
+      "source": null,
+      "target": null,
+      "geometry": null
+    },
+    {
+      "id": "Xt5h5PVO_5MyDHxTXsWM-1",
+      "label": "",
+      "style": {
+        "rounded": "0",
+        "whiteSpace": "wrap",
+        "html": "1",
+        "fontFamily": "Helvetica",
+        "fontSize": "11",
+        "fontColor": "default",
+        "labelBackgroundColor": "default"
+      },
+      "vertex": true,
+      "edge": false,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 210.0,
+        "y": 70.0,
+        "width": 540.0,
+        "height": 410.0,
+        "relative": false
+      }
+    },
+    {
+      "id": "Xt5h5PVO_5MyDHxTXsWM-2",
+      "label": "timepiecer_datapath",
+      "style": {
+        "text": "1",
+        "html": "1",
+        "whiteSpace": "wrap",
+        "strokeColor": "none",
+        "fillColor": "none",
+        "align": "center",
+        "verticalAlign": "middle",
+        "rounded": "0"
+      },
+      "vertex": true,
+      "edge": false,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 630.0,
+        "y": 40.0,
+        "width": 110.0,
+        "height": 30.0,
+        "relative": false
+      }
+    },
+    {
+      "id": "Xt5h5PVO_5MyDHxTXsWM-3",
+      "label": "",
+      "style": {
+        "edgeStyle": "orthogonalEdgeStyle",
+        "rounded": "0",
+        "orthogonalLoop": "1",
+        "jettySize": "auto",
+        "html": "1",
+        "entryX": "0.461",
+        "entryY": "-0.027",
+        "entryDx": "0",
+        "entryDy": "0",
+        "entryPerimeter": "0",
+        "exitX": "1",
+        "exitY": "0.75",
+        "exitDx": "0",
+        "exitDy": "0"
+      },
+      "vertex": false,
+      "edge": true,
+      "source": "Xt5h5PVO_5MyDHxTXsWM-5",
+      "target": null,
+      "geometry": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0,
+        "relative": true
+      }
+    },
+    {
+      "id": "Xt5h5PVO_5MyDHxTXsWM-4",
+      "label": "100Hz tick",
+      "style": {
+        "edgeLabel": "1",
+        "html": "1",
+        "align": "center",
+        "verticalAlign": "middle",
+        "resizable": "0",
+        "points": "[]"
+      },
+      "vertex": true,
+      "edge": false,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 0.1382,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0,
+        "relative": true
+      }
+    },
+    {
+      "id": "Xt5h5PVO_5MyDHxTXsWM-5",
+      "label": "tick_gen _100hz",
+      "style": {
+        "whiteSpace": "wrap",
+        "html": "1",
+        "aspect": "fixed",
+        "align": "right"
+      },
+      "vertex": true,
+      "edge": false,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 550.0,
+        "y": 88.0,
+        "width": 50.0,
+        "height": 50.0,
+        "relative": false
+      }
+    },
+    {
+      "id": "Xt5h5PVO_5MyDHxTXsWM-6",
+      "label": "",
+      "style": {
+        "edgeStyle": "orthogonalEdgeStyle",
+        "rounded": "0",
+        "orthogonalLoop": "1",
+        "jettySize": "auto",
+        "html": "1",
+        "exitX": "1",
+        "exitY": "0.25",
+        "exitDx": "0",
+        "exitDy": "0"
+      },
+      "vertex": false,
+      "edge": true,
+      "source": "Xt5h5PVO_5MyDHxTXsWM-8",
+      "target": null,
+      "geometry": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0,
+        "relative": true
+      }
+    },
+    {
+      "id": "Xt5h5PVO_5MyDHxTXsWM-7",
+      "label": "7",
+      "style": {
+        "edgeLabel": "1",
+        "html": "1",
+        "align": "center",
+        "verticalAlign": "middle",
+        "resizable": "0",
+        "points": "[]"
+      },
+      "vertex": true,
+      "edge": false,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 0.1252,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0,
+        "relative": true
+      }
+    },
+    {
+      "id": "Xt5h5PVO_5MyDHxTXsWM-8",
+      "label": "msec_tick_count",
+      "style": {
+        "rounded": "0",
+        "whiteSpace": "wrap",
+        "html": "1",
+        "fontStyle": "1",
+        "align": "left"
+      },
+      "vertex": true,
+      "edge": false,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 550.0,
+        "y": 155.0,
+        "width": 120.0,
+        "height": 37.0,
+        "relative": false
+      }
+    },
+    {
+      "id": "Xt5h5PVO_5MyDHxTXsWM-9",
+      "label": "",
+      "style": {
+        "edgeStyle": "orthogonalEdgeStyle",
+        "rounded": "0",
+        "orthogonalLoop": "1",
+        "jettySize": "auto",
+        "html": "1",
+        "exitX": "1",
+        "exitY": "0.25",
+        "exitDx": "0",
+        "exitDy": "0"
+      },
+      "vertex": false,
+      "edge": true,
+      "source": "Xt5h5PVO_5MyDHxTXsWM-11",
+      "target": null,
+      "geometry": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0,
+        "relative": true
+      }
+    },
+    {
+      "id": "Xt5h5PVO_5MyDHxTXsWM-10",
+      "label": "6",
+      "style": {
+        "edgeLabel": "1",
+        "html": "1",
+        "align": "center",
+        "verticalAlign": "middle",
+        "resizable": "0",
+        "points": "[]"
+      },
+      "vertex": true,
+      "edge": false,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 0.2854,
+        "y": -2.0,
+        "width": 0.0,
+        "height": 0.0,
+        "relative": true
+      }
+    },
+    {
+      "id": "Xt5h5PVO_5MyDHxTXsWM-11",
+      "label": "sec_tick_count",
+      "style": {
+        "rounded": "0",
+        "whiteSpace": "wrap",
+        "html": "1",
+        "fontStyle": "1",
+        "align": "left"
+      },
+      "vertex": true,
+      "edge": false,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 550.0,
+        "y": 230.0,
+        "width": 120.0,
+        "height": 37.0,
+        "relative": false
+      }
+    },
+    {
+      "id": "Xt5h5PVO_5MyDHxTXsWM-12",
+      "label": "",
+      "style": {
+        "edgeStyle": "orthogonalEdgeStyle",
+        "rounded": "0",
+        "orthogonalLoop": "1",
+        "jettySize": "auto",
+        "html": "1",
+        "exitX": "1",
+        "exitY": "0.75",
+        "exitDx": "0",
+        "exitDy": "0",
+        "entryX": "0",
+        "entryY": "0.25",
+        "entryDx": "0",
+        "entryDy": "0",
+        "fontStyle": "1"
+      },
+      "vertex": false,
+      "edge": true,
+      "source": "Xt5h5PVO_5MyDHxTXsWM-8",
+      "target": "Xt5h5PVO_5MyDHxTXsWM-11",
+      "geometry": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0,
+        "relative": true
+      }
+    },
+    {
+      "id": "Xt5h5PVO_5MyDHxTXsWM-13",
+      "label": "o_sec_tick",
+      "style": {
+        "edgeLabel": "1",
+        "html": "1",
+        "align": "center",
+        "verticalAlign": "middle",
+        "resizable": "0",
+        "points": "[]"
+      },
+      "vertex": true,
+      "edge": false,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": -0.8871,
+        "y": -1.0,
+        "width": 0.0,
+        "height": 0.0,
+        "relative": true
+      }
+    },
+    {
+      "id": "Xt5h5PVO_5MyDHxTXsWM-14",
+      "label": "i_tick",
+      "style": {
+        "edgeLabel": "1",
+        "html": "1",
+        "align": "center",
+        "verticalAlign": "middle",
+        "resizable": "0",
+        "points": "[]"
+      },
+      "vertex": true,
+      "edge": false,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 0.8891,
+        "y": 1.0,
+        "width": 0.0,
+        "height": 0.0,
+        "relative": true
+      }
+    },
+    {
+      "id": "Xt5h5PVO_5MyDHxTXsWM-15",
+      "label": "",
+      "style": {
+        "edgeStyle": "orthogonalEdgeStyle",
+        "rounded": "0",
+        "orthogonalLoop": "1",
+        "jettySize": "auto",
+        "html": "1",
+        "exitX": "1",
+        "exitY": "0.75",
+        "exitDx": "0",
+        "exitDy": "0",
+        "entryX": "0",
+        "entryY": "0.25",
+        "entryDx": "0",
+        "entryDy": "0"
+      },
+      "vertex": false,
+      "edge": true,
+      "source": "Xt5h5PVO_5MyDHxTXsWM-11",
+      "target": "Xt5h5PVO_5MyDHxTXsWM-18",
+      "geometry": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0,
+        "relative": true
+      }
+    },
+    {
+      "id": "Xt5h5PVO_5MyDHxTXsWM-16",
+      "label": "",
+      "style": {
+        "edgeStyle": "orthogonalEdgeStyle",
+        "rounded": "0",
+        "orthogonalLoop": "1",
+        "jettySize": "auto",
+        "html": "1",
+        "exitX": "1",
+        "exitY": "0.75",
+        "exitDx": "0",
+        "exitDy": "0",
+        "entryX": "0",
+        "entryY": "0.25",
+        "entryDx": "0",
+        "entryDy": "0"
+      },
+      "vertex": false,
+      "edge": true,
+      "source": "Xt5h5PVO_5MyDHxTXsWM-18",
+      "target": "Xt5h5PVO_5MyDHxTXsWM-21",
+      "geometry": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0,
+        "relative": true
+      }
+    },
+    {
+      "id": "Xt5h5PVO_5MyDHxTXsWM-17",
+      "label": "6",
+      "style": {
+        "edgeStyle": "orthogonalEdgeStyle",
+        "rounded": "0",
+        "orthogonalLoop": "1",
+        "jettySize": "auto",
+        "html": "1",
+        "exitX": "1",
+        "exitY": "0.25",
+        "exitDx": "0",
+        "exitDy": "0"
+      },
+      "vertex": false,
+      "edge": true,
+      "source": "Xt5h5PVO_5MyDHxTXsWM-18",
+      "target": null,
+      "geometry": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0,
+        "relative": true
+      }
+    },
+    {
+      "id": "Xt5h5PVO_5MyDHxTXsWM-18",
+      "label": "min_tick_count",
+      "style": {
+        "rounded": "0",
+        "whiteSpace": "wrap",
+        "html": "1",
+        "align": "left"
+      },
+      "vertex": true,
+      "edge": false,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 550.0,
+        "y": 301.0,
+        "width": 120.0,
+        "height": 37.0,
+        "relative": false
+      }
+    },
+    {
+      "id": "Xt5h5PVO_5MyDHxTXsWM-19",
+      "label": "",
+      "style": {
+        "edgeStyle": "orthogonalEdgeStyle",
+        "rounded": "0",
+        "orthogonalLoop": "1",
+        "jettySize": "auto",
+        "html": "1",
+        "exitX": "1",
+        "exitY": "0.25",
+        "exitDx": "0",
+        "exitDy": "0"
+      },
+      "vertex": false,
+      "edge": true,
+      "source": "Xt5h5PVO_5MyDHxTXsWM-21",
+      "target": null,
+      "geometry": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0,
+        "relative": true
+      }
+    },
+    {
+      "id": "Xt5h5PVO_5MyDHxTXsWM-20",
+      "label": "5",
+      "style": {
+        "edgeLabel": "1",
+        "html": "1",
+        "align": "center",
+        "verticalAlign": "middle",
+        "resizable": "0",
+        "points": "[]"
+      },
+      "vertex": true,
+      "edge": false,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 0.1789,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0,
+        "relative": true
+      }
+    },
+    {
+      "id": "Xt5h5PVO_5MyDHxTXsWM-21",
+      "label": "hour_tick_count",
+      "style": {
+        "rounded": "0",
+        "whiteSpace": "wrap",
+        "html": "1",
+        "align": "left"
+      },
+      "vertex": true,
+      "edge": false,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 550.0,
+        "y": 376.0,
+        "width": 120.0,
+        "height": 37.0,
+        "relative": false
+      }
+    },
+    {
+      "id": "Xt5h5PVO_5MyDHxTXsWM-22",
+      "label": "o_hour_tick",
+      "style": {
+        "edgeLabel": "1",
+        "html": "1",
+        "align": "center",
+        "verticalAlign": "middle",
+        "resizable": "0",
+        "points": "[]"
+      },
+      "vertex": true,
+      "edge": false,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 646.833368698355,
+        "y": 327.0,
+        "width": 0.0,
+        "height": 0.0,
+        "relative": false
+      }
+    },
+    {
+      "id": "Xt5h5PVO_5MyDHxTXsWM-23",
+      "label": "i_tick",
+      "style": {
+        "edgeLabel": "1",
+        "html": "1",
+        "align": "center",
+        "verticalAlign": "middle",
+        "resizable": "0",
+        "points": "[]"
+      },
+      "vertex": true,
+      "edge": false,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 561.0,
+        "y": 384.99923654271026,
+        "width": 0.0,
+        "height": 0.0,
+        "relative": false
+      }
+    },
+    {
+      "id": "Xt5h5PVO_5MyDHxTXsWM-24",
+      "label": "o_min_tick",
+      "style": {
+        "edgeLabel": "1",
+        "html": "1",
+        "align": "center",
+        "verticalAlign": "middle",
+        "resizable": "0",
+        "points": "[]"
+      },
+      "vertex": true,
+      "edge": false,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 647.913368698355,
+        "y": 258.0,
+        "width": 0.0,
+        "height": 0.0,
+        "relative": false
+      }
+    },
+    {
+      "id": "Xt5h5PVO_5MyDHxTXsWM-25",
+      "label": "i_tick",
+      "style": {
+        "edgeLabel": "1",
+        "html": "1",
+        "align": "center",
+        "verticalAlign": "middle",
+        "resizable": "0",
+        "points": "[]"
+      },
+      "vertex": true,
+      "edge": false,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 561.0,
+        "y": 307.99923654271026,
+        "width": 0.0,
+        "height": 0.0,
+        "relative": false
+      }
+    },
+    {
+      "id": "Xt5h5PVO_5MyDHxTXsWM-26",
+      "label": "",
+      "style": {
+        "edgeStyle": "orthogonalEdgeStyle",
+        "rounded": "0",
+        "orthogonalLoop": "1",
+        "jettySize": "auto",
+        "html": "1",
+        "exitX": "1",
+        "exitY": "0.14",
+        "exitDx": "0",
+        "exitDy": "0",
+        "exitPerimeter": "0",
+        "entryX": "0.008",
+        "entryY": "0.141",
+        "entryDx": "0",
+        "entryDy": "0",
+        "entryPerimeter": "0"
+      },
+      "vertex": false,
+      "edge": true,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0,
+        "relative": true
+      }
+    },
+    {
+      "id": "Xt5h5PVO_5MyDHxTXsWM-27",
+      "label": "i_set_index",
+      "style": {
+        "edgeLabel": "1",
+        "html": "1",
+        "align": "center",
+        "verticalAlign": "middle",
+        "resizable": "0",
+        "points": "[]"
+      },
+      "vertex": true,
+      "edge": false,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 0.3003,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0,
+        "relative": true
+      }
+    },
+    {
+      "id": "Xt5h5PVO_5MyDHxTXsWM-28",
+      "label": "",
+      "style": {
+        "edgeStyle": "orthogonalEdgeStyle",
+        "rounded": "0",
+        "orthogonalLoop": "1",
+        "jettySize": "auto",
+        "html": "1",
+        "exitX": "1",
+        "exitY": "0.29",
+        "exitDx": "0",
+        "exitDy": "0",
+        "exitPerimeter": "0"
+      },
+      "vertex": false,
+      "edge": true,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0,
+        "relative": true
+      }
+    },
+    {
+      "id": "Xt5h5PVO_5MyDHxTXsWM-29",
+      "label": "i_set_mode",
+      "style": {
+        "edgeLabel": "1",
+        "html": "1",
+        "align": "center",
+        "verticalAlign": "middle",
+        "resizable": "0",
+        "points": "[]"
+      },
+      "vertex": true,
+      "edge": false,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 0.2517,
+        "y": -2.0,
+        "width": 0.0,
+        "height": 0.0,
+        "relative": true
+      }
+    },
+    {
+      "id": "Xt5h5PVO_5MyDHxTXsWM-30",
+      "label": "",
+      "style": {
+        "edgeStyle": "orthogonalEdgeStyle",
+        "rounded": "0",
+        "orthogonalLoop": "1",
+        "jettySize": "auto",
+        "html": "1",
+        "exitX": "1",
+        "exitY": "0.43",
+        "exitDx": "0",
+        "exitDy": "0",
+        "exitPerimeter": "0",
+        "entryX": "0.001",
+        "entryY": "0.53",
+        "entryDx": "0",
+        "entryDy": "0",
+        "entryPerimeter": "0"
+      },
+      "vertex": false,
+      "edge": true,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0,
+        "relative": true
+      }
+    },
+    {
+      "id": "Xt5h5PVO_5MyDHxTXsWM-31",
+      "label": "i_index_shift",
+      "style": {
+        "edgeLabel": "1",
+        "html": "1",
+        "align": "center",
+        "verticalAlign": "middle",
+        "resizable": "0",
+        "points": "[]"
+      },
+      "vertex": true,
+      "edge": false,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 0.3169,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0,
+        "relative": true
+      }
+    },
+    {
+      "id": "Xt5h5PVO_5MyDHxTXsWM-32",
+      "label": "",
+      "style": {
+        "edgeStyle": "orthogonalEdgeStyle",
+        "rounded": "0",
+        "orthogonalLoop": "1",
+        "jettySize": "auto",
+        "html": "1",
+        "exitX": "1",
+        "exitY": "0.71",
+        "exitDx": "0",
+        "exitDy": "0",
+        "exitPerimeter": "0",
+        "entryX": "0.023",
+        "entryY": "0.902",
+        "entryDx": "0",
+        "entryDy": "0",
+        "entryPerimeter": "0"
+      },
+      "vertex": false,
+      "edge": true,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0,
+        "relative": true
+      }
+    },
+    {
+      "id": "Xt5h5PVO_5MyDHxTXsWM-33",
+      "label": "i_decrement",
+      "style": {
+        "edgeLabel": "1",
+        "html": "1",
+        "align": "center",
+        "verticalAlign": "middle",
+        "resizable": "0",
+        "points": "[]"
+      },
+      "vertex": true,
+      "edge": false,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 0.3545,
+        "y": -1.0,
+        "width": 0.0,
+        "height": 0.0,
+        "relative": true
+      }
+    },
+    {
+      "id": "Xt5h5PVO_5MyDHxTXsWM-38",
+      "label": "time_set_module",
+      "style": {
+        "rounded": "0",
+        "whiteSpace": "wrap",
+        "html": "1",
+        "points": "[[0,0,0,0,0],[0,0.25,0,0,0],[0,0.5,0,0,0],[0,0.75,0,0,0],[0,1,0,0,0],[0.25,0,0,0,0],[0.25,1,0,0,0],[0.5,0,0,0,0],[0.5,1,0,0,0],[0.75,0,0,0,0],[0.75,1,0,0,0],[1,0,0,0,0],[1,0.13,0,0,0],[1,0.25,0,0,0],[1,0.38,0,0,0],[1,0.5,0,0,0],[1,0.63,0,0,0],[1,0.75,0,0,0],[1,1,0,0,0]]"
+      },
+      "vertex": true,
+      "edge": false,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 240.0,
+        "y": 120.0,
+        "width": 120.0,
+        "height": 260.0,
+        "relative": false
+      }
+    },
+    {
+      "id": "Xt5h5PVO_5MyDHxTXsWM-39",
+      "label": "",
+      "style": {
+        "edgeStyle": "orthogonalEdgeStyle",
+        "rounded": "0",
+        "orthogonalLoop": "1",
+        "jettySize": "auto",
+        "html": "1",
+        "exitX": "1",
+        "exitY": "0.57",
+        "exitDx": "0",
+        "exitDy": "0",
+        "exitPerimeter": "0",
+        "entryX": "0.026",
+        "entryY": "0.719",
+        "entryDx": "0",
+        "entryDy": "0",
+        "entryPerimeter": "0"
+      },
+      "vertex": false,
+      "edge": true,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0,
+        "relative": true
+      }
+    },
+    {
+      "id": "Xt5h5PVO_5MyDHxTXsWM-40",
+      "label": "i_increment",
+      "style": {
+        "edgeLabel": "1",
+        "html": "1",
+        "align": "center",
+        "verticalAlign": "middle",
+        "resizable": "0",
+        "points": "[]"
+      },
+      "vertex": true,
+      "edge": false,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 0.3462,
+        "y": 1.0,
+        "width": 0.0,
+        "height": 0.0,
+        "relative": true
+      }
+    },
+    {
+      "id": "Xt5h5PVO_5MyDHxTXsWM-41",
+      "label": "",
+      "style": {
+        "edgeStyle": "orthogonalEdgeStyle",
+        "rounded": "0",
+        "orthogonalLoop": "1",
+        "jettySize": "auto",
+        "html": "1",
+        "entryX": "0.327",
+        "entryY": "1.005",
+        "entryDx": "0",
+        "entryDy": "0",
+        "entryPerimeter": "0"
+      },
+      "vertex": false,
+      "edge": true,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0,
+        "relative": true
+      }
+    },
+    {
+      "id": "Xt5h5PVO_5MyDHxTXsWM-42",
+      "label": "24",
+      "style": {
+        "edgeLabel": "1",
+        "html": "1",
+        "align": "center",
+        "verticalAlign": "middle",
+        "resizable": "0",
+        "points": "[]"
+      },
+      "vertex": true,
+      "edge": false,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 0.0182,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0,
+        "relative": true
+      }
+    },
+    {
+      "id": "Xt5h5PVO_5MyDHxTXsWM-43",
+      "label": "",
+      "style": {
+        "edgeStyle": "orthogonalEdgeStyle",
+        "rounded": "0",
+        "orthogonalLoop": "1",
+        "jettySize": "auto",
+        "html": "1",
+        "exitX": "1",
+        "exitY": "0.14",
+        "exitDx": "0",
+        "exitDy": "0",
+        "exitPerimeter": "0",
+        "entryX": "0.012",
+        "entryY": "0.672",
+        "entryDx": "0",
+        "entryDy": "0",
+        "entryPerimeter": "0"
+      },
+      "vertex": false,
+      "edge": true,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0,
+        "relative": true
+      }
+    },
+    {
+      "id": "Xt5h5PVO_5MyDHxTXsWM-44",
+      "label": "w_set_msec",
+      "style": {
+        "edgeLabel": "1",
+        "html": "1",
+        "align": "center",
+        "verticalAlign": "middle",
+        "resizable": "0",
+        "points": "[]"
+      },
+      "vertex": true,
+      "edge": false,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 0.3003,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0,
+        "relative": true
+      }
+    },
+    {
+      "id": "Xt5h5PVO_5MyDHxTXsWM-45",
+      "label": "",
+      "style": {
+        "edgeStyle": "orthogonalEdgeStyle",
+        "rounded": "0",
+        "orthogonalLoop": "1",
+        "jettySize": "auto",
+        "html": "1",
+        "exitX": "1",
+        "exitY": "0.14",
+        "exitDx": "0",
+        "exitDy": "0",
+        "exitPerimeter": "0",
+        "entryX": "-0.003",
+        "entryY": "0.525",
+        "entryDx": "0",
+        "entryDy": "0",
+        "entryPerimeter": "0"
+      },
+      "vertex": false,
+      "edge": true,
+      "source": null,
+      "target": "Xt5h5PVO_5MyDHxTXsWM-11",
+      "geometry": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0,
+        "relative": true
+      }
+    },
+    {
+      "id": "Xt5h5PVO_5MyDHxTXsWM-46",
+      "label": "w_set_sec",
+      "style": {
+        "edgeLabel": "1",
+        "html": "1",
+        "align": "center",
+        "verticalAlign": "middle",
+        "resizable": "0",
+        "points": "[]"
+      },
+      "vertex": true,
+      "edge": false,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 0.3003,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0,
+        "relative": true
+      }
+    },
+    {
+      "id": "Xt5h5PVO_5MyDHxTXsWM-47",
+      "label": "",
+      "style": {
+        "edgeStyle": "orthogonalEdgeStyle",
+        "rounded": "0",
+        "orthogonalLoop": "1",
+        "jettySize": "auto",
+        "html": "1",
+        "exitX": "1",
+        "exitY": "0.14",
+        "exitDx": "0",
+        "exitDy": "0",
+        "exitPerimeter": "0",
+        "entryX": "-0.007",
+        "entryY": "0.55",
+        "entryDx": "0",
+        "entryDy": "0",
+        "entryPerimeter": "0"
+      },
+      "vertex": false,
+      "edge": true,
+      "source": null,
+      "target": "Xt5h5PVO_5MyDHxTXsWM-18",
+      "geometry": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0,
+        "relative": true
+      }
+    },
+    {
+      "id": "Xt5h5PVO_5MyDHxTXsWM-48",
+      "label": "w_set_min",
+      "style": {
+        "edgeLabel": "1",
+        "html": "1",
+        "align": "center",
+        "verticalAlign": "middle",
+        "resizable": "0",
+        "points": "[]"
+      },
+      "vertex": true,
+      "edge": false,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 0.3003,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0,
+        "relative": true
+      }
+    },
+    {
+      "id": "Xt5h5PVO_5MyDHxTXsWM-49",
+      "label": "",
+      "style": {
+        "edgeStyle": "orthogonalEdgeStyle",
+        "rounded": "0",
+        "orthogonalLoop": "1",
+        "jettySize": "auto",
+        "html": "1",
+        "exitX": "1",
+        "exitY": "0.14",
+        "exitDx": "0",
+        "exitDy": "0",
+        "exitPerimeter": "0",
+        "entryX": "-0.007",
+        "entryY": "0.614",
+        "entryDx": "0",
+        "entryDy": "0",
+        "entryPerimeter": "0"
+      },
+      "vertex": false,
+      "edge": true,
+      "source": null,
+      "target": "Xt5h5PVO_5MyDHxTXsWM-21",
+      "geometry": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0,
+        "relative": true
+      }
+    },
+    {
+      "id": "Xt5h5PVO_5MyDHxTXsWM-50",
+      "label": "w_set_hour",
+      "style": {
+        "edgeLabel": "1",
+        "html": "1",
+        "align": "center",
+        "verticalAlign": "middle",
+        "resizable": "0",
+        "points": "[]"
+      },
+      "vertex": true,
+      "edge": false,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 0.3003,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0,
+        "relative": true
+      }
+    },
+    {
+      "id": "Xt5h5PVO_5MyDHxTXsWM-52",
+      "label": "",
+      "style": {
+        "edgeStyle": "orthogonalEdgeStyle",
+        "rounded": "0",
+        "orthogonalLoop": "1",
+        "jettySize": "auto",
+        "html": "1",
+        "entryX": "0.008",
+        "entryY": "0.332",
+        "entryDx": "0",
+        "entryDy": "0",
+        "entryPerimeter": "0"
+      },
+      "vertex": false,
+      "edge": true,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0,
+        "relative": true
+      }
+    },
+    {
+      "id": "Xt5h5PVO_5MyDHxTXsWM-55",
+      "label": "w_set_mode",
+      "style": {
+        "edgeLabel": "1",
+        "html": "1",
+        "align": "center",
+        "verticalAlign": "middle",
+        "resizable": "0",
+        "points": "[]"
+      },
+      "vertex": true,
+      "edge": false,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 410.0,
+        "y": 430.0,
+        "width": 0.0,
+        "height": 0.0,
+        "relative": false
+      }
+    },
+    {
+      "id": "Xt5h5PVO_5MyDHxTXsWM-56",
+      "label": "w_timepiiecer_value",
+      "style": {
+        "edgeLabel": "1",
+        "html": "1",
+        "align": "center",
+        "verticalAlign": "middle",
+        "resizable": "0",
+        "points": "[]"
+      },
+      "vertex": true,
+      "edge": false,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 500.0,
+        "y": 470.0,
+        "width": 0.0,
+        "height": 0.0,
+        "relative": false
+      }
+    },
+    {
+      "id": "Xt5h5PVO_5MyDHxTXsWM-57",
+      "label": "",
+      "style": {
+        "endArrow": "classic",
+        "html": "1",
+        "rounded": "0",
+        "strokeColor": "default",
+        "align": "center",
+        "verticalAlign": "middle",
+        "fontFamily": "Helvetica",
+        "fontSize": "11",
+        "fontColor": "default",
+        "labelBackgroundColor": "default",
+        "edgeStyle": "orthogonalEdgeStyle"
+      },
+      "vertex": false,
+      "edge": true,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 50.0,
+        "height": 50.0,
+        "relative": true
+      }
+    },
+    {
+      "id": "Xt5h5PVO_5MyDHxTXsWM-58",
+      "label": "24",
+      "style": {
+        "edgeLabel": "1",
+        "html": "1",
+        "align": "center",
+        "verticalAlign": "middle",
+        "resizable": "0",
+        "points": "[]",
+        "fontFamily": "Helvetica",
+        "fontSize": "11",
+        "fontColor": "default",
+        "labelBackgroundColor": "default"
+      },
+      "vertex": true,
+      "edge": false,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 0.7307,
+        "y": 1.0,
+        "width": 0.0,
+        "height": 0.0,
+        "relative": true
+      }
+    },
+    {
+      "id": "Xt5h5PVO_5MyDHxTXsWM-59",
+      "label": "o_timepiecer_value",
+      "style": {
+        "edgeLabel": "1",
+        "html": "1",
+        "align": "center",
+        "verticalAlign": "middle",
+        "resizable": "0",
+        "points": "[]",
+        "fontFamily": "Helvetica",
+        "fontSize": "11",
+        "fontColor": "default",
+        "labelBackgroundColor": "default"
+      },
+      "vertex": true,
+      "edge": false,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 0.8997,
+        "y": 1.0,
+        "width": 0.0,
+        "height": 0.0,
+        "relative": true
+      }
+    },
+    {
+      "id": "Xt5h5PVO_5MyDHxTXsWM-60",
+      "label": "",
+      "style": {
+        "edgeStyle": "orthogonalEdgeStyle",
+        "rounded": "0",
+        "orthogonalLoop": "1",
+        "jettySize": "auto",
+        "html": "1",
+        "exitX": "1",
+        "exitY": "0.71",
+        "exitDx": "0",
+        "exitDy": "0",
+        "exitPerimeter": "0",
+        "entryX": "0.023",
+        "entryY": "0.902",
+        "entryDx": "0",
+        "entryDy": "0",
+        "entryPerimeter": "0"
+      },
+      "vertex": false,
+      "edge": true,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0,
+        "relative": true
+      }
+    },
+    {
+      "id": "Xt5h5PVO_5MyDHxTXsWM-61",
+      "label": "i_decrement_1s",
+      "style": {
+        "edgeLabel": "1",
+        "html": "1",
+        "align": "center",
+        "verticalAlign": "middle",
+        "resizable": "0",
+        "points": "[]"
+      },
+      "vertex": true,
+      "edge": false,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 0.3545,
+        "y": -1.0,
+        "width": 0.0,
+        "height": 0.0,
+        "relative": true
+      }
+    },
+    {
+      "id": "Xt5h5PVO_5MyDHxTXsWM-62",
+      "label": "",
+      "style": {
+        "edgeStyle": "orthogonalEdgeStyle",
+        "rounded": "0",
+        "orthogonalLoop": "1",
+        "jettySize": "auto",
+        "html": "1",
+        "exitX": "1",
+        "exitY": "0.57",
+        "exitDx": "0",
+        "exitDy": "0",
+        "exitPerimeter": "0",
+        "entryX": "0.026",
+        "entryY": "0.719",
+        "entryDx": "0",
+        "entryDy": "0",
+        "entryPerimeter": "0"
+      },
+      "vertex": false,
+      "edge": true,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0,
+        "relative": true
+      }
+    },
+    {
+      "id": "Xt5h5PVO_5MyDHxTXsWM-63",
+      "label": "i_increment_1s",
+      "style": {
+        "edgeLabel": "1",
+        "html": "1",
+        "align": "center",
+        "verticalAlign": "middle",
+        "resizable": "0",
+        "points": "[]"
+      },
+      "vertex": true,
+      "edge": false,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 0.3462,
+        "y": 1.0,
+        "width": 0.0,
+        "height": 0.0,
+        "relative": true
+      }
+    },
+    {
+      "id": "Xt5h5PVO_5MyDHxTXsWM-66",
+      "label": "",
+      "style": {
+        "edgeStyle": "orthogonalEdgeStyle",
+        "rounded": "0",
+        "orthogonalLoop": "1",
+        "jettySize": "auto",
+        "html": "1",
+        "entryX": "0.026",
+        "entryY": "0.719",
+        "entryDx": "0",
+        "entryDy": "0",
+        "entryPerimeter": "0"
+      },
+      "vertex": false,
+      "edge": true,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0,
+        "relative": true
+      }
+    },
+    {
+      "id": "Xt5h5PVO_5MyDHxTXsWM-67",
+      "label": "clk",
+      "style": {
+        "edgeLabel": "1",
+        "html": "1",
+        "align": "center",
+        "verticalAlign": "middle",
+        "resizable": "0",
+        "points": "[]"
+      },
+      "vertex": true,
+      "edge": false,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 0.3462,
+        "y": 1.0,
+        "width": 0.0,
+        "height": 0.0,
+        "relative": true
+      }
+    },
+    {
+      "id": "Xt5h5PVO_5MyDHxTXsWM-70",
+      "label": "",
+      "style": {
+        "edgeStyle": "orthogonalEdgeStyle",
+        "rounded": "0",
+        "orthogonalLoop": "1",
+        "jettySize": "auto",
+        "html": "1",
+        "entryX": "0.026",
+        "entryY": "0.719",
+        "entryDx": "0",
+        "entryDy": "0",
+        "entryPerimeter": "0"
+      },
+      "vertex": false,
+      "edge": true,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0,
+        "relative": true
+      }
+    },
+    {
+      "id": "Xt5h5PVO_5MyDHxTXsWM-71",
+      "label": "rst",
+      "style": {
+        "edgeLabel": "1",
+        "html": "1",
+        "align": "center",
+        "verticalAlign": "middle",
+        "resizable": "0",
+        "points": "[]"
+      },
+      "vertex": true,
+      "edge": false,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 0.3462,
+        "y": 1.0,
+        "width": 0.0,
+        "height": 0.0,
+        "relative": true
+      }
+    },
+    {
+      "id": "E9N4p9MdtPNkOz_vh_yI-1",
+      "label": "",
+      "style": {
+        "triangle": "1",
+        "whiteSpace": "wrap",
+        "html": "1"
+      },
+      "vertex": true,
+      "edge": false,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 210.0,
+        "y": 385.0,
+        "width": 20.0,
+        "height": 30.0,
+        "relative": false
+      }
+    }
+  ]
+}

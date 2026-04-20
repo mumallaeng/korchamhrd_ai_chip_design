@@ -1,0 +1,23 @@
+% Source: 260420-time-fsm.drawio, page: 페이지-1
+\begin{tikzpicture}[x=0.04cm,y=-0.04cm,>=Latex,line cap=round,line join=round]
+  \node[draw, align=center, font=\scriptsize, minimum width=3.20cm, minimum height=6.40cm, text width=3.08cm] (nPpjYwLhxrEH4BbogUr0x_1) at (310.04,183.00) {timer\_fsm};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nPpjYwLhxrEH4BbogUr0x_6) at (385.04,169.00) {o\_clear};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nPpjYwLhxrEH4BbogUr0x_7) at (480.04,373.00) {o\_updown};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nPpjYwLhxrEH4BbogUr0x_8) at (390.04,124.00) {o\_runstop};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nPpjYwLhxrEH4BbogUr0x_12) at (230.04,156.00) {i\_btnL};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nPpjYwLhxrEH4BbogUr0x_13) at (230.04,182.00) {i\_btnU};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nPpjYwLhxrEH4BbogUr0x_14) at (230.04,211.00) {i\_btnD};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nPpjYwLhxrEH4BbogUr0x_16) at (0.14,4.00) {i\_sw0};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (no4FoTvy3GKNA2CTONlQc_3) at (222.04,104.00) {clk};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (no4FoTvy3GKNA2CTONlQc_4) at (222.04,129.00) {rst};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.40cm, minimum height=0.40cm, text width=0.28cm] (no4FoTvy3GKNA2CTONlQc_5) at (275.04,114.00) {};
+  \draw[thick, ->] (350.04,133.00) -- (440.00,133.00);
+  \draw[thick, ->] (350.04,178.00) -- (440.00,178.00);
+  \draw[thick, ->] (210.04,193.00) -- (190.04,193.00) -- (270.04,193.00);
+  \draw[thick, ->] (210.04,221.00) -- (190.04,221.00) -- (270.04,221.00);
+  \draw[thick, ->] (210.02,166.00) -- (190.02,166.00) -- (270.02,166.00);
+  \draw[thick, ->] (210.04,247.60) -- (190.04,247.60) -- (270.04,247.60);
+  \draw[thick, ->] (350.04,225.00) -- (440.00,225.00);
+  \draw[thick, ->] (210.03,140.00) -- (190.03,140.00) -- (270.03,140.00);
+  \draw[thick, ->] (210.02,114.00) -- (190.02,114.00) -- (270.02,114.00);
+\end{tikzpicture}

@@ -1,0 +1,21 @@
+digraph G {
+  graph [rankdir=LR];
+  node [shape=box, style="rounded,filled", fillcolor="#f8f9fb", color="#5b6b7a", fontname="Arial"];
+  "n_g0RLNKt16P9XedoZUAFf_1" [label="timepiece_fsm"];
+  "n_g0RLNKt16P9XedoZUAFf_17" [label="i_btnL"];
+  "n_g0RLNKt16P9XedoZUAFf_18" [label="i_btnU"];
+  "n_g0RLNKt16P9XedoZUAFf_19" [label="i_btnU_hold"];
+  "n_g0RLNKt16P9XedoZUAFf_20" [label="i_btnD"];
+  "n_g0RLNKt16P9XedoZUAFf_21" [label="i_btnD_hold"];
+  "n_g0RLNKt16P9XedoZUAFf_25" [label="i_sw0"];
+  "n_g0RLNKt16P9XedoZUAFf_27" [label="o_set_index"];
+  "n_g0RLNKt16P9XedoZUAFf_29" [label="o_set_mode"];
+  "n_g0RLNKt16P9XedoZUAFf_31" [label="o_index_shift"];
+  "n_g0RLNKt16P9XedoZUAFf_33" [label="o_decrement_ones"];
+  "n_g0RLNKt16P9XedoZUAFf_35" [label="o_increment_ones"];
+  "n_g0RLNKt16P9XedoZUAFf_38" [label="clk"];
+  "n_g0RLNKt16P9XedoZUAFf_39" [label="rst"];
+  "n_g0RLNKt16P9XedoZUAFf_40" [label="node_AFf-40"];
+  "n_g0RLNKt16P9XedoZUAFf_44" [label="o_decrement_tens"];
+  "n_g0RLNKt16P9XedoZUAFf_46" [label="o_increment_tens"];
+}

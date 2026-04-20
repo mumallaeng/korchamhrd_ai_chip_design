@@ -1,0 +1,35 @@
+digraph G {
+  graph [rankdir=LR];
+  node [shape=box, style="rounded,filled", fillcolor="#f8f9fb", color="#5b6b7a", fontname="Arial"];
+  "n_b8cbeCLrpgBhF2lM7fum_36" [label="node_fum-36"];
+  "n_b8cbeCLrpgBhF2lM7fum_40" [label="i_clear"];
+  "n_b8cbeCLrpgBhF2lM7fum_41" [label="i_updown"];
+  "n_b8cbeCLrpgBhF2lM7fum_42" [label="i_runstop"];
+  "n_b8cbeCLrpgBhF2lM7fum_43" [label="timer_datapath"];
+  "n_b8cbeCLrpgBhF2lM7fum_45" [label="100Hz tick"];
+  "n_b8cbeCLrpgBhF2lM7fum_46" [label="tick_gen _100hz"];
+  "n_b8cbeCLrpgBhF2lM7fum_48" [label="7"];
+  "n_b8cbeCLrpgBhF2lM7fum_49" [label="msec_tick_count"];
+  "n_b8cbeCLrpgBhF2lM7fum_51" [label="6"];
+  "n_b8cbeCLrpgBhF2lM7fum_52" [label="sec_tick_count"];
+  "n_b8cbeCLrpgBhF2lM7fum_54" [label="o_sec_tick"];
+  "n_b8cbeCLrpgBhF2lM7fum_55" [label="i_tick"];
+  "n_b8cbeCLrpgBhF2lM7fum_59" [label="min_tick_count"];
+  "n_b8cbeCLrpgBhF2lM7fum_61" [label="5"];
+  "n_b8cbeCLrpgBhF2lM7fum_62" [label="hour_tink_count"];
+  "n_b8cbeCLrpgBhF2lM7fum_63" [label="o_hour_tick"];
+  "n_b8cbeCLrpgBhF2lM7fum_64" [label="i_tick"];
+  "n_b8cbeCLrpgBhF2lM7fum_65" [label="o_min_tick"];
+  "n_b8cbeCLrpgBhF2lM7fum_66" [label="i_tick"];
+  "n_b8cbeCLrpgBhF2lM7fum_68" [label="24"];
+  "n_b8cbeCLrpgBhF2lM7fum_69" [label="o_timer_value"];
+  "n_b8cbeCLrpgBhF2lM7fum_75" [label="rst"];
+  "n_b8cbeCLrpgBhF2lM7fum_76" [label="clk"];
+  "n_b8cbeCLrpgBhF2lM7fum_77" [label="node_fum-77"];
+  "n_c6urQ4iPjfcKnkznKz9D_2" [label="clk"];
+  "n_c6urQ4iPjfcKnkznKz9D_3" [label="node_Kz9D-3"];
+  "n_c6urQ4iPjfcKnkznKz9D_5" [label="rst"];
+  "n_b8cbeCLrpgBhF2lM7fum_49" -> "n_b8cbeCLrpgBhF2lM7fum_52";
+  "n_b8cbeCLrpgBhF2lM7fum_52" -> "n_b8cbeCLrpgBhF2lM7fum_59";
+  "n_b8cbeCLrpgBhF2lM7fum_59" -> "n_b8cbeCLrpgBhF2lM7fum_62";
+}

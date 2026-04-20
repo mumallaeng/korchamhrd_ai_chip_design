@@ -1,0 +1,65 @@
+\definecolor{cd4e1f5}{HTML}{D4E1F5}
+
+% Source: 260420-top-timer-timepiece-project.drawio, page: 페이지-1
+\begin{tikzpicture}[x=0.04cm,y=-0.04cm,>=Latex,line cap=round,line join=round]
+  \node[draw, align=center, font=\scriptsize, minimum width=34.40cm, minimum height=25.20cm, text width=34.28cm] (ne8PLG3kEcCTFos2G7Ypj_3) at (440.00,384.50) {};
+  \node[align=center, font=\scriptsize, fill=cd4e1f5!18, opacity=0, minimum width=4.40cm, minimum height=11.60cm, text width=4.28cm] (n3sv_IS42M_PzI3kGq3iH_1) at (80.00,245.00) {};
+  \node[align=center, font=\scriptsize, fill=cd4e1f5!18, opacity=0, minimum width=11.60cm, minimum height=12.00cm, text width=11.48cm] (n2trcLsQLmsmYuEsOdBA8_4) at (708.00,324.00) {};
+  \node[align=center, font=\scriptsize, fill=cd4e1f5!18, opacity=0, minimum width=13.60cm, minimum height=7.20cm, text width=13.48cm] (n2trcLsQLmsmYuEsOdBA8_2) at (370.00,200.00) {};
+  \node[align=center, font=\scriptsize, fill=cd4e1f5!18, opacity=0, minimum width=13.60cm, minimum height=7.60cm, text width=13.48cm] (n2trcLsQLmsmYuEsOdBA8_3) at (370.00,404.50) {};
+  \node[draw, align=center, font=\scriptsize, minimum width=1.60cm, minimum height=1.60cm, text width=1.48cm] (nnbyKZ8UsinEBuoknLQGr_3) at (-60.00,140.00) {Bnt\_L};
+  \node[draw, align=center, font=\scriptsize, minimum width=3.20cm, minimum height=6.40cm, text width=3.08cm] (nnbyKZ8UsinEBuoknLQGr_4) at (280.00,200.00) {timer\_fsm};
+  \node[draw, align=center, font=\scriptsize, minimum width=1.60cm, minimum height=1.60cm, text width=1.48cm] (nnbyKZ8UsinEBuoknLQGr_5) at (-60.00,200.00) {Bnt\_U};
+  \node[draw, align=center, font=\scriptsize, minimum width=1.60cm, minimum height=1.60cm, text width=1.48cm] (nnbyKZ8UsinEBuoknLQGr_6) at (-60.00,260.00) {Bnt\_D};
+  \node[draw, align=center, font=\scriptsize, minimum width=1.60cm, minimum height=1.60cm, text width=1.48cm] (nnbyKZ8UsinEBuoknLQGr_7) at (-60.00,320.00) {Bnt\_R};
+  \node[draw, align=center, font=\scriptsize, minimum width=3.20cm, minimum height=6.40cm, text width=3.08cm] (nnbyKZ8UsinEBuoknLQGr_14) at (280.00,400.00) {timepiece\_fsm};
+  \node[draw, align=center, font=\scriptsize, minimum width=4.80cm, minimum height=6.40cm, text width=4.68cm] (nnbyKZ8UsinEBuoknLQGr_44) at (460.00,400.00) {timepiece\_datapath};
+  \node[draw, align=center, font=\scriptsize, minimum width=4.80cm, minimum height=6.40cm, text width=4.68cm] (nnbyKZ8UsinEBuoknLQGr_59) at (460.00,200.00) {timer\_datapath};
+  \node[draw, align=center, font=\scriptsize, minimum width=3.20cm, minimum height=4.00cm, text width=3.08cm] (nnbyKZ8UsinEBuoknLQGr_69) at (620.00,310.00) {display\_select\_logic};
+  \node[draw, align=center, font=\scriptsize, minimum width=4.80cm, minimum height=9.60cm, text width=4.68cm] (nnbyKZ8UsinEBuoknLQGr_71) at (780.00,320.00) {fnd\_controller};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.40cm, minimum height=0.40cm, text width=0.28cm] (nnbyKZ8UsinEBuoknLQGr_88) at (259.00,314.50) {};
+  \node[draw, align=center, font=\scriptsize, minimum width=3.20cm, minimum height=9.60cm, text width=3.08cm] (nnbyKZ8UsinEBuoknLQGr_90) at (80.00,240.00) {input\_conditioning};
+  \node[draw, align=center, font=\scriptsize, minimum width=1.60cm, minimum height=1.60cm, text width=1.48cm] (nnbyKZ8UsinEBuoknLQGr_91) at (-60.00,380.00) {sw[0]};
+  \node[draw, align=center, font=\scriptsize, minimum width=1.60cm, minimum height=1.60cm, text width=1.48cm] (nnbyKZ8UsinEBuoknLQGr_92) at (-60.00,440.00) {sw[15]};
+  \node[draw, align=center, font=\scriptsize, minimum width=15.20cm, minimum height=5.20cm, text width=15.08cm] (ne8PLG3kEcCTFos2G7Ypj_4) at (1110.00,384.50) {};
+  \node[draw, align=center, font=\scriptsize, minimum width=3.19cm, minimum height=3.88cm, text width=3.07cm] (ne8PLG3kEcCTFos2G7Ypj_5) at (979.90,384.50) {};
+  \node[draw, align=center, font=\scriptsize, minimum width=3.19cm, minimum height=3.88cm, text width=3.07cm] (ne8PLG3kEcCTFos2G7Ypj_6) at (1069.90,384.50) {};
+  \node[draw, align=center, font=\scriptsize, minimum width=3.19cm, minimum height=3.88cm, text width=3.07cm] (ne8PLG3kEcCTFos2G7Ypj_7) at (1159.90,384.50) {};
+  \node[draw, align=center, font=\scriptsize, minimum width=3.19cm, minimum height=3.88cm, text width=3.07cm] (ne8PLG3kEcCTFos2G7Ypj_8) at (1249.90,384.50) {};
+  \node[draw, align=center, font=\scriptsize, minimum width=3.20cm, minimum height=3.20cm, text width=3.08cm] (nnbyKZ8UsinEBuoknLQGr_21) at (280.00,560.00) {common\_fsm};
+  \node[align=center, font=\scriptsize, minimum width=2.40cm, minimum height=1.20cm, text width=2.28cm] (n3sv_IS42M_PzI3kGq3iH_2) at (506.00,101.00) {timer\_unit};
+  \node[align=center, font=\scriptsize, minimum width=2.40cm, minimum height=1.20cm, text width=2.28cm] (n3sv_IS42M_PzI3kGq3iH_3) at (489.00,301.00) {timepiece\_unit};
+  \node[align=center, font=\scriptsize, minimum width=2.40cm, minimum height=1.20cm, text width=2.28cm] (n3sv_IS42M_PzI3kGq3iH_4) at (812.00,166.00) {display\_unit};
+  \draw[thick, ->] (280.00,200.00) -- (400.00,160.00);
+  \draw[thick, ->] (280.00,200.00) -- (460.00,200.00);
+  \draw[thick, ->] (280.00,200.00) -- (460.00,200.00);
+  \draw[thick, ->] (320.00,330.00) -- (400.00,330.00);
+  \draw[thick, ->] (320.00,359.60) -- (400.00,359.60);
+  \draw[thick, ->] (320.00,390.00) -- (400.00,390.00);
+  \draw[thick, ->] (320.00,420.00) -- (400.00,420.00);
+  \draw[thick, ->] (320.00,449.50) -- (400.00,449.50);
+  \draw[thick, ->] (460.00,200.00) -- (620.00,310.00);
+  \draw[thick, ->] (460.00,400.00) -- (620.00,310.00);
+  \draw[thick, ->] (780.00,320.00) -- (1110.00,384.50);
+  \draw[thick, ->] (780.00,320.00) -- (840.00,385.00) -- (880.00,385.00) -- (1110.00,384.50);
+  \draw[thick, ->] (620.00,310.00) -- (780.00,320.00);
+  \draw[thick, ->] (160.00,290.40) -- (259.00,314.50);
+  \draw[thick, ->] (-60.00,140.00) -- (40.00,153.60);
+  \draw[thick, ->] (-60.00,200.00) -- (-20.00,200.00) -- (-20.00,190.00) -- (40.00,189.60);
+  \draw[thick, ->] (-60.00,260.00) -- (-10.00,260.00) -- (-10.00,223.00) -- (40.00,223.20);
+  \draw[thick, ->] (-60.00,320.00) -- (0.00,320.00) -- (0.00,257.00) -- (40.00,256.80);
+  \draw[thick, ->] (80.00,240.00) -- (160.00,150.00) -- (280.00,200.00);
+  \draw[thick, ->] (80.00,240.00) -- (121.00,181.00) -- (160.00,181.00) -- (280.00,200.00);
+  \draw[thick, ->] (80.00,240.00) -- (121.00,214.00) -- (160.00,214.00) -- (280.00,200.00);
+  \draw[thick, ->] (180.00,214.00) -- (180.00,214.00) -- (180.00,344.00) -- (239.76,343.96);
+  \draw[thick, ->] (170.00,181.00) -- (170.00,181.00) -- (170.00,382.00) -- (240.00,381.80);
+  \draw[thick, ->] (200.00,150.00) -- (160.00,150.00) -- (160.00,414.00) -- (280.00,400.00);
+  \draw[thick, ->] (80.00,240.00) -- (150.00,257.00) -- (150.00,550.00) -- (280.00,560.00);
+  \draw[thick, ->] (122.00,290.16) -- (218.44,290.00) -- (258.44,290.00) -- (258.44,280.00);
+  \draw[thick, ->] (-60.00,380.00) -- (10.00,380.00) -- (10.00,300.00) -- (80.00,240.00);
+  \draw[thick, ->] (-60.00,440.00) -- (30.00,440.00) -- (30.00,333.00) -- (80.00,240.00);
+  \draw[thick, ->] (80.00,240.00) -- (140.00,312.00) -- (140.00,620.00) -- (600.00,620.00) -- (620.00,310.00);
+  \draw[thick, ->] (80.00,240.00) -- (130.00,336.00) -- (130.00,650.00) -- (630.00,650.00) -- (630.00,362.00) -- (620.00,310.00);
+  \draw[thick] (280.00,560.00) -- (320.00,570.00) -- (780.00,570.00) -- (780.00,320.00);
+  \draw[thick] (280.00,400.00) -- (300.00,510.00) -- (753.00,510.00) -- (780.00,320.00);
+\end{tikzpicture}

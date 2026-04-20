@@ -1,0 +1,60 @@
+\definecolor{c000000}{HTML}{000000}
+
+% Source: 260420-status.drawio, page: Timepiece FSM
+\begin{tikzpicture}[x=0.04cm,y=-0.04cm,>=Latex,line cap=round,line join=round]
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nfPqWIV3_2aiWo3gq1zi2_88) at (-0.16,0.00) {BtnR\_hold == 1};
+  \node[draw, align=center, font=\scriptsize, minimum width=3.20cm, minimum height=3.20cm, text width=3.08cm] (nfPqWIV3_2aiWo3gq1zi2_89) at (210.00,450.00) {VIEWtime\_setting=0};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nfPqWIV3_2aiWo3gq1zi2_91) at (-0.06,-1.00) {BtnL == 1};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nfPqWIV3_2aiWo3gq1zi2_93) at (0.58,2.00) {BtnU\_hold == 1};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nfPqWIV3_2aiWo3gq1zi2_95) at (0.69,1.00) {BtnU == 1};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nfPqWIV3_2aiWo3gq1zi2_97) at (0.59,1.00) {BtnD == 1};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nfPqWIV3_2aiWo3gq1zi2_99) at (0.69,1.00) {BtnD\_hold == 1};
+  \node[draw, align=center, font=\scriptsize, minimum width=3.20cm, minimum height=3.20cm, text width=3.08cm] (nfPqWIV3_2aiWo3gq1zi2_101) at (550.00,190.00) {INCREMENTONESedit\_target=ones};
+  \node[draw, align=center, font=\scriptsize, minimum width=3.20cm, minimum height=3.20cm, text width=3.08cm] (nfPqWIV3_2aiWo3gq1zi2_102) at (550.00,320.00) {INCREMENTTENSedit\_target=tens};
+  \node[draw, align=center, font=\scriptsize, fill=c000000!18, minimum width=3.20cm, minimum height=3.20cm, text width=3.08cm] (nfPqWIV3_2aiWo3gq1zi2_104) at (210.00,190.00) {INITtime\_setting=0};
+  \node[draw, align=center, font=\scriptsize, minimum width=3.20cm, minimum height=3.20cm, text width=3.08cm] (nfPqWIV3_2aiWo3gq1zi2_105) at (550.00,450.00) {INDEXSHIFTposition\_shift\\=next\_unit};
+  \node[draw, align=center, font=\scriptsize, minimum width=3.20cm, minimum height=3.20cm, text width=3.08cm] (nfPqWIV3_2aiWo3gq1zi2_106) at (550.00,580.00) {DECREMENTONESedit\_target=ones};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nfPqWIV3_2aiWo3gq1zi2_123) at (0.27,1.00) {next\_clock};
+  \node[draw, align=center, font=\scriptsize, minimum width=3.20cm, minimum height=3.20cm, text width=3.08cm] (nfPqWIV3_2aiWo3gq1zi2_107) at (550.00,710.00) {DECREMENTTENSedit\_target=tens};
+  \node[draw, align=center, font=\scriptsize, minimum width=3.20cm, minimum height=3.20cm, text width=3.08cm] (nfPqWIV3_2aiWo3gq1zi2_108) at (210.00,710.00) {SETtime\_setting=1};
+  \draw[thick] (210.00,450.00) -- (210.00,710.00);
+  \draw[thick] (210.00,710.00) -- (340.00,710.00) -- (340.00,450.00) -- (550.00,450.00);
+  \draw[thick] (210.00,710.00) -- (340.00,710.00) -- (340.00,320.00) -- (550.00,320.00);
+  \draw[thick] (210.00,710.00) -- (340.00,710.00) -- (340.00,190.00) -- (550.00,190.00);
+  \draw[thick] (210.00,710.00) -- (340.00,710.00) -- (340.00,580.00) -- (550.00,580.00);
+  \draw[thick] (210.00,710.00) -- (340.00,710.00) -- (340.00,710.00) -- (550.00,710.00);
+  \draw[thick] (550.00,190.00) -- (700.00,190.00) -- (700.00,840.00) -- (210.00,840.00) -- (210.00,710.00);
+  \draw[thick] (550.00,320.00) -- (700.00,320.00) -- (700.00,840.00) -- (210.00,840.00) -- (210.00,710.00);
+  \draw[thick] (210.00,190.00) -- (210.00,450.00);
+  \draw[thick] (550.00,450.00) -- (700.00,450.00) -- (700.00,840.00) -- (210.00,840.00) -- (210.00,710.00);
+  \draw[thick] (550.00,580.00) -- (700.00,580.00) -- (700.00,840.00) -- (210.00,840.00) -- (210.00,710.00);
+  \draw[thick] (510.00,840.01) -- (210.00,710.00);
+  \draw[thick] (550.00,710.00) -- (700.00,710.00) -- (700.00,840.00) -- (210.00,840.00) -- (210.00,710.00);
+\end{tikzpicture}
+% Source: 260420-status.drawio, page: Timer FSM
+\begin{tikzpicture}[x=0.04cm,y=-0.04cm,>=Latex,line cap=round,line join=round]
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nNtYnNxRafVZCUhzqZuAG_2) at (0.01,1.00) {Btn\_D == 1};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nx6hel12YKlh6qTf4T9uN_1) at (-0.03,1.00) {BtnU==1};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nx6hel12YKlh6qTf4T9uN_7) at (0.39,1.00) {BtnL==1};
+  \node[draw, align=center, font=\scriptsize, minimum width=3.20cm, minimum height=3.20cm, text width=3.08cm] (nNtYnNxRafVZCUhzqZuAG_6) at (-544.01,509.00) {STOP\\run\_stop=0clear=0};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nx6hel12YKlh6qTf4T9uN_6) at (-0.65,3.00) {previous\_state == RUN};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nx6hel12YKlh6qTf4T9uN_5) at (-0.16,0.00) {previous\_state == STOP};
+  \node[draw, align=center, font=\scriptsize, minimum width=3.20cm, minimum height=3.20cm, text width=3.08cm] (nNtYnNxRafVZCUhzqZuAG_9) at (-314.01,729.00) {CLEARclear=1};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nx6hel12YKlh6qTf4T9uN_3) at (-0.09,1.00) {previous\_state == STOP};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nx6hel12YKlh6qTf4T9uN_4) at (-0.55,0.00) {previous\_state == RUN};
+  \node[draw, align=center, font=\scriptsize, minimum width=3.20cm, minimum height=3.20cm, text width=3.08cm] (nNtYnNxRafVZCUhzqZuAG_12) at (-314.01,289.00) {UPDOWN\\updown=\textasciitilde{}updown};
+  \node[draw, align=center, font=\scriptsize, fill=c000000!18, minimum width=3.20cm, minimum height=3.20cm, text width=3.08cm] (nNtYnNxRafVZCUhzqZuAG_15) at (-745.00,509.00) {INITupdown=1 (UP)run\_stop=0clear=0};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nx6hel12YKlh6qTf4T9uN_2) at (0.46,2.00) {BtnU==1};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nx6hel12YKlh6qTf4T9uN_8) at (0.55,-2.00) {BtnL==1};
+  \node[draw, align=center, font=\scriptsize, minimum width=3.20cm, minimum height=3.20cm, text width=3.08cm] (nNtYnNxRafVZCUhzqZuAG_18) at (-104.01,509.00) {RUN\\run\_stop=1clear=0};
+  \draw[thick] (-544.01,509.00) -- (-104.01,509.00);
+  \draw[thick] (-544.01,509.00) -- (-544.01,289.00) -- (-314.01,289.00);
+  \draw[thick] (-544.01,509.00) -- (-314.01,729.00);
+  \draw[thick] (-314.01,729.00) -- (-104.01,509.00);
+  \draw[thick] (-314.01,729.00) -- (-544.01,509.00);
+  \draw[thick] (-314.01,289.00) -- (-544.01,509.00);
+  \draw[thick] (-314.01,289.00) -- (-104.01,509.00);
+  \draw[thick] (-745.00,509.00) -- (-544.01,509.00);
+  \draw[thick] (-104.01,509.00) -- (-314.01,289.00);
+  \draw[thick] (-104.01,509.00) -- (-104.01,729.00) -- (-314.01,729.00);
+\end{tikzpicture}
