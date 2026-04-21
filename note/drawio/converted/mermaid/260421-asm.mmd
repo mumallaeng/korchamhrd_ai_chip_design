@@ -1,0 +1,179 @@
+flowchart LR
+  n_2hiasUPIRgNUq5fgBpaz_12["TX = 1bit_cnt = 0"]
+  n_2hiasUPIRgNUq5fgBpaz_14["i_tx_start == 1"]
+  n_2hiasUPIRgNUq5fgBpaz_16["data_reg = i_tx_data"]
+  n_2hiasUPIRgNUq5fgBpaz_18["START"]
+  n_2hiasUPIRgNUq5fgBpaz_22["False"]
+  n_2hiasUPIRgNUq5fgBpaz_23["True"]
+  n_2hiasUPIRgNUq5fgBpaz_24["TX = 0"]
+  n_2hiasUPIRgNUq5fgBpaz_26["i_b_tick == 1"]
+  n_2hiasUPIRgNUq5fgBpaz_28["DATA"]
+  n_2hiasUPIRgNUq5fgBpaz_30["True"]
+  n_2hiasUPIRgNUq5fgBpaz_31["TX = data_reg[bit_cnt]"]
+  n_2hiasUPIRgNUq5fgBpaz_33["i_b_tick == 1"]
+  n_2hiasUPIRgNUq5fgBpaz_35["bit_cnt == 7"]
+  n_2hiasUPIRgNUq5fgBpaz_38["False"]
+  n_2hiasUPIRgNUq5fgBpaz_39["bit_cnt++"]
+  n_2hiasUPIRgNUq5fgBpaz_41["True"]
+  n_2hiasUPIRgNUq5fgBpaz_42["False"]
+  n_2hiasUPIRgNUq5fgBpaz_46["bit_cnt = 0"]
+  n_2hiasUPIRgNUq5fgBpaz_49["STOP"]
+  n_2hiasUPIRgNUq5fgBpaz_51["TX = 1"]
+  n_2hiasUPIRgNUq5fgBpaz_55["i_b_tick == 1"]
+  n_2hiasUPIRgNUq5fgBpaz_58["False"]
+  n_2hiasUPIRgNUq5fgBpaz_60["True"]
+  n_UoZTmbrcyOv7tkDtMk2t_13["start == 1"]
+  n_UoZTmbrcyOv7tkDtMk2t_15["START"]
+  n_UoZTmbrcyOv7tkDtMk2t_2["IDLE"]
+  n_UoZTmbrcyOv7tkDtMk2t_22["False"]
+  n_UoZTmbrcyOv7tkDtMk2t_23["Ture"]
+  n_UoZTmbrcyOv7tkDtMk2t_24["TX = 0"]
+  n_UoZTmbrcyOv7tkDtMk2t_55["i=0data[8:0]"]
+  n_UoZTmbrcyOv7tkDtMk2t_58["btick==1"]
+  n_UoZTmbrcyOv7tkDtMk2t_60["TX=data[0]"]
+  n_UoZTmbrcyOv7tkDtMk2t_62["btick==1"]
+  n_UoZTmbrcyOv7tkDtMk2t_63["i++"]
+  n_UoZTmbrcyOv7tkDtMk2t_64["bit[0]"]
+  n_UoZTmbrcyOv7tkDtMk2t_69["TX=data[i]"]
+  n_UoZTmbrcyOv7tkDtMk2t_70["bit[i]"]
+  n_UoZTmbrcyOv7tkDtMk2t_73["True"]
+  n_UoZTmbrcyOv7tkDtMk2t_77["i == 8"]
+  n_UoZTmbrcyOv7tkDtMk2t_82["True"]
+  n_UoZTmbrcyOv7tkDtMk2t_84["False"]
+  n_UoZTmbrcyOv7tkDtMk2t_85["btick==1"]
+  n_UoZTmbrcyOv7tkDtMk2t_86["STOP"]
+  n_UoZTmbrcyOv7tkDtMk2t_88["True"]
+  n_UoZTmbrcyOv7tkDtMk2t_92["TX=1"]
+  n_UoZTmbrcyOv7tkDtMk2t_94["btick==1"]
+  n_Z8cy0SIaxi_QjKJotWLw_100["False"]
+  n_Z8cy0SIaxi_QjKJotWLw_101["baud_tick == 1"]
+  n_Z8cy0SIaxi_QjKJotWLw_103["bit6"]
+  n_Z8cy0SIaxi_QjKJotWLw_105["TX = data[6]"]
+  n_Z8cy0SIaxi_QjKJotWLw_107["False"]
+  n_Z8cy0SIaxi_QjKJotWLw_108["bit7"]
+  n_Z8cy0SIaxi_QjKJotWLw_110["True"]
+  n_Z8cy0SIaxi_QjKJotWLw_111["baud_tick == 1"]
+  n_Z8cy0SIaxi_QjKJotWLw_113["TX = data[7]"]
+  n_Z8cy0SIaxi_QjKJotWLw_116["True"]
+  n_Z8cy0SIaxi_QjKJotWLw_118["False"]
+  n_Z8cy0SIaxi_QjKJotWLw_119["baud_tick == 1"]
+  n_Z8cy0SIaxi_QjKJotWLw_121["STOP"]
+  n_Z8cy0SIaxi_QjKJotWLw_123["TX = 1"]
+  n_Z8cy0SIaxi_QjKJotWLw_125["False"]
+  n_Z8cy0SIaxi_QjKJotWLw_128["True"]
+  n_Z8cy0SIaxi_QjKJotWLw_129["baud_tick == 1"]
+  n_Z8cy0SIaxi_QjKJotWLw_20["TX = data[1]"]
+  n_Z8cy0SIaxi_QjKJotWLw_23["True"]
+  n_Z8cy0SIaxi_QjKJotWLw_25["False"]
+  n_Z8cy0SIaxi_QjKJotWLw_26["baud_tick == 1"]
+  n_Z8cy0SIaxi_QjKJotWLw_28["bit2"]
+  n_Z8cy0SIaxi_QjKJotWLw_30["TX = data[2]"]
+  n_Z8cy0SIaxi_QjKJotWLw_32["False"]
+  n_Z8cy0SIaxi_QjKJotWLw_33["bit3"]
+  n_Z8cy0SIaxi_QjKJotWLw_35["True"]
+  n_Z8cy0SIaxi_QjKJotWLw_36["baud_tick == 1"]
+  n_Z8cy0SIaxi_QjKJotWLw_77["TX = data[3]"]
+  n_Z8cy0SIaxi_QjKJotWLw_80["True"]
+  n_Z8cy0SIaxi_QjKJotWLw_82["False"]
+  n_Z8cy0SIaxi_QjKJotWLw_83["baud_tick == 1"]
+  n_Z8cy0SIaxi_QjKJotWLw_85["bit4"]
+  n_Z8cy0SIaxi_QjKJotWLw_87["TX = data[4]"]
+  n_Z8cy0SIaxi_QjKJotWLw_89["False"]
+  n_Z8cy0SIaxi_QjKJotWLw_90["bit5"]
+  n_Z8cy0SIaxi_QjKJotWLw_92["True"]
+  n_Z8cy0SIaxi_QjKJotWLw_93["baud_tick == 1"]
+  n_Z8cy0SIaxi_QjKJotWLw_95["TX = data[5]"]
+  n_Z8cy0SIaxi_QjKJotWLw_98["True"]
+  n_kM2_0921JKwGd9c51KsA_1["TX=0"]
+  n_nQHYzv7olxwLTFIKdGA2_2["IDLE"]
+  n_zN6g8_zkIhvAV65zujq3_1["IDLE"]
+  n_zN6g8_zkIhvAV65zujq3_139["baud_tick == 1"]
+  n_zN6g8_zkIhvAV65zujq3_143["True"]
+  n_zN6g8_zkIhvAV65zujq3_34["TX = 1"]
+  n_zN6g8_zkIhvAV65zujq3_36["start == 1"]
+  n_zN6g8_zkIhvAV65zujq3_38["WAIT"]
+  n_zN6g8_zkIhvAV65zujq3_40["baud_tick == 1"]
+  n_zN6g8_zkIhvAV65zujq3_42["START"]
+  n_zN6g8_zkIhvAV65zujq3_46["TX = 0"]
+  n_zN6g8_zkIhvAV65zujq3_50["baud_tick == 1"]
+  n_zN6g8_zkIhvAV65zujq3_51["bit0"]
+  n_zN6g8_zkIhvAV65zujq3_54["False"]
+  n_zN6g8_zkIhvAV65zujq3_55["True"]
+  n_zN6g8_zkIhvAV65zujq3_56["False"]
+  n_zN6g8_zkIhvAV65zujq3_58["TX = data[0]"]
+  n_zN6g8_zkIhvAV65zujq3_63["bit1"]
+  n_zN6g8_zkIhvAV65zujq3_70["False"]
+  n_zN6g8_zkIhvAV65zujq3_72["True"]
+  n_zN6g8_zkIhvAV65zujq3_74["False"]
+  n_UoZTmbrcyOv7tkDtMk2t_13 --> n_UoZTmbrcyOv7tkDtMk2t_15
+  n_UoZTmbrcyOv7tkDtMk2t_15 --> n_UoZTmbrcyOv7tkDtMk2t_24
+  n_UoZTmbrcyOv7tkDtMk2t_13 --> n_UoZTmbrcyOv7tkDtMk2t_2
+  n_UoZTmbrcyOv7tkDtMk2t_24 --> n_UoZTmbrcyOv7tkDtMk2t_55
+  n_UoZTmbrcyOv7tkDtMk2t_55 --> n_UoZTmbrcyOv7tkDtMk2t_58
+  n_UoZTmbrcyOv7tkDtMk2t_64 --> n_UoZTmbrcyOv7tkDtMk2t_60
+  n_UoZTmbrcyOv7tkDtMk2t_58 --> n_UoZTmbrcyOv7tkDtMk2t_64
+  n_UoZTmbrcyOv7tkDtMk2t_60 --> n_UoZTmbrcyOv7tkDtMk2t_62
+  n_UoZTmbrcyOv7tkDtMk2t_62 --> n_UoZTmbrcyOv7tkDtMk2t_63
+  n_UoZTmbrcyOv7tkDtMk2t_69 --> n_UoZTmbrcyOv7tkDtMk2t_77
+  n_UoZTmbrcyOv7tkDtMk2t_77 --> n_UoZTmbrcyOv7tkDtMk2t_62
+  n_UoZTmbrcyOv7tkDtMk2t_94 --> n_UoZTmbrcyOv7tkDtMk2t_2
+  n_nQHYzv7olxwLTFIKdGA2_2 --> n_2hiasUPIRgNUq5fgBpaz_12
+  n_2hiasUPIRgNUq5fgBpaz_12 --> n_2hiasUPIRgNUq5fgBpaz_14
+  n_2hiasUPIRgNUq5fgBpaz_14 --> n_2hiasUPIRgNUq5fgBpaz_16
+  n_2hiasUPIRgNUq5fgBpaz_14 --> n_nQHYzv7olxwLTFIKdGA2_2
+  n_2hiasUPIRgNUq5fgBpaz_16 --> n_2hiasUPIRgNUq5fgBpaz_18
+  n_2hiasUPIRgNUq5fgBpaz_18 --> n_2hiasUPIRgNUq5fgBpaz_24
+  n_2hiasUPIRgNUq5fgBpaz_24 --> n_2hiasUPIRgNUq5fgBpaz_26
+  n_2hiasUPIRgNUq5fgBpaz_26 --> n_2hiasUPIRgNUq5fgBpaz_28
+  n_2hiasUPIRgNUq5fgBpaz_28 --> n_2hiasUPIRgNUq5fgBpaz_31
+  n_2hiasUPIRgNUq5fgBpaz_31 --> n_2hiasUPIRgNUq5fgBpaz_33
+  n_2hiasUPIRgNUq5fgBpaz_33 --> n_2hiasUPIRgNUq5fgBpaz_35
+  n_2hiasUPIRgNUq5fgBpaz_33 --> n_2hiasUPIRgNUq5fgBpaz_28
+  n_2hiasUPIRgNUq5fgBpaz_35 --> n_2hiasUPIRgNUq5fgBpaz_39
+  n_2hiasUPIRgNUq5fgBpaz_35 --> n_2hiasUPIRgNUq5fgBpaz_46
+  n_2hiasUPIRgNUq5fgBpaz_39 --> n_2hiasUPIRgNUq5fgBpaz_28
+  n_2hiasUPIRgNUq5fgBpaz_46 --> n_2hiasUPIRgNUq5fgBpaz_49
+  n_2hiasUPIRgNUq5fgBpaz_49 --> n_2hiasUPIRgNUq5fgBpaz_51
+  n_2hiasUPIRgNUq5fgBpaz_51 --> n_2hiasUPIRgNUq5fgBpaz_55
+  n_2hiasUPIRgNUq5fgBpaz_55 --> n_2hiasUPIRgNUq5fgBpaz_49
+  n_2hiasUPIRgNUq5fgBpaz_55 --> n_nQHYzv7olxwLTFIKdGA2_2
+  n_zN6g8_zkIhvAV65zujq3_1 --> n_zN6g8_zkIhvAV65zujq3_34
+  n_zN6g8_zkIhvAV65zujq3_34 --> n_zN6g8_zkIhvAV65zujq3_36
+  n_zN6g8_zkIhvAV65zujq3_36 --> n_zN6g8_zkIhvAV65zujq3_38
+  n_zN6g8_zkIhvAV65zujq3_36 --> n_zN6g8_zkIhvAV65zujq3_1
+  n_zN6g8_zkIhvAV65zujq3_38 --> n_zN6g8_zkIhvAV65zujq3_40
+  n_zN6g8_zkIhvAV65zujq3_40 --> n_zN6g8_zkIhvAV65zujq3_38
+  n_zN6g8_zkIhvAV65zujq3_40 --> n_zN6g8_zkIhvAV65zujq3_42
+  n_zN6g8_zkIhvAV65zujq3_42 --> n_zN6g8_zkIhvAV65zujq3_46
+  n_zN6g8_zkIhvAV65zujq3_50 --> n_zN6g8_zkIhvAV65zujq3_51
+  n_zN6g8_zkIhvAV65zujq3_50 --> n_zN6g8_zkIhvAV65zujq3_42
+  n_zN6g8_zkIhvAV65zujq3_51 --> n_zN6g8_zkIhvAV65zujq3_58
+  n_zN6g8_zkIhvAV65zujq3_58 --> n_zN6g8_zkIhvAV65zujq3_139
+  n_zN6g8_zkIhvAV65zujq3_139 --> n_zN6g8_zkIhvAV65zujq3_51
+  n_zN6g8_zkIhvAV65zujq3_139 --> n_zN6g8_zkIhvAV65zujq3_63
+  n_zN6g8_zkIhvAV65zujq3_63 --> n_Z8cy0SIaxi_QjKJotWLw_20
+  n_Z8cy0SIaxi_QjKJotWLw_26 --> n_Z8cy0SIaxi_QjKJotWLw_28
+  n_Z8cy0SIaxi_QjKJotWLw_26 --> n_zN6g8_zkIhvAV65zujq3_63
+  n_Z8cy0SIaxi_QjKJotWLw_28 --> n_Z8cy0SIaxi_QjKJotWLw_30
+  n_Z8cy0SIaxi_QjKJotWLw_30 --> n_Z8cy0SIaxi_QjKJotWLw_36
+  n_Z8cy0SIaxi_QjKJotWLw_36 --> n_Z8cy0SIaxi_QjKJotWLw_28
+  n_Z8cy0SIaxi_QjKJotWLw_36 --> n_Z8cy0SIaxi_QjKJotWLw_33
+  n_Z8cy0SIaxi_QjKJotWLw_33 --> n_Z8cy0SIaxi_QjKJotWLw_77
+  n_Z8cy0SIaxi_QjKJotWLw_83 --> n_Z8cy0SIaxi_QjKJotWLw_85
+  n_Z8cy0SIaxi_QjKJotWLw_83 --> n_Z8cy0SIaxi_QjKJotWLw_33
+  n_Z8cy0SIaxi_QjKJotWLw_85 --> n_Z8cy0SIaxi_QjKJotWLw_87
+  n_Z8cy0SIaxi_QjKJotWLw_87 --> n_Z8cy0SIaxi_QjKJotWLw_93
+  n_Z8cy0SIaxi_QjKJotWLw_93 --> n_Z8cy0SIaxi_QjKJotWLw_85
+  n_Z8cy0SIaxi_QjKJotWLw_93 --> n_Z8cy0SIaxi_QjKJotWLw_90
+  n_Z8cy0SIaxi_QjKJotWLw_90 --> n_Z8cy0SIaxi_QjKJotWLw_95
+  n_Z8cy0SIaxi_QjKJotWLw_101 --> n_Z8cy0SIaxi_QjKJotWLw_103
+  n_Z8cy0SIaxi_QjKJotWLw_101 --> n_Z8cy0SIaxi_QjKJotWLw_90
+  n_Z8cy0SIaxi_QjKJotWLw_103 --> n_Z8cy0SIaxi_QjKJotWLw_105
+  n_Z8cy0SIaxi_QjKJotWLw_105 --> n_Z8cy0SIaxi_QjKJotWLw_111
+  n_Z8cy0SIaxi_QjKJotWLw_111 --> n_Z8cy0SIaxi_QjKJotWLw_103
+  n_Z8cy0SIaxi_QjKJotWLw_111 --> n_Z8cy0SIaxi_QjKJotWLw_108
+  n_Z8cy0SIaxi_QjKJotWLw_119 --> n_Z8cy0SIaxi_QjKJotWLw_121
+  n_Z8cy0SIaxi_QjKJotWLw_121 --> n_Z8cy0SIaxi_QjKJotWLw_123
+  n_Z8cy0SIaxi_QjKJotWLw_123 --> n_Z8cy0SIaxi_QjKJotWLw_129
+  n_Z8cy0SIaxi_QjKJotWLw_129 --> n_Z8cy0SIaxi_QjKJotWLw_121
+  n_Z8cy0SIaxi_QjKJotWLw_129 --> n_zN6g8_zkIhvAV65zujq3_1
