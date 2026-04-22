@@ -1,0 +1,7 @@
+digraph G {
+  graph [rankdir=LR];
+  node [shape=box, style="rounded,filled", fillcolor="#f8f9fb", color="#5b6b7a", fontname="Arial"];
+  "n__m_tatnkw_NWWG0i04Gg_1" [label="IDLE"];
+  "n__m_tatnkw_NWWG0i04Gg_2" [label="buad_tick == 1"];
+  "n__m_tatnkw_NWWG0i04Gg_1" -> "n__m_tatnkw_NWWG0i04Gg_2";
+}

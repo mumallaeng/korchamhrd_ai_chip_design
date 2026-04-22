@@ -1,0 +1,39 @@
+% Source: 260422-uart-rx-tx.drawio, page: 1
+\begin{tikzpicture}[x=0.04cm,y=-0.04cm,>=Latex,line cap=round,line join=round]
+  \node[draw, align=center, font=\scriptsize, minimum width=3.20cm, minimum height=3.20cm, text width=3.08cm] (ntigCFdpCh4TNrfEZiWfl_1) at (70.00,70.00) {IDLE};
+  \node[draw, align=center, font=\scriptsize, minimum width=4.80cm, minimum height=2.40cm, text width=4.68cm] (ntigCFdpCh4TNrfEZiWfl_2) at (220.00,70.00) {TX = 1};
+  \node[draw, align=center, font=\scriptsize, minimum width=5.60cm, minimum height=3.20cm, text width=5.48cm] (ntigCFdpCh4TNrfEZiWfl_4) at (400.00,70.00) {start == 1};
+  \node[draw, align=center, font=\scriptsize, minimum width=4.80cm, minimum height=2.40cm, text width=4.68cm] (ntigCFdpCh4TNrfEZiWfl_6) at (580.00,70.00) {data = tx\_data};
+  \node[draw, align=center, font=\scriptsize, minimum width=3.20cm, minimum height=3.20cm, text width=3.08cm] (ntigCFdpCh4TNrfEZiWfl_8) at (70.00,210.00) {WAIT};
+  \node[draw, align=center, font=\scriptsize, minimum width=5.60cm, minimum height=3.20cm, text width=5.48cm] (ntigCFdpCh4TNrfEZiWfl_10) at (220.00,210.00) {b\_tick == 1};
+  \node[draw, align=center, font=\scriptsize, minimum width=3.20cm, minimum height=3.20cm, text width=3.08cm] (ntigCFdpCh4TNrfEZiWfl_14) at (400.00,210.00) {START};
+  \node[draw, align=center, font=\scriptsize, minimum width=4.80cm, minimum height=2.40cm, text width=4.68cm] (ntigCFdpCh4TNrfEZiWfl_16) at (580.00,210.00) {TX = 0};
+  \node[draw, align=center, font=\scriptsize, minimum width=5.60cm, minimum height=3.20cm, text width=5.48cm] (nRXUKRIrRUouVhUge0_Jv_1) at (70.00,350.00) {b\_tick == 1};
+  \node[draw, align=center, font=\scriptsize, minimum width=3.20cm, minimum height=3.20cm, text width=3.08cm] (nRXUKRIrRUouVhUge0_Jv_3) at (220.00,350.00) {DATA};
+  \node[draw, align=center, font=\scriptsize, minimum width=4.80cm, minimum height=2.40cm, text width=4.68cm] (nRXUKRIrRUouVhUge0_Jv_5) at (400.00,350.00) {TX = data[bit\_cnt]};
+  \node[draw, align=center, font=\scriptsize, minimum width=5.80cm, minimum height=3.20cm, text width=5.68cm] (nRXUKRIrRUouVhUge0_Jv_7) at (580.00,350.00) {};
+  \node[draw, align=center, font=\scriptsize, minimum width=5.60cm, minimum height=3.20cm, text width=5.48cm] (nRXUKRIrRUouVhUge0_Jv_9) at (70.00,590.00) {};
+  \node[draw, align=center, font=\scriptsize, minimum width=3.20cm, minimum height=3.20cm, text width=3.08cm] (nRXUKRIrRUouVhUge0_Jv_11) at (220.00,590.00) {};
+  \node[draw, align=center, font=\scriptsize, minimum width=4.80cm, minimum height=2.40cm, text width=4.68cm] (nRXUKRIrRUouVhUge0_Jv_13) at (400.00,590.00) {};
+  \node[draw, align=center, font=\scriptsize, minimum width=6.05cm, minimum height=3.20cm, text width=5.93cm] (nRXUKRIrRUouVhUge0_Jv_15) at (580.00,590.00) {};
+  \node[draw, align=center, font=\scriptsize, minimum width=4.80cm, minimum height=2.40cm, text width=4.68cm] (nRXUKRIrRUouVhUge0_Jv_20) at (220.00,440.00) {bit\_cnt ++};
+  \draw[thick] (70.00,70.00) -- (220.00,70.00);
+  \draw[thick] (220.00,70.00) -- (400.00,70.00);
+  \draw[thick] (400.00,70.00) -- (580.00,70.00);
+  \draw[thick] (580.00,70.00) -- (580.00,140.00) -- (70.00,140.00) -- (70.00,210.00);
+  \draw[thick] (70.00,210.00) -- (220.00,210.00);
+  \draw[thick] (220.00,210.00) -- (400.00,210.00);
+  \draw[thick] (400.00,210.00) -- (580.00,210.00);
+  \draw[thick] (580.00,210.00) -- (580.00,280.00) -- (70.00,280.00) -- (70.00,350.00);
+  \draw[thick] (70.00,350.00) -- (220.00,350.00);
+  \draw[thick] (220.00,350.00) -- (400.00,350.00);
+  \draw[thick] (400.00,350.00) -- (580.00,350.00);
+  \draw[thick] (580.00,350.00) -- (580.00,520.00) -- (70.00,520.00) -- (70.00,590.00);
+  \draw[thick] (70.00,590.00) -- (220.00,590.00);
+  \draw[thick] (220.00,590.00) -- (400.00,590.00);
+  \draw[thick] (400.00,590.00) -- (580.00,590.00);
+  \draw[thick] (580.00,590.00) -- (700.00,590.00) -- (700.00,10.00) -- (70.00,10.00) -- (70.00,70.00);
+\end{tikzpicture}
+% Source: 260422-uart-rx-tx.drawio, page: 2. tx_busy 추가
+\begin{tikzpicture}[x=0.04cm,y=-0.04cm,>=Latex,line cap=round,line join=round]
+\end{tikzpicture}

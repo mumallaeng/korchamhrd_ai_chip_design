@@ -1,0 +1,6 @@
+% Source: 260422-uart-rx.drawio, page: 수업듣고 생각
+\begin{tikzpicture}[x=0.04cm,y=-0.04cm,>=Latex,line cap=round,line join=round]
+  \node[draw, align=center, font=\scriptsize, minimum width=3.20cm, minimum height=3.20cm, text width=3.08cm] (n_m_tatnkw_NWWG0i04Gg_1) at (100.00,60.00) {IDLE};
+  \node[draw, align=center, font=\scriptsize, minimum width=4.80cm, minimum height=3.20cm, text width=4.68cm] (n_m_tatnkw_NWWG0i04Gg_2) at (100.00,220.00) {buad\_tick == 1};
+  \draw[thick] (100.00,60.00) -- (100.00,220.00);
+\end{tikzpicture}

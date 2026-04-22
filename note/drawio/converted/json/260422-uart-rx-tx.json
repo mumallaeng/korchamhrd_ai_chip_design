@@ -1,0 +1,783 @@
+{
+  "source": "260422-uart-rx-tx.drawio",
+  "generated_at": "2026-06-29T08:02:44",
+  "pages": [
+    {
+      "name": "1",
+      "id": "eEhxLdRW3rlnf1OjIk8r",
+      "vertex_count": 17,
+      "edge_count": 16,
+      "bounds": {
+        "min_x": 0.0,
+        "min_y": 0.0,
+        "max_x": 655.63,
+        "max_y": 630.0
+      }
+    },
+    {
+      "name": "2. tx_busy 추가",
+      "id": "q6XyjJjwHNYFxK9uonZt",
+      "vertex_count": 0,
+      "edge_count": 0,
+      "bounds": {
+        "min_x": 0.0,
+        "min_y": 0.0,
+        "max_x": 0.0,
+        "max_y": 0.0
+      }
+    }
+  ],
+  "cells": [
+    {
+      "id": "0",
+      "label": "",
+      "style": {},
+      "vertex": false,
+      "edge": false,
+      "source": null,
+      "target": null,
+      "geometry": null
+    },
+    {
+      "id": "1",
+      "label": "",
+      "style": {},
+      "vertex": false,
+      "edge": false,
+      "source": null,
+      "target": null,
+      "geometry": null
+    },
+    {
+      "id": "tigCFdpCh4TNrfEZiWfl-3",
+      "label": "",
+      "style": {
+        "edgeStyle": "orthogonalEdgeStyle",
+        "rounded": "0",
+        "orthogonalLoop": "1",
+        "jettySize": "auto",
+        "html": "1"
+      },
+      "vertex": false,
+      "edge": true,
+      "source": "tigCFdpCh4TNrfEZiWfl-1",
+      "target": "tigCFdpCh4TNrfEZiWfl-2",
+      "geometry": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0,
+        "relative": true
+      }
+    },
+    {
+      "id": "tigCFdpCh4TNrfEZiWfl-1",
+      "label": "IDLE",
+      "style": {
+        "ellipse": "1",
+        "whiteSpace": "wrap",
+        "html": "1",
+        "aspect": "fixed"
+      },
+      "vertex": true,
+      "edge": false,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 30.0,
+        "y": 30.0,
+        "width": 80.0,
+        "height": 80.0,
+        "relative": false
+      }
+    },
+    {
+      "id": "tigCFdpCh4TNrfEZiWfl-5",
+      "label": "",
+      "style": {
+        "edgeStyle": "orthogonalEdgeStyle",
+        "rounded": "0",
+        "orthogonalLoop": "1",
+        "jettySize": "auto",
+        "html": "1"
+      },
+      "vertex": false,
+      "edge": true,
+      "source": "tigCFdpCh4TNrfEZiWfl-2",
+      "target": "tigCFdpCh4TNrfEZiWfl-4",
+      "geometry": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0,
+        "relative": true
+      }
+    },
+    {
+      "id": "tigCFdpCh4TNrfEZiWfl-2",
+      "label": "TX = 1",
+      "style": {
+        "rounded": "0",
+        "whiteSpace": "wrap",
+        "html": "1"
+      },
+      "vertex": true,
+      "edge": false,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 160.0,
+        "y": 40.0,
+        "width": 120.0,
+        "height": 60.0,
+        "relative": false
+      }
+    },
+    {
+      "id": "tigCFdpCh4TNrfEZiWfl-7",
+      "label": "",
+      "style": {
+        "edgeStyle": "orthogonalEdgeStyle",
+        "rounded": "0",
+        "orthogonalLoop": "1",
+        "jettySize": "auto",
+        "html": "1"
+      },
+      "vertex": false,
+      "edge": true,
+      "source": "tigCFdpCh4TNrfEZiWfl-4",
+      "target": "tigCFdpCh4TNrfEZiWfl-6",
+      "geometry": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0,
+        "relative": true
+      }
+    },
+    {
+      "id": "tigCFdpCh4TNrfEZiWfl-4",
+      "label": "start == 1",
+      "style": {
+        "rhombus": "1",
+        "whiteSpace": "wrap",
+        "html": "1",
+        "rounded": "0"
+      },
+      "vertex": true,
+      "edge": false,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 330.0,
+        "y": 30.0,
+        "width": 140.0,
+        "height": 80.0,
+        "relative": false
+      }
+    },
+    {
+      "id": "tigCFdpCh4TNrfEZiWfl-9",
+      "label": "",
+      "style": {
+        "edgeStyle": "orthogonalEdgeStyle",
+        "rounded": "0",
+        "orthogonalLoop": "1",
+        "jettySize": "auto",
+        "html": "1"
+      },
+      "vertex": false,
+      "edge": true,
+      "source": "tigCFdpCh4TNrfEZiWfl-6",
+      "target": "tigCFdpCh4TNrfEZiWfl-8",
+      "geometry": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0,
+        "relative": true
+      }
+    },
+    {
+      "id": "tigCFdpCh4TNrfEZiWfl-6",
+      "label": "data = tx_data",
+      "style": {
+        "whiteSpace": "wrap",
+        "html": "1",
+        "rounded": "0"
+      },
+      "vertex": true,
+      "edge": false,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 520.0,
+        "y": 40.0,
+        "width": 120.0,
+        "height": 60.0,
+        "relative": false
+      }
+    },
+    {
+      "id": "tigCFdpCh4TNrfEZiWfl-11",
+      "label": "",
+      "style": {
+        "edgeStyle": "orthogonalEdgeStyle",
+        "rounded": "0",
+        "orthogonalLoop": "1",
+        "jettySize": "auto",
+        "html": "1"
+      },
+      "vertex": false,
+      "edge": true,
+      "source": "tigCFdpCh4TNrfEZiWfl-8",
+      "target": "tigCFdpCh4TNrfEZiWfl-10",
+      "geometry": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0,
+        "relative": true
+      }
+    },
+    {
+      "id": "tigCFdpCh4TNrfEZiWfl-8",
+      "label": "WAIT",
+      "style": {
+        "ellipse": "1",
+        "whiteSpace": "wrap",
+        "html": "1",
+        "rounded": "0"
+      },
+      "vertex": true,
+      "edge": false,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 30.0,
+        "y": 170.0,
+        "width": 80.0,
+        "height": 80.0,
+        "relative": false
+      }
+    },
+    {
+      "id": "tigCFdpCh4TNrfEZiWfl-15",
+      "label": "",
+      "style": {
+        "edgeStyle": "orthogonalEdgeStyle",
+        "rounded": "0",
+        "orthogonalLoop": "1",
+        "jettySize": "auto",
+        "html": "1"
+      },
+      "vertex": false,
+      "edge": true,
+      "source": "tigCFdpCh4TNrfEZiWfl-10",
+      "target": "tigCFdpCh4TNrfEZiWfl-14",
+      "geometry": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0,
+        "relative": true
+      }
+    },
+    {
+      "id": "tigCFdpCh4TNrfEZiWfl-10",
+      "label": "b_tick == 1",
+      "style": {
+        "rhombus": "1",
+        "whiteSpace": "wrap",
+        "html": "1",
+        "rounded": "0"
+      },
+      "vertex": true,
+      "edge": false,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 150.0,
+        "y": 170.0,
+        "width": 140.0,
+        "height": 80.0,
+        "relative": false
+      }
+    },
+    {
+      "id": "tigCFdpCh4TNrfEZiWfl-17",
+      "label": "",
+      "style": {
+        "edgeStyle": "orthogonalEdgeStyle",
+        "rounded": "0",
+        "orthogonalLoop": "1",
+        "jettySize": "auto",
+        "html": "1"
+      },
+      "vertex": false,
+      "edge": true,
+      "source": "tigCFdpCh4TNrfEZiWfl-14",
+      "target": "tigCFdpCh4TNrfEZiWfl-16",
+      "geometry": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0,
+        "relative": true
+      }
+    },
+    {
+      "id": "tigCFdpCh4TNrfEZiWfl-14",
+      "label": "START",
+      "style": {
+        "ellipse": "1",
+        "whiteSpace": "wrap",
+        "html": "1",
+        "rounded": "0"
+      },
+      "vertex": true,
+      "edge": false,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 360.0,
+        "y": 170.0,
+        "width": 80.0,
+        "height": 80.0,
+        "relative": false
+      }
+    },
+    {
+      "id": "RXUKRIrRUouVhUge0-Jv-2",
+      "label": "",
+      "style": {
+        "edgeStyle": "orthogonalEdgeStyle",
+        "rounded": "0",
+        "orthogonalLoop": "1",
+        "jettySize": "auto",
+        "html": "1"
+      },
+      "vertex": false,
+      "edge": true,
+      "source": "tigCFdpCh4TNrfEZiWfl-16",
+      "target": "RXUKRIrRUouVhUge0-Jv-1",
+      "geometry": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0,
+        "relative": true
+      }
+    },
+    {
+      "id": "tigCFdpCh4TNrfEZiWfl-16",
+      "label": "TX = 0",
+      "style": {
+        "whiteSpace": "wrap",
+        "html": "1",
+        "rounded": "0"
+      },
+      "vertex": true,
+      "edge": false,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 520.0,
+        "y": 180.0,
+        "width": 120.0,
+        "height": 60.0,
+        "relative": false
+      }
+    },
+    {
+      "id": "RXUKRIrRUouVhUge0-Jv-4",
+      "label": "",
+      "style": {
+        "edgeStyle": "orthogonalEdgeStyle",
+        "rounded": "0",
+        "orthogonalLoop": "1",
+        "jettySize": "auto",
+        "html": "1"
+      },
+      "vertex": false,
+      "edge": true,
+      "source": "RXUKRIrRUouVhUge0-Jv-1",
+      "target": "RXUKRIrRUouVhUge0-Jv-3",
+      "geometry": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0,
+        "relative": true
+      }
+    },
+    {
+      "id": "RXUKRIrRUouVhUge0-Jv-1",
+      "label": "b_tick == 1",
+      "style": {
+        "rhombus": "1",
+        "whiteSpace": "wrap",
+        "html": "1",
+        "rounded": "0"
+      },
+      "vertex": true,
+      "edge": false,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 0.0,
+        "y": 310.0,
+        "width": 140.0,
+        "height": 80.0,
+        "relative": false
+      }
+    },
+    {
+      "id": "RXUKRIrRUouVhUge0-Jv-6",
+      "label": "",
+      "style": {
+        "edgeStyle": "orthogonalEdgeStyle",
+        "rounded": "0",
+        "orthogonalLoop": "1",
+        "jettySize": "auto",
+        "html": "1"
+      },
+      "vertex": false,
+      "edge": true,
+      "source": "RXUKRIrRUouVhUge0-Jv-3",
+      "target": "RXUKRIrRUouVhUge0-Jv-5",
+      "geometry": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0,
+        "relative": true
+      }
+    },
+    {
+      "id": "RXUKRIrRUouVhUge0-Jv-3",
+      "label": "DATA",
+      "style": {
+        "ellipse": "1",
+        "whiteSpace": "wrap",
+        "html": "1",
+        "rounded": "0"
+      },
+      "vertex": true,
+      "edge": false,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 180.0,
+        "y": 310.0,
+        "width": 80.0,
+        "height": 80.0,
+        "relative": false
+      }
+    },
+    {
+      "id": "RXUKRIrRUouVhUge0-Jv-8",
+      "label": "",
+      "style": {
+        "edgeStyle": "orthogonalEdgeStyle",
+        "rounded": "0",
+        "orthogonalLoop": "1",
+        "jettySize": "auto",
+        "html": "1"
+      },
+      "vertex": false,
+      "edge": true,
+      "source": "RXUKRIrRUouVhUge0-Jv-5",
+      "target": "RXUKRIrRUouVhUge0-Jv-7",
+      "geometry": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0,
+        "relative": true
+      }
+    },
+    {
+      "id": "RXUKRIrRUouVhUge0-Jv-5",
+      "label": "TX = data[bit_cnt]",
+      "style": {
+        "whiteSpace": "wrap",
+        "html": "1",
+        "rounded": "0"
+      },
+      "vertex": true,
+      "edge": false,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 340.0,
+        "y": 320.0,
+        "width": 120.0,
+        "height": 60.0,
+        "relative": false
+      }
+    },
+    {
+      "id": "RXUKRIrRUouVhUge0-Jv-10",
+      "label": "",
+      "style": {
+        "edgeStyle": "orthogonalEdgeStyle",
+        "rounded": "0",
+        "orthogonalLoop": "1",
+        "jettySize": "auto",
+        "html": "1"
+      },
+      "vertex": false,
+      "edge": true,
+      "source": "RXUKRIrRUouVhUge0-Jv-7",
+      "target": "RXUKRIrRUouVhUge0-Jv-9",
+      "geometry": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0,
+        "relative": true
+      }
+    },
+    {
+      "id": "RXUKRIrRUouVhUge0-Jv-7",
+      "label": "",
+      "style": {
+        "rhombus": "1",
+        "whiteSpace": "wrap",
+        "html": "1",
+        "rounded": "0"
+      },
+      "vertex": true,
+      "edge": false,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 507.5,
+        "y": 310.0,
+        "width": 145.0,
+        "height": 80.0,
+        "relative": false
+      }
+    },
+    {
+      "id": "RXUKRIrRUouVhUge0-Jv-12",
+      "label": "",
+      "style": {
+        "edgeStyle": "orthogonalEdgeStyle",
+        "rounded": "0",
+        "orthogonalLoop": "1",
+        "jettySize": "auto",
+        "html": "1"
+      },
+      "vertex": false,
+      "edge": true,
+      "source": "RXUKRIrRUouVhUge0-Jv-9",
+      "target": "RXUKRIrRUouVhUge0-Jv-11",
+      "geometry": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0,
+        "relative": true
+      }
+    },
+    {
+      "id": "RXUKRIrRUouVhUge0-Jv-9",
+      "label": "",
+      "style": {
+        "rhombus": "1",
+        "whiteSpace": "wrap",
+        "html": "1",
+        "rounded": "0"
+      },
+      "vertex": true,
+      "edge": false,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 0.0,
+        "y": 550.0,
+        "width": 140.0,
+        "height": 80.0,
+        "relative": false
+      }
+    },
+    {
+      "id": "RXUKRIrRUouVhUge0-Jv-14",
+      "label": "",
+      "style": {
+        "edgeStyle": "orthogonalEdgeStyle",
+        "rounded": "0",
+        "orthogonalLoop": "1",
+        "jettySize": "auto",
+        "html": "1"
+      },
+      "vertex": false,
+      "edge": true,
+      "source": "RXUKRIrRUouVhUge0-Jv-11",
+      "target": "RXUKRIrRUouVhUge0-Jv-13",
+      "geometry": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0,
+        "relative": true
+      }
+    },
+    {
+      "id": "RXUKRIrRUouVhUge0-Jv-11",
+      "label": "",
+      "style": {
+        "ellipse": "1",
+        "whiteSpace": "wrap",
+        "html": "1",
+        "rounded": "0"
+      },
+      "vertex": true,
+      "edge": false,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 180.0,
+        "y": 550.0,
+        "width": 80.0,
+        "height": 80.0,
+        "relative": false
+      }
+    },
+    {
+      "id": "RXUKRIrRUouVhUge0-Jv-16",
+      "label": "",
+      "style": {
+        "edgeStyle": "orthogonalEdgeStyle",
+        "rounded": "0",
+        "orthogonalLoop": "1",
+        "jettySize": "auto",
+        "html": "1"
+      },
+      "vertex": false,
+      "edge": true,
+      "source": "RXUKRIrRUouVhUge0-Jv-13",
+      "target": "RXUKRIrRUouVhUge0-Jv-15",
+      "geometry": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0,
+        "relative": true
+      }
+    },
+    {
+      "id": "RXUKRIrRUouVhUge0-Jv-13",
+      "label": "",
+      "style": {
+        "whiteSpace": "wrap",
+        "html": "1",
+        "rounded": "0"
+      },
+      "vertex": true,
+      "edge": false,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 340.0,
+        "y": 560.0,
+        "width": 120.0,
+        "height": 60.0,
+        "relative": false
+      }
+    },
+    {
+      "id": "RXUKRIrRUouVhUge0-Jv-17",
+      "label": "",
+      "style": {
+        "edgeStyle": "orthogonalEdgeStyle",
+        "rounded": "0",
+        "orthogonalLoop": "1",
+        "jettySize": "auto",
+        "html": "1",
+        "entryX": "0.5",
+        "entryY": "0",
+        "entryDx": "0",
+        "entryDy": "0",
+        "exitX": "1",
+        "exitY": "0.5",
+        "exitDx": "0",
+        "exitDy": "0"
+      },
+      "vertex": false,
+      "edge": true,
+      "source": "RXUKRIrRUouVhUge0-Jv-15",
+      "target": "tigCFdpCh4TNrfEZiWfl-1",
+      "geometry": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0,
+        "relative": true
+      }
+    },
+    {
+      "id": "RXUKRIrRUouVhUge0-Jv-15",
+      "label": "",
+      "style": {
+        "rhombus": "1",
+        "whiteSpace": "wrap",
+        "html": "1",
+        "rounded": "0"
+      },
+      "vertex": true,
+      "edge": false,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 504.38,
+        "y": 550.0,
+        "width": 151.25,
+        "height": 80.0,
+        "relative": false
+      }
+    },
+    {
+      "id": "RXUKRIrRUouVhUge0-Jv-20",
+      "label": "bit_cnt ++",
+      "style": {
+        "whiteSpace": "wrap",
+        "html": "1",
+        "rounded": "0"
+      },
+      "vertex": true,
+      "edge": false,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 160.0,
+        "y": 410.0,
+        "width": 120.0,
+        "height": 60.0,
+        "relative": false
+      }
+    },
+    {
+      "id": "0",
+      "label": "",
+      "style": {},
+      "vertex": false,
+      "edge": false,
+      "source": null,
+      "target": null,
+      "geometry": null
+    },
+    {
+      "id": "1",
+      "label": "",
+      "style": {},
+      "vertex": false,
+      "edge": false,
+      "source": null,
+      "target": null,
+      "geometry": null
+    }
+  ]
+}

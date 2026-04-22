@@ -1,0 +1,34 @@
+flowchart LR
+  n_RXUKRIrRUouVhUge0_Jv_1["b_tick == 1"]
+  n_RXUKRIrRUouVhUge0_Jv_11["node_-Jv-11"]
+  n_RXUKRIrRUouVhUge0_Jv_13["node_-Jv-13"]
+  n_RXUKRIrRUouVhUge0_Jv_15["node_-Jv-15"]
+  n_RXUKRIrRUouVhUge0_Jv_20["bit_cnt ++"]
+  n_RXUKRIrRUouVhUge0_Jv_3["DATA"]
+  n_RXUKRIrRUouVhUge0_Jv_5["TX = data[bit_cnt]"]
+  n_RXUKRIrRUouVhUge0_Jv_7["node_0-Jv-7"]
+  n_RXUKRIrRUouVhUge0_Jv_9["node_0-Jv-9"]
+  n_tigCFdpCh4TNrfEZiWfl_1["IDLE"]
+  n_tigCFdpCh4TNrfEZiWfl_10["b_tick == 1"]
+  n_tigCFdpCh4TNrfEZiWfl_14["START"]
+  n_tigCFdpCh4TNrfEZiWfl_16["TX = 0"]
+  n_tigCFdpCh4TNrfEZiWfl_2["TX = 1"]
+  n_tigCFdpCh4TNrfEZiWfl_4["start == 1"]
+  n_tigCFdpCh4TNrfEZiWfl_6["data = tx_data"]
+  n_tigCFdpCh4TNrfEZiWfl_8["WAIT"]
+  n_tigCFdpCh4TNrfEZiWfl_1 --> n_tigCFdpCh4TNrfEZiWfl_2
+  n_tigCFdpCh4TNrfEZiWfl_2 --> n_tigCFdpCh4TNrfEZiWfl_4
+  n_tigCFdpCh4TNrfEZiWfl_4 --> n_tigCFdpCh4TNrfEZiWfl_6
+  n_tigCFdpCh4TNrfEZiWfl_6 --> n_tigCFdpCh4TNrfEZiWfl_8
+  n_tigCFdpCh4TNrfEZiWfl_8 --> n_tigCFdpCh4TNrfEZiWfl_10
+  n_tigCFdpCh4TNrfEZiWfl_10 --> n_tigCFdpCh4TNrfEZiWfl_14
+  n_tigCFdpCh4TNrfEZiWfl_14 --> n_tigCFdpCh4TNrfEZiWfl_16
+  n_tigCFdpCh4TNrfEZiWfl_16 --> n_RXUKRIrRUouVhUge0_Jv_1
+  n_RXUKRIrRUouVhUge0_Jv_1 --> n_RXUKRIrRUouVhUge0_Jv_3
+  n_RXUKRIrRUouVhUge0_Jv_3 --> n_RXUKRIrRUouVhUge0_Jv_5
+  n_RXUKRIrRUouVhUge0_Jv_5 --> n_RXUKRIrRUouVhUge0_Jv_7
+  n_RXUKRIrRUouVhUge0_Jv_7 --> n_RXUKRIrRUouVhUge0_Jv_9
+  n_RXUKRIrRUouVhUge0_Jv_9 --> n_RXUKRIrRUouVhUge0_Jv_11
+  n_RXUKRIrRUouVhUge0_Jv_11 --> n_RXUKRIrRUouVhUge0_Jv_13
+  n_RXUKRIrRUouVhUge0_Jv_13 --> n_RXUKRIrRUouVhUge0_Jv_15
+  n_RXUKRIrRUouVhUge0_Jv_15 --> n_tigCFdpCh4TNrfEZiWfl_1

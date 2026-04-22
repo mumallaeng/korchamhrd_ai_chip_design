@@ -1,0 +1,123 @@
+flowchart LR
+  n_JEGFsw1pDFeAgpJkrh1B_1["tx_start"]
+  n_JEGFsw1pDFeAgpJkrh1B_10["b_tick && b_tick_cnt_reg == 4'd15"]
+  n_JEGFsw1pDFeAgpJkrh1B_12["DATAtx=data_reg[0]"]
+  n_JEGFsw1pDFeAgpJkrh1B_14["b_tick && b_tick_cnt_reg == 4'd15"]
+  n_JEGFsw1pDFeAgpJkrh1B_4["0"]
+  n_JEGFsw1pDFeAgpJkrh1B_7["STARTdata_next=tx_datab_tick_cnt_next=0"]
+  n_JEGFsw1pDFeAgpJkrh1B_9["1"]
+  n_LHoBtbc4w8Q7jgh_8VmH_3["baud_tick_gen"]
+  n_LHoBtbc4w8Q7jgh_8VmH_4["uart_rx"]
+  n_LHoBtbc4w8Q7jgh_8VmH_5["uart_tx"]
+  n_MatuQYz9G3r0r1yaECfq_12["tx"]
+  n_MatuQYz9G3r0r1yaECfq_3["rx"]
+  n_MatuQYz9G3r0r1yaECfq_4["clk"]
+  n_MatuQYz9G3r0r1yaECfq_5["rst"]
+  n_MatuQYz9G3r0r1yaECfq_7["uart"]
+  n_RCDBOVk_CWwNJ6lyr2Th_16["IDLEtx=1tx_busy=0"]
+  n_aU61401ok2B8Z_UHviJd_8["b_tick"]
+  n_bL9TW57_xZc7vtcbFIv__10["DATA"]
+  n_bL9TW57_xZc7vtcbFIv__12["b_tick && b_tick_cnt_reg == 5'd23"]
+  n_bL9TW57_xZc7vtcbFIv__13["STOP"]
+  n_bL9TW57_xZc7vtcbFIv__15["b_tick && b_tick_cnt_reg == 4'd15<br/>&& bit_cnt_reg != 3'd7"]
+  n_bL9TW57_xZc7vtcbFIv__2["node_FIv_-2"]
+  n_bL9TW57_xZc7vtcbFIv__4["!rx_sync_reg"]
+  n_bL9TW57_xZc7vtcbFIv__5["IDLE"]
+  n_bL9TW57_xZc7vtcbFIv__7["b_tick && <br/>b_tick_cnt_reg == 4'd7<br/>&& !rx_sync_reg"]
+  n_bL9TW57_xZc7vtcbFIv__8["START"]
+  n_hh58LY84gVTi_uTaTazf_16["tx_start"]
+  n_hh58LY84gVTi_uTaTazf_17["b_tick && <br/>b_tick_cnt_reg == 4'd15"]
+  n_hh58LY84gVTi_uTaTazf_2["node_Tazf-2"]
+  n_hh58LY84gVTi_uTaTazf_21["b_tick && b_tick_cnt_reg == 4'd15<br/>&& bit_cnt_reg != 3'd7"]
+  n_hh58LY84gVTi_uTaTazf_22["b_tick && b_tick_cnt_reg == 4'd15"]
+  n_hh58LY84gVTi_uTaTazf_3["IDLE"]
+  n_hh58LY84gVTi_uTaTazf_5["START"]
+  n_hh58LY84gVTi_uTaTazf_7["DATA"]
+  n_hh58LY84gVTi_uTaTazf_9["STOP"]
+  n_pLi7oLsUr74iVJoOanX__2["rx_done -> tx_start"]
+  n_pLi7oLsUr74iVJoOanX__3["rx_data[7:0]"]
+  n_sUdIR_gYSZblfbk4yXds_11["0"]
+  n_sUdIR_gYSZblfbk4yXds_12["0"]
+  n_sUdIR_gYSZblfbk4yXds_13["1"]
+  n_sUdIR_gYSZblfbk4yXds_14["1"]
+  n_sUdIR_gYSZblfbk4yXds_15["1"]
+  n_sUdIR_gYSZblfbk4yXds_17["0"]
+  n_sUdIR_gYSZblfbk4yXds_19["b_tick && b_tick_cnt_reg == 4'd15"]
+  n_sUdIR_gYSZblfbk4yXds_23["0"]
+  n_sUdIR_gYSZblfbk4yXds_24["1"]
+  n_sUdIR_gYSZblfbk4yXds_4["bit_cnt_reg == 3'd7"]
+  n_sUdIR_gYSZblfbk4yXds_6["STOPtx=1"]
+  n_sUdIR_gYSZblfbk4yXds_8["data_next = {1'b0, data_reg[7:1]}bit_cnt_next = bit_cnt_reg + 1"]
+  n_sho9qr575B_gimooWG_9_11["1"]
+  n_sho9qr575B_gimooWG_9_13["0"]
+  n_sho9qr575B_gimooWG_9_14["b_tick && b_tick_cnt_reg == 4'd7"]
+  n_sho9qr575B_gimooWG_9_16["DATAsample every 16 ticks"]
+  n_sho9qr575B_gimooWG_9_19["1"]
+  n_sho9qr575B_gimooWG_9_2["IDLEwait for rx low"]
+  n_sho9qr575B_gimooWG_9_20["b_tick && b_tick_cnt_reg == 4'd15"]
+  n_sho9qr575B_gimooWG_9_22["1"]
+  n_sho9qr575B_gimooWG_9_24["0"]
+  n_sho9qr575B_gimooWG_9_25["bit_cnt_reg == 3'd7"]
+  n_sho9qr575B_gimooWG_9_27["STOPcheck stop bit"]
+  n_sho9qr575B_gimooWG_9_29["0"]
+  n_sho9qr575B_gimooWG_9_30["data_next = {1'b0, data_reg[7:1]}bit_cnt_next = bit_cnt_reg + 1"]
+  n_sho9qr575B_gimooWG_9_35["b_tick && b_tick_cnt_reg == 4'd15"]
+  n_sho9qr575B_gimooWG_9_36["!rx_sync_reg"]
+  n_sho9qr575B_gimooWG_9_4["0"]
+  n_sho9qr575B_gimooWG_9_43["0"]
+  n_sho9qr575B_gimooWG_9_44["rx_sync_reg"]
+  n_sho9qr575B_gimooWG_9_46["rx_done_next = 1'b1"]
+  n_sho9qr575B_gimooWG_9_48["1"]
+  n_sho9qr575B_gimooWG_9_6["1"]
+  n_sho9qr575B_gimooWG_9_7["!rx_sync_reg"]
+  n_sho9qr575B_gimooWG_9_9["STARTrecheck start bit"]
+  n_MatuQYz9G3r0r1yaECfq_3 --> n_MatuQYz9G3r0r1yaECfq_7
+  n_MatuQYz9G3r0r1yaECfq_4 --> n_MatuQYz9G3r0r1yaECfq_7
+  n_MatuQYz9G3r0r1yaECfq_5 --> n_MatuQYz9G3r0r1yaECfq_7
+  n_LHoBtbc4w8Q7jgh_8VmH_3 --> n_LHoBtbc4w8Q7jgh_8VmH_4
+  n_LHoBtbc4w8Q7jgh_8VmH_3 --> n_LHoBtbc4w8Q7jgh_8VmH_5
+  n_hh58LY84gVTi_uTaTazf_2 --> n_hh58LY84gVTi_uTaTazf_3
+  n_hh58LY84gVTi_uTaTazf_3 --> n_hh58LY84gVTi_uTaTazf_5
+  n_hh58LY84gVTi_uTaTazf_5 --> n_hh58LY84gVTi_uTaTazf_7
+  n_hh58LY84gVTi_uTaTazf_7 --> n_hh58LY84gVTi_uTaTazf_9
+  n_hh58LY84gVTi_uTaTazf_7 --> n_hh58LY84gVTi_uTaTazf_7
+  n_RCDBOVk_CWwNJ6lyr2Th_16 --> n_JEGFsw1pDFeAgpJkrh1B_1
+  n_JEGFsw1pDFeAgpJkrh1B_1 --> n_RCDBOVk_CWwNJ6lyr2Th_16
+  n_JEGFsw1pDFeAgpJkrh1B_1 --> n_JEGFsw1pDFeAgpJkrh1B_7
+  n_JEGFsw1pDFeAgpJkrh1B_7 --> n_JEGFsw1pDFeAgpJkrh1B_10
+  n_JEGFsw1pDFeAgpJkrh1B_10 --> n_JEGFsw1pDFeAgpJkrh1B_12
+  n_JEGFsw1pDFeAgpJkrh1B_10 --> n_JEGFsw1pDFeAgpJkrh1B_7
+  n_JEGFsw1pDFeAgpJkrh1B_12 --> n_JEGFsw1pDFeAgpJkrh1B_14
+  n_JEGFsw1pDFeAgpJkrh1B_14 --> n_JEGFsw1pDFeAgpJkrh1B_12
+  n_JEGFsw1pDFeAgpJkrh1B_14 --> n_sUdIR_gYSZblfbk4yXds_4
+  n_sUdIR_gYSZblfbk4yXds_4 --> n_sUdIR_gYSZblfbk4yXds_6
+  n_sUdIR_gYSZblfbk4yXds_4 --> n_sUdIR_gYSZblfbk4yXds_8
+  n_sUdIR_gYSZblfbk4yXds_6 --> n_sUdIR_gYSZblfbk4yXds_19
+  n_sUdIR_gYSZblfbk4yXds_8 --> n_JEGFsw1pDFeAgpJkrh1B_12
+  n_sUdIR_gYSZblfbk4yXds_19 --> n_RCDBOVk_CWwNJ6lyr2Th_16
+  n_sUdIR_gYSZblfbk4yXds_19 --> n_sUdIR_gYSZblfbk4yXds_6
+  n_bL9TW57_xZc7vtcbFIv__2 --> n_bL9TW57_xZc7vtcbFIv__5
+  n_bL9TW57_xZc7vtcbFIv__5 --> n_bL9TW57_xZc7vtcbFIv__8
+  n_bL9TW57_xZc7vtcbFIv__8 --> n_bL9TW57_xZc7vtcbFIv__10
+  n_bL9TW57_xZc7vtcbFIv__8 --> n_bL9TW57_xZc7vtcbFIv__5
+  n_bL9TW57_xZc7vtcbFIv__10 --> n_bL9TW57_xZc7vtcbFIv__13
+  n_bL9TW57_xZc7vtcbFIv__10 --> n_bL9TW57_xZc7vtcbFIv__10
+  n_sho9qr575B_gimooWG_9_2 --> n_sho9qr575B_gimooWG_9_7
+  n_sho9qr575B_gimooWG_9_7 --> n_sho9qr575B_gimooWG_9_2
+  n_sho9qr575B_gimooWG_9_7 --> n_sho9qr575B_gimooWG_9_9
+  n_sho9qr575B_gimooWG_9_9 --> n_sho9qr575B_gimooWG_9_14
+  n_sho9qr575B_gimooWG_9_36 --> n_sho9qr575B_gimooWG_9_16
+  n_sho9qr575B_gimooWG_9_14 --> n_sho9qr575B_gimooWG_9_9
+  n_sho9qr575B_gimooWG_9_14 --> n_sho9qr575B_gimooWG_9_36
+  n_sho9qr575B_gimooWG_9_16 --> n_sho9qr575B_gimooWG_9_20
+  n_sho9qr575B_gimooWG_9_20 --> n_sho9qr575B_gimooWG_9_16
+  n_sho9qr575B_gimooWG_9_20 --> n_sho9qr575B_gimooWG_9_25
+  n_sho9qr575B_gimooWG_9_25 --> n_sho9qr575B_gimooWG_9_27
+  n_sho9qr575B_gimooWG_9_25 --> n_sho9qr575B_gimooWG_9_30
+  n_sho9qr575B_gimooWG_9_27 --> n_sho9qr575B_gimooWG_9_35
+  n_sho9qr575B_gimooWG_9_30 --> n_sho9qr575B_gimooWG_9_16
+  n_sho9qr575B_gimooWG_9_35 --> n_sho9qr575B_gimooWG_9_27
+  n_sho9qr575B_gimooWG_9_35 --> n_sho9qr575B_gimooWG_9_44
+  n_sho9qr575B_gimooWG_9_36 --> n_sho9qr575B_gimooWG_9_2
+  n_sho9qr575B_gimooWG_9_44 --> n_sho9qr575B_gimooWG_9_46
+  n_sho9qr575B_gimooWG_9_46 --> n_sho9qr575B_gimooWG_9_2

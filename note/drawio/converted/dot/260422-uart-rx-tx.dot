@@ -1,0 +1,37 @@
+digraph G {
+  graph [rankdir=LR];
+  node [shape=box, style="rounded,filled", fillcolor="#f8f9fb", color="#5b6b7a", fontname="Arial"];
+  "n_RXUKRIrRUouVhUge0_Jv_1" [label="b_tick == 1"];
+  "n_RXUKRIrRUouVhUge0_Jv_11" [label="node_-Jv-11"];
+  "n_RXUKRIrRUouVhUge0_Jv_13" [label="node_-Jv-13"];
+  "n_RXUKRIrRUouVhUge0_Jv_15" [label="node_-Jv-15"];
+  "n_RXUKRIrRUouVhUge0_Jv_20" [label="bit_cnt ++"];
+  "n_RXUKRIrRUouVhUge0_Jv_3" [label="DATA"];
+  "n_RXUKRIrRUouVhUge0_Jv_5" [label="TX = data[bit_cnt]"];
+  "n_RXUKRIrRUouVhUge0_Jv_7" [label="node_0-Jv-7"];
+  "n_RXUKRIrRUouVhUge0_Jv_9" [label="node_0-Jv-9"];
+  "n_tigCFdpCh4TNrfEZiWfl_1" [label="IDLE"];
+  "n_tigCFdpCh4TNrfEZiWfl_10" [label="b_tick == 1"];
+  "n_tigCFdpCh4TNrfEZiWfl_14" [label="START"];
+  "n_tigCFdpCh4TNrfEZiWfl_16" [label="TX = 0"];
+  "n_tigCFdpCh4TNrfEZiWfl_2" [label="TX = 1"];
+  "n_tigCFdpCh4TNrfEZiWfl_4" [label="start == 1"];
+  "n_tigCFdpCh4TNrfEZiWfl_6" [label="data = tx_data"];
+  "n_tigCFdpCh4TNrfEZiWfl_8" [label="WAIT"];
+  "n_tigCFdpCh4TNrfEZiWfl_1" -> "n_tigCFdpCh4TNrfEZiWfl_2";
+  "n_tigCFdpCh4TNrfEZiWfl_2" -> "n_tigCFdpCh4TNrfEZiWfl_4";
+  "n_tigCFdpCh4TNrfEZiWfl_4" -> "n_tigCFdpCh4TNrfEZiWfl_6";
+  "n_tigCFdpCh4TNrfEZiWfl_6" -> "n_tigCFdpCh4TNrfEZiWfl_8";
+  "n_tigCFdpCh4TNrfEZiWfl_8" -> "n_tigCFdpCh4TNrfEZiWfl_10";
+  "n_tigCFdpCh4TNrfEZiWfl_10" -> "n_tigCFdpCh4TNrfEZiWfl_14";
+  "n_tigCFdpCh4TNrfEZiWfl_14" -> "n_tigCFdpCh4TNrfEZiWfl_16";
+  "n_tigCFdpCh4TNrfEZiWfl_16" -> "n_RXUKRIrRUouVhUge0_Jv_1";
+  "n_RXUKRIrRUouVhUge0_Jv_1" -> "n_RXUKRIrRUouVhUge0_Jv_3";
+  "n_RXUKRIrRUouVhUge0_Jv_3" -> "n_RXUKRIrRUouVhUge0_Jv_5";
+  "n_RXUKRIrRUouVhUge0_Jv_5" -> "n_RXUKRIrRUouVhUge0_Jv_7";
+  "n_RXUKRIrRUouVhUge0_Jv_7" -> "n_RXUKRIrRUouVhUge0_Jv_9";
+  "n_RXUKRIrRUouVhUge0_Jv_9" -> "n_RXUKRIrRUouVhUge0_Jv_11";
+  "n_RXUKRIrRUouVhUge0_Jv_11" -> "n_RXUKRIrRUouVhUge0_Jv_13";
+  "n_RXUKRIrRUouVhUge0_Jv_13" -> "n_RXUKRIrRUouVhUge0_Jv_15";
+  "n_RXUKRIrRUouVhUge0_Jv_15" -> "n_tigCFdpCh4TNrfEZiWfl_1";
+}
