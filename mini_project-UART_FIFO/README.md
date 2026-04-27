@@ -6,6 +6,8 @@ English | [한국어](README.ko.md)
 
 > A personal project carried out in the Verilog class of *[Consortium] On-Device AI System Semiconductor Design, 2nd Cohort*.
 
+<img width="300" alt="uart-loopback-demo_x2" src="docs/images/uart-loopback-demo_x2.gif" />
+
 | Name | Responsibilities |
 | --- | --- |
 | Yeonwoo Gim ([@mumallaeng](https://github.com/mumallaeng)) | UART TX/RX and FIFO RTL design, loopback testbench verification |

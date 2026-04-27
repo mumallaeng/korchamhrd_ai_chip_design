@@ -6,6 +6,8 @@
 
 > *[컨소시엄] 온디바이스AI 시스템반도체 설계 2기* 교육과정 Verilog 수업에서 진행된 개인 과제입니다.
 
+<img width="300" alt="uart-loopback-demo_x2" src="docs/images/uart-loopback-demo_x2.gif" />
+
 | 이름 | 담당 |
 | --- | --- |
 | 김연우 ([@mumallaeng](https://github.com/mumallaeng)) | UART TX/RX·FIFO RTL 설계, loopback testbench 검증 |
