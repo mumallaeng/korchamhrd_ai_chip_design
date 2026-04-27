@@ -2,10 +2,15 @@ English | [한국어](README.ko.md)
 
 # UART LOOPBACK
 
-Kim Yeonwoo
 2026.04.22 ~ 2026.04.27
 
-## 1. Overview (Overview)
+> A personal project carried out in the Verilog class of *[Consortium] On-Device AI System Semiconductor Design, 2nd Cohort*.
+
+| Name | Responsibilities |
+| --- | --- |
+| Yeonwoo Gim ([@mumallaeng](https://github.com/mumallaeng)) | UART TX/RX and FIFO RTL design, loopback testbench verification |
+
+## 1. Overview
 
 ### 1.1 Purpose and Objectives
 
@@ -24,7 +29,7 @@ The purpose of this project is to expand the values previously verified only via
 - A loopback system connecting Basys3 and a PC via UART to retransmit received 1 byte
 - Key keywords: Timepiecer extension, UART 8N1, serial communication, shift register, RX/TX FSM, stop bit troubleshooting
 
-### 1.4 Design Specification Summary (Specification Summary)
+### 1.4 Design Specification Summary
 
 The main design and presentation parameters are as follows:
 
@@ -40,7 +45,7 @@ The main design and presentation parameters are as follows:
 - **TO-BE**: Connect to the PC via USB-UART and establish a loopback structure that immediately retransmits received values, creating the starting point for external communication.
 - **Key Improvements**: Presentation of communication necessity, learning of UART basic theory, organization of RX/TX FSM, comparison of stop bit criteria, derivation of directions for future lesson expansion
 
-## 2. Project Management (Project Management)
+## 2. Project Management
 
 ### 2.1 Schedule Planning (Schedule)
 
@@ -52,14 +57,14 @@ The main design and presentation parameters are as follows:
 | Troubleshooting/Implementation | 2026.04.26 | 23 tick stop bit comparison, board implementation verification |
 | Final Presentation/Organization | 2026.04.27 | Final presentation, schedule table/journal/completion report organization |
 
-### 2.2 Development Environment (Development Environment)
+### 2.2 Development Environment
 
 | Category | Technology |
 |---|---|
 | Learning Materials | Class materials, presentation slides, board practice results |
 | Documents | Microsoft PowerPoint, Word, Excel, Markdown |
 
-### 2.3 Design Environment (Design Environment)
+### 2.3 Design Environment
 
 | Category | Content |
 |---|---|
@@ -97,7 +102,7 @@ Related theory was organized based on the final presentation slide flow of "`Tim
 - TX ASM
 <img width="955" height="790" alt="image7" src="https://github.com/user-attachments/assets/06ba3ac5-dfe0-4de9-b653-ee571a461619" />
 
-## 4. Detailed Design (Detailed Design)
+## 4. Detailed Design
 
 ### 4.1 RTL
 
