@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "clear-spreadsheet"
+version = "0.1.0"
+description = "Flatten workbook theme/table styling while preserving explicit cell fills in .xlsx files."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = []
+
+[project.scripts]
+clear-spreadsheet = "clear_spreadsheet:main"
+
+[tool.setuptools]
+py-modules = ["clear_spreadsheet"]
