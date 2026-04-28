@@ -35,6 +35,28 @@ Removed theme/table artifacts: 6 parts, 4 table links, 8 theme color refs
 
 If you want to install it as a local package instead of using `run.sh`, `setuptools` is used through `pyproject.toml`.
 
+## Windows EXE
+
+For non-technical Windows users, the intended distribution format is a standalone `.exe`.
+
+- Drag one or more `.xlsx` files onto the app window
+- Or drop files directly onto the built `.exe`
+- Each cleaned file is written next to the original as `filename.cleaned.xlsx`
+
+To build the Windows executable on a Windows machine:
+
+```bat
+build_windows_exe.bat
+```
+
+That batch file installs the GUI/build dependencies from `requirements-build.txt` and creates:
+
+```text
+dist\clear-spreadsheet.exe
+```
+
+The GUI uses `tkinterdnd2` for drag-and-drop, following its documented `TkinterDnD.Tk()` / `DND_FILES` usage on PyPI, and the included `hook-tkinterdnd2.py` follows the project's official PyInstaller hook guidance.
+
 ## Before and After
 
 ### Before
