@@ -49,6 +49,12 @@ To build the Windows executable on a Windows machine:
 build_windows_exe.bat
 ```
 
+If Python 3 is not installed on the build machine, install it first:
+
+```powershell
+winget install -e --id Python.Python.3.12 --accept-package-agreements --accept-source-agreements
+```
+
 That batch file installs the GUI/build dependencies from `requirements-build.txt` and creates:
 
 ```text
