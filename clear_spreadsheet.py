@@ -133,10 +133,10 @@ def count_theme_references(root: ET.Element) -> int:
 
 
 def materialize_theme_colors(styles_root: ET.Element, theme_colors: dict[int, str]) -> tuple[int, int]:
-    """Replace theme references in styles.xml with explicit RGB values.
+    """Replace theme color references in styles.xml with explicit RGB values.
 
-    The table style block is also cleared here because striped table styling is
-    the main source of visual differences between Excel and Google Sheets.
+    Keep the broader theme/style scaffolding intact so Excel can still round-
+    trip the workbook without repairing unrelated parts such as drawings.
     """
     converted = 0
     stripped_font_schemes = 0
@@ -159,21 +159,6 @@ def materialize_theme_colors(styles_root: ET.Element, theme_colors: dict[int, st
         element.attrib.pop("tint", None)
         element.attrib["rgb"] = rgb
         converted += 1
-
-    fonts = styles_root.find("main:fonts", NAMESPACES)
-    if fonts is not None:
-        for font in fonts:
-            for child in list(font):
-                # Once colors are flattened, font scheme inheritance is no longer
-                # useful and can reintroduce theme-driven rendering differences.
-                if child.tag == qname("main", "scheme"):
-                    font.remove(child)
-                    stripped_font_schemes += 1
-
-    table_styles = styles_root.find("main:tableStyles", NAMESPACES)
-    if table_styles is not None:
-        table_styles.clear()
-        table_styles.set("count", "0")
 
     return converted, stripped_font_schemes
 
@@ -277,8 +262,6 @@ def clean_workbook(input_path: Path, output_path: Path, overwrite: bool = False)
                 worksheet_parts.append(target)
             elif rel_type.endswith("/theme"):
                 theme_part = target
-                removed_parts.add(target)
-                workbook_rels_root.remove(relationship)
             elif "workbookmetadata" in rel_type.lower():
                 metadata_part = target
                 removed_parts.add(target)

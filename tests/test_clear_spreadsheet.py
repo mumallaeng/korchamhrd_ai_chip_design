@@ -140,7 +140,7 @@ class CleanWorkbookTests(unittest.TestCase):
             workbook.writestr("xl/drawings/drawing1.xml", "<drawing/>")
             workbook.writestr("xl/metadata", b"google-metadata")
 
-    def test_clean_workbook_removes_theme_tables_and_metadata(self) -> None:
+    def test_clean_workbook_removes_table_artifacts_and_preserves_theme_part(self) -> None:
         with tempfile.TemporaryDirectory() as tmp_dir:
             tmp_path = Path(tmp_dir)
             source = tmp_path / "input.xlsx"
@@ -155,20 +155,20 @@ class CleanWorkbookTests(unittest.TestCase):
 
             with zipfile.ZipFile(output) as workbook:
                 names = set(workbook.namelist())
-                self.assertNotIn("xl/theme/theme1.xml", names)
+                self.assertIn("xl/theme/theme1.xml", names)
                 self.assertNotIn("xl/tables/table1.xml", names)
                 self.assertNotIn("xl/metadata", names)
 
                 styles = workbook.read("xl/styles.xml").decode("utf-8")
                 self.assertNotIn('theme="', styles)
                 self.assertIn('rgb="FFFFFFFF"', styles)
-                self.assertIn("<tableStyles count=\"0\" />", styles)
+                self.assertIn("defaultTableStyle=\"TableStyleMedium9\"", styles)
 
                 sheet = workbook.read("xl/worksheets/sheet1.xml").decode("utf-8")
                 self.assertNotIn("tableParts", sheet)
 
                 workbook_rels = workbook.read("xl/_rels/workbook.xml.rels").decode("utf-8")
-                self.assertNotIn("theme/theme1.xml", workbook_rels)
+                self.assertIn("theme/theme1.xml", workbook_rels)
                 self.assertNotIn("metadata", workbook_rels)
 
                 sheet_rels = workbook.read("xl/worksheets/_rels/sheet1.xml.rels").decode("utf-8")
@@ -184,7 +184,7 @@ class CleanWorkbookTests(unittest.TestCase):
 
             self.assertEqual(summary.output_path, source)
             with zipfile.ZipFile(source) as workbook:
-                self.assertNotIn("xl/theme/theme1.xml", workbook.namelist())
+                self.assertIn("xl/theme/theme1.xml", workbook.namelist())
 
 
 if __name__ == "__main__":
