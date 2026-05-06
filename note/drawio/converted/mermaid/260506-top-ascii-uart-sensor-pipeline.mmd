@@ -1,0 +1,236 @@
+flowchart LR
+  n_6ph_AlxTgNuJ9rCcHqhe_11["node_qhe-11"]
+  n_6ph_AlxTgNuJ9rCcHqhe_3["remote_output_unit"]
+  n_6ph_AlxTgNuJ9rCcHqhe_5["log_entry_selector"]
+  n_6ph_AlxTgNuJ9rCcHqhe_7["ascii_log_formatter"]
+  n_6ph_AlxTgNuJ9rCcHqhe_8["uart_tx_fifo"]
+  n_Ln7tzscga1ssze_G1rDV_0["node_1rDV-0"]
+  n_PQr5wzI52vcO2iHJT48Q_0["inputHW"]
+  n_PQr5wzI52vcO2iHJT48Q_1["Logic"]
+  n_PQr5wzI52vcO2iHJT48Q_2["outputHW"]
+  n_SbR6JJQIqVE1rE5_B1QI_102["Remote"]
+  n_SbR6JJQIqVE1rE5_B1QI_105["remote_cmd_bus"]
+  n_SbR6JJQIqVE1rE5_B1QI_109["local_button_bus"]
+  n_SbR6JJQIqVE1rE5_B1QI_116["Local"]
+  n_SbR6JJQIqVE1rE5_B1QI_119["display_unit"]
+  n_SbR6JJQIqVE1rE5_B1QI_12["btnU"]
+  n_SbR6JJQIqVE1rE5_B1QI_120["FND"]
+  n_SbR6JJQIqVE1rE5_B1QI_124["current_contextcontext_change_pulse"]
+  n_SbR6JJQIqVE1rE5_B1QI_125["control_pulsesrefresh_reqstatus_req"]
+  n_SbR6JJQIqVE1rE5_B1QI_128["[watch/stopwatch/sr04/dht11]_payload"]
+  n_SbR6JJQIqVE1rE5_B1QI_13["btnD"]
+  n_SbR6JJQIqVE1rE5_B1QI_130["fnd_[watch/stopwatch/sr04/dht11]"]
+  n_SbR6JJQIqVE1rE5_B1QI_131["tx"]
+  n_SbR6JJQIqVE1rE5_B1QI_132["fnd_comfnd_data"]
+  n_SbR6JJQIqVE1rE5_B1QI_133["SR04(JA)"]
+  n_SbR6JJQIqVE1rE5_B1QI_135["trig"]
+  n_SbR6JJQIqVE1rE5_B1QI_136["LED"]
+  n_SbR6JJQIqVE1rE5_B1QI_138["led[2:0]"]
+  n_SbR6JJQIqVE1rE5_B1QI_14["btnL"]
+  n_SbR6JJQIqVE1rE5_B1QI_142["current_context"]
+  n_SbR6JJQIqVE1rE5_B1QI_15["btnR"]
+  n_SbR6JJQIqVE1rE5_B1QI_16["btnC"]
+  n_SbR6JJQIqVE1rE5_B1QI_17["sw[1:0]"]
+  n_SbR6JJQIqVE1rE5_B1QI_19["echo"]
+  n_SbR6JJQIqVE1rE5_B1QI_2["Remote"]
+  n_SbR6JJQIqVE1rE5_B1QI_20["dht11_io"]
+  n_SbR6JJQIqVE1rE5_B1QI_26["uart_rx_fifo"]
+  n_SbR6JJQIqVE1rE5_B1QI_27["ascii_command_parser"]
+  n_SbR6JJQIqVE1rE5_B1QI_28["cmd_token_pulser"]
+  n_SbR6JJQIqVE1rE5_B1QI_29["input_conditioning"]
+  n_SbR6JJQIqVE1rE5_B1QI_30["context_manager"]
+  n_SbR6JJQIqVE1rE5_B1QI_36["sw15"]
+  n_SbR6JJQIqVE1rE5_B1QI_37["rx"]
+  n_SbR6JJQIqVE1rE5_B1QI_40["node_1QI-40"]
+  n_SbR6JJQIqVE1rE5_B1QI_41["node_1QI-41"]
+  n_SbR6JJQIqVE1rE5_B1QI_43["SR04(JA)"]
+  n_SbR6JJQIqVE1rE5_B1QI_44["DHT11(JB)"]
+  n_SbR6JJQIqVE1rE5_B1QI_47["Local"]
+  n_SbR6JJQIqVE1rE5_B1QI_48["decision_unit"]
+  n_SbR6JJQIqVE1rE5_B1QI_49["event_selector"]
+  n_SbR6JJQIqVE1rE5_B1QI_50["action_dispatcher"]
+  n_SbR6JJQIqVE1rE5_B1QI_6["remote_input_unit"]
+  n_SbR6JJQIqVE1rE5_B1QI_61["decision_unit"]
+  n_SbR6JJQIqVE1rE5_B1QI_63["watch_stopwatch_unit"]
+  n_SbR6JJQIqVE1rE5_B1QI_65["sr04_unit"]
+  n_SbR6JJQIqVE1rE5_B1QI_66["dht11_unit"]
+  n_SbR6JJQIqVE1rE5_B1QI_81["Buttons"]
+  n_SbR6JJQIqVE1rE5_B1QI_82["Switchs"]
+  n_gU8_vGPnXsWrMlz1GlUk_10["dht11_io"]
+  n_gU8_vGPnXsWrMlz1GlUk_12["uart_rx_fifo"]
+  n_gU8_vGPnXsWrMlz1GlUk_14["pc_command_normalizer"]
+  n_gU8_vGPnXsWrMlz1GlUk_15["ascii_command_decoder"]
+  n_gU8_vGPnXsWrMlz1GlUk_17["local_button_bus"]
+  n_gU8_vGPnXsWrMlz1GlUk_18["input_conditioning"]
+  n_gU8_vGPnXsWrMlz1GlUk_19["context_manager"]
+  n_gU8_vGPnXsWrMlz1GlUk_21["rx"]
+  n_gU8_vGPnXsWrMlz1GlUk_22["node_lUk-22"]
+  n_gU8_vGPnXsWrMlz1GlUk_23["btnU"]
+  n_gU8_vGPnXsWrMlz1GlUk_24["btnD"]
+  n_gU8_vGPnXsWrMlz1GlUk_25["btnL"]
+  n_gU8_vGPnXsWrMlz1GlUk_26["btnR"]
+  n_gU8_vGPnXsWrMlz1GlUk_27["btnC"]
+  n_gU8_vGPnXsWrMlz1GlUk_28["node_lUk-28"]
+  n_gU8_vGPnXsWrMlz1GlUk_29["sw[1:0]"]
+  n_gU8_vGPnXsWrMlz1GlUk_3["fnd_[watch/stopwatch/sr04/dht11]"]
+  n_gU8_vGPnXsWrMlz1GlUk_30["sw15"]
+  n_gU8_vGPnXsWrMlz1GlUk_32["SR04(JA)"]
+  n_gU8_vGPnXsWrMlz1GlUk_34["DHT11(JB)"]
+  n_gU8_vGPnXsWrMlz1GlUk_36["control_pulsesrefresh_reqsnap_req"]
+  n_gU8_vGPnXsWrMlz1GlUk_37["control_unit"]
+  n_gU8_vGPnXsWrMlz1GlUk_39["control_event_arbiter"]
+  n_gU8_vGPnXsWrMlz1GlUk_4["function_unit"]
+  n_gU8_vGPnXsWrMlz1GlUk_41["current_context"]
+  n_gU8_vGPnXsWrMlz1GlUk_42["context_event_dispatcher"]
+  n_gU8_vGPnXsWrMlz1GlUk_43["watch_stopwatch_unit"]
+  n_gU8_vGPnXsWrMlz1GlUk_44["sr04_unit"]
+  n_gU8_vGPnXsWrMlz1GlUk_45["dht11_unit"]
+  n_gU8_vGPnXsWrMlz1GlUk_47["remote_cmd_bus"]
+  n_gU8_vGPnXsWrMlz1GlUk_48["event_log_unit"]
+  n_gU8_vGPnXsWrMlz1GlUk_5["Local"]
+  n_gU8_vGPnXsWrMlz1GlUk_50["ascii_frame_formatter"]
+  n_gU8_vGPnXsWrMlz1GlUk_52["ascii_frame_sender"]
+  n_gU8_vGPnXsWrMlz1GlUk_54["tx"]
+  n_gU8_vGPnXsWrMlz1GlUk_55["uart_tx_fifo"]
+  n_gU8_vGPnXsWrMlz1GlUk_57["telemetry_collector"]
+  n_gU8_vGPnXsWrMlz1GlUk_59["Buttons"]
+  n_gU8_vGPnXsWrMlz1GlUk_6["Remote"]
+  n_gU8_vGPnXsWrMlz1GlUk_61["Switchs"]
+  n_gU8_vGPnXsWrMlz1GlUk_62["Remote"]
+  n_gU8_vGPnXsWrMlz1GlUk_63["Local"]
+  n_gU8_vGPnXsWrMlz1GlUk_65["fnd_comfnd_data"]
+  n_gU8_vGPnXsWrMlz1GlUk_66["display_unit"]
+  n_gU8_vGPnXsWrMlz1GlUk_67["FND"]
+  n_gU8_vGPnXsWrMlz1GlUk_69["[watch/stopwatch/sr04/dht11]_payload"]
+  n_gU8_vGPnXsWrMlz1GlUk_7["remote_input_unit"]
+  n_gU8_vGPnXsWrMlz1GlUk_71["current_contextcontext_change_pulse"]
+  n_gU8_vGPnXsWrMlz1GlUk_72["SR04(JA)"]
+  n_gU8_vGPnXsWrMlz1GlUk_74["trig"]
+  n_gU8_vGPnXsWrMlz1GlUk_75["LED"]
+  n_gU8_vGPnXsWrMlz1GlUk_77["led[2:0]"]
+  n_gU8_vGPnXsWrMlz1GlUk_8["rst, clk 어떻게 넣지...?? 일단 모두에 다 들어가는데 생략해도 되나"]
+  n_gU8_vGPnXsWrMlz1GlUk_9["echo"]
+  n_xupBIcBxnwQmT9nJnN4t_10["dht11_io"]
+  n_xupBIcBxnwQmT9nJnN4t_12["uart_rx_fifo"]
+  n_xupBIcBxnwQmT9nJnN4t_14["pc_command_normalizer"]
+  n_xupBIcBxnwQmT9nJnN4t_15["ascii_command_decoder"]
+  n_xupBIcBxnwQmT9nJnN4t_17["local_button_bus"]
+  n_xupBIcBxnwQmT9nJnN4t_18["input_conditioning"]
+  n_xupBIcBxnwQmT9nJnN4t_19["context_manager"]
+  n_xupBIcBxnwQmT9nJnN4t_21["rx"]
+  n_xupBIcBxnwQmT9nJnN4t_22["node_N4t-22"]
+  n_xupBIcBxnwQmT9nJnN4t_23["btnU"]
+  n_xupBIcBxnwQmT9nJnN4t_24["btnD"]
+  n_xupBIcBxnwQmT9nJnN4t_25["btnL"]
+  n_xupBIcBxnwQmT9nJnN4t_26["btnR"]
+  n_xupBIcBxnwQmT9nJnN4t_27["btnC"]
+  n_xupBIcBxnwQmT9nJnN4t_28["node_N4t-28"]
+  n_xupBIcBxnwQmT9nJnN4t_29["sw[1:0]"]
+  n_xupBIcBxnwQmT9nJnN4t_3["fnd_[watch/stopwatch/sr04/dht11]"]
+  n_xupBIcBxnwQmT9nJnN4t_30["sw15"]
+  n_xupBIcBxnwQmT9nJnN4t_32["SR04(JA)"]
+  n_xupBIcBxnwQmT9nJnN4t_34["DHT11(JB)"]
+  n_xupBIcBxnwQmT9nJnN4t_36["control_pulsesrefresh_reqsnap_req"]
+  n_xupBIcBxnwQmT9nJnN4t_37["control_unit"]
+  n_xupBIcBxnwQmT9nJnN4t_39["control_event_arbiter"]
+  n_xupBIcBxnwQmT9nJnN4t_4["function_unit"]
+  n_xupBIcBxnwQmT9nJnN4t_41["current_context"]
+  n_xupBIcBxnwQmT9nJnN4t_42["context_event_dispatcher"]
+  n_xupBIcBxnwQmT9nJnN4t_43["watch_stopwatch_unit"]
+  n_xupBIcBxnwQmT9nJnN4t_44["sr04_unit"]
+  n_xupBIcBxnwQmT9nJnN4t_45["dht11_unit"]
+  n_xupBIcBxnwQmT9nJnN4t_47["remote_cmd_bus"]
+  n_xupBIcBxnwQmT9nJnN4t_48["event_log_unit"]
+  n_xupBIcBxnwQmT9nJnN4t_5["Local"]
+  n_xupBIcBxnwQmT9nJnN4t_50["ascii_frame_formatter"]
+  n_xupBIcBxnwQmT9nJnN4t_52["ascii_frame_sender"]
+  n_xupBIcBxnwQmT9nJnN4t_54["tx"]
+  n_xupBIcBxnwQmT9nJnN4t_55["uart_tx_fifo"]
+  n_xupBIcBxnwQmT9nJnN4t_57["telemetry_collector"]
+  n_xupBIcBxnwQmT9nJnN4t_59["Buttons"]
+  n_xupBIcBxnwQmT9nJnN4t_6["Remote"]
+  n_xupBIcBxnwQmT9nJnN4t_61["Switchs"]
+  n_xupBIcBxnwQmT9nJnN4t_62["Remote"]
+  n_xupBIcBxnwQmT9nJnN4t_63["Local"]
+  n_xupBIcBxnwQmT9nJnN4t_65["fnd_comfnd_data"]
+  n_xupBIcBxnwQmT9nJnN4t_66["display_unit"]
+  n_xupBIcBxnwQmT9nJnN4t_67["FND"]
+  n_xupBIcBxnwQmT9nJnN4t_69["[watch/stopwatch/sr04/dht11]_payload"]
+  n_xupBIcBxnwQmT9nJnN4t_7["remote_input_unit"]
+  n_xupBIcBxnwQmT9nJnN4t_71["current_contextcontext_change_pulse"]
+  n_xupBIcBxnwQmT9nJnN4t_72["SR04(JA)"]
+  n_xupBIcBxnwQmT9nJnN4t_74["trig"]
+  n_xupBIcBxnwQmT9nJnN4t_75["LED"]
+  n_xupBIcBxnwQmT9nJnN4t_77["led[2:0]"]
+  n_xupBIcBxnwQmT9nJnN4t_79["Text"]
+  n_xupBIcBxnwQmT9nJnN4t_9["echo"]
+  n_zfoJ8nr7IR9R3ZtS3frr_0["input"]
+  n_zfoJ8nr7IR9R3ZtS3frr_1["control"]
+  n_zfoJ8nr7IR9R3ZtS3frr_2["output"]
+  n_zsD84ahbDdrgX_gzH_5l_1["* 모든 모듈은 reset과 clock을 포함"]
+  n_gU8_vGPnXsWrMlz1GlUk_4 --> n_gU8_vGPnXsWrMlz1GlUk_66
+  n_gU8_vGPnXsWrMlz1GlUk_12 --> n_gU8_vGPnXsWrMlz1GlUk_14
+  n_gU8_vGPnXsWrMlz1GlUk_14 --> n_gU8_vGPnXsWrMlz1GlUk_15
+  n_gU8_vGPnXsWrMlz1GlUk_18 --> n_gU8_vGPnXsWrMlz1GlUk_39
+  n_gU8_vGPnXsWrMlz1GlUk_6 --> n_gU8_vGPnXsWrMlz1GlUk_12
+  n_gU8_vGPnXsWrMlz1GlUk_32 --> n_gU8_vGPnXsWrMlz1GlUk_44
+  n_gU8_vGPnXsWrMlz1GlUk_34 --> n_gU8_vGPnXsWrMlz1GlUk_45
+  n_gU8_vGPnXsWrMlz1GlUk_37 --> n_gU8_vGPnXsWrMlz1GlUk_4
+  n_gU8_vGPnXsWrMlz1GlUk_39 --> n_gU8_vGPnXsWrMlz1GlUk_42
+  n_gU8_vGPnXsWrMlz1GlUk_42 --> n_gU8_vGPnXsWrMlz1GlUk_66
+  n_gU8_vGPnXsWrMlz1GlUk_15 --> n_gU8_vGPnXsWrMlz1GlUk_39
+  n_gU8_vGPnXsWrMlz1GlUk_50 --> n_gU8_vGPnXsWrMlz1GlUk_52
+  n_gU8_vGPnXsWrMlz1GlUk_52 --> n_gU8_vGPnXsWrMlz1GlUk_55
+  n_gU8_vGPnXsWrMlz1GlUk_55 --> n_gU8_vGPnXsWrMlz1GlUk_62
+  n_gU8_vGPnXsWrMlz1GlUk_57 --> n_gU8_vGPnXsWrMlz1GlUk_50
+  n_gU8_vGPnXsWrMlz1GlUk_59 --> n_gU8_vGPnXsWrMlz1GlUk_18
+  n_gU8_vGPnXsWrMlz1GlUk_61 --> n_gU8_vGPnXsWrMlz1GlUk_19
+  n_gU8_vGPnXsWrMlz1GlUk_66 --> n_gU8_vGPnXsWrMlz1GlUk_67
+  n_gU8_vGPnXsWrMlz1GlUk_4 --> n_gU8_vGPnXsWrMlz1GlUk_57
+  n_gU8_vGPnXsWrMlz1GlUk_19 --> n_gU8_vGPnXsWrMlz1GlUk_39
+  n_gU8_vGPnXsWrMlz1GlUk_44 --> n_gU8_vGPnXsWrMlz1GlUk_72
+  n_gU8_vGPnXsWrMlz1GlUk_45 --> n_gU8_vGPnXsWrMlz1GlUk_75
+  n_gU8_vGPnXsWrMlz1GlUk_42 --> n_gU8_vGPnXsWrMlz1GlUk_57
+  n_xupBIcBxnwQmT9nJnN4t_4 --> n_xupBIcBxnwQmT9nJnN4t_66
+  n_xupBIcBxnwQmT9nJnN4t_12 --> n_xupBIcBxnwQmT9nJnN4t_14
+  n_xupBIcBxnwQmT9nJnN4t_14 --> n_xupBIcBxnwQmT9nJnN4t_15
+  n_xupBIcBxnwQmT9nJnN4t_18 --> n_xupBIcBxnwQmT9nJnN4t_39
+  n_xupBIcBxnwQmT9nJnN4t_6 --> n_xupBIcBxnwQmT9nJnN4t_12
+  n_xupBIcBxnwQmT9nJnN4t_32 --> n_xupBIcBxnwQmT9nJnN4t_44
+  n_xupBIcBxnwQmT9nJnN4t_34 --> n_xupBIcBxnwQmT9nJnN4t_45
+  n_xupBIcBxnwQmT9nJnN4t_37 --> n_xupBIcBxnwQmT9nJnN4t_4
+  n_xupBIcBxnwQmT9nJnN4t_39 --> n_xupBIcBxnwQmT9nJnN4t_42
+  n_xupBIcBxnwQmT9nJnN4t_42 --> n_xupBIcBxnwQmT9nJnN4t_66
+  n_xupBIcBxnwQmT9nJnN4t_15 --> n_xupBIcBxnwQmT9nJnN4t_39
+  n_xupBIcBxnwQmT9nJnN4t_50 --> n_xupBIcBxnwQmT9nJnN4t_52
+  n_xupBIcBxnwQmT9nJnN4t_52 --> n_xupBIcBxnwQmT9nJnN4t_55
+  n_xupBIcBxnwQmT9nJnN4t_55 --> n_xupBIcBxnwQmT9nJnN4t_62
+  n_xupBIcBxnwQmT9nJnN4t_57 --> n_xupBIcBxnwQmT9nJnN4t_50
+  n_xupBIcBxnwQmT9nJnN4t_59 --> n_xupBIcBxnwQmT9nJnN4t_18
+  n_xupBIcBxnwQmT9nJnN4t_61 --> n_xupBIcBxnwQmT9nJnN4t_19
+  n_xupBIcBxnwQmT9nJnN4t_66 --> n_xupBIcBxnwQmT9nJnN4t_67
+  n_xupBIcBxnwQmT9nJnN4t_4 --> n_xupBIcBxnwQmT9nJnN4t_57
+  n_xupBIcBxnwQmT9nJnN4t_19 --> n_xupBIcBxnwQmT9nJnN4t_39
+  n_xupBIcBxnwQmT9nJnN4t_44 --> n_xupBIcBxnwQmT9nJnN4t_72
+  n_xupBIcBxnwQmT9nJnN4t_45 --> n_xupBIcBxnwQmT9nJnN4t_75
+  n_xupBIcBxnwQmT9nJnN4t_42 --> n_xupBIcBxnwQmT9nJnN4t_57
+  n_6ph_AlxTgNuJ9rCcHqhe_5 --> n_6ph_AlxTgNuJ9rCcHqhe_7
+  n_6ph_AlxTgNuJ9rCcHqhe_7 --> n_6ph_AlxTgNuJ9rCcHqhe_8
+  n_SbR6JJQIqVE1rE5_B1QI_61 --> n_SbR6JJQIqVE1rE5_B1QI_119
+  n_SbR6JJQIqVE1rE5_B1QI_26 --> n_SbR6JJQIqVE1rE5_B1QI_27
+  n_SbR6JJQIqVE1rE5_B1QI_27 --> n_SbR6JJQIqVE1rE5_B1QI_28
+  n_SbR6JJQIqVE1rE5_B1QI_29 --> n_SbR6JJQIqVE1rE5_B1QI_49
+  n_SbR6JJQIqVE1rE5_B1QI_2 --> n_SbR6JJQIqVE1rE5_B1QI_26
+  n_SbR6JJQIqVE1rE5_B1QI_43 --> n_SbR6JJQIqVE1rE5_B1QI_65
+  n_SbR6JJQIqVE1rE5_B1QI_44 --> n_SbR6JJQIqVE1rE5_B1QI_66
+  n_SbR6JJQIqVE1rE5_B1QI_48 --> n_SbR6JJQIqVE1rE5_B1QI_61
+  n_SbR6JJQIqVE1rE5_B1QI_49 --> n_SbR6JJQIqVE1rE5_B1QI_50
+  n_SbR6JJQIqVE1rE5_B1QI_50 --> n_SbR6JJQIqVE1rE5_B1QI_119
+  n_SbR6JJQIqVE1rE5_B1QI_28 --> n_SbR6JJQIqVE1rE5_B1QI_49
+  n_6ph_AlxTgNuJ9rCcHqhe_8 --> n_SbR6JJQIqVE1rE5_B1QI_102
+  n_SbR6JJQIqVE1rE5_B1QI_81 --> n_SbR6JJQIqVE1rE5_B1QI_29
+  n_SbR6JJQIqVE1rE5_B1QI_82 --> n_SbR6JJQIqVE1rE5_B1QI_30
+  n_SbR6JJQIqVE1rE5_B1QI_119 --> n_SbR6JJQIqVE1rE5_B1QI_120
+  n_SbR6JJQIqVE1rE5_B1QI_30 --> n_SbR6JJQIqVE1rE5_B1QI_49
+  n_SbR6JJQIqVE1rE5_B1QI_65 --> n_SbR6JJQIqVE1rE5_B1QI_133
+  n_SbR6JJQIqVE1rE5_B1QI_66 --> n_SbR6JJQIqVE1rE5_B1QI_136

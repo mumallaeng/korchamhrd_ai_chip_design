@@ -1,0 +1,43 @@
+flowchart LR
+  n_7NoLvqlB_6QXBLo4ep7x_1["node_ep7x-1"]
+  n_7NoLvqlB_6QXBLo4ep7x_11["node_p7x-11"]
+  n_7NoLvqlB_6QXBLo4ep7x_12["Sync L"]
+  n_7NoLvqlB_6QXBLo4ep7x_14["node_p7x-14"]
+  n_7NoLvqlB_6QXBLo4ep7x_15["STOP"]
+  n_7NoLvqlB_6QXBLo4ep7x_18["node_p7x-18"]
+  n_7NoLvqlB_6QXBLo4ep7x_19["DATA_count"]
+  n_7NoLvqlB_6QXBLo4ep7x_21["node_p7x-21"]
+  n_7NoLvqlB_6QXBLo4ep7x_22["Decision_DATA"]
+  n_7NoLvqlB_6QXBLo4ep7x_24["dht11 =1 &&out_se; =1 (3_state buffer)"]
+  n_7NoLvqlB_6QXBLo4ep7x_25["start ==1"]
+  n_7NoLvqlB_6QXBLo4ep7x_27["dht 11 =0"]
+  n_7NoLvqlB_6QXBLo4ep7x_28["> 18msec"]
+  n_7NoLvqlB_6QXBLo4ep7x_3["IDLE"]
+  n_7NoLvqlB_6QXBLo4ep7x_30["dht 11 =1"]
+  n_7NoLvqlB_6QXBLo4ep7x_31["30usec"]
+  n_7NoLvqlB_6QXBLo4ep7x_33["out_sel =0"]
+  n_7NoLvqlB_6QXBLo4ep7x_34["출력 끊어도 상관 없음. drive 아니니까. 읽는건 걍 읽으셈"]
+  n_7NoLvqlB_6QXBLo4ep7x_36["node_p7x-36"]
+  n_7NoLvqlB_6QXBLo4ep7x_37["Sync H"]
+  n_7NoLvqlB_6QXBLo4ep7x_39["out_sel =0"]
+  n_7NoLvqlB_6QXBLo4ep7x_40["> 50usec (dht11 ==1)"]
+  n_7NoLvqlB_6QXBLo4ep7x_41["High 구간을 50usec && dht11 ==0 까지 기다리자 -> data sync 로 내보냄 따로 출력 x"]
+  n_7NoLvqlB_6QXBLo4ep7x_42["node_p7x-42"]
+  n_7NoLvqlB_6QXBLo4ep7x_43["DATA Sync"]
+  n_7NoLvqlB_6QXBLo4ep7x_45["out_sel =0"]
+  n_7NoLvqlB_6QXBLo4ep7x_46[">= 50 usec&dht 11 == 0"]
+  n_7NoLvqlB_6QXBLo4ep7x_48["dht 11 == 1"]
+  n_7NoLvqlB_6QXBLo4ep7x_49["0 or 1 판별, Data_reg 에 저장 , dht11 == 0"]
+  n_7NoLvqlB_6QXBLo4ep7x_5["node_ep7x-5"]
+  n_7NoLvqlB_6QXBLo4ep7x_50["bit_CNT <40"]
+  n_7NoLvqlB_6QXBLo4ep7x_51["bit_CNT == 40"]
+  n_7NoLvqlB_6QXBLo4ep7x_52["50 usec & out_sel = 1"]
+  n_7NoLvqlB_6QXBLo4ep7x_6["START"]
+  n_7NoLvqlB_6QXBLo4ep7x_8["node_ep7x-8"]
+  n_7NoLvqlB_6QXBLo4ep7x_9["WAIT"]
+  n_7NoLvqlB_6QXBLo4ep7x_5 --> n_7NoLvqlB_6QXBLo4ep7x_8
+  n_7NoLvqlB_6QXBLo4ep7x_8 --> n_7NoLvqlB_6QXBLo4ep7x_11
+  n_7NoLvqlB_6QXBLo4ep7x_14 --> n_7NoLvqlB_6QXBLo4ep7x_1
+  n_7NoLvqlB_6QXBLo4ep7x_18 --> n_7NoLvqlB_6QXBLo4ep7x_21
+  n_7NoLvqlB_6QXBLo4ep7x_21 --> n_7NoLvqlB_6QXBLo4ep7x_42
+  n_7NoLvqlB_6QXBLo4ep7x_36 --> n_7NoLvqlB_6QXBLo4ep7x_42

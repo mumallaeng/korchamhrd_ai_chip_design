@@ -1,0 +1,21 @@
+\definecolor{c101010}{HTML}{101010}
+\definecolor{c333333}{HTML}{333333}
+\definecolor{c484848}{HTML}{484848}
+\definecolor{c6b6b6b}{HTML}{6B6B6B}
+\definecolor{cffffff}{HTML}{FFFFFF}
+
+% Source: 260506-sr04-fsm-parallel.drawio, page: 페이지-1
+\begin{tikzpicture}[x=0.04cm,y=-0.04cm,>=Latex,line cap=round,line join=round]
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nRaH5bSJ8qddCBHo4QJCX_2) at (-0.29,0.00) {SR04\_start == 1};
+  \node[draw, align=center, font=\scriptsize, fill=cffffff!18, draw=c484848, minimum width=3.20cm, minimum height=3.20cm, text width=3.08cm] (nRaH5bSJ8qddCBHo4QJCX_3) at (430.00,580.00) {IDLE};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nRaH5bSJ8qddCBHo4QJCX_5) at (-0.08,3.00) {usec\_tick >= 11};
+  \node[draw, align=center, font=\scriptsize, fill=cffffff!18, draw=c6b6b6b, minimum width=3.20cm, minimum height=3.20cm, text width=3.08cm] (nRaH5bSJ8qddCBHo4QJCX_6) at (649.67,580.00) {STARTtrig = 1};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nRaH5bSJ8qddCBHo4QJCX_8) at (-0.18,1.00) {echo == 1};
+  \node[draw, align=center, font=\scriptsize, fill=cffffff!18, draw=c333333, minimum width=3.20cm, minimum height=3.20cm, text width=3.08cm] (nRaH5bSJ8qddCBHo4QJCX_9) at (870.00,580.00) {WAIT};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nRaH5bSJ8qddCBHo4QJCX_11) at (0.10,2.00) {echo == 0};
+  \node[draw, align=center, font=\scriptsize, fill=cffffff!18, draw=c101010, minimum width=3.20cm, minimum height=3.20cm, text width=3.08cm] (nRaH5bSJ8qddCBHo4QJCX_12) at (1090.00,580.00) {RESPONSE};
+  \draw[thick] (430.00,580.00) -- (649.67,580.00);
+  \draw[thick] (649.67,580.00) -- (870.00,580.00);
+  \draw[thick] (870.00,580.00) -- (1090.00,580.00);
+  \draw[thick] (1090.00,580.00) -- (1160.00,580.00) -- (1160.00,670.00) -- (430.00,670.00) -- (430.00,580.00);
+\end{tikzpicture}
