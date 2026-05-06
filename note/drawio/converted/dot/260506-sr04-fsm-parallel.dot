@@ -1,0 +1,16 @@
+digraph G {
+  graph [rankdir=LR];
+  node [shape=box, style="rounded,filled", fillcolor="#f8f9fb", color="#5b6b7a", fontname="Arial"];
+  "n_RaH5bSJ8qddCBHo4QJCX_11" [label="echo == 0"];
+  "n_RaH5bSJ8qddCBHo4QJCX_12" [label="RESPONSE"];
+  "n_RaH5bSJ8qddCBHo4QJCX_2" [label="SR04_start == 1"];
+  "n_RaH5bSJ8qddCBHo4QJCX_3" [label="IDLE"];
+  "n_RaH5bSJ8qddCBHo4QJCX_5" [label="usec_tick >= 11"];
+  "n_RaH5bSJ8qddCBHo4QJCX_6" [label="STARTtrig = 1"];
+  "n_RaH5bSJ8qddCBHo4QJCX_8" [label="echo == 1"];
+  "n_RaH5bSJ8qddCBHo4QJCX_9" [label="WAIT"];
+  "n_RaH5bSJ8qddCBHo4QJCX_3" -> "n_RaH5bSJ8qddCBHo4QJCX_6";
+  "n_RaH5bSJ8qddCBHo4QJCX_6" -> "n_RaH5bSJ8qddCBHo4QJCX_9";
+  "n_RaH5bSJ8qddCBHo4QJCX_9" -> "n_RaH5bSJ8qddCBHo4QJCX_12";
+  "n_RaH5bSJ8qddCBHo4QJCX_12" -> "n_RaH5bSJ8qddCBHo4QJCX_3";
+}

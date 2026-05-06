@@ -1,0 +1,28 @@
+digraph G {
+  graph [rankdir=LR];
+  node [shape=box, style="rounded,filled", fillcolor="#f8f9fb", color="#5b6b7a", fontname="Arial"];
+  "n_uJbS0oFlKzLOFJ9pkARO_13" [label="SYNC HIGH"];
+  "n_uJbS0oFlKzLOFJ9pkARO_30" [label="DATACOUNT"];
+  "n_uJbS0oFlKzLOFJ9pkARO_32" [label="DATADECISION"];
+  "n_uJbS0oFlKzLOFJ9pkARO_35" [label="STOP"];
+  "n_uJbS0oFlKzLOFJ9pkARO_37" [label="DATA SYNC"];
+  "n_uJbS0oFlKzLOFJ9pkARO_40" [label="18 msec"];
+  "n_uJbS0oFlKzLOFJ9pkARO_41" [label="30 msec"];
+  "n_uJbS0oFlKzLOFJ9pkARO_42" [label="50msec (dht11==1)"];
+  "n_uJbS0oFlKzLOFJ9pkARO_43" [label="50msec (dht11==0)"];
+  "n_uJbS0oFlKzLOFJ9pkARO_44" [label="dht11==1"];
+  "n_uJbS0oFlKzLOFJ9pkARO_7" [label="WAIT"];
+  "n_uJbS0oFlKzLOFJ9pkARO_9" [label="SYNC LOW"];
+  "n_wMw_0nVfDBvoHkL4EHTT_11" [label="IDLEdht11=1outsel=1"];
+  "n_wMw_0nVfDBvoHkL4EHTT_14" [label="STARTdht11 = 0"];
+  "n_wMw_0nVfDBvoHkL4EHTT_21" [label="DHT11_start==1"];
+  "n_wMw_0nVfDBvoHkL4EHTT_22" [label="outsell is 3 state bufferLOW: 30msecHIGH: 20 <= MCU <= 40us"];
+  "n_wMw_0nVfDBvoHkL4EHTT_11" -> "n_wMw_0nVfDBvoHkL4EHTT_14";
+  "n_wMw_0nVfDBvoHkL4EHTT_14" -> "n_uJbS0oFlKzLOFJ9pkARO_7";
+  "n_uJbS0oFlKzLOFJ9pkARO_7" -> "n_uJbS0oFlKzLOFJ9pkARO_9";
+  "n_uJbS0oFlKzLOFJ9pkARO_9" -> "n_uJbS0oFlKzLOFJ9pkARO_13";
+  "n_uJbS0oFlKzLOFJ9pkARO_13" -> "n_uJbS0oFlKzLOFJ9pkARO_37";
+  "n_uJbS0oFlKzLOFJ9pkARO_30" -> "n_uJbS0oFlKzLOFJ9pkARO_32";
+  "n_uJbS0oFlKzLOFJ9pkARO_32" -> "n_uJbS0oFlKzLOFJ9pkARO_35";
+  "n_uJbS0oFlKzLOFJ9pkARO_32" -> "n_uJbS0oFlKzLOFJ9pkARO_37";
+}

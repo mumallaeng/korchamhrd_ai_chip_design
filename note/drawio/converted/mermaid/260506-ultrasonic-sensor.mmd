@@ -1,0 +1,63 @@
+flowchart LR
+  n_KuxB96fk1PK30fdosjAa_15["SR04_start == 1"]
+  n_KuxB96fk1PK30fdosjAa_16["usec_tick >= 11"]
+  n_KuxB96fk1PK30fdosjAa_17["echo == 1"]
+  n_KuxB96fk1PK30fdosjAa_18["echo == 0"]
+  n_KuxB96fk1PK30fdosjAa_2["IDLE"]
+  n_KuxB96fk1PK30fdosjAa_4["STARTtrig = 1"]
+  n_KuxB96fk1PK30fdosjAa_6["WAIT"]
+  n_KuxB96fk1PK30fdosjAa_8["Response"]
+  n_ZWzSoCU0VGYe7Tsr4cPh_1["IDLE"]
+  n_ZWzSoCU0VGYe7Tsr4cPh_11["trig = 1"]
+  n_ZWzSoCU0VGYe7Tsr4cPh_13["tick_us == 1"]
+  n_ZWzSoCU0VGYe7Tsr4cPh_16["tick_cnt ++"]
+  n_ZWzSoCU0VGYe7Tsr4cPh_18["tick_cnt >= 11"]
+  n_ZWzSoCU0VGYe7Tsr4cPh_2["trig = 0"]
+  n_ZWzSoCU0VGYe7Tsr4cPh_20["Wait"]
+  n_ZWzSoCU0VGYe7Tsr4cPh_22["True"]
+  n_ZWzSoCU0VGYe7Tsr4cPh_24["False"]
+  n_ZWzSoCU0VGYe7Tsr4cPh_25["True"]
+  n_ZWzSoCU0VGYe7Tsr4cPh_26["trig = 0"]
+  n_ZWzSoCU0VGYe7Tsr4cPh_28["tick_us == 1"]
+  n_ZWzSoCU0VGYe7Tsr4cPh_31["False"]
+  n_ZWzSoCU0VGYe7Tsr4cPh_32["True"]
+  n_ZWzSoCU0VGYe7Tsr4cPh_34["echo == 1"]
+  n_ZWzSoCU0VGYe7Tsr4cPh_36["tick_cnt = 0"]
+  n_ZWzSoCU0VGYe7Tsr4cPh_39["False"]
+  n_ZWzSoCU0VGYe7Tsr4cPh_4["SR04_start==1"]
+  n_ZWzSoCU0VGYe7Tsr4cPh_40["False"]
+  n_ZWzSoCU0VGYe7Tsr4cPh_41["response"]
+  n_ZWzSoCU0VGYe7Tsr4cPh_43["tick_us == 1"]
+  n_ZWzSoCU0VGYe7Tsr4cPh_47["tick_cnt ++"]
+  n_ZWzSoCU0VGYe7Tsr4cPh_49["echo == 0"]
+  n_ZWzSoCU0VGYe7Tsr4cPh_51["distance = tick_cnt / 58"]
+  n_ZWzSoCU0VGYe7Tsr4cPh_7["False"]
+  n_ZWzSoCU0VGYe7Tsr4cPh_9["Start"]
+  n_KuxB96fk1PK30fdosjAa_2 --> n_KuxB96fk1PK30fdosjAa_4
+  n_KuxB96fk1PK30fdosjAa_4 --> n_KuxB96fk1PK30fdosjAa_6
+  n_KuxB96fk1PK30fdosjAa_6 --> n_KuxB96fk1PK30fdosjAa_8
+  n_KuxB96fk1PK30fdosjAa_8 --> n_KuxB96fk1PK30fdosjAa_2
+  n_ZWzSoCU0VGYe7Tsr4cPh_1 --> n_ZWzSoCU0VGYe7Tsr4cPh_2
+  n_ZWzSoCU0VGYe7Tsr4cPh_2 --> n_ZWzSoCU0VGYe7Tsr4cPh_4
+  n_ZWzSoCU0VGYe7Tsr4cPh_4 --> n_ZWzSoCU0VGYe7Tsr4cPh_9
+  n_ZWzSoCU0VGYe7Tsr4cPh_4 --> n_ZWzSoCU0VGYe7Tsr4cPh_1
+  n_ZWzSoCU0VGYe7Tsr4cPh_9 --> n_ZWzSoCU0VGYe7Tsr4cPh_11
+  n_ZWzSoCU0VGYe7Tsr4cPh_11 --> n_ZWzSoCU0VGYe7Tsr4cPh_13
+  n_ZWzSoCU0VGYe7Tsr4cPh_13 --> n_ZWzSoCU0VGYe7Tsr4cPh_16
+  n_ZWzSoCU0VGYe7Tsr4cPh_13 --> n_ZWzSoCU0VGYe7Tsr4cPh_9
+  n_ZWzSoCU0VGYe7Tsr4cPh_16 --> n_ZWzSoCU0VGYe7Tsr4cPh_18
+  n_ZWzSoCU0VGYe7Tsr4cPh_18 --> n_ZWzSoCU0VGYe7Tsr4cPh_20
+  n_ZWzSoCU0VGYe7Tsr4cPh_18 --> n_ZWzSoCU0VGYe7Tsr4cPh_9
+  n_ZWzSoCU0VGYe7Tsr4cPh_20 --> n_ZWzSoCU0VGYe7Tsr4cPh_26
+  n_ZWzSoCU0VGYe7Tsr4cPh_26 --> n_ZWzSoCU0VGYe7Tsr4cPh_28
+  n_ZWzSoCU0VGYe7Tsr4cPh_28 --> n_ZWzSoCU0VGYe7Tsr4cPh_20
+  n_ZWzSoCU0VGYe7Tsr4cPh_28 --> n_ZWzSoCU0VGYe7Tsr4cPh_34
+  n_ZWzSoCU0VGYe7Tsr4cPh_34 --> n_ZWzSoCU0VGYe7Tsr4cPh_36
+  n_ZWzSoCU0VGYe7Tsr4cPh_34 --> n_ZWzSoCU0VGYe7Tsr4cPh_20
+  n_ZWzSoCU0VGYe7Tsr4cPh_36 --> n_ZWzSoCU0VGYe7Tsr4cPh_41
+  n_ZWzSoCU0VGYe7Tsr4cPh_41 --> n_ZWzSoCU0VGYe7Tsr4cPh_43
+  n_ZWzSoCU0VGYe7Tsr4cPh_43 --> n_ZWzSoCU0VGYe7Tsr4cPh_47
+  n_ZWzSoCU0VGYe7Tsr4cPh_43 --> n_ZWzSoCU0VGYe7Tsr4cPh_41
+  n_ZWzSoCU0VGYe7Tsr4cPh_47 --> n_ZWzSoCU0VGYe7Tsr4cPh_49
+  n_ZWzSoCU0VGYe7Tsr4cPh_49 --> n_ZWzSoCU0VGYe7Tsr4cPh_51
+  n_ZWzSoCU0VGYe7Tsr4cPh_51 --> n_ZWzSoCU0VGYe7Tsr4cPh_1

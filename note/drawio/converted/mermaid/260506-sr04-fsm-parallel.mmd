@@ -1,0 +1,13 @@
+flowchart LR
+  n_RaH5bSJ8qddCBHo4QJCX_11["echo == 0"]
+  n_RaH5bSJ8qddCBHo4QJCX_12["RESPONSE"]
+  n_RaH5bSJ8qddCBHo4QJCX_2["SR04_start == 1"]
+  n_RaH5bSJ8qddCBHo4QJCX_3["IDLE"]
+  n_RaH5bSJ8qddCBHo4QJCX_5["usec_tick >= 11"]
+  n_RaH5bSJ8qddCBHo4QJCX_6["STARTtrig = 1"]
+  n_RaH5bSJ8qddCBHo4QJCX_8["echo == 1"]
+  n_RaH5bSJ8qddCBHo4QJCX_9["WAIT"]
+  n_RaH5bSJ8qddCBHo4QJCX_3 --> n_RaH5bSJ8qddCBHo4QJCX_6
+  n_RaH5bSJ8qddCBHo4QJCX_6 --> n_RaH5bSJ8qddCBHo4QJCX_9
+  n_RaH5bSJ8qddCBHo4QJCX_9 --> n_RaH5bSJ8qddCBHo4QJCX_12
+  n_RaH5bSJ8qddCBHo4QJCX_12 --> n_RaH5bSJ8qddCBHo4QJCX_3

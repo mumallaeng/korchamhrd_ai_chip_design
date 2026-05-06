@@ -1,0 +1,71 @@
+\definecolor{cf0f0f0}{HTML}{F0F0F0}
+
+% Source: 260506-ultrasonic-sensor.drawio, page: FSM
+\begin{tikzpicture}[x=0.04cm,y=-0.04cm,>=Latex,line cap=round,line join=round]
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nKuxB96fk1PK30fdosjAa_15) at (-0.29,0.00) {SR04\_start == 1};
+  \node[align=center, font=\scriptsize, fill=cf0f0f0!18, minimum width=3.20cm, minimum height=3.20cm, text width=3.08cm] (nKuxB96fk1PK30fdosjAa_2) at (69.00,320.00) {IDLE};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nKuxB96fk1PK30fdosjAa_16) at (-0.08,3.00) {usec\_tick >= 11};
+  \node[align=center, font=\scriptsize, fill=cf0f0f0!18, minimum width=3.20cm, minimum height=3.20cm, text width=3.08cm] (nKuxB96fk1PK30fdosjAa_4) at (288.67,320.00) {STARTtrig = 1};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nKuxB96fk1PK30fdosjAa_17) at (-0.18,1.00) {echo == 1};
+  \node[align=center, font=\scriptsize, fill=cf0f0f0!18, minimum width=3.20cm, minimum height=3.20cm, text width=3.08cm] (nKuxB96fk1PK30fdosjAa_6) at (509.00,320.00) {WAIT};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nKuxB96fk1PK30fdosjAa_18) at (0.10,2.00) {echo == 0};
+  \node[align=center, font=\scriptsize, fill=cf0f0f0!18, minimum width=3.20cm, minimum height=3.20cm, text width=3.08cm] (nKuxB96fk1PK30fdosjAa_8) at (729.00,320.00) {Response};
+  \draw[thick] (69.00,320.00) -- (288.67,320.00);
+  \draw[thick] (288.67,320.00) -- (509.00,320.00);
+  \draw[thick] (509.00,320.00) -- (729.00,320.00);
+  \draw[thick] (729.00,320.00) -- (799.00,320.00) -- (799.00,410.00) -- (69.00,410.00) -- (69.00,320.00);
+\end{tikzpicture}
+% Source: 260506-ultrasonic-sensor.drawio, page: ASM
+\begin{tikzpicture}[x=0.04cm,y=-0.04cm,>=Latex,line cap=round,line join=round]
+  \node[draw, align=center, font=\scriptsize, minimum width=3.20cm, minimum height=3.20cm, text width=3.08cm] (nZWzSoCU0VGYe7Tsr4cPh_1) at (110.00,130.00) {IDLE};
+  \node[draw, align=center, font=\scriptsize, minimum width=4.80cm, minimum height=2.40cm, text width=4.68cm] (nZWzSoCU0VGYe7Tsr4cPh_2) at (110.00,290.00) {trig = 0};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nZWzSoCU0VGYe7Tsr4cPh_22) at (-0.85,-1.00) {True};
+  \node[draw, align=center, font=\scriptsize, minimum width=5.60cm, minimum height=3.20cm, text width=5.48cm] (nZWzSoCU0VGYe7Tsr4cPh_4) at (110.00,430.00) {SR04\_start==1};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nZWzSoCU0VGYe7Tsr4cPh_7) at (-0.81,0.00) {False};
+  \node[draw, align=center, font=\scriptsize, minimum width=3.20cm, minimum height=3.20cm, text width=3.08cm] (nZWzSoCU0VGYe7Tsr4cPh_9) at (340.00,130.00) {Start};
+  \node[draw, align=center, font=\scriptsize, minimum width=4.80cm, minimum height=2.40cm, text width=4.68cm] (nZWzSoCU0VGYe7Tsr4cPh_11) at (340.00,290.00) {trig = 1};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nZWzSoCU0VGYe7Tsr4cPh_32) at (-0.17,0.00) {True};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nZWzSoCU0VGYe7Tsr4cPh_31) at (-0.93,0.00) {False};
+  \node[draw, align=center, font=\scriptsize, minimum width=5.60cm, minimum height=3.20cm, text width=5.48cm] (nZWzSoCU0VGYe7Tsr4cPh_13) at (340.00,430.00) {tick\_us == 1};
+  \node[draw, align=center, font=\scriptsize, minimum width=4.80cm, minimum height=2.40cm, text width=4.68cm] (nZWzSoCU0VGYe7Tsr4cPh_16) at (340.00,590.00) {tick\_cnt ++};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nZWzSoCU0VGYe7Tsr4cPh_25) at (-0.77,-2.00) {True};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nZWzSoCU0VGYe7Tsr4cPh_24) at (-0.91,-1.00) {False};
+  \node[draw, align=center, font=\scriptsize, minimum width=5.60cm, minimum height=3.20cm, text width=5.48cm] (nZWzSoCU0VGYe7Tsr4cPh_18) at (340.00,730.00) {tick\_cnt >= 11};
+  \node[draw, align=center, font=\scriptsize, minimum width=3.20cm, minimum height=3.20cm, text width=3.08cm] (nZWzSoCU0VGYe7Tsr4cPh_20) at (570.00,130.00) {Wait};
+  \node[draw, align=center, font=\scriptsize, minimum width=4.80cm, minimum height=2.40cm, text width=4.68cm] (nZWzSoCU0VGYe7Tsr4cPh_26) at (570.00,290.00) {trig = 0};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nZWzSoCU0VGYe7Tsr4cPh_40) at (-0.94,0.00) {False};
+  \node[draw, align=center, font=\scriptsize, minimum width=5.60cm, minimum height=3.20cm, text width=5.48cm] (nZWzSoCU0VGYe7Tsr4cPh_28) at (570.00,430.00) {tick\_us == 1};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nZWzSoCU0VGYe7Tsr4cPh_39) at (-0.93,3.00) {False};
+  \node[draw, align=center, font=\scriptsize, minimum width=5.60cm, minimum height=3.20cm, text width=5.48cm] (nZWzSoCU0VGYe7Tsr4cPh_34) at (570.00,590.00) {echo == 1};
+  \node[draw, align=center, font=\scriptsize, minimum width=4.80cm, minimum height=2.40cm, text width=4.68cm] (nZWzSoCU0VGYe7Tsr4cPh_36) at (570.00,750.00) {tick\_cnt = 0};
+  \node[draw, align=center, font=\scriptsize, minimum width=3.20cm, minimum height=3.20cm, text width=3.08cm] (nZWzSoCU0VGYe7Tsr4cPh_41) at (780.00,130.00) {response};
+  \node[draw, align=center, font=\scriptsize, minimum width=5.60cm, minimum height=3.20cm, text width=5.48cm] (nZWzSoCU0VGYe7Tsr4cPh_43) at (780.00,290.00) {tick\_us == 1};
+  \node[draw, align=center, font=\scriptsize, minimum width=4.80cm, minimum height=2.40cm, text width=4.68cm] (nZWzSoCU0VGYe7Tsr4cPh_47) at (780.00,450.00) {tick\_cnt ++};
+  \node[draw, align=center, font=\scriptsize, minimum width=5.60cm, minimum height=3.20cm, text width=5.48cm] (nZWzSoCU0VGYe7Tsr4cPh_49) at (780.00,590.00) {echo == 0};
+  \node[draw, align=center, font=\scriptsize, minimum width=4.80cm, minimum height=2.40cm, text width=4.68cm] (nZWzSoCU0VGYe7Tsr4cPh_51) at (780.00,750.00) {distance = tick\_cnt / 58};
+  \draw[thick] (110.00,130.00) -- (110.00,290.00);
+  \draw[thick] (110.00,290.00) -- (110.00,430.00);
+  \draw[thick] (110.00,430.00) -- (110.00,490.00) -- (200.00,490.00) -- (200.00,60.00) -- (340.00,60.00) -- (340.00,130.00);
+  \draw[thick] (110.00,430.00) -- (20.00,430.00) -- (20.00,134.00) -- (110.00,130.00);
+  \draw[thick] (340.00,130.00) -- (340.00,290.00);
+  \draw[thick] (340.00,290.00) -- (340.00,430.00);
+  \draw[thick] (340.00,430.00) -- (340.00,590.00);
+  \draw[thick] (340.00,430.00) -- (250.00,430.00) -- (250.00,130.00) -- (340.00,130.00);
+  \draw[thick] (340.00,590.00) -- (340.00,730.00);
+  \draw[thick] (340.00,730.00) -- (340.00,790.00) -- (440.00,790.00) -- (440.00,60.00) -- (570.00,60.00) -- (570.00,130.00);
+  \draw[thick] (340.00,730.00) -- (250.00,730.00) -- (250.00,130.00) -- (340.00,130.00);
+  \draw[thick] (570.00,130.00) -- (570.00,290.00);
+  \draw[thick] (570.00,290.00) -- (570.00,430.00);
+  \draw[thick] (570.00,430.00) -- (570.00,130.00);
+  \draw[thick] (570.00,430.00) -- (570.00,590.00);
+  \draw[thick] (570.00,590.00) -- (570.00,750.00);
+  \draw[thick] (570.00,590.00) -- (480.00,590.00) -- (480.00,130.00) -- (570.00,130.00);
+  \draw[thick] (570.00,750.00) -- (570.00,800.00) -- (660.00,800.00) -- (660.00,60.00) -- (780.00,60.00) -- (780.00,130.00);
+  \draw[thick] (780.00,130.00) -- (780.00,290.00);
+  \draw[thick] (780.00,290.00) -- (780.00,450.00);
+  \draw[thick] (780.00,290.00) -- (690.00,290.00) -- (690.00,130.00) -- (780.00,130.00);
+  \draw[thick] (780.00,450.00) -- (780.00,590.00);
+  \draw[thick] (780.00,590.00) -- (780.00,750.00);
+  \draw[thick] (780.00,590.00) -- (690.00,590.00) -- (690.00,130.00) -- (740.00,130.00);
+  \draw[thick] (780.00,750.00) -- (780.00,810.00) -- (880.00,810.00) -- (880.00,-10.00) -- (110.00,-10.00) -- (110.00,130.00);
+\end{tikzpicture}

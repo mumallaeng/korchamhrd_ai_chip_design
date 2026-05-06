@@ -1,0 +1,33 @@
+\definecolor{cf0f0f0}{HTML}{F0F0F0}
+
+% Source: 260506-temp-humidity.drawio, page: FSM
+\begin{tikzpicture}[x=0.04cm,y=-0.04cm,>=Latex,line cap=round,line join=round]
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nwMw_0nVfDBvoHkL4EHTT_21) at (-0.16,2.00) {DHT11\_start==1};
+  \node[align=center, font=\scriptsize, fill=cf0f0f0!18, minimum width=3.20cm, minimum height=3.20cm, text width=3.08cm] (nwMw_0nVfDBvoHkL4EHTT_11) at (80.00,120.00) {IDLEdht11=1outsel=1};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nuJbS0oFlKzLOFJ9pkARO_40) at (-0.09,1.00) {18 msec};
+  \node[align=center, font=\scriptsize, fill=cf0f0f0!18, minimum width=3.20cm, minimum height=3.20cm, text width=3.08cm] (nwMw_0nVfDBvoHkL4EHTT_14) at (299.67,120.00) {STARTdht11 = 0};
+  \node[align=center, font=\scriptsize, minimum width=7.20cm, minimum height=1.20cm, text width=7.08cm] (nwMw_0nVfDBvoHkL4EHTT_22) at (130.00,25.00) {outsell is 3 state bufferLOW: 30msecHIGH: 20 <= MCU <= 40us};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nuJbS0oFlKzLOFJ9pkARO_41) at (0.66,-2.00) {30 msec};
+  \node[align=center, font=\scriptsize, fill=cf0f0f0!18, minimum width=3.20cm, minimum height=3.20cm, text width=3.08cm] (nuJbS0oFlKzLOFJ9pkARO_7) at (520.00,120.00) {WAIT};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nuJbS0oFlKzLOFJ9pkARO_42) at (-0.11,0.00) {50msec (dht11==1)};
+  \node[align=center, font=\scriptsize, fill=cf0f0f0!18, minimum width=3.20cm, minimum height=3.20cm, text width=3.08cm] (nuJbS0oFlKzLOFJ9pkARO_9) at (80.00,320.00) {SYNC LOW};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nuJbS0oFlKzLOFJ9pkARO_43) at (-0.09,0.00) {50msec (dht11==0)};
+  \node[align=center, font=\scriptsize, fill=cf0f0f0!18, minimum width=3.20cm, minimum height=3.20cm, text width=3.08cm] (nuJbS0oFlKzLOFJ9pkARO_13) at (299.67,320.00) {SYNC HIGH};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nuJbS0oFlKzLOFJ9pkARO_44) at (0.79,3.00) {dht11==1};
+  \node[align=center, font=\scriptsize, fill=cf0f0f0!18, minimum width=3.20cm, minimum height=3.20cm, text width=3.08cm] (nuJbS0oFlKzLOFJ9pkARO_30) at (80.00,520.00) {DATACOUNT};
+  \node[align=center, font=\scriptsize, fill=cf0f0f0!18, minimum width=3.20cm, minimum height=3.20cm, text width=3.08cm] (nuJbS0oFlKzLOFJ9pkARO_32) at (299.67,520.00) {DATADECISION};
+  \node[align=center, font=\scriptsize, fill=cf0f0f0!18, minimum width=3.20cm, minimum height=3.20cm, text width=3.08cm] (nuJbS0oFlKzLOFJ9pkARO_35) at (521.00,520.00) {STOP};
+  \node[align=center, font=\scriptsize, fill=cf0f0f0!18, minimum width=3.20cm, minimum height=3.20cm, text width=3.08cm] (nuJbS0oFlKzLOFJ9pkARO_37) at (520.00,320.00) {DATA SYNC};
+  \draw[thick] (80.00,120.00) -- (299.67,120.00);
+  \draw[thick] (299.67,120.00) -- (520.00,120.00);
+  \draw[thick] (520.00,120.00) -- (590.00,120.00) -- (590.00,240.00) -- (80.00,240.00) -- (80.00,320.00);
+  \draw[thick] (80.00,320.00) -- (80.00,280.00) -- (80.00,320.00) -- (299.67,320.00);
+  \draw[thick] (299.67,320.00) -- (520.00,320.00);
+  \draw[thick] (560.00,320.00) -- (590.00,320.00) -- (590.00,440.00) -- (80.00,440.00) -- (80.00,520.00);
+  \draw[thick] (80.00,520.00) -- (80.00,480.00) -- (80.00,520.00) -- (299.67,520.00);
+  \draw[thick] (299.67,520.00) -- (521.00,520.00);
+  \draw[thick] (299.67,520.00) -- (300.00,600.00) -- (670.00,600.00) -- (670.00,320.00) -- (520.00,320.00);
+\end{tikzpicture}
+% Source: 260506-temp-humidity.drawio, page: ASM
+\begin{tikzpicture}[x=0.04cm,y=-0.04cm,>=Latex,line cap=round,line join=round]
+\end{tikzpicture}

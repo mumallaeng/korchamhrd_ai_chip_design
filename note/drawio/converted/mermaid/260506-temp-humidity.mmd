@@ -1,0 +1,25 @@
+flowchart LR
+  n_uJbS0oFlKzLOFJ9pkARO_13["SYNC HIGH"]
+  n_uJbS0oFlKzLOFJ9pkARO_30["DATACOUNT"]
+  n_uJbS0oFlKzLOFJ9pkARO_32["DATADECISION"]
+  n_uJbS0oFlKzLOFJ9pkARO_35["STOP"]
+  n_uJbS0oFlKzLOFJ9pkARO_37["DATA SYNC"]
+  n_uJbS0oFlKzLOFJ9pkARO_40["18 msec"]
+  n_uJbS0oFlKzLOFJ9pkARO_41["30 msec"]
+  n_uJbS0oFlKzLOFJ9pkARO_42["50msec (dht11==1)"]
+  n_uJbS0oFlKzLOFJ9pkARO_43["50msec (dht11==0)"]
+  n_uJbS0oFlKzLOFJ9pkARO_44["dht11==1"]
+  n_uJbS0oFlKzLOFJ9pkARO_7["WAIT"]
+  n_uJbS0oFlKzLOFJ9pkARO_9["SYNC LOW"]
+  n_wMw_0nVfDBvoHkL4EHTT_11["IDLEdht11=1outsel=1"]
+  n_wMw_0nVfDBvoHkL4EHTT_14["STARTdht11 = 0"]
+  n_wMw_0nVfDBvoHkL4EHTT_21["DHT11_start==1"]
+  n_wMw_0nVfDBvoHkL4EHTT_22["outsell is 3 state bufferLOW: 30msecHIGH: 20 <= MCU <= 40us"]
+  n_wMw_0nVfDBvoHkL4EHTT_11 --> n_wMw_0nVfDBvoHkL4EHTT_14
+  n_wMw_0nVfDBvoHkL4EHTT_14 --> n_uJbS0oFlKzLOFJ9pkARO_7
+  n_uJbS0oFlKzLOFJ9pkARO_7 --> n_uJbS0oFlKzLOFJ9pkARO_9
+  n_uJbS0oFlKzLOFJ9pkARO_9 --> n_uJbS0oFlKzLOFJ9pkARO_13
+  n_uJbS0oFlKzLOFJ9pkARO_13 --> n_uJbS0oFlKzLOFJ9pkARO_37
+  n_uJbS0oFlKzLOFJ9pkARO_30 --> n_uJbS0oFlKzLOFJ9pkARO_32
+  n_uJbS0oFlKzLOFJ9pkARO_32 --> n_uJbS0oFlKzLOFJ9pkARO_35
+  n_uJbS0oFlKzLOFJ9pkARO_32 --> n_uJbS0oFlKzLOFJ9pkARO_37
