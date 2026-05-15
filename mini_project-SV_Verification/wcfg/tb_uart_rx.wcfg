@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_uart_rx_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="\$unit_tb_uart_rx_sv " />
+            <top_module name="glbl" />
+            <top_module name="std" />
+            <top_module name="tb_uart_rx" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="73538275000fs"></ZoomStartTime>
+      <ZoomEndTime time="74289275001fs"></ZoomEndTime>
+      <Cursor1Time time="74657275000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="170"></NameColumnWidth>
+      <ValueColumnWidth column_width="77"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="8" />
+   <wvobject type="logic" fp_name="/tb_uart_rx/tb_if/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_uart_rx/tb_if/rst">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_uart_rx/tb_if/expected_byte">
+      <obj_property name="ElementShortName">expected_byte[7:0]</obj_property>
+      <obj_property name="ObjectShortName">expected_byte[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_uart_rx/tb_if/baud_tick">
+      <obj_property name="ElementShortName">baud_tick</obj_property>
+      <obj_property name="ObjectShortName">baud_tick</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_uart_rx/tb_if/rx">
+      <obj_property name="ElementShortName">rx</obj_property>
+      <obj_property name="ObjectShortName">rx</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_uart_rx/tb_if/rx_done">
+      <obj_property name="ElementShortName">rx_done</obj_property>
+      <obj_property name="ObjectShortName">rx_done</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_uart_rx/tb_if/rx_data">
+      <obj_property name="ElementShortName">rx_data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">rx_data[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_uart_rx/dut/c_state">
+      <obj_property name="ElementShortName">c_state[1:0]</obj_property>
+      <obj_property name="ObjectShortName">c_state[1:0]</obj_property>
+   </wvobject>
+</wave_config>
