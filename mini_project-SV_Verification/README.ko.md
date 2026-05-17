@@ -459,7 +459,7 @@ random trial을 256회 반복하면서 ordering과 data 일치가 계속 유지�
 
 <img width="961" height="431" alt="image18" src="https://github.com/user-attachments/assets/d5b0da8c-d2f2-4d89-95ce-c1e860f86a8a" />
 
-시나리오 3은 앞의 동일한 random 구간에서 payload_len=1부터 4 구간의 간격 1에서 2는 0~8, 2에서 3은 8~16, 3에서 4는 16~32 byte baud_tick 간격이 모두 나왔는지를 확인한다.
+시나리오 3은 앞의 동일한 random 구간에서 payload_len=1부터 4 구간의 간격 1에서 2는 0\~8, 2에서 3은 8\~16, 3에서 4는 16\~32 byte baud_tick 간격이 모두 나왔는지를 확인한다.
 
 Scoreboard에 누적된 TC-LOOP-004, TC-LOOP-005 PASS 로그로 빠른 확인이 가능하다.
 

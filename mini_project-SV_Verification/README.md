@@ -454,7 +454,7 @@ Scenario 2 also checks whether the frame last value is 1 and tx_busy=1 is actual
 **Verification of TC-LOOP-004 and TC-LOOP-005 in the same random section**
 <img width="961" height="431" alt="image18" src="https://github.com/user-attachments/assets/d5b0da8c-d2f2-4d89-95ce-c1e860f86a8a" />
 
-Scenario 3 verifies whether the baud_tick intervals of 1 to 2 (0~8), 2 to 3 (8~16), and 3 to 4 (16~32 bytes) all appeared within the same random interval as in the preceding scenario, with payload_len ranging from 1 to 4.
+Scenario 3 verifies whether the baud_tick intervals of 1 to 2 (0\~8), 2 to 3 (8\~16), and 3 to 4 (16\~32 bytes) all appeared within the same random interval as in the preceding scenario, with payload_len ranging from 1 to 4.
 
 The accumulated TC-LOOP-004 and TC-LOOP-005 PASS logs on the Scoreboard allow for quick verification.
 
