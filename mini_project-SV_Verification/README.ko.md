@@ -2,9 +2,13 @@
 
 # Verification of UART FIFO Loopback Using SystemVerilog
 
-김연우
-
 2026.05.12 ~ 2026.05.17
+
+> *[컨소시엄] 온디바이스AI 시스템반도체 설계 2기* 교육과정 SystemVerilog 수업에서 진행된 개인 과제입니다.
+
+| 이름 | 담당 |
+| --- | --- |
+| 김연우 ([@mumallaeng](https://github.com/mumallaeng)) | UART·FIFO SystemVerilog 재작성, class 기반 testbench 설계·검증 |
 
 ## 1. 개요 (Overview)
 

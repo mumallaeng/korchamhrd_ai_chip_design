@@ -2,11 +2,15 @@ English | [한국어](README.ko.md)
 
 # Verification of UART FIFO Loopback Using SystemVerilog
 
-Kim Yeonwoo
-
 2026.05.12 ~ 2026.05.17
 
-## 1. Overview (Overview)
+> A personal project carried out in the SystemVerilog class of *[Consortium] On-Device AI System Semiconductor Design, 2nd Cohort*.
+
+| Name | Responsibilities |
+| --- | --- |
+| Yeonwoo Gim ([@mumallaeng](https://github.com/mumallaeng)) | SystemVerilog rewrite of UART and FIFO, class-based testbench design and verification |
+
+## 1. Overview
 
 ### 1.1 Purpose and Objectives
 
@@ -93,7 +97,7 @@ This learning flow expanded in the order of Watch_Stopwatch -> UART -> FIFO -> S
 
 Therefore, within the entire learning sequence, the UART+FIFO section was selected as the area where SystemVerilog improvements are most clearly demonstrated.
 
-### 1.7 Design Specification Summary (Specification Summary)
+### 1.7 Design Specification Summary
 
 | Item | Content |
 |---|---|
@@ -105,7 +109,7 @@ Therefore, within the entire learning sequence, the UART+FIFO section was select
 | top module | uart_fifo_loopback |
 | Design Goal | Implementation of buffered loopback path and completion of self-checking verification |
 
-## 2. Project Management (Project Management)
+## 2. Project Management
 
 ### 2.1 Schedule Planning (Schedule)
 
@@ -117,7 +121,7 @@ Therefore, within the entire learning sequence, the UART+FIFO section was select
 | Verification | 2026.05.14 ~ 2026.05.15 | Verification scenario confirmation and code writing |
 | Deliverables Compilation | 2026.05.16 ~ 2026.05.17 | Presentation materials, completion report, schedule table, and log compilation |
 
-### 2.2 Design Environment (Design Environment)
+### 2.2 Design Environment
 
 | Category | Content |
 |---|---|
