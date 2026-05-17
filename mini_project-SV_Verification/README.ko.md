@@ -6,6 +6,9 @@
 
 > *[컨소시엄] 온디바이스AI 시스템반도체 설계 2기* 교육과정 SystemVerilog 수업에서 진행된 개인 과제입니다.
 
+| <img width="400" alt="sv-verification-testbench" src="https://github.com/user-attachments/assets/9d6335b2-a65e-489f-b1e8-d00d4e1af0dd" /> | <img width="400" alt="sv-verification-loopback-waveform" src="https://github.com/user-attachments/assets/41208b1e-e1fd-47c4-b2da-360cd8a3c171" /> |
+|:---:|:---:|
+
 | 이름 | 담당 |
 | --- | --- |
 | 김연우 ([@mumallaeng](https://github.com/mumallaeng)) | UART·FIFO SystemVerilog 재작성, class 기반 testbench 설계·검증 |

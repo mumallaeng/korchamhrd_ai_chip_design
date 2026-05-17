@@ -6,6 +6,9 @@ English | [한국어](README.ko.md)
 
 > A personal project carried out in the SystemVerilog class of *[Consortium] On-Device AI System Semiconductor Design, 2nd Cohort*.
 
+| <img width="400" alt="sv-verification-testbench" src="https://github.com/user-attachments/assets/9d6335b2-a65e-489f-b1e8-d00d4e1af0dd" /> | <img width="400" alt="sv-verification-loopback-waveform" src="https://github.com/user-attachments/assets/41208b1e-e1fd-47c4-b2da-360cd8a3c171" /> |
+|:---:|:---:|
+
 | Name | Responsibilities |
 | --- | --- |
 | Yeonwoo Gim ([@mumallaeng](https://github.com/mumallaeng)) | SystemVerilog rewrite of UART and FIFO, class-based testbench design and verification |
