@@ -1,0 +1,29 @@
+digraph G {
+  graph [rankdir=LR];
+  node [shape=box, style="rounded,filled", fillcolor="#f8f9fb", color="#5b6b7a", fontname="Arial"];
+  "n_l8_BoaSIQ5hj2dUQ6oXH_11" [label="ram_vif"];
+  "n_l8_BoaSIQ5hj2dUQ6oXH_13" [label="monitor"];
+  "n_l8_BoaSIQ5hj2dUQ6oXH_14" [label="transaction"];
+  "n_l8_BoaSIQ5hj2dUQ6oXH_15" [label="scoreboard"];
+  "n_l8_BoaSIQ5hj2dUQ6oXH_16" [label="transaction"];
+  "n_l8_BoaSIQ5hj2dUQ6oXH_18" [label="mailbox"];
+  "n_l8_BoaSIQ5hj2dUQ6oXH_2" [label="ram"];
+  "n_l8_BoaSIQ5hj2dUQ6oXH_21" [label="we"];
+  "n_l8_BoaSIQ5hj2dUQ6oXH_23" [label="addr,wdata"];
+  "n_l8_BoaSIQ5hj2dUQ6oXH_24" [label="8"];
+  "n_l8_BoaSIQ5hj2dUQ6oXH_26" [label="clk"];
+  "n_l8_BoaSIQ5hj2dUQ6oXH_28" [label="clk we"];
+  "n_l8_BoaSIQ5hj2dUQ6oXH_29" [label="rdata,addr"];
+  "n_l8_BoaSIQ5hj2dUQ6oXH_3" [label="generator"];
+  "n_l8_BoaSIQ5hj2dUQ6oXH_30" [label="8"];
+  "n_l8_BoaSIQ5hj2dUQ6oXH_32" [label="event_gen_next"];
+  "n_l8_BoaSIQ5hj2dUQ6oXH_5" [label="transaction"];
+  "n_l8_BoaSIQ5hj2dUQ6oXH_7" [label="mailbox"];
+  "n_l8_BoaSIQ5hj2dUQ6oXH_8" [label="driver"];
+  "n_l8_BoaSIQ5hj2dUQ6oXH_9" [label="ram_vif"];
+  "n_l8_BoaSIQ5hj2dUQ6oXH_3" -> "n_l8_BoaSIQ5hj2dUQ6oXH_7";
+  "n_l8_BoaSIQ5hj2dUQ6oXH_7" -> "n_l8_BoaSIQ5hj2dUQ6oXH_8";
+  "n_l8_BoaSIQ5hj2dUQ6oXH_13" -> "n_l8_BoaSIQ5hj2dUQ6oXH_18";
+  "n_l8_BoaSIQ5hj2dUQ6oXH_15" -> "n_l8_BoaSIQ5hj2dUQ6oXH_3";
+  "n_l8_BoaSIQ5hj2dUQ6oXH_18" -> "n_l8_BoaSIQ5hj2dUQ6oXH_15";
+}

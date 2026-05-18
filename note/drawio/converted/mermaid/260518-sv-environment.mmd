@@ -1,0 +1,40 @@
+flowchart LR
+  n_DsIzo_cLWOuwoU7vRuJV_1["Dedicated CPU"]
+  n_DsIzo_cLWOuwoU7vRuJV_10["dedicated_cpu_if"]
+  n_DsIzo_cLWOuwoU7vRuJV_12["monitor"]
+  n_DsIzo_cLWOuwoU7vRuJV_13["transaction"]
+  n_DsIzo_cLWOuwoU7vRuJV_15["event_gen_next"]
+  n_DsIzo_cLWOuwoU7vRuJV_16["scoreboard"]
+  n_DsIzo_cLWOuwoU7vRuJV_17["transaction"]
+  n_DsIzo_cLWOuwoU7vRuJV_19["mailbox"]
+  n_DsIzo_cLWOuwoU7vRuJV_2["generator"]
+  n_DsIzo_cLWOuwoU7vRuJV_22["event_drv_ready"]
+  n_DsIzo_cLWOuwoU7vRuJV_23["dut"]
+  n_DsIzo_cLWOuwoU7vRuJV_4["transaction"]
+  n_DsIzo_cLWOuwoU7vRuJV_6["mailbox"]
+  n_DsIzo_cLWOuwoU7vRuJV_7["driver"]
+  n_DsIzo_cLWOuwoU7vRuJV_8["dedicated_cpu_vif"]
+  n_MJ5Diis6ZCilQXir7rq6_1["envirnoument"]
+  n_MJ5Diis6ZCilQXir7rq6_15["mailbox"]
+  n_MJ5Diis6ZCilQXir7rq6_17["driver"]
+  n_MJ5Diis6ZCilQXir7rq6_18["adder_vif"]
+  n_MJ5Diis6ZCilQXir7rq6_19["adder_vif"]
+  n_MJ5Diis6ZCilQXir7rq6_20["monitor"]
+  n_MJ5Diis6ZCilQXir7rq6_21["adder_vif"]
+  n_MJ5Diis6ZCilQXir7rq6_22["scoreboard"]
+  n_MJ5Diis6ZCilQXir7rq6_23["transaction"]
+  n_MJ5Diis6ZCilQXir7rq6_24["mailbox"]
+  n_MJ5Diis6ZCilQXir7rq6_3["generator"]
+  n_MJ5Diis6ZCilQXir7rq6_7["transaction"]
+  n_MJ5Diis6ZCilQXir7rq6_3 --> n_MJ5Diis6ZCilQXir7rq6_15
+  n_MJ5Diis6ZCilQXir7rq6_15 --> n_MJ5Diis6ZCilQXir7rq6_17
+  n_MJ5Diis6ZCilQXir7rq6_19 --> n_MJ5Diis6ZCilQXir7rq6_20
+  n_MJ5Diis6ZCilQXir7rq6_20 --> n_MJ5Diis6ZCilQXir7rq6_24
+  n_MJ5Diis6ZCilQXir7rq6_24 --> n_MJ5Diis6ZCilQXir7rq6_22
+  n_MJ5Diis6ZCilQXir7rq6_17 --> n_MJ5Diis6ZCilQXir7rq6_19
+  n_DsIzo_cLWOuwoU7vRuJV_2 --> n_DsIzo_cLWOuwoU7vRuJV_6
+  n_DsIzo_cLWOuwoU7vRuJV_6 --> n_DsIzo_cLWOuwoU7vRuJV_7
+  n_DsIzo_cLWOuwoU7vRuJV_10 --> n_DsIzo_cLWOuwoU7vRuJV_23
+  n_DsIzo_cLWOuwoU7vRuJV_12 --> n_DsIzo_cLWOuwoU7vRuJV_19
+  n_DsIzo_cLWOuwoU7vRuJV_16 --> n_DsIzo_cLWOuwoU7vRuJV_2
+  n_DsIzo_cLWOuwoU7vRuJV_19 --> n_DsIzo_cLWOuwoU7vRuJV_16

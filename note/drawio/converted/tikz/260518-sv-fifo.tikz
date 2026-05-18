@@ -1,0 +1,35 @@
+% Source: 260518-sv-fifo.drawio, page: FIFO+TB_BD
+\begin{tikzpicture}[x=0.04cm,y=-0.04cm,>=Latex,line cap=round,line join=round]
+  \node[draw, align=center, font=\scriptsize, minimum width=21.60cm, minimum height=19.20cm, text width=21.48cm] (nygdigbPnnXHzdoJ2lgJH_1) at (310.00,280.00) {tb\_env\_fifo};
+  \node[draw, align=center, font=\scriptsize, minimum width=7.20cm, minimum height=2.40cm, text width=7.08cm] (nygdigbPnnXHzdoJ2lgJH_2) at (150.00,90.00) {generator};
+  \node[draw, align=center, font=\scriptsize, minimum width=4.80cm, minimum height=1.20cm, text width=4.68cm] (nygdigbPnnXHzdoJ2lgJH_4) at (150.00,100.00) {transaction};
+  \node[draw, align=center, font=\scriptsize, minimum width=7.20cm, minimum height=1.20cm, text width=7.08cm] (nygdigbPnnXHzdoJ2lgJH_6) at (150.00,165.00) {mailbox gen2drv};
+  \node[draw, align=center, font=\scriptsize, minimum width=7.20cm, minimum height=4.80cm, text width=7.08cm] (nygdigbPnnXHzdoJ2lgJH_7) at (150.00,270.00) {driver};
+  \node[draw, align=center, font=\scriptsize, minimum width=4.80cm, minimum height=1.20cm, text width=4.68cm] (nygdigbPnnXHzdoJ2lgJH_8) at (150.00,250.00) {transaction};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nygdigbPnnXHzdoJ2lgJH_10) at (-0.05,-1.00) {pop\_data};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nygdigbPnnXHzdoJ2lgJH_11) at (0.54,0.00) {8};
+  \node[draw, align=center, font=\scriptsize, minimum width=20.00cm, minimum height=1.20cm, text width=19.88cm] (nygdigbPnnXHzdoJ2lgJH_12) at (310.00,485.00) {dut\_fifo};
+  \node[draw, align=center, font=\scriptsize, minimum width=7.20cm, minimum height=4.80cm, text width=7.08cm] (nygdigbPnnXHzdoJ2lgJH_14) at (470.00,270.00) {monitor};
+  \node[draw, align=center, font=\scriptsize, minimum width=4.80cm, minimum height=1.20cm, text width=4.68cm] (nygdigbPnnXHzdoJ2lgJH_15) at (470.00,250.00) {transaction};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nygdigbPnnXHzdoJ2lgJH_17) at (0.28,1.00) {event\_gen\_next};
+  \node[draw, align=center, font=\scriptsize, minimum width=7.20cm, minimum height=2.40cm, text width=7.08cm] (nygdigbPnnXHzdoJ2lgJH_18) at (470.00,90.00) {scoreboard};
+  \node[draw, align=center, font=\scriptsize, minimum width=4.80cm, minimum height=1.20cm, text width=4.68cm] (nygdigbPnnXHzdoJ2lgJH_19) at (470.00,100.00) {transaction};
+  \node[draw, align=center, font=\scriptsize, minimum width=7.20cm, minimum height=1.20cm, text width=7.08cm] (nygdigbPnnXHzdoJ2lgJH_21) at (470.00,165.00) {mailbox mon2scb};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nygdigbPnnXHzdoJ2lgJH_23) at (0.06,0.00) {push, pop};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nygdigbPnnXHzdoJ2lgJH_25) at (0.06,0.00) {push\_data};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nygdigbPnnXHzdoJ2lgJH_26) at (0.25,0.00) {8};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nygdigbPnnXHzdoJ2lgJH_28) at (0.05,-1.00) {clk};
+  \node[draw, align=center, font=\scriptsize, minimum width=4.80cm, minimum height=1.20cm, text width=4.68cm] (nygdigbPnnXHzdoJ2lgJH_32) at (150.00,295.00) {fifo\_interface};
+  \node[draw, align=center, font=\scriptsize, minimum width=4.80cm, minimum height=1.20cm, text width=4.68cm] (nygdigbPnnXHzdoJ2lgJH_33) at (470.00,295.00) {fifo\_interface};
+  \draw[thick] (150.00,90.00) -- (150.00,165.00);
+  \draw[thick] (150.00,165.00) -- (150.00,270.00);
+  \draw[thick] (150.00,250.00) -- (150.00,295.00);
+  \draw[thick] (555.00,470.00) -- (470.00,470.00) -- (470.00,330.00);
+  \draw[thick] (470.00,270.00) -- (470.00,165.00);
+  \draw[thick] (470.00,90.00) -- (150.00,90.00);
+  \draw[thick] (470.00,165.00) -- (470.00,90.00);
+  \draw[thick] (140.00,330.00) -- (140.00,470.00);
+  \draw[thick] (200.00,330.00) -- (200.00,470.00);
+  \draw[thick] (70.00,470.00) -- (75.00,470.00) -- (75.00,330.00);
+  \draw[thick] (470.00,295.00) -- (470.00,250.00);
+\end{tikzpicture}
