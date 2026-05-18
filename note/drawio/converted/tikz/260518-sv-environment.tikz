@@ -1,0 +1,45 @@
+% Source: 260518-sv-environment.drawio, page: Page-1
+\begin{tikzpicture}[x=0.04cm,y=-0.04cm,>=Latex,line cap=round,line join=round]
+  \node[draw, align=center, font=\scriptsize, minimum width=16.80cm, minimum height=12.40cm, text width=16.68cm] (nMJ5Diis6ZCilQXir7rq6_1) at (290.00,195.00) {envirnoument};
+  \node[draw, align=center, font=\scriptsize, minimum width=7.20cm, minimum height=2.40cm, text width=7.08cm] (nMJ5Diis6ZCilQXir7rq6_3) at (190.00,110.00) {generator};
+  \node[draw, align=center, font=\scriptsize, minimum width=4.80cm, minimum height=1.20cm, text width=4.68cm] (nMJ5Diis6ZCilQXir7rq6_7) at (190.00,120.00) {transaction};
+  \node[draw, align=center, font=\scriptsize, minimum width=7.20cm, minimum height=1.20cm, text width=7.08cm] (nMJ5Diis6ZCilQXir7rq6_15) at (190.00,185.00) {mailbox};
+  \node[draw, align=center, font=\scriptsize, minimum width=7.20cm, minimum height=2.40cm, text width=7.08cm] (nMJ5Diis6ZCilQXir7rq6_17) at (190.00,260.00) {driver};
+  \node[draw, align=center, font=\scriptsize, minimum width=4.80cm, minimum height=1.20cm, text width=4.68cm] (nMJ5Diis6ZCilQXir7rq6_18) at (190.00,270.00) {adder\_vif};
+  \node[draw, align=center, font=\scriptsize, minimum width=15.20cm, minimum height=1.20cm, text width=15.08cm] (nMJ5Diis6ZCilQXir7rq6_19) at (290.00,325.00) {adder\_vif};
+  \node[draw, align=center, font=\scriptsize, minimum width=7.20cm, minimum height=2.40cm, text width=7.08cm] (nMJ5Diis6ZCilQXir7rq6_20) at (390.00,260.00) {monitor};
+  \node[draw, align=center, font=\scriptsize, minimum width=4.80cm, minimum height=1.20cm, text width=4.68cm] (nMJ5Diis6ZCilQXir7rq6_21) at (390.00,270.00) {adder\_vif};
+  \node[draw, align=center, font=\scriptsize, minimum width=7.20cm, minimum height=2.40cm, text width=7.08cm] (nMJ5Diis6ZCilQXir7rq6_22) at (390.00,110.00) {scoreboard};
+  \node[draw, align=center, font=\scriptsize, minimum width=4.80cm, minimum height=1.20cm, text width=4.68cm] (nMJ5Diis6ZCilQXir7rq6_23) at (390.00,120.00) {transaction};
+  \node[draw, align=center, font=\scriptsize, minimum width=7.20cm, minimum height=1.20cm, text width=7.08cm] (nMJ5Diis6ZCilQXir7rq6_24) at (390.00,185.00) {mailbox};
+  \node[draw, align=center, font=\scriptsize, minimum width=21.60cm, minimum height=15.60cm, text width=21.48cm] (nDsIzo_cLWOuwoU7vRuJV_1) at (230.00,595.00) {Dedicated CPU};
+  \node[draw, align=center, font=\scriptsize, minimum width=7.20cm, minimum height=2.40cm, text width=7.08cm] (nDsIzo_cLWOuwoU7vRuJV_2) at (70.00,470.00) {generator};
+  \node[draw, align=center, font=\scriptsize, minimum width=4.80cm, minimum height=1.20cm, text width=4.68cm] (nDsIzo_cLWOuwoU7vRuJV_4) at (70.00,480.00) {transaction};
+  \node[draw, align=center, font=\scriptsize, minimum width=7.20cm, minimum height=1.20cm, text width=7.08cm] (nDsIzo_cLWOuwoU7vRuJV_6) at (70.00,545.00) {mailbox};
+  \node[draw, align=center, font=\scriptsize, minimum width=7.20cm, minimum height=2.40cm, text width=7.08cm] (nDsIzo_cLWOuwoU7vRuJV_7) at (70.00,620.00) {driver};
+  \node[draw, align=center, font=\scriptsize, minimum width=4.80cm, minimum height=1.20cm, text width=4.68cm] (nDsIzo_cLWOuwoU7vRuJV_8) at (70.00,630.00) {dedicated\_cpu\_vif};
+  \node[draw, align=center, font=\scriptsize, minimum width=20.00cm, minimum height=1.20cm, text width=19.88cm] (nDsIzo_cLWOuwoU7vRuJV_10) at (230.00,705.00) {dedicated\_cpu\_if};
+  \node[draw, align=center, font=\scriptsize, minimum width=7.20cm, minimum height=2.40cm, text width=7.08cm] (nDsIzo_cLWOuwoU7vRuJV_12) at (390.00,620.00) {monitor};
+  \node[draw, align=center, font=\scriptsize, minimum width=4.80cm, minimum height=1.20cm, text width=4.68cm] (nDsIzo_cLWOuwoU7vRuJV_13) at (390.00,630.00) {transaction};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nDsIzo_cLWOuwoU7vRuJV_15) at (0.28,1.00) {event\_gen\_next};
+  \node[draw, align=center, font=\scriptsize, minimum width=7.20cm, minimum height=2.40cm, text width=7.08cm] (nDsIzo_cLWOuwoU7vRuJV_16) at (390.00,470.00) {scoreboard};
+  \node[draw, align=center, font=\scriptsize, minimum width=4.80cm, minimum height=1.20cm, text width=4.68cm] (nDsIzo_cLWOuwoU7vRuJV_17) at (390.00,480.00) {transaction};
+  \node[draw, align=center, font=\scriptsize, minimum width=7.20cm, minimum height=1.20cm, text width=7.08cm] (nDsIzo_cLWOuwoU7vRuJV_19) at (390.00,545.00) {mailbox};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nDsIzo_cLWOuwoU7vRuJV_22) at (0.28,1.00) {event\_drv\_ready};
+  \node[draw, align=center, font=\scriptsize, minimum width=20.00cm, minimum height=1.20cm, text width=19.88cm] (nDsIzo_cLWOuwoU7vRuJV_23) at (230.00,755.00) {dut};
+  \draw[thick] (190.00,110.00) -- (190.00,185.00);
+  \draw[thick] (190.00,185.00) -- (190.00,260.00);
+  \draw[thick] (290.00,325.00) -- (390.00,260.00);
+  \draw[thick] (390.00,260.00) -- (390.00,185.00);
+  \draw[thick] (390.00,185.00) -- (390.00,110.00);
+  \draw[thick] (190.00,260.00) -- (290.00,325.00);
+  \draw[thick] (70.00,470.00) -- (70.00,545.00);
+  \draw[thick] (70.00,545.00) -- (70.00,620.00);
+  \draw[thick] (230.00,705.00) -- (230.00,755.00);
+  \draw[thick] (390.00,620.00) -- (390.00,545.00);
+  \draw[thick] (390.00,470.00) -- (70.00,470.00);
+  \draw[thick] (390.00,545.00) -- (390.00,470.00);
+  \draw[thick] (69.78,650.00) -- (70.00,690.00);
+  \draw[thick] (300.00,619.74) -- (160.00,619.74);
+  \draw[thick] (230.00,705.00) -- (389.88,650.00);
+\end{tikzpicture}

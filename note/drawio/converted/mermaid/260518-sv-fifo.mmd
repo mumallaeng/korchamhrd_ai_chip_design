@@ -1,0 +1,29 @@
+flowchart LR
+  n_ygdigbPnnXHzdoJ2lgJH_1["tb_env_fifo"]
+  n_ygdigbPnnXHzdoJ2lgJH_10["pop_data"]
+  n_ygdigbPnnXHzdoJ2lgJH_11["8"]
+  n_ygdigbPnnXHzdoJ2lgJH_12["dut_fifo"]
+  n_ygdigbPnnXHzdoJ2lgJH_14["monitor"]
+  n_ygdigbPnnXHzdoJ2lgJH_15["transaction"]
+  n_ygdigbPnnXHzdoJ2lgJH_17["event_gen_next"]
+  n_ygdigbPnnXHzdoJ2lgJH_18["scoreboard"]
+  n_ygdigbPnnXHzdoJ2lgJH_19["transaction"]
+  n_ygdigbPnnXHzdoJ2lgJH_2["generator"]
+  n_ygdigbPnnXHzdoJ2lgJH_21["mailbox mon2scb"]
+  n_ygdigbPnnXHzdoJ2lgJH_23["push, pop"]
+  n_ygdigbPnnXHzdoJ2lgJH_25["push_data"]
+  n_ygdigbPnnXHzdoJ2lgJH_26["8"]
+  n_ygdigbPnnXHzdoJ2lgJH_28["clk"]
+  n_ygdigbPnnXHzdoJ2lgJH_32["fifo_interface"]
+  n_ygdigbPnnXHzdoJ2lgJH_33["fifo_interface"]
+  n_ygdigbPnnXHzdoJ2lgJH_4["transaction"]
+  n_ygdigbPnnXHzdoJ2lgJH_6["mailbox gen2drv"]
+  n_ygdigbPnnXHzdoJ2lgJH_7["driver"]
+  n_ygdigbPnnXHzdoJ2lgJH_8["transaction"]
+  n_ygdigbPnnXHzdoJ2lgJH_2 --> n_ygdigbPnnXHzdoJ2lgJH_6
+  n_ygdigbPnnXHzdoJ2lgJH_6 --> n_ygdigbPnnXHzdoJ2lgJH_7
+  n_ygdigbPnnXHzdoJ2lgJH_8 --> n_ygdigbPnnXHzdoJ2lgJH_32
+  n_ygdigbPnnXHzdoJ2lgJH_14 --> n_ygdigbPnnXHzdoJ2lgJH_21
+  n_ygdigbPnnXHzdoJ2lgJH_18 --> n_ygdigbPnnXHzdoJ2lgJH_2
+  n_ygdigbPnnXHzdoJ2lgJH_21 --> n_ygdigbPnnXHzdoJ2lgJH_18
+  n_ygdigbPnnXHzdoJ2lgJH_33 --> n_ygdigbPnnXHzdoJ2lgJH_15

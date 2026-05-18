@@ -1,0 +1,32 @@
+digraph G {
+  graph [rankdir=LR];
+  node [shape=box, style="rounded,filled", fillcolor="#f8f9fb", color="#5b6b7a", fontname="Arial"];
+  "n_ygdigbPnnXHzdoJ2lgJH_1" [label="tb_env_fifo"];
+  "n_ygdigbPnnXHzdoJ2lgJH_10" [label="pop_data"];
+  "n_ygdigbPnnXHzdoJ2lgJH_11" [label="8"];
+  "n_ygdigbPnnXHzdoJ2lgJH_12" [label="dut_fifo"];
+  "n_ygdigbPnnXHzdoJ2lgJH_14" [label="monitor"];
+  "n_ygdigbPnnXHzdoJ2lgJH_15" [label="transaction"];
+  "n_ygdigbPnnXHzdoJ2lgJH_17" [label="event_gen_next"];
+  "n_ygdigbPnnXHzdoJ2lgJH_18" [label="scoreboard"];
+  "n_ygdigbPnnXHzdoJ2lgJH_19" [label="transaction"];
+  "n_ygdigbPnnXHzdoJ2lgJH_2" [label="generator"];
+  "n_ygdigbPnnXHzdoJ2lgJH_21" [label="mailbox mon2scb"];
+  "n_ygdigbPnnXHzdoJ2lgJH_23" [label="push, pop"];
+  "n_ygdigbPnnXHzdoJ2lgJH_25" [label="push_data"];
+  "n_ygdigbPnnXHzdoJ2lgJH_26" [label="8"];
+  "n_ygdigbPnnXHzdoJ2lgJH_28" [label="clk"];
+  "n_ygdigbPnnXHzdoJ2lgJH_32" [label="fifo_interface"];
+  "n_ygdigbPnnXHzdoJ2lgJH_33" [label="fifo_interface"];
+  "n_ygdigbPnnXHzdoJ2lgJH_4" [label="transaction"];
+  "n_ygdigbPnnXHzdoJ2lgJH_6" [label="mailbox gen2drv"];
+  "n_ygdigbPnnXHzdoJ2lgJH_7" [label="driver"];
+  "n_ygdigbPnnXHzdoJ2lgJH_8" [label="transaction"];
+  "n_ygdigbPnnXHzdoJ2lgJH_2" -> "n_ygdigbPnnXHzdoJ2lgJH_6";
+  "n_ygdigbPnnXHzdoJ2lgJH_6" -> "n_ygdigbPnnXHzdoJ2lgJH_7";
+  "n_ygdigbPnnXHzdoJ2lgJH_8" -> "n_ygdigbPnnXHzdoJ2lgJH_32";
+  "n_ygdigbPnnXHzdoJ2lgJH_14" -> "n_ygdigbPnnXHzdoJ2lgJH_21";
+  "n_ygdigbPnnXHzdoJ2lgJH_18" -> "n_ygdigbPnnXHzdoJ2lgJH_2";
+  "n_ygdigbPnnXHzdoJ2lgJH_21" -> "n_ygdigbPnnXHzdoJ2lgJH_18";
+  "n_ygdigbPnnXHzdoJ2lgJH_33" -> "n_ygdigbPnnXHzdoJ2lgJH_15";
+}
