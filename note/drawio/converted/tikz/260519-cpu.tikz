@@ -1,0 +1,9 @@
+% Source: 260519-cpu.drawio, page: Page-1
+\begin{tikzpicture}[x=0.04cm,y=-0.04cm,>=Latex,line cap=round,line join=round]
+  \node[draw, align=center, font=\scriptsize, minimum width=3.20cm, minimum height=16.00cm, text width=3.08cm] (nJND3kyrR1L1Zv8udtbI__4) at (920.00,240.00) {Data\\Memory (RAM)};
+  \node[draw, align=center, font=\scriptsize, minimum width=3.20cm, minimum height=16.00cm, text width=3.08cm] (nzjug9o3QdesyKxwelZWT_5) at (-80.00,240.00) {Instruction Memory\\(ROM)};
+  \node[draw, align=center, font=\scriptsize, minimum width=15.60cm, minimum height=16.00cm, text width=15.48cm] (nzjug9o3QdesyKxwelZWT_6) at (195.00,240.00) {Instruction Field Split};
+  \node[draw, align=center, font=\scriptsize, minimum width=3.20cm, minimum height=4.80cm, text width=3.08cm] (nzjug9o3QdesyKxwelZWT_7) at (520.00,100.00) {Control Unit};
+  \node[draw, align=center, font=\scriptsize, minimum width=13.20cm, minimum height=7.20cm, text width=13.08cm] (nzjug9o3QdesyKxwelZWT_8) at (645.00,350.00) {register file};
+  \node[draw, align=center, font=\scriptsize, minimum width=3.20cm, minimum height=4.80cm, text width=3.08cm] (nzjug9o3QdesyKxwelZWT_9) at (770.00,100.00) {ALU};
+\end{tikzpicture}
