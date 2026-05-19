@@ -1,0 +1,10 @@
+digraph G {
+  graph [rankdir=LR];
+  node [shape=box, style="rounded,filled", fillcolor="#f8f9fb", color="#5b6b7a", fontname="Arial"];
+  "n_JND3kyrR1L1Zv8udtbI__4" [label="Data\nMemory (RAM)"];
+  "n_zjug9o3QdesyKxwelZWT_5" [label="Instruction Memory\n(ROM)"];
+  "n_zjug9o3QdesyKxwelZWT_6" [label="Instruction Field Split"];
+  "n_zjug9o3QdesyKxwelZWT_7" [label="Control Unit"];
+  "n_zjug9o3QdesyKxwelZWT_8" [label="register file"];
+  "n_zjug9o3QdesyKxwelZWT_9" [label="ALU"];
+}

@@ -1,0 +1,160 @@
+{
+  "source": "260519-cpu.drawio",
+  "generated_at": "2026-06-29T08:02:44",
+  "pages": [
+    {
+      "name": "Page-1",
+      "id": "1-g8bTFxI-KrX69KVhSG",
+      "vertex_count": 6,
+      "edge_count": 0,
+      "bounds": {
+        "min_x": -120.0,
+        "min_y": 0.0,
+        "max_x": 960.0,
+        "max_y": 440.0
+      }
+    }
+  ],
+  "cells": [
+    {
+      "id": "0",
+      "label": "",
+      "style": {},
+      "vertex": false,
+      "edge": false,
+      "source": null,
+      "target": null,
+      "geometry": null
+    },
+    {
+      "id": "1",
+      "label": "",
+      "style": {},
+      "vertex": false,
+      "edge": false,
+      "source": null,
+      "target": null,
+      "geometry": null
+    },
+    {
+      "id": "JND3kyrR1L1Zv8udtbI--4",
+      "label": "Data\nMemory (RAM)",
+      "style": {
+        "rounded": "0",
+        "whiteSpace": "wrap",
+        "html": "1"
+      },
+      "vertex": true,
+      "edge": false,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 880.0,
+        "y": 40.0,
+        "width": 80.0,
+        "height": 400.0,
+        "relative": false
+      }
+    },
+    {
+      "id": "zjug9o3QdesyKxwelZWT-5",
+      "label": "Instruction Memory\n(ROM)",
+      "style": {
+        "rounded": "0",
+        "whiteSpace": "wrap",
+        "html": "1"
+      },
+      "vertex": true,
+      "edge": false,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": -120.0,
+        "y": 40.0,
+        "width": 80.0,
+        "height": 400.0,
+        "relative": false
+      }
+    },
+    {
+      "id": "zjug9o3QdesyKxwelZWT-6",
+      "label": "Instruction Field Split",
+      "style": {
+        "rounded": "0",
+        "whiteSpace": "wrap",
+        "html": "1"
+      },
+      "vertex": true,
+      "edge": false,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 0.0,
+        "y": 40.0,
+        "width": 390.0,
+        "height": 400.0,
+        "relative": false
+      }
+    },
+    {
+      "id": "zjug9o3QdesyKxwelZWT-7",
+      "label": "Control Unit",
+      "style": {
+        "rounded": "0",
+        "whiteSpace": "wrap",
+        "html": "1"
+      },
+      "vertex": true,
+      "edge": false,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 480.0,
+        "y": 40.0,
+        "width": 80.0,
+        "height": 120.0,
+        "relative": false
+      }
+    },
+    {
+      "id": "zjug9o3QdesyKxwelZWT-8",
+      "label": "register file",
+      "style": {
+        "rounded": "0",
+        "whiteSpace": "wrap",
+        "html": "1"
+      },
+      "vertex": true,
+      "edge": false,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 480.0,
+        "y": 260.0,
+        "width": 330.0,
+        "height": 180.0,
+        "relative": false
+      }
+    },
+    {
+      "id": "zjug9o3QdesyKxwelZWT-9",
+      "label": "ALU",
+      "style": {
+        "rounded": "0",
+        "whiteSpace": "wrap",
+        "html": "1"
+      },
+      "vertex": true,
+      "edge": false,
+      "source": null,
+      "target": null,
+      "geometry": {
+        "x": 730.0,
+        "y": 40.0,
+        "width": 80.0,
+        "height": 120.0,
+        "relative": false
+      }
+    }
+  ]
+}
