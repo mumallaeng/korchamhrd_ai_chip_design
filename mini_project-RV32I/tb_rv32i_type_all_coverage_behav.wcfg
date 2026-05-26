@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_rv32i_type_all_coverage_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="tb_rv32i_type_all_coverage" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="326201fs"></ZoomEndTime>
+      <Cursor1Time time="40000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="176"></NameColumnWidth>
+      <ValueColumnWidth column_width="69"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="28" />
+   <wvobject type="logic" fp_name="/tb_rv32i_type_all_coverage/dut/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_rv32i_type_all_coverage/dut/rst">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_rv32i_type_all_coverage/dut/instr_code">
+      <obj_property name="ElementShortName">instr_code[31:0]</obj_property>
+      <obj_property name="ObjectShortName">instr_code[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_rv32i_type_all_coverage/dut/instr_addr">
+      <obj_property name="ElementShortName">instr_addr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">instr_addr[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_rv32i_type_all_coverage/dut/daddr">
+      <obj_property name="ElementShortName">daddr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">daddr[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_rv32i_type_all_coverage/dut/dwdata">
+      <obj_property name="ElementShortName">dwdata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">dwdata[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_rv32i_type_all_coverage/dut/drdata">
+      <obj_property name="ElementShortName">drdata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">drdata[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_rv32i_type_all_coverage/dut/mem_mode">
+      <obj_property name="ElementShortName">mem_mode[2:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_mode[2:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_rv32i_type_all_coverage/dut/dwe">
+      <obj_property name="ElementShortName">dwe</obj_property>
+      <obj_property name="ObjectShortName">dwe</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_rv32i_type_all_coverage/dut/SIM_MODE">
+      <obj_property name="ElementShortName">SIM_MODE[31:0]</obj_property>
+      <obj_property name="ObjectShortName">SIM_MODE[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_rv32i_type_all_coverage/dut/U_RV32_CPU/U_CONTROL_UNIT/funct7">
+      <obj_property name="ElementShortName">funct7[6:0]</obj_property>
+      <obj_property name="ObjectShortName">funct7[6:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_rv32i_type_all_coverage/dut/U_RV32_CPU/U_CONTROL_UNIT/funct3">
+      <obj_property name="ElementShortName">funct3[2:0]</obj_property>
+      <obj_property name="ObjectShortName">funct3[2:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_rv32i_type_all_coverage/dut/U_RV32_CPU/U_CONTROL_UNIT/opcode">
+      <obj_property name="ElementShortName">opcode[6:0]</obj_property>
+      <obj_property name="ObjectShortName">opcode[6:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_rv32i_type_all_coverage/dut/U_RV32_CPU/U_CONTROL_UNIT/opcode_dbg">
+      <obj_property name="ElementShortName">opcode_dbg[6:0]</obj_property>
+      <obj_property name="ObjectShortName">opcode_dbg[6:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_rv32i_type_all_coverage/dut/U_RV32_CPU/U_DATAPATH/RD2">
+      <obj_property name="ElementShortName">RD2[31:0]</obj_property>
+      <obj_property name="ObjectShortName">RD2[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_rv32i_type_all_coverage/dut/U_RV32_CPU/U_DATAPATH/alu_RD2">
+      <obj_property name="ElementShortName">alu_RD2[31:0]</obj_property>
+      <obj_property name="ObjectShortName">alu_RD2[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_rv32i_type_all_coverage/dut/U_RV32_CPU/U_DATAPATH/RD1">
+      <obj_property name="ElementShortName">RD1[31:0]</obj_property>
+      <obj_property name="ObjectShortName">RD1[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_rv32i_type_all_coverage/dut/U_RV32_CPU/U_DATAPATH/alu_result">
+      <obj_property name="ElementShortName">alu_result[31:0]</obj_property>
+      <obj_property name="ObjectShortName">alu_result[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_rv32i_type_all_coverage/dut/U_RV32_CPU/U_DATAPATH/alu_src_sel">
+      <obj_property name="ElementShortName">alu_src_sel</obj_property>
+      <obj_property name="ObjectShortName">alu_src_sel</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_rv32i_type_all_coverage/dut/U_RV32_CPU/U_DATAPATH/alu_control">
+      <obj_property name="ElementShortName">alu_control[3:0]</obj_property>
+      <obj_property name="ObjectShortName">alu_control[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_rv32i_type_all_coverage/dut/U_RV32_CPU/U_DATAPATH/rf_src_sel">
+      <obj_property name="ElementShortName">rf_src_sel[2:0]</obj_property>
+      <obj_property name="ObjectShortName">rf_src_sel[2:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_rv32i_type_all_coverage/dut/U_RV32_CPU/U_DATAPATH/rf_src_mux_out">
+      <obj_property name="ElementShortName">rf_src_mux_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">rf_src_mux_out[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_rv32i_type_all_coverage/dut/U_RV32_CPU/U_DATAPATH/imm_extend">
+      <obj_property name="ElementShortName">imm_extend[31:0]</obj_property>
+      <obj_property name="ObjectShortName">imm_extend[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_rv32i_type_all_coverage/dut/U_RV32_CPU/U_DATAPATH/w_pc_add">
+      <obj_property name="ElementShortName">w_pc_add[31:0]</obj_property>
+      <obj_property name="ObjectShortName">w_pc_add[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_rv32i_type_all_coverage/dut/U_RV32_CPU/U_DATAPATH/pc_imm">
+      <obj_property name="ElementShortName">pc_imm[31:0]</obj_property>
+      <obj_property name="ObjectShortName">pc_imm[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_rv32i_type_all_coverage/dut/U_RV32_CPU/U_DATAPATH/pc_next">
+      <obj_property name="ElementShortName">pc_next[31:0]</obj_property>
+      <obj_property name="ObjectShortName">pc_next[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_rv32i_type_all_coverage/dut/U_RV32_CPU/U_DATAPATH/b_taken">
+      <obj_property name="ElementShortName">b_taken</obj_property>
+      <obj_property name="ObjectShortName">b_taken</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_rv32i_type_all_coverage/dut/U_RV32_CPU/U_DATAPATH/branch">
+      <obj_property name="ElementShortName">branch</obj_property>
+      <obj_property name="ObjectShortName">branch</obj_property>
+   </wvobject>
+</wave_config>
