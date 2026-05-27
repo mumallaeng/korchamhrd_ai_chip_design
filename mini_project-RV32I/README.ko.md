@@ -6,6 +6,9 @@
 
 > *[컨소시엄] 온디바이스AI 시스템반도체 설계 2기* 교육과정 RISC-V CPU 수업에서 진행된 개인 과제입니다.
 
+| <img width="400" alt="rv32i-cpu-structure" src="https://github.com/user-attachments/assets/bdabb13e-b7c9-4d34-813b-4847e84f78b6" /> | <img width="400" alt="rv32i-sum-counting-waveform" src="https://github.com/user-attachments/assets/459a8a9d-0d47-4dfa-bbbe-553964874c42" /> |
+|:---:|:---:|
+
 | 이름 | 담당 |
 | --- | --- |
 | 김연우 ([@mumallaeng](https://github.com/mumallaeng)) | RV32I datapath·control RTL 설계, type별 testbench 검증, C 프로그램 실행 분석 |

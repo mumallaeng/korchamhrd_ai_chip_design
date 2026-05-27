@@ -6,6 +6,9 @@ English | [한국어](README.ko.md)
 
 > A personal project carried out in the RISC-V CPU class of *[Consortium] On-Device AI System Semiconductor Design, 2nd Cohort*.
 
+| <img width="400" alt="rv32i-cpu-structure" src="https://github.com/user-attachments/assets/bdabb13e-b7c9-4d34-813b-4847e84f78b6" /> | <img width="400" alt="rv32i-sum-counting-waveform" src="https://github.com/user-attachments/assets/459a8a9d-0d47-4dfa-bbbe-553964874c42" /> |
+|:---:|:---:|
+
 | Name | Responsibilities |
 | --- | --- |
 | Yeonwoo Gim ([@mumallaeng](https://github.com/mumallaeng)) | RV32I datapath and control RTL design, per-type testbench verification, C program execution analysis |
