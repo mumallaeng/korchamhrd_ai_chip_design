@@ -1,0 +1,21 @@
+% Source: 260527-sv-rv32i-multi.drawio, page: Page-1
+\begin{tikzpicture}[x=0.04cm,y=-0.04cm,>=Latex,line cap=round,line join=round]
+  \node[draw, align=center, font=\scriptsize, minimum width=3.20cm, minimum height=3.20cm, text width=3.08cm] (nB41RF5fDZg85oseUpRRu_1) at (200.00,120.00) {FETCH};
+  \node[draw, align=center, font=\scriptsize, minimum width=3.20cm, minimum height=3.20cm, text width=3.08cm] (nzxzzcLYM27ozNX4tYacm_1) at (360.00,120.00) {DECODE};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nzxzzcLYM27ozNX4tYacm_11) at (-0.29,1.00) {Store or ImmediateLoad};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nzxzzcLYM27ozNX4tYacm_22) at (-0.92,0.00) {!(Store or ImmediateLoad)};
+  \node[draw, align=center, font=\scriptsize, minimum width=3.20cm, minimum height=3.20cm, text width=3.08cm] (nzxzzcLYM27ozNX4tYacm_2) at (600.00,120.00) {EXECUTE};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nzxzzcLYM27ozNX4tYacm_17) at (-0.09,-1.00) {ImmediateLoad};
+  \node[draw, align=center, font=\scriptsize, minimum width=0.00cm, minimum height=0.00cm] (nzxzzcLYM27ozNX4tYacm_16) at (-0.85,0.00) {Store};
+  \node[draw, align=center, font=\scriptsize, minimum width=3.20cm, minimum height=3.20cm, text width=3.08cm] (nzxzzcLYM27ozNX4tYacm_3) at (600.00,280.00) {MEMORY};
+  \node[draw, align=center, font=\scriptsize, minimum width=3.20cm, minimum height=3.20cm, text width=3.08cm] (nzxzzcLYM27ozNX4tYacm_4) at (360.00,280.00) {WRITE\\BACK};
+  \node[align=center, font=\scriptsize, minimum width=2.40cm, minimum height=0.40cm, text width=2.28cm] (nzxzzcLYM27ozNX4tYacm_18) at (50.00,120.00) {ANY\_TYPE\\OPCODE};
+  \draw[thick] (200.00,120.00) -- (360.00,120.00);
+  \draw[thick] (360.00,120.00) -- (600.00,120.00);
+  \draw[thick] (600.00,120.00) -- (600.00,280.00);
+  \draw[thick] (600.00,120.00) -- (600.00,40.00) -- (200.00,40.00) -- (200.00,120.00);
+  \draw[thick] (600.00,280.00) -- (360.00,280.00);
+  \draw[thick] (600.00,280.00) -- (720.00,280.00) -- (720.00,40.00) -- (200.00,40.00) -- (200.00,120.00);
+  \draw[thick] (360.00,280.00) -- (200.00,120.00);
+  \draw[thick] (50.00,120.00) -- (200.00,120.00);
+\end{tikzpicture}
