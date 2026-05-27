@@ -2,9 +2,13 @@
 
 # RV32I Single-Cycle CPU
 
-김연우
-
 2026.05.22 ~ 2026.05.27
+
+> *[컨소시엄] 온디바이스AI 시스템반도체 설계 2기* 교육과정 RISC-V CPU 수업에서 진행된 개인 과제입니다.
+
+| 이름 | 담당 |
+| --- | --- |
+| 김연우 ([@mumallaeng](https://github.com/mumallaeng)) | RV32I datapath·control RTL 설계, type별 testbench 검증, C 프로그램 실행 분석 |
 
 ## 1. 개요 및 설계 범위
 

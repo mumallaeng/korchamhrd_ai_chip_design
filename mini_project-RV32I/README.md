@@ -2,9 +2,13 @@ English | [한국어](README.ko.md)
 
 # RV32I Single-Cycle CPU
 
-Kim Yeonwoo
-
 2026.05.22 ~ 2026.05.27
+
+> A personal project carried out in the RISC-V CPU class of *[Consortium] On-Device AI System Semiconductor Design, 2nd Cohort*.
+
+| Name | Responsibilities |
+| --- | --- |
+| Yeonwoo Gim ([@mumallaeng](https://github.com/mumallaeng)) | RV32I datapath and control RTL design, per-type testbench verification, C program execution analysis |
 
 ## 1. Overview and Design Scope
 
@@ -32,7 +36,7 @@ The purpose of this project is to design an RV32I single-cycle CPU, compile C so
 
 This design is an educational single-cycle CPU implementation targeting the RV32I integer basic instruction set. The top-level module RV32I serves as a wrapper, instantiating top_rv32i_soc internally and connecting instruction_mem, rv32i_sv, and data_mem in its lower hierarchy. The basic instruction memory initialization image is buble_sort.mem, and sum_counting.mem is provided together as an alternative execution image. Accordingly, this report analyzes function calls and cumulative sum calculation structures through sum_counting, and comprehensively describes arrays, pointers, nested loops, comparison branches, and boundary condition problems through buble_sort.
 
-### 1.4 Design Specification Summary (Specification Summary)
+### 1.4 Design Specification Summary
 
 | Item | Content |
 |---|---|
@@ -81,7 +85,7 @@ This design implements the RISC-V based 32-bit basic integer ISA, RV32I, in a si
 
 ## 2. Project Management and Development Environment
 
-### 2.1 Schedule (Schedule)
+### 2.1 Schedule
 
 | Phase | Duration | Key Tasks |
 |---|---|---|
