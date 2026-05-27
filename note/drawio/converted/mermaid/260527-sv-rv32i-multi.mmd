@@ -1,0 +1,19 @@
+flowchart LR
+  n_B41RF5fDZg85oseUpRRu_1["FETCH"]
+  n_zxzzcLYM27ozNX4tYacm_1["DECODE"]
+  n_zxzzcLYM27ozNX4tYacm_11["Store or ImmediateLoad"]
+  n_zxzzcLYM27ozNX4tYacm_16["Store"]
+  n_zxzzcLYM27ozNX4tYacm_17["ImmediateLoad"]
+  n_zxzzcLYM27ozNX4tYacm_18["ANY_TYPE<br/>OPCODE"]
+  n_zxzzcLYM27ozNX4tYacm_2["EXECUTE"]
+  n_zxzzcLYM27ozNX4tYacm_22["!(Store or ImmediateLoad)"]
+  n_zxzzcLYM27ozNX4tYacm_3["MEMORY"]
+  n_zxzzcLYM27ozNX4tYacm_4["WRITE<br/>BACK"]
+  n_B41RF5fDZg85oseUpRRu_1 --> n_zxzzcLYM27ozNX4tYacm_1
+  n_zxzzcLYM27ozNX4tYacm_1 --> n_zxzzcLYM27ozNX4tYacm_2
+  n_zxzzcLYM27ozNX4tYacm_2 --> n_zxzzcLYM27ozNX4tYacm_3
+  n_zxzzcLYM27ozNX4tYacm_2 --> n_B41RF5fDZg85oseUpRRu_1
+  n_zxzzcLYM27ozNX4tYacm_3 --> n_zxzzcLYM27ozNX4tYacm_4
+  n_zxzzcLYM27ozNX4tYacm_3 --> n_B41RF5fDZg85oseUpRRu_1
+  n_zxzzcLYM27ozNX4tYacm_4 --> n_B41RF5fDZg85oseUpRRu_1
+  n_zxzzcLYM27ozNX4tYacm_18 --> n_B41RF5fDZg85oseUpRRu_1
