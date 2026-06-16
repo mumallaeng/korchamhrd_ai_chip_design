@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_SPI_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="tb_SPI" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="71101fs"></ZoomEndTime>
+      <Cursor1Time time="46800fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="197"></NameColumnWidth>
+      <ValueColumnWidth column_width="91"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="35" />
+   <wvobject type="logic" fp_name="/tb_SPI/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_SPI/reset_n">
+      <obj_property name="ElementShortName">reset_n</obj_property>
+      <obj_property name="ObjectShortName">reset_n</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_SPI/sclk">
+      <obj_property name="ElementShortName">sclk</obj_property>
+      <obj_property name="ObjectShortName">sclk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_SPI/u_spi_target/sclk_rise">
+      <obj_property name="ElementShortName">sclk_rise</obj_property>
+      <obj_property name="ObjectShortName">sclk_rise</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_SPI/u_spi_target/sclk_fall">
+      <obj_property name="ElementShortName">sclk_fall</obj_property>
+      <obj_property name="ObjectShortName">sclk_fall</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_SPI/u_spi_controller/sclk_half_tick">
+      <obj_property name="ElementShortName">sclk_half_tick</obj_property>
+      <obj_property name="ObjectShortName">sclk_half_tick</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_SPI/clk_div">
+      <obj_property name="ElementShortName">clk_div[15:0]</obj_property>
+      <obj_property name="ObjectShortName">clk_div[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_SPI/cpol">
+      <obj_property name="ElementShortName">cpol</obj_property>
+      <obj_property name="ObjectShortName">cpol</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_SPI/cpha">
+      <obj_property name="ElementShortName">cpha</obj_property>
+      <obj_property name="ObjectShortName">cpha</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_SPI/u_spi_controller/state">
+      <obj_property name="ElementShortName">state[1:0]</obj_property>
+      <obj_property name="ObjectShortName">state[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_SPI/start">
+      <obj_property name="ElementShortName">start</obj_property>
+      <obj_property name="ObjectShortName">start</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_SPI/ctrl_tx_data">
+      <obj_property name="ElementShortName">ctrl_tx_data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">ctrl_tx_data[7:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_SPI/ctrl_sdo">
+      <obj_property name="ElementShortName">ctrl_sdo</obj_property>
+      <obj_property name="ObjectShortName">ctrl_sdo</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_SPI/ctrl_busy">
+      <obj_property name="ElementShortName">ctrl_busy</obj_property>
+      <obj_property name="ObjectShortName">ctrl_busy</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_SPI/ctrl_done">
+      <obj_property name="ElementShortName">ctrl_done</obj_property>
+      <obj_property name="ObjectShortName">ctrl_done</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_SPI/ctrl_sdi">
+      <obj_property name="ElementShortName">ctrl_sdi</obj_property>
+      <obj_property name="ObjectShortName">ctrl_sdi</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_SPI/ctrl_rx_data">
+      <obj_property name="ElementShortName">ctrl_rx_data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">ctrl_rx_data[7:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_SPI/ctrl_rx_valid">
+      <obj_property name="ElementShortName">ctrl_rx_valid</obj_property>
+      <obj_property name="ObjectShortName">ctrl_rx_valid</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_SPI/u_spi_target/state">
+      <obj_property name="ElementShortName">state[1:0]</obj_property>
+      <obj_property name="ObjectShortName">state[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_SPI/u_spi_target/tgt_sdi">
+      <obj_property name="ElementShortName">tgt_sdi</obj_property>
+      <obj_property name="ObjectShortName">tgt_sdi</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_SPI/tgt_sdo">
+      <obj_property name="ElementShortName">tgt_sdo</obj_property>
+      <obj_property name="ObjectShortName">tgt_sdo</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_SPI/tgt_sdo_oe">
+      <obj_property name="ElementShortName">tgt_sdo_oe</obj_property>
+      <obj_property name="ObjectShortName">tgt_sdo_oe</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_SPI/target_tx_data">
+      <obj_property name="ElementShortName">target_tx_data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">target_tx_data[7:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_SPI/u_spi_target/tx_shift_reg">
+      <obj_property name="ElementShortName">tx_shift_reg[7:0]</obj_property>
+      <obj_property name="ObjectShortName">tx_shift_reg[7:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_SPI/u_spi_target/shift_edge">
+      <obj_property name="ElementShortName">shift_edge</obj_property>
+      <obj_property name="ObjectShortName">shift_edge</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_SPI/target_selected">
+      <obj_property name="ElementShortName">target_selected</obj_property>
+      <obj_property name="ObjectShortName">target_selected</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_SPI/target_rx_data">
+      <obj_property name="ElementShortName">target_rx_data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">target_rx_data[7:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_SPI/u_spi_target/rx_shift_reg">
+      <obj_property name="ElementShortName">rx_shift_reg[7:0]</obj_property>
+      <obj_property name="ObjectShortName">rx_shift_reg[7:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_SPI/u_spi_target/sample_edge">
+      <obj_property name="ElementShortName">sample_edge</obj_property>
+      <obj_property name="ObjectShortName">sample_edge</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_SPI/u_spi_target/bit_cnt">
+      <obj_property name="ElementShortName">bit_cnt[2:0]</obj_property>
+      <obj_property name="ObjectShortName">bit_cnt[2:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_SPI/target_rx_valid">
+      <obj_property name="ElementShortName">target_rx_valid</obj_property>
+      <obj_property name="ObjectShortName">target_rx_valid</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_SPI/u_spi_target/cs_n">
+      <obj_property name="ElementShortName">cs_n</obj_property>
+      <obj_property name="ObjectShortName">cs_n</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_SPI/u_spi_target/cs_start">
+      <obj_property name="ElementShortName">cs_start</obj_property>
+      <obj_property name="ObjectShortName">cs_start</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_SPI/u_spi_target/cs_n_d">
+      <obj_property name="ElementShortName">cs_n_d</obj_property>
+      <obj_property name="ObjectShortName">cs_n_d</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_SPI/u_spi_target/cs_stop">
+      <obj_property name="ElementShortName">cs_stop</obj_property>
+      <obj_property name="ObjectShortName">cs_stop</obj_property>
+   </wvobject>
+</wave_config>
