@@ -1,0 +1,508 @@
+flowchart LR
+  n_7lffjfs2SrMcJT1IvJNY_13["node_JNY-13"]
+  n_7lffjfs2SrMcJT1IvJNY_14["node_JNY-14"]
+  n_7lffjfs2SrMcJT1IvJNY_15["IDLE"]
+  n_7lffjfs2SrMcJT1IvJNY_18["START"]
+  n_7lffjfs2SrMcJT1IvJNY_2["IDLE"]
+  n_7lffjfs2SrMcJT1IvJNY_21["node_JNY-21"]
+  n_7lffjfs2SrMcJT1IvJNY_23["SETUP"]
+  n_7lffjfs2SrMcJT1IvJNY_27["node_JNY-27"]
+  n_7lffjfs2SrMcJT1IvJNY_28["TRANSFER"]
+  n_7lffjfs2SrMcJT1IvJNY_3["SETUP"]
+  n_7lffjfs2SrMcJT1IvJNY_31["sclk_half_tick"]
+  n_7lffjfs2SrMcJT1IvJNY_32["sclk_r = ~sclk_r"]
+  n_7lffjfs2SrMcJT1IvJNY_35["IDLE"]
+  n_7lffjfs2SrMcJT1IvJNY_37["GEN_START"]
+  n_7lffjfs2SrMcJT1IvJNY_39["TX_BYTE"]
+  n_7lffjfs2SrMcJT1IvJNY_40["WAIT_ACK"]
+  n_7lffjfs2SrMcJT1IvJNY_42["node_JNY-42"]
+  n_7lffjfs2SrMcJT1IvJNY_5["TRANSFER"]
+  n_7lffjfs2SrMcJT1IvJNY_7["DONE"]
+  n_7lffjfs2SrMcJT1IvJNY_9["node_vJNY-9"]
+  n_Ae3oPlt2ZsId0ac_4q3b_12["node_q3b-12"]
+  n_Ae3oPlt2ZsId0ac_4q3b_131["environment"]
+  n_Ae3oPlt2ZsId0ac_4q3b_134["SPI_controller"]
+  n_Ae3oPlt2ZsId0ac_4q3b_135["SPI_target"]
+  n_Ae3oPlt2ZsId0ac_4q3b_136["sequence"]
+  n_Ae3oPlt2ZsId0ac_4q3b_14["node_q3b-14"]
+  n_Ae3oPlt2ZsId0ac_4q3b_143["virtual interface"]
+  n_Ae3oPlt2ZsId0ac_4q3b_15["IDLE"]
+  n_Ae3oPlt2ZsId0ac_4q3b_151["virtual interface"]
+  n_Ae3oPlt2ZsId0ac_4q3b_153["monitor"]
+  n_Ae3oPlt2ZsId0ac_4q3b_159["scoreboard"]
+  n_Ae3oPlt2ZsId0ac_4q3b_160["functional coverage"]
+  n_Ae3oPlt2ZsId0ac_4q3b_161["protocol collector"]
+  n_Ae3oPlt2ZsId0ac_4q3b_162["I2C_agnet"]
+  n_Ae3oPlt2ZsId0ac_4q3b_165["sequencer"]
+  n_Ae3oPlt2ZsId0ac_4q3b_166["driver"]
+  n_Ae3oPlt2ZsId0ac_4q3b_167["Interface"]
+  n_Ae3oPlt2ZsId0ac_4q3b_168["sequence"]
+  n_Ae3oPlt2ZsId0ac_4q3b_17["start"]
+  n_Ae3oPlt2ZsId0ac_4q3b_170["virtual interface"]
+  n_Ae3oPlt2ZsId0ac_4q3b_172["virtual interface"]
+  n_Ae3oPlt2ZsId0ac_4q3b_173["monitor"]
+  n_Ae3oPlt2ZsId0ac_4q3b_176["test"]
+  n_Ae3oPlt2ZsId0ac_4q3b_177["Test Bench"]
+  n_Ae3oPlt2ZsId0ac_4q3b_18["node_q3b-18"]
+  n_Ae3oPlt2ZsId0ac_4q3b_185["DUT"]
+  n_Ae3oPlt2ZsId0ac_4q3b_194["I2C_controller"]
+  n_Ae3oPlt2ZsId0ac_4q3b_195["I2C_target"]
+  n_Ae3oPlt2ZsId0ac_4q3b_2["RX_BYTE"]
+  n_Ae3oPlt2ZsId0ac_4q3b_205["start == 1"]
+  n_Ae3oPlt2ZsId0ac_4q3b_207["node_3b-207"]
+  n_Ae3oPlt2ZsId0ac_4q3b_208["sclk_half_tick == 1 &&bit_cnt != DATA_W-1"]
+  n_Ae3oPlt2ZsId0ac_4q3b_209["sclk_half_tick == 1 &&sclk_edge_cnt == 1 &&bit_cnt = DATA_W-1"]
+  n_Ae3oPlt2ZsId0ac_4q3b_212["0"]
+  n_Ae3oPlt2ZsId0ac_4q3b_214["busy = 0ctrl_sdo = 1cs_n = 1sclk_r = 0"]
+  n_Ae3oPlt2ZsId0ac_4q3b_215["Output First TX Bit:ctrl_sdo = tx_shift_regtx_shift_reg <<= 1"]
+  n_Ae3oPlt2ZsId0ac_4q3b_218["node_3b-218"]
+  n_Ae3oPlt2ZsId0ac_4q3b_219["1"]
+  n_Ae3oPlt2ZsId0ac_4q3b_220["busy = 1Load TX DataClear RX Datacs_n = 0"]
+  n_Ae3oPlt2ZsId0ac_4q3b_221["SETUP"]
+  n_Ae3oPlt2ZsId0ac_4q3b_230["sclk_edge_cnt"]
+  n_Ae3oPlt2ZsId0ac_4q3b_231["node_3b-231"]
+  n_Ae3oPlt2ZsId0ac_4q3b_233["node_3b-233"]
+  n_Ae3oPlt2ZsId0ac_4q3b_237["bit_cnt == DATA_W - 1"]
+  n_Ae3oPlt2ZsId0ac_4q3b_238["bit_cnt++"]
+  n_Ae3oPlt2ZsId0ac_4q3b_243["IDLE"]
+  n_Ae3oPlt2ZsId0ac_4q3b_247["sclk_edge_cnt = 1<br/>RX shift"]
+  n_Ae3oPlt2ZsId0ac_4q3b_248["0"]
+  n_Ae3oPlt2ZsId0ac_4q3b_249["1"]
+  n_Ae3oPlt2ZsId0ac_4q3b_252["1"]
+  n_Ae3oPlt2ZsId0ac_4q3b_253["sclk_edge_cnt = 0<br/>TX shift"]
+  n_Ae3oPlt2ZsId0ac_4q3b_254["DONE"]
+  n_Ae3oPlt2ZsId0ac_4q3b_255["node_3b-255"]
+  n_Ae3oPlt2ZsId0ac_4q3b_256["busy = 0done = 1rx_valid = 1sclk_r = 0cs_n = 1ctrl_sdo = 1"]
+  n_Ae3oPlt2ZsId0ac_4q3b_260["1"]
+  n_Ae3oPlt2ZsId0ac_4q3b_261["0"]
+  n_Ae3oPlt2ZsId0ac_4q3b_267["cs_start == 1"]
+  n_Ae3oPlt2ZsId0ac_4q3b_268["IDLE"]
+  n_Ae3oPlt2ZsId0ac_4q3b_270["SETUP"]
+  n_Ae3oPlt2ZsId0ac_4q3b_272["TRANSFER"]
+  n_Ae3oPlt2ZsId0ac_4q3b_274["DONE"]
+  n_Ae3oPlt2ZsId0ac_4q3b_276["node_3b-276"]
+  n_Ae3oPlt2ZsId0ac_4q3b_279["node_3b-279"]
+  n_Ae3oPlt2ZsId0ac_4q3b_281["node_3b-281"]
+  n_Ae3oPlt2ZsId0ac_4q3b_282["IDLE"]
+  n_Ae3oPlt2ZsId0ac_4q3b_284["0"]
+  n_Ae3oPlt2ZsId0ac_4q3b_285["cs_start"]
+  n_Ae3oPlt2ZsId0ac_4q3b_287["SETUP"]
+  n_Ae3oPlt2ZsId0ac_4q3b_289["node_3b-289"]
+  n_Ae3oPlt2ZsId0ac_4q3b_290["TRANSFER"]
+  n_Ae3oPlt2ZsId0ac_4q3b_293["1"]
+  n_Ae3oPlt2ZsId0ac_4q3b_294["sample_edge"]
+  n_Ae3oPlt2ZsId0ac_4q3b_296["rx_shift_reg ={rx_shiget_reg[DATA_W-2:0], tgt_sdi}"]
+  n_Ae3oPlt2ZsId0ac_4q3b_298["node_3b-298"]
+  n_Ae3oPlt2ZsId0ac_4q3b_299["sample_edge && !lastorshift_edge"]
+  n_Ae3oPlt2ZsId0ac_4q3b_300["sample_edge && last"]
+  n_Ae3oPlt2ZsId0ac_4q3b_301["selected = 0tgt_sdo_oe = 0tgt_sdo = 1rx_valid = 0"]
+  n_Ae3oPlt2ZsId0ac_4q3b_304["1"]
+  n_Ae3oPlt2ZsId0ac_4q3b_305["node_3b-305"]
+  n_Ae3oPlt2ZsId0ac_4q3b_310["0"]
+  n_Ae3oPlt2ZsId0ac_4q3b_312["1"]
+  n_Ae3oPlt2ZsId0ac_4q3b_313["bit_cnt == DATA_W-1"]
+  n_Ae3oPlt2ZsId0ac_4q3b_315["node_3b-315"]
+  n_Ae3oPlt2ZsId0ac_4q3b_325["IDLE"]
+  n_Ae3oPlt2ZsId0ac_4q3b_326["bit_cnt ++"]
+  n_Ae3oPlt2ZsId0ac_4q3b_328["DONE"]
+  n_Ae3oPlt2ZsId0ac_4q3b_329["node_3b-329"]
+  n_Ae3oPlt2ZsId0ac_4q3b_332["Controller"]
+  n_Ae3oPlt2ZsId0ac_4q3b_333["Target"]
+  n_Ae3oPlt2ZsId0ac_4q3b_4["SEND_ACK"]
+  n_Ae3oPlt2ZsId0ac_4q3b_6["GEN_STOP"]
+  n_Ae3oPlt2ZsId0ac_4q3b_8["DONE"]
+  n_LNQQEUjiXasE_i83GHhc_1["외부장치"]
+  n_LNQQEUjiXasE_i83GHhc_11["Signal통신 신호 SPI/I2C 등"]
+  n_LNQQEUjiXasE_i83GHhc_13["내부 신호"]
+  n_LNQQEUjiXasE_i83GHhc_2["Protocolbit 통신 신호를 <br/>내부 신호로 해석"]
+  n_LNQQEUjiXasE_i83GHhc_25["Signal통신 신호 SPI/I2C 등"]
+  n_LNQQEUjiXasE_i83GHhc_26["외부장치"]
+  n_LNQQEUjiXasE_i83GHhc_28["내부 신호"]
+  n_LNQQEUjiXasE_i83GHhc_29["Protocol<br/>bit 통신 신호를 <br/>내부 신호로 해석"]
+  n_LNQQEUjiXasE_i83GHhc_3["Custom IP해석된 데이터를<br/>register/output으로 보관"]
+  n_LNQQEUjiXasE_i83GHhc_31["Custom IP해석된 데이터를<br/>register/output으로 보관"]
+  n_LNQQEUjiXasE_i83GHhc_32["검증 환경<br/>통신 및 register 결과를 검증 (UVM 등)"]
+  n_LNQQEUjiXasE_i83GHhc_38["Signal통신 신호 SPI/I2C 등"]
+  n_LNQQEUjiXasE_i83GHhc_39["외부장치"]
+  n_LNQQEUjiXasE_i83GHhc_40["Protocolbit 통신 신호를 <br/>내부 신호로 해석"]
+  n_MMC8JyfsVthdM_83dXaR_1["SPI_agnet"]
+  n_MMC8JyfsVthdM_83dXaR_12["Interface"]
+  n_MMC8JyfsVthdM_83dXaR_6["sequencer"]
+  n_MMC8JyfsVthdM_83dXaR_7["driver"]
+  n_ZGaksvkUjO74tfg4Xu4P_10["sclk"]
+  n_ZGaksvkUjO74tfg4Xu4P_11["cs_n"]
+  n_ZGaksvkUjO74tfg4Xu4P_12["tgt_sdi"]
+  n_ZGaksvkUjO74tfg4Xu4P_13["tgt_sdo"]
+  n_ZGaksvkUjO74tfg4Xu4P_14["tgt_sdo_oe"]
+  n_ZGaksvkUjO74tfg4Xu4P_15["selected"]
+  n_ZGaksvkUjO74tfg4Xu4P_16["rx_data"]
+  n_ZGaksvkUjO74tfg4Xu4P_17["rx_valid"]
+  n_ZGaksvkUjO74tfg4Xu4P_18["clk"]
+  n_ZGaksvkUjO74tfg4Xu4P_19["reset_n"]
+  n_ZGaksvkUjO74tfg4Xu4P_20["cpol"]
+  n_ZGaksvkUjO74tfg4Xu4P_21["cpha"]
+  n_ZGaksvkUjO74tfg4Xu4P_22["clk_div"]
+  n_ZGaksvkUjO74tfg4Xu4P_23["sclk"]
+  n_ZGaksvkUjO74tfg4Xu4P_24["cs_n"]
+  n_ZGaksvkUjO74tfg4Xu4P_25["ctrl_sdi"]
+  n_ZGaksvkUjO74tfg4Xu4P_26["ctrl_sdo"]
+  n_ZGaksvkUjO74tfg4Xu4P_27["start"]
+  n_ZGaksvkUjO74tfg4Xu4P_28["tx_data"]
+  n_ZGaksvkUjO74tfg4Xu4P_29["busy"]
+  n_ZGaksvkUjO74tfg4Xu4P_30["done"]
+  n_ZGaksvkUjO74tfg4Xu4P_31["rx_data"]
+  n_ZGaksvkUjO74tfg4Xu4P_32["rx_valid"]
+  n_ZGaksvkUjO74tfg4Xu4P_46["clk"]
+  n_ZGaksvkUjO74tfg4Xu4P_47["reset_n"]
+  n_ZGaksvkUjO74tfg4Xu4P_48["rw"]
+  n_ZGaksvkUjO74tfg4Xu4P_49["scl"]
+  n_ZGaksvkUjO74tfg4Xu4P_5["clk"]
+  n_ZGaksvkUjO74tfg4Xu4P_50["target_addr"]
+  n_ZGaksvkUjO74tfg4Xu4P_51["clk_div"]
+  n_ZGaksvkUjO74tfg4Xu4P_52["sda"]
+  n_ZGaksvkUjO74tfg4Xu4P_53["ctrl_scl_drive_low"]
+  n_ZGaksvkUjO74tfg4Xu4P_54["ctrl_sda_drive_low"]
+  n_ZGaksvkUjO74tfg4Xu4P_55["start"]
+  n_ZGaksvkUjO74tfg4Xu4P_56["tx_data"]
+  n_ZGaksvkUjO74tfg4Xu4P_57["ack_in"]
+  n_ZGaksvkUjO74tfg4Xu4P_58["ack_seen"]
+  n_ZGaksvkUjO74tfg4Xu4P_59["rx_data"]
+  n_ZGaksvkUjO74tfg4Xu4P_6["reset_n"]
+  n_ZGaksvkUjO74tfg4Xu4P_60["busy"]
+  n_ZGaksvkUjO74tfg4Xu4P_61["done"]
+  n_ZGaksvkUjO74tfg4Xu4P_62["clk"]
+  n_ZGaksvkUjO74tfg4Xu4P_63["reset_n"]
+  n_ZGaksvkUjO74tfg4Xu4P_65["scl"]
+  n_ZGaksvkUjO74tfg4Xu4P_66["tx_data"]
+  n_ZGaksvkUjO74tfg4Xu4P_67["own_addr"]
+  n_ZGaksvkUjO74tfg4Xu4P_68["sda"]
+  n_ZGaksvkUjO74tfg4Xu4P_69["tgt_scl_drive_low"]
+  n_ZGaksvkUjO74tfg4Xu4P_7["cpol"]
+  n_ZGaksvkUjO74tfg4Xu4P_70["tgt_sda_drive_low"]
+  n_ZGaksvkUjO74tfg4Xu4P_71["selected"]
+  n_ZGaksvkUjO74tfg4Xu4P_72["rw"]
+  n_ZGaksvkUjO74tfg4Xu4P_73["rx_valid"]
+  n_ZGaksvkUjO74tfg4Xu4P_75["rx_data"]
+  n_ZGaksvkUjO74tfg4Xu4P_8["cpha"]
+  n_ZGaksvkUjO74tfg4Xu4P_9["tx_data"]
+  n_bEe0Rk7Iqyd7tdKUXm4W_1["Device A"]
+  n_bEe0Rk7Iqyd7tdKUXm4W_10["tx_data"]
+  n_bEe0Rk7Iqyd7tdKUXm4W_114["Data SDA"]
+  n_bEe0Rk7Iqyd7tdKUXm4W_115["Clock SCL"]
+  n_bEe0Rk7Iqyd7tdKUXm4W_120["Controller 0"]
+  n_bEe0Rk7Iqyd7tdKUXm4W_121["Controller 1"]
+  n_bEe0Rk7Iqyd7tdKUXm4W_123["Target 0"]
+  n_bEe0Rk7Iqyd7tdKUXm4W_132["Target 1"]
+  n_bEe0Rk7Iqyd7tdKUXm4W_135["node_4W-135"]
+  n_bEe0Rk7Iqyd7tdKUXm4W_139["node_4W-139"]
+  n_bEe0Rk7Iqyd7tdKUXm4W_146["VDD"]
+  n_bEe0Rk7Iqyd7tdKUXm4W_2["TX(Transmit)"]
+  n_bEe0Rk7Iqyd7tdKUXm4W_21["Controller"]
+  n_bEe0Rk7Iqyd7tdKUXm4W_3["RX(Receive)"]
+  n_bEe0Rk7Iqyd7tdKUXm4W_31["sclk"]
+  n_bEe0Rk7Iqyd7tdKUXm4W_33["ctrl_sdo(MOSI)"]
+  n_bEe0Rk7Iqyd7tdKUXm4W_34["ctrl_sdi(MISO)"]
+  n_bEe0Rk7Iqyd7tdKUXm4W_35["cs_n[0]"]
+  n_bEe0Rk7Iqyd7tdKUXm4W_36["cs_n[1]"]
+  n_bEe0Rk7Iqyd7tdKUXm4W_37["Target 0"]
+  n_bEe0Rk7Iqyd7tdKUXm4W_38["sclk"]
+  n_bEe0Rk7Iqyd7tdKUXm4W_39["tgt_sdi(MOSI)"]
+  n_bEe0Rk7Iqyd7tdKUXm4W_4["Device B"]
+  n_bEe0Rk7Iqyd7tdKUXm4W_40["tgt_sdo(MISO)"]
+  n_bEe0Rk7Iqyd7tdKUXm4W_41["cs_n"]
+  n_bEe0Rk7Iqyd7tdKUXm4W_48["Target 1"]
+  n_bEe0Rk7Iqyd7tdKUXm4W_49["sclk"]
+  n_bEe0Rk7Iqyd7tdKUXm4W_5["TX(Transmit)"]
+  n_bEe0Rk7Iqyd7tdKUXm4W_50["tgt_sdi(MOSI)"]
+  n_bEe0Rk7Iqyd7tdKUXm4W_51["tgt_sdo(MISO)"]
+  n_bEe0Rk7Iqyd7tdKUXm4W_52["cs_n"]
+  n_bEe0Rk7Iqyd7tdKUXm4W_57["node_m4W-57"]
+  n_bEe0Rk7Iqyd7tdKUXm4W_58["node_m4W-58"]
+  n_bEe0Rk7Iqyd7tdKUXm4W_6["RX(Receive)"]
+  n_bEe0Rk7Iqyd7tdKUXm4W_64["node_m4W-64"]
+  n_bEe0Rk7Iqyd7tdKUXm4W_9["tx_data"]
+  n_ltt8_5uzGe2_F_w9ssLU_109["Controller"]
+  n_ltt8_5uzGe2_F_w9ssLU_115["start==0"]
+  n_ltt8_5uzGe2_F_w9ssLU_119["start==0"]
+  n_ltt8_5uzGe2_F_w9ssLU_120["start==1"]
+  n_ltt8_5uzGe2_F_w9ssLU_121["START done"]
+  n_ltt8_5uzGe2_F_w9ssLU_124["bit_cnt != 7"]
+  n_ltt8_5uzGe2_F_w9ssLU_125["byte done"]
+  n_ltt8_5uzGe2_F_w9ssLU_127["addr ACK && write"]
+  n_ltt8_5uzGe2_F_w9ssLU_128["addr ACK && read"]
+  n_ltt8_5uzGe2_F_w9ssLU_129["byte done"]
+  n_ltt8_5uzGe2_F_w9ssLU_131["data ACK done"]
+  n_ltt8_5uzGe2_F_w9ssLU_133["ACK sent"]
+  n_ltt8_5uzGe2_F_w9ssLU_134["next cycle"]
+  n_ltt8_5uzGe2_F_w9ssLU_136["bit_cnt != 7"]
+  n_ltt8_5uzGe2_F_w9ssLU_137["busy = 0done = 0release SCK/SDAclear step, bit_cnt"]
+  n_ltt8_5uzGe2_F_w9ssLU_141["0"]
+  n_ltt8_5uzGe2_F_w9ssLU_142["1"]
+  n_ltt8_5uzGe2_F_w9ssLU_143["busy = 1latch clk_div, addr, <br/>rw, ack_in ,txload {target_addr, rw}"]
+  n_ltt8_5uzGe2_F_w9ssLU_148["node_LU-148"]
+  n_ltt8_5uzGe2_F_w9ssLU_15["selected"]
+  n_ltt8_5uzGe2_F_w9ssLU_150["GEN_START"]
+  n_ltt8_5uzGe2_F_w9ssLU_154["qtr_tick"]
+  n_ltt8_5uzGe2_F_w9ssLU_158["step"]
+  n_ltt8_5uzGe2_F_w9ssLU_162["node_LU-162"]
+  n_ltt8_5uzGe2_F_w9ssLU_165["ctrl_scl_drive_low = 0ctrl_sda_drive_low = 0step = 1"]
+  n_ltt8_5uzGe2_F_w9ssLU_172["node_LU-172"]
+  n_ltt8_5uzGe2_F_w9ssLU_173["ctrl_scl_drive_low = 0ctrl_sda_drive_low = 1step = 2"]
+  n_ltt8_5uzGe2_F_w9ssLU_175["node_LU-175"]
+  n_ltt8_5uzGe2_F_w9ssLU_176["ctrl_scl_drive_low = 1ctrl_sda_drive_low = 1step = 0"]
+  n_ltt8_5uzGe2_F_w9ssLU_178["TX_BYTE"]
+  n_ltt8_5uzGe2_F_w9ssLU_184["0"]
+  n_ltt8_5uzGe2_F_w9ssLU_185["1"]
+  n_ltt8_5uzGe2_F_w9ssLU_186["2"]
+  n_ltt8_5uzGe2_F_w9ssLU_189["step = 0"]
+  n_ltt8_5uzGe2_F_w9ssLU_192["default"]
+  n_ltt8_5uzGe2_F_w9ssLU_20["cs_start == 0"]
+  n_ltt8_5uzGe2_F_w9ssLU_223["node_LU-223"]
+  n_ltt8_5uzGe2_F_w9ssLU_224["TX_BYTE"]
+  n_ltt8_5uzGe2_F_w9ssLU_226["qtr_tick"]
+  n_ltt8_5uzGe2_F_w9ssLU_228["0"]
+  n_ltt8_5uzGe2_F_w9ssLU_23["cs_stop == 1"]
+  n_ltt8_5uzGe2_F_w9ssLU_230["2"]
+  n_ltt8_5uzGe2_F_w9ssLU_233["step"]
+  n_ltt8_5uzGe2_F_w9ssLU_234["node_LU-234"]
+  n_ltt8_5uzGe2_F_w9ssLU_236["ctrl_scl_drive_low = 1ctrl_sda_drive_low = ~tx_bit_is_onestep = 1"]
+  n_ltt8_5uzGe2_F_w9ssLU_238["1"]
+  n_ltt8_5uzGe2_F_w9ssLU_239["node_LU-239"]
+  n_ltt8_5uzGe2_F_w9ssLU_241["ctrl_scl_drive_low = 0step = 2"]
+  n_ltt8_5uzGe2_F_w9ssLU_242["node_LU-242"]
+  n_ltt8_5uzGe2_F_w9ssLU_244["ctrl_scl_drive_low = 1tx_shift_reg = {tx_shift_reg[6:0], 0}step = 0"]
+  n_ltt8_5uzGe2_F_w9ssLU_250["bit_cnt == 3'd7"]
+  n_ltt8_5uzGe2_F_w9ssLU_253["bit_cnt = 0"]
+  n_ltt8_5uzGe2_F_w9ssLU_255["WAIT_ACK"]
+  n_ltt8_5uzGe2_F_w9ssLU_256["Controller ASM 너무 복잡하다.. FSM으로만 끝내기로함 ㅅㄱ"]
+  n_ltt8_5uzGe2_F_w9ssLU_293["start == 1"]
+  n_ltt8_5uzGe2_F_w9ssLU_294["IDLE"]
+  n_ltt8_5uzGe2_F_w9ssLU_296["addr match"]
+  n_ltt8_5uzGe2_F_w9ssLU_297["RX_ADDR"]
+  n_ltt8_5uzGe2_F_w9ssLU_300["ADD_ACK"]
+  n_ltt8_5uzGe2_F_w9ssLU_309["node_LU-309"]
+  n_ltt8_5uzGe2_F_w9ssLU_321["Target"]
+  n_ltt8_5uzGe2_F_w9ssLU_329["scl_rise && bit_cnt != 7"]
+  n_ltt8_5uzGe2_F_w9ssLU_330["RX_DATA"]
+  n_ltt8_5uzGe2_F_w9ssLU_332["TX_DATA"]
+  n_ltt8_5uzGe2_F_w9ssLU_334["DATA_ACK"]
+  n_ltt8_5uzGe2_F_w9ssLU_336["WAIT_ACK"]
+  n_ltt8_5uzGe2_F_w9ssLU_338["IGNOTE"]
+  n_ltt8_5uzGe2_F_w9ssLU_347["bit_cnt != 7"]
+  n_ltt8_5uzGe2_F_w9ssLU_349["drive ACK"]
+  n_ltt8_5uzGe2_F_w9ssLU_350["rw == 1"]
+  n_ltt8_5uzGe2_F_w9ssLU_351["rw == 0"]
+  n_ltt8_5uzGe2_F_w9ssLU_352["start == 0"]
+  n_ltt8_5uzGe2_F_w9ssLU_354["scl_fall && bit_cnt != 7"]
+  n_ltt8_5uzGe2_F_w9ssLU_355["data done"]
+  n_ltt8_5uzGe2_F_w9ssLU_357["start_detect"]
+  n_ltt8_5uzGe2_F_w9ssLU_358["ACK done"]
+  n_ltt8_5uzGe2_F_w9ssLU_359["byte done"]
+  n_ltt8_5uzGe2_F_w9ssLU_36["selected = 1bit_cnt = 0rx_shift_reg = 0tgt_sdo_oe = 1tgt_sdo = tx_data[DATA_W-1]tx_shift_reg = {tx_data[DATA_W-2:0], 1'b0}"]
+  n_ltt8_5uzGe2_F_w9ssLU_360["ACK phase done"]
+  n_ltt8_5uzGe2_F_w9ssLU_362["wait boundary"]
+  n_ltt8_5uzGe2_F_w9ssLU_41["node_sLU-41"]
+  n_ltt8_5uzGe2_F_w9ssLU_45["selected"]
+  n_ltt8_5uzGe2_F_w9ssLU_46["SETUP"]
+  n_ltt8_5uzGe2_F_w9ssLU_49["rx_data ={rx_shiget_reg[DATA_W-2:0], tgt_sdi}"]
+  n_ltt8_5uzGe2_F_w9ssLU_51["shift_edge"]
+  n_ltt8_5uzGe2_F_w9ssLU_53["tgt_sdo = tx_data[DATA_W-1]tx_shift_reg = {tx_data[DATA_W-2:0], 1'b0}"]
+  n_ltt8_5uzGe2_F_w9ssLU_62["stop"]
+  n_ltt8_5uzGe2_F_w9ssLU_64["IDLE"]
+  n_ltt8_5uzGe2_F_w9ssLU_66["1"]
+  n_ltt8_5uzGe2_F_w9ssLU_67["0"]
+  n_ltt8_5uzGe2_F_w9ssLU_68["1"]
+  n_ltt8_5uzGe2_F_w9ssLU_71["sample_edge"]
+  n_ltt8_5uzGe2_F_w9ssLU_76["0"]
+  n_ltt8_5uzGe2_F_w9ssLU_87["0"]
+  n_ltt8_5uzGe2_F_w9ssLU_88["TRANSFER"]
+  n_xwpWKVpSPQ_d_rkWeaS__100["1"]
+  n_xwpWKVpSPQ_d_rkWeaS__101["CTRL_SEND_ACK"]
+  n_xwpWKVpSPQ_d_rkWeaS__103["step 0: drive SDA per ack_in_r<br/>step 1: release SCL high<br/>step 2: hold ACK/NACK phase<br/>step 3: drive SCL low, release SDA"]
+  n_xwpWKVpSPQ_d_rkWeaS__105["CTRL_GEN_STOP"]
+  n_xwpWKVpSPQ_d_rkWeaS__106["step 0: drive SCL low, SDA low<br/>step 1: release SCL high, keep SDA low<br/>step 2: release SDA (SCL high)"]
+  n_xwpWKVpSPQ_d_rkWeaS__109["also goto CTRL_GEN_STOP from data phase branch"]
+  n_xwpWKVpSPQ_d_rkWeaS__110["CTRL_DONE"]
+  n_xwpWKVpSPQ_d_rkWeaS__112["busy = 0<br/>done = 1"]
+  n_xwpWKVpSPQ_d_rkWeaS__115["data phase"]
+  n_xwpWKVpSPQ_d_rkWeaS__3["SPI_target — FSM (MODE0, CPOL=0, CPHA=0, MSB-first, 1 byte)"]
+  n_xwpWKVpSPQ_d_rkWeaS__4["node_eaS--4"]
+  n_xwpWKVpSPQ_d_rkWeaS__5["TGT_IDLE"]
+  n_xwpWKVpSPQ_d_rkWeaS__50["CTRL_IDLE"]
+  n_xwpWKVpSPQ_d_rkWeaS__51["busy = 0<br/>release SCL, SDA<br/>clear step, bit_cnt"]
+  n_xwpWKVpSPQ_d_rkWeaS__52["start?"]
+  n_xwpWKVpSPQ_d_rkWeaS__56["0"]
+  n_xwpWKVpSPQ_d_rkWeaS__57["latch clk_div, target_addr, rw, ack_in, tx_data<br/>busy = 1<br/>load {target_addr, rw}"]
+  n_xwpWKVpSPQ_d_rkWeaS__58["CTRL_GEN_START"]
+  n_xwpWKVpSPQ_d_rkWeaS__6["TGT_SETUP"]
+  n_xwpWKVpSPQ_d_rkWeaS__60["1"]
+  n_xwpWKVpSPQ_d_rkWeaS__62["step 0: release SCL, SDA<br/>step 1: keep SCL released, drive SDA low<br/>step 2: drive SCL low, keep SDA low"]
+  n_xwpWKVpSPQ_d_rkWeaS__63["CTRL_TX_BYTE"]
+  n_xwpWKVpSPQ_d_rkWeaS__66["step 0: SCL low, drive SDA low if TX[bit]=0<br/>step 1: release SCL high<br/>step 2: hold data stable<br/>step 3: drive SCL low, shift byte"]
+  n_xwpWKVpSPQ_d_rkWeaS__67["bit_cnt == 7?"]
+  n_xwpWKVpSPQ_d_rkWeaS__7["TGT_TRANSFER"]
+  n_xwpWKVpSPQ_d_rkWeaS__70["bit_cnt++"]
+  n_xwpWKVpSPQ_d_rkWeaS__72["0"]
+  n_xwpWKVpSPQ_d_rkWeaS__74["clear bit_cnt"]
+  n_xwpWKVpSPQ_d_rkWeaS__76["1"]
+  n_xwpWKVpSPQ_d_rkWeaS__77["CTRL_WAIT_ACK"]
+  n_xwpWKVpSPQ_d_rkWeaS__79["step 0: release SDA, keep SCL low<br/>step 1: release SCL high<br/>step 2: sample ACK as ack_seen = ~sda<br/>step 3: drive SCL low"]
+  n_xwpWKVpSPQ_d_rkWeaS__8["TGT_DONE"]
+  n_xwpWKVpSPQ_d_rkWeaS__81["byte_phase<br/>& rw"]
+  n_xwpWKVpSPQ_d_rkWeaS__83["load tx_data"]
+  n_xwpWKVpSPQ_d_rkWeaS__85["addr, rw=0"]
+  n_xwpWKVpSPQ_d_rkWeaS__87["CTRL_RX_BYTE"]
+  n_xwpWKVpSPQ_d_rkWeaS__89["addr, rw=1"]
+  n_xwpWKVpSPQ_d_rkWeaS__90["step 0: release SDA, keep SCL low<br/>step 1: release SCL high<br/>step 2: sample SDA into RX shift register<br/>step 3: drive SCL low"]
+  n_xwpWKVpSPQ_d_rkWeaS__92["bit_cnt == 7?"]
+  n_xwpWKVpSPQ_d_rkWeaS__94["bit_cnt++"]
+  n_xwpWKVpSPQ_d_rkWeaS__96["0"]
+  n_xwpWKVpSPQ_d_rkWeaS__98["latch rx_data"]
+  n_LNQQEUjiXasE_i83GHhc_1 --> n_LNQQEUjiXasE_i83GHhc_2
+  n_LNQQEUjiXasE_i83GHhc_2 --> n_LNQQEUjiXasE_i83GHhc_3
+  n_LNQQEUjiXasE_i83GHhc_26 --> n_LNQQEUjiXasE_i83GHhc_29
+  n_LNQQEUjiXasE_i83GHhc_29 --> n_LNQQEUjiXasE_i83GHhc_31
+  n_LNQQEUjiXasE_i83GHhc_31 --> n_LNQQEUjiXasE_i83GHhc_32
+  n_LNQQEUjiXasE_i83GHhc_39 --> n_LNQQEUjiXasE_i83GHhc_40
+  n_bEe0Rk7Iqyd7tdKUXm4W_5 --> n_bEe0Rk7Iqyd7tdKUXm4W_3
+  n_bEe0Rk7Iqyd7tdKUXm4W_58 --> n_bEe0Rk7Iqyd7tdKUXm4W_39
+  n_bEe0Rk7Iqyd7tdKUXm4W_58 --> n_bEe0Rk7Iqyd7tdKUXm4W_50
+  n_bEe0Rk7Iqyd7tdKUXm4W_40 --> n_bEe0Rk7Iqyd7tdKUXm4W_34
+  n_bEe0Rk7Iqyd7tdKUXm4W_51 --> n_bEe0Rk7Iqyd7tdKUXm4W_34
+  n_bEe0Rk7Iqyd7tdKUXm4W_35 --> n_bEe0Rk7Iqyd7tdKUXm4W_41
+  n_bEe0Rk7Iqyd7tdKUXm4W_36 --> n_bEe0Rk7Iqyd7tdKUXm4W_52
+  n_bEe0Rk7Iqyd7tdKUXm4W_31 --> n_bEe0Rk7Iqyd7tdKUXm4W_49
+  n_bEe0Rk7Iqyd7tdKUXm4W_31 --> n_bEe0Rk7Iqyd7tdKUXm4W_38
+  n_Ae3oPlt2ZsId0ac_4q3b_136 --> n_MMC8JyfsVthdM_83dXaR_6
+  n_MMC8JyfsVthdM_83dXaR_6 --> n_MMC8JyfsVthdM_83dXaR_7
+  n_7lffjfs2SrMcJT1IvJNY_2 --> n_7lffjfs2SrMcJT1IvJNY_3
+  n_7lffjfs2SrMcJT1IvJNY_3 --> n_7lffjfs2SrMcJT1IvJNY_5
+  n_7lffjfs2SrMcJT1IvJNY_5 --> n_7lffjfs2SrMcJT1IvJNY_7
+  n_7lffjfs2SrMcJT1IvJNY_7 --> n_7lffjfs2SrMcJT1IvJNY_2
+  n_7lffjfs2SrMcJT1IvJNY_9 --> n_7lffjfs2SrMcJT1IvJNY_2
+  n_7lffjfs2SrMcJT1IvJNY_14 --> n_7lffjfs2SrMcJT1IvJNY_18
+  n_7lffjfs2SrMcJT1IvJNY_18 --> n_7lffjfs2SrMcJT1IvJNY_14
+  n_7lffjfs2SrMcJT1IvJNY_31 --> n_7lffjfs2SrMcJT1IvJNY_32
+  n_7lffjfs2SrMcJT1IvJNY_32 --> n_Ae3oPlt2ZsId0ac_4q3b_230
+  n_7lffjfs2SrMcJT1IvJNY_35 --> n_7lffjfs2SrMcJT1IvJNY_37
+  n_7lffjfs2SrMcJT1IvJNY_37 --> n_7lffjfs2SrMcJT1IvJNY_39
+  n_7lffjfs2SrMcJT1IvJNY_39 --> n_7lffjfs2SrMcJT1IvJNY_40
+  n_7lffjfs2SrMcJT1IvJNY_40 --> n_Ae3oPlt2ZsId0ac_4q3b_2
+  n_7lffjfs2SrMcJT1IvJNY_40 --> n_7lffjfs2SrMcJT1IvJNY_39
+  n_7lffjfs2SrMcJT1IvJNY_40 --> n_Ae3oPlt2ZsId0ac_4q3b_6
+  n_7lffjfs2SrMcJT1IvJNY_42 --> n_7lffjfs2SrMcJT1IvJNY_35
+  n_Ae3oPlt2ZsId0ac_4q3b_2 --> n_Ae3oPlt2ZsId0ac_4q3b_4
+  n_Ae3oPlt2ZsId0ac_4q3b_4 --> n_Ae3oPlt2ZsId0ac_4q3b_6
+  n_Ae3oPlt2ZsId0ac_4q3b_6 --> n_Ae3oPlt2ZsId0ac_4q3b_8
+  n_Ae3oPlt2ZsId0ac_4q3b_8 --> n_7lffjfs2SrMcJT1IvJNY_35
+  n_Ae3oPlt2ZsId0ac_4q3b_14 --> n_Ae3oPlt2ZsId0ac_4q3b_17
+  n_Ae3oPlt2ZsId0ac_4q3b_17 --> n_Ae3oPlt2ZsId0ac_4q3b_18
+  n_Ae3oPlt2ZsId0ac_4q3b_17 --> n_ltt8_5uzGe2_F_w9ssLU_137
+  n_Ae3oPlt2ZsId0ac_4q3b_151 --> n_Ae3oPlt2ZsId0ac_4q3b_153
+  n_Ae3oPlt2ZsId0ac_4q3b_153 --> n_Ae3oPlt2ZsId0ac_4q3b_161
+  n_Ae3oPlt2ZsId0ac_4q3b_161 --> n_Ae3oPlt2ZsId0ac_4q3b_160
+  n_Ae3oPlt2ZsId0ac_4q3b_161 --> n_Ae3oPlt2ZsId0ac_4q3b_159
+  n_Ae3oPlt2ZsId0ac_4q3b_168 --> n_Ae3oPlt2ZsId0ac_4q3b_165
+  n_Ae3oPlt2ZsId0ac_4q3b_165 --> n_Ae3oPlt2ZsId0ac_4q3b_166
+  n_Ae3oPlt2ZsId0ac_4q3b_172 --> n_Ae3oPlt2ZsId0ac_4q3b_173
+  n_Ae3oPlt2ZsId0ac_4q3b_173 --> n_Ae3oPlt2ZsId0ac_4q3b_161
+  n_Ae3oPlt2ZsId0ac_4q3b_218 --> n_Ae3oPlt2ZsId0ac_4q3b_221
+  n_Ae3oPlt2ZsId0ac_4q3b_230 --> n_Ae3oPlt2ZsId0ac_4q3b_231
+  n_Ae3oPlt2ZsId0ac_4q3b_230 --> n_Ae3oPlt2ZsId0ac_4q3b_233
+  n_Ae3oPlt2ZsId0ac_4q3b_231 --> n_Ae3oPlt2ZsId0ac_4q3b_230
+  n_Ae3oPlt2ZsId0ac_4q3b_233 --> n_Ae3oPlt2ZsId0ac_4q3b_237
+  n_Ae3oPlt2ZsId0ac_4q3b_237 --> n_Ae3oPlt2ZsId0ac_4q3b_238
+  n_Ae3oPlt2ZsId0ac_4q3b_237 --> n_Ae3oPlt2ZsId0ac_4q3b_256
+  n_Ae3oPlt2ZsId0ac_4q3b_238 --> n_7lffjfs2SrMcJT1IvJNY_27
+  n_Ae3oPlt2ZsId0ac_4q3b_256 --> n_Ae3oPlt2ZsId0ac_4q3b_243
+  n_Ae3oPlt2ZsId0ac_4q3b_268 --> n_Ae3oPlt2ZsId0ac_4q3b_270
+  n_Ae3oPlt2ZsId0ac_4q3b_270 --> n_Ae3oPlt2ZsId0ac_4q3b_272
+  n_Ae3oPlt2ZsId0ac_4q3b_272 --> n_Ae3oPlt2ZsId0ac_4q3b_274
+  n_Ae3oPlt2ZsId0ac_4q3b_272 --> n_Ae3oPlt2ZsId0ac_4q3b_268
+  n_Ae3oPlt2ZsId0ac_4q3b_274 --> n_Ae3oPlt2ZsId0ac_4q3b_268
+  n_Ae3oPlt2ZsId0ac_4q3b_276 --> n_Ae3oPlt2ZsId0ac_4q3b_268
+  n_Ae3oPlt2ZsId0ac_4q3b_281 --> n_Ae3oPlt2ZsId0ac_4q3b_285
+  n_Ae3oPlt2ZsId0ac_4q3b_285 --> n_Ae3oPlt2ZsId0ac_4q3b_281
+  n_Ae3oPlt2ZsId0ac_4q3b_294 --> n_Ae3oPlt2ZsId0ac_4q3b_296
+  n_Ae3oPlt2ZsId0ac_4q3b_296 --> n_Ae3oPlt2ZsId0ac_4q3b_313
+  n_Ae3oPlt2ZsId0ac_4q3b_313 --> n_Ae3oPlt2ZsId0ac_4q3b_315
+  n_Ae3oPlt2ZsId0ac_4q3b_315 --> n_Ae3oPlt2ZsId0ac_4q3b_313
+  n_Ae3oPlt2ZsId0ac_4q3b_329 --> n_Ae3oPlt2ZsId0ac_4q3b_325
+  n_Ae3oPlt2ZsId0ac_4q3b_268 --> n_Ae3oPlt2ZsId0ac_4q3b_268
+  n_ltt8_5uzGe2_F_w9ssLU_45 --> n_ltt8_5uzGe2_F_w9ssLU_46
+  n_ltt8_5uzGe2_F_w9ssLU_45 --> n_ltt8_5uzGe2_F_w9ssLU_62
+  n_ltt8_5uzGe2_F_w9ssLU_49 --> n_Ae3oPlt2ZsId0ac_4q3b_329
+  n_ltt8_5uzGe2_F_w9ssLU_51 --> n_ltt8_5uzGe2_F_w9ssLU_53
+  n_ltt8_5uzGe2_F_w9ssLU_51 --> n_ltt8_5uzGe2_F_w9ssLU_88
+  n_ltt8_5uzGe2_F_w9ssLU_62 --> n_ltt8_5uzGe2_F_w9ssLU_64
+  n_ltt8_5uzGe2_F_w9ssLU_62 --> n_ltt8_5uzGe2_F_w9ssLU_45
+  n_ltt8_5uzGe2_F_w9ssLU_71 --> n_ltt8_5uzGe2_F_w9ssLU_51
+  n_7lffjfs2SrMcJT1IvJNY_39 --> n_7lffjfs2SrMcJT1IvJNY_39
+  n_Ae3oPlt2ZsId0ac_4q3b_2 --> n_Ae3oPlt2ZsId0ac_4q3b_2
+  n_ltt8_5uzGe2_F_w9ssLU_148 --> n_ltt8_5uzGe2_F_w9ssLU_154
+  n_ltt8_5uzGe2_F_w9ssLU_154 --> n_ltt8_5uzGe2_F_w9ssLU_158
+  n_ltt8_5uzGe2_F_w9ssLU_158 --> n_ltt8_5uzGe2_F_w9ssLU_165
+  n_ltt8_5uzGe2_F_w9ssLU_158 --> n_ltt8_5uzGe2_F_w9ssLU_176
+  n_ltt8_5uzGe2_F_w9ssLU_158 --> n_ltt8_5uzGe2_F_w9ssLU_189
+  n_ltt8_5uzGe2_F_w9ssLU_162 --> n_ltt8_5uzGe2_F_w9ssLU_148
+  n_ltt8_5uzGe2_F_w9ssLU_173 --> n_ltt8_5uzGe2_F_w9ssLU_148
+  n_ltt8_5uzGe2_F_w9ssLU_176 --> n_ltt8_5uzGe2_F_w9ssLU_178
+  n_ltt8_5uzGe2_F_w9ssLU_189 --> n_ltt8_5uzGe2_F_w9ssLU_148
+  n_ltt8_5uzGe2_F_w9ssLU_223 --> n_ltt8_5uzGe2_F_w9ssLU_226
+  n_ltt8_5uzGe2_F_w9ssLU_226 --> n_ltt8_5uzGe2_F_w9ssLU_233
+  n_ltt8_5uzGe2_F_w9ssLU_233 --> n_ltt8_5uzGe2_F_w9ssLU_236
+  n_ltt8_5uzGe2_F_w9ssLU_233 --> n_ltt8_5uzGe2_F_w9ssLU_244
+  n_ltt8_5uzGe2_F_w9ssLU_234 --> n_ltt8_5uzGe2_F_w9ssLU_223
+  n_ltt8_5uzGe2_F_w9ssLU_241 --> n_ltt8_5uzGe2_F_w9ssLU_223
+  n_ltt8_5uzGe2_F_w9ssLU_244 --> n_ltt8_5uzGe2_F_w9ssLU_250
+  n_ltt8_5uzGe2_F_w9ssLU_250 --> n_ltt8_5uzGe2_F_w9ssLU_253
+  n_ltt8_5uzGe2_F_w9ssLU_294 --> n_ltt8_5uzGe2_F_w9ssLU_297
+  n_ltt8_5uzGe2_F_w9ssLU_297 --> n_ltt8_5uzGe2_F_w9ssLU_300
+  n_ltt8_5uzGe2_F_w9ssLU_300 --> n_ltt8_5uzGe2_F_w9ssLU_330
+  n_ltt8_5uzGe2_F_w9ssLU_300 --> n_ltt8_5uzGe2_F_w9ssLU_332
+  n_ltt8_5uzGe2_F_w9ssLU_309 --> n_ltt8_5uzGe2_F_w9ssLU_294
+  n_ltt8_5uzGe2_F_w9ssLU_330 --> n_ltt8_5uzGe2_F_w9ssLU_334
+  n_ltt8_5uzGe2_F_w9ssLU_332 --> n_ltt8_5uzGe2_F_w9ssLU_336
+  n_ltt8_5uzGe2_F_w9ssLU_334 --> n_ltt8_5uzGe2_F_w9ssLU_338
+  n_ltt8_5uzGe2_F_w9ssLU_336 --> n_ltt8_5uzGe2_F_w9ssLU_338
+  n_ltt8_5uzGe2_F_w9ssLU_338 --> n_ltt8_5uzGe2_F_w9ssLU_294
+  n_ltt8_5uzGe2_F_w9ssLU_338 --> n_ltt8_5uzGe2_F_w9ssLU_338
+  n_xwpWKVpSPQ_d_rkWeaS__4 --> n_xwpWKVpSPQ_d_rkWeaS__5
+  n_xwpWKVpSPQ_d_rkWeaS__5 --> n_xwpWKVpSPQ_d_rkWeaS__5
+  n_xwpWKVpSPQ_d_rkWeaS__5 --> n_xwpWKVpSPQ_d_rkWeaS__6
+  n_xwpWKVpSPQ_d_rkWeaS__6 --> n_xwpWKVpSPQ_d_rkWeaS__7
+  n_xwpWKVpSPQ_d_rkWeaS__7 --> n_xwpWKVpSPQ_d_rkWeaS__7
+  n_xwpWKVpSPQ_d_rkWeaS__7 --> n_xwpWKVpSPQ_d_rkWeaS__7
+  n_xwpWKVpSPQ_d_rkWeaS__7 --> n_xwpWKVpSPQ_d_rkWeaS__8
+  n_xwpWKVpSPQ_d_rkWeaS__7 --> n_xwpWKVpSPQ_d_rkWeaS__5
+  n_xwpWKVpSPQ_d_rkWeaS__8 --> n_xwpWKVpSPQ_d_rkWeaS__5
+  n_xwpWKVpSPQ_d_rkWeaS__50 --> n_xwpWKVpSPQ_d_rkWeaS__51
+  n_xwpWKVpSPQ_d_rkWeaS__51 --> n_xwpWKVpSPQ_d_rkWeaS__52
+  n_xwpWKVpSPQ_d_rkWeaS__52 --> n_xwpWKVpSPQ_d_rkWeaS__50
+  n_xwpWKVpSPQ_d_rkWeaS__52 --> n_xwpWKVpSPQ_d_rkWeaS__57
+  n_xwpWKVpSPQ_d_rkWeaS__57 --> n_xwpWKVpSPQ_d_rkWeaS__58
+  n_xwpWKVpSPQ_d_rkWeaS__58 --> n_xwpWKVpSPQ_d_rkWeaS__62
+  n_xwpWKVpSPQ_d_rkWeaS__62 --> n_xwpWKVpSPQ_d_rkWeaS__63
+  n_xwpWKVpSPQ_d_rkWeaS__63 --> n_xwpWKVpSPQ_d_rkWeaS__66
+  n_xwpWKVpSPQ_d_rkWeaS__66 --> n_xwpWKVpSPQ_d_rkWeaS__67
+  n_xwpWKVpSPQ_d_rkWeaS__67 --> n_xwpWKVpSPQ_d_rkWeaS__70
+  n_xwpWKVpSPQ_d_rkWeaS__70 --> n_xwpWKVpSPQ_d_rkWeaS__63
+  n_xwpWKVpSPQ_d_rkWeaS__67 --> n_xwpWKVpSPQ_d_rkWeaS__74
+  n_xwpWKVpSPQ_d_rkWeaS__74 --> n_xwpWKVpSPQ_d_rkWeaS__77
+  n_xwpWKVpSPQ_d_rkWeaS__77 --> n_xwpWKVpSPQ_d_rkWeaS__79
+  n_xwpWKVpSPQ_d_rkWeaS__79 --> n_xwpWKVpSPQ_d_rkWeaS__81
+  n_xwpWKVpSPQ_d_rkWeaS__81 --> n_xwpWKVpSPQ_d_rkWeaS__83
+  n_xwpWKVpSPQ_d_rkWeaS__83 --> n_xwpWKVpSPQ_d_rkWeaS__63
+  n_xwpWKVpSPQ_d_rkWeaS__81 --> n_xwpWKVpSPQ_d_rkWeaS__87
+  n_xwpWKVpSPQ_d_rkWeaS__87 --> n_xwpWKVpSPQ_d_rkWeaS__90
+  n_xwpWKVpSPQ_d_rkWeaS__90 --> n_xwpWKVpSPQ_d_rkWeaS__92
+  n_xwpWKVpSPQ_d_rkWeaS__92 --> n_xwpWKVpSPQ_d_rkWeaS__94
+  n_xwpWKVpSPQ_d_rkWeaS__94 --> n_xwpWKVpSPQ_d_rkWeaS__87
+  n_xwpWKVpSPQ_d_rkWeaS__92 --> n_xwpWKVpSPQ_d_rkWeaS__98
+  n_xwpWKVpSPQ_d_rkWeaS__98 --> n_xwpWKVpSPQ_d_rkWeaS__101
+  n_xwpWKVpSPQ_d_rkWeaS__101 --> n_xwpWKVpSPQ_d_rkWeaS__103
+  n_xwpWKVpSPQ_d_rkWeaS__103 --> n_xwpWKVpSPQ_d_rkWeaS__105
+  n_xwpWKVpSPQ_d_rkWeaS__105 --> n_xwpWKVpSPQ_d_rkWeaS__106
+  n_xwpWKVpSPQ_d_rkWeaS__106 --> n_xwpWKVpSPQ_d_rkWeaS__110
+  n_xwpWKVpSPQ_d_rkWeaS__110 --> n_xwpWKVpSPQ_d_rkWeaS__112
+  n_xwpWKVpSPQ_d_rkWeaS__81 --> n_xwpWKVpSPQ_d_rkWeaS__105
