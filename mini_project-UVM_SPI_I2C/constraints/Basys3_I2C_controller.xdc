@@ -1,5 +1,5 @@
 ## Basys3 XDC: top_I2C_controller_board
-## I2C controller pins: JB1=SCL, JB2=SDA.
+## I2C controller pins: JA1=SCL, JA2=SDA.
 
 set_property -dict { PACKAGE_PIN W5 IOSTANDARD LVCMOS33 } [get_ports clk]
 create_clock -add -name sys_clk_pin -period 10.00 -waveform {0 5} [get_ports clk]
@@ -41,8 +41,8 @@ set_property -dict { PACKAGE_PIN L1  IOSTANDARD LVCMOS33 } [get_ports {led[15]}]
 set_property -dict { PACKAGE_PIN U18 IOSTANDARD LVCMOS33 } [get_ports btn_reset]
 set_property -dict { PACKAGE_PIN T18 IOSTANDARD LVCMOS33 } [get_ports btn_start]
 
-set_property -dict { PACKAGE_PIN A14 IOSTANDARD LVCMOS33 PULLUP true } [get_ports i2c_scl]
-set_property -dict { PACKAGE_PIN A16 IOSTANDARD LVCMOS33 PULLUP true } [get_ports i2c_sda]
+set_property -dict { PACKAGE_PIN J1 IOSTANDARD LVCMOS33 PULLUP true } [get_ports i2c_scl]
+set_property -dict { PACKAGE_PIN L2 IOSTANDARD LVCMOS33 PULLUP true } [get_ports i2c_sda]
 
 set_property CONFIG_VOLTAGE 3.3 [current_design]
 set_property CFGBVS VCCO [current_design]
