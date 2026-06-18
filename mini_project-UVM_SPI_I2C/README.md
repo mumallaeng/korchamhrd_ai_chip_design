@@ -2,11 +2,15 @@ English | [한국어](README.ko.md)
 
 # SPI/I2C Serial Communication IP UVM Verification
 
-Kim Yeonwoo
-
 2026.06.11 ~ 2026.06.18
 
-## 1. Overview (Overview)
+> A personal project carried out in the UVM class of *[Consortium] On-Device AI System Semiconductor Design, 2nd Cohort*.
+
+| Name | Responsibilities |
+| --- | --- |
+| Yeonwoo Gim ([@mumallaeng](https://github.com/mumallaeng)) | SPI and I2C controller/target RTL design, UVM environment, Basys 3 board validation |
+
+## 1. Overview
 
 ### 1.1 Purpose and Objectives
 
@@ -32,7 +36,7 @@ This project aims to directly implement SPI and I2C serial communication RTL and
 
 The SPI/I2C communication IP was configured as educational RTL, and operation was confirmed in UVM through expected/actual comparison and coverage hits. The document is structured in the order of RTL structure, FSM/ASM, waveforms, UVM architecture, VCS/Verdi/coverage evidence.
 
-### 1.4 Design Specification Summary (Specification Summary)
+### 1.4 Design Specification Summary
 
 | Item | Content |
 |---|---|
@@ -58,7 +62,7 @@ The SPI/I2C communication IP was configured as educational RTL, and operation wa
 
 The improvement effect is that SPI/I2C and UVM, which felt distant before the class, can now be directly explained through RTL implementation, transaction comparison, and coverage evidence.
 
-## 2. Project Management (Project Management)
+## 2. Project Management
 
 ### 2.1 Schedule Planning (Schedule)
 
@@ -72,7 +76,7 @@ The improvement effect is that SPI/I2C and UVM, which felt distant before the cl
 
 **Table 4. Project Schedule Summary**
 
-### 2.2 Development Environment (Development Environment)
+### 2.2 Development Environment
 
 | Category | Technology |
 |---|---|
@@ -82,7 +86,7 @@ The improvement effect is that SPI/I2C and UVM, which felt distant before the cl
 
 **Table 6. Development Environment**
 
-### 2.3 Design Environment (Design Environment)
+### 2.3 Design Environment
 
 | Category | Content |
 |---|---|
@@ -127,7 +131,7 @@ Table 8. SPI/I2C Terminology Comparison
 
 Table 9. UART/SPI/I2C Comparison
 
-## 4. Detailed Design (Detailed Design)
+## 4. Detailed Design
 
 ### 4.1 RTL Design
 

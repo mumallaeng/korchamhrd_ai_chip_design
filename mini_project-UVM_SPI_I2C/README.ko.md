@@ -2,9 +2,13 @@
 
 # SPI/I2C Serial Communication IP UVM 검증
 
-김연우
-
 2026.06.11 ~ 2026.06.18
+
+> *[컨소시엄] 온디바이스AI 시스템반도체 설계 2기* 교육과정 UVM 수업에서 진행된 개인 과제입니다.
+
+| 이름 | 담당 |
+| --- | --- |
+| 김연우 ([@mumallaeng](https://github.com/mumallaeng)) | SPI·I2C controller/target RTL 설계, UVM 검증 환경 구성, Basys 3 board 검증 |
 
 ## 1. 개요 (Overview)
 
