@@ -6,6 +6,9 @@ English | [한국어](README.ko.md)
 
 > A personal project carried out in the UVM class of *[Consortium] On-Device AI System Semiconductor Design, 2nd Cohort*.
 
+| <img width="400" alt="uvm-spi-i2c-demo-00" src="docs/images/uvm-spi-i2c-demo-00.gif" /> | <img width="400" alt="uvm-spi-i2c-demo-04" src="docs/images/uvm-spi-i2c-demo-04.gif" /> |
+|:---:|:---:|
+
 | Name | Responsibilities |
 | --- | --- |
 | Yeonwoo Gim ([@mumallaeng](https://github.com/mumallaeng)) | SPI and I2C controller/target RTL design, UVM environment, Basys 3 board validation |
