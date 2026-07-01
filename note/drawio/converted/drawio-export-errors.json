@@ -1,0 +1,10 @@
+{
+  "svg_failures": [
+    {
+      "source": "260420-display-select-logic.drawio",
+      "returncode": 0,
+      "stderr": "Error: Export failed: /Users/mumallaeng/git/Vault/activities/korcham/notes/drawio/260420-display-select-logic.drawio\n"
+    }
+  ],
+  "render_failures": []
+}
