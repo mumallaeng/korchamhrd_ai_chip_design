@@ -1,0 +1,92 @@
+{
+  "assignment_title": "0501~0506 UART+FIFO+SENSOR+stopwatch_watch",
+  "course_id": "YOUR_CLASSROOM_COURSE_ID",
+  "course_work_id": "YOUR_CLASSROOM_COURSEWORK_ID",
+  "assignment_slug": "UART+FIFO+SENSOR+stopwatch_watch",
+  "deliverable_root": "/absolute/path/to/GoogleDrive/My Drive/Classroom/.../0501~0506 UART+FIFO+SENSOR+stopwatch_watch",
+  "drive_sync_root": "/absolute/path/to/GoogleDrive/My Drive",
+  "output_dir": "./output",
+  "auto_fix_names_before_scan": true,
+  "google_client_secret_path": "/absolute/path/to/oauth-client-secret.json",
+  "google_token_path": "./tokens/google-oauth-token.json",
+  "google_classroom_token_path": "./tokens/google-classroom-oauth-token.json",
+  "google_oauth_mode": "local-server",
+  "top_level_student_name_regex": "^(?P<student>[^_]+)_",
+  "pilot_students": [
+    "Example Student"
+  ],
+  "excluded_students": [],
+  "roster": {
+    "xlsx_path": "/absolute/path/to/roster.xlsx",
+    "sheet_name": "학생",
+    "student_name_column": "학생 명단",
+    "classroom_email_column": "메일(구글 클래스룸)"
+  },
+  "base_comment_template": "{url} 편집 권한으로 공유했습니다. 제출물을 확인하고, 편집이 필요한 경우에는 직접 수정해주세요.",
+  "expected_artifacts": [
+    {
+      "key": "daily_log",
+      "label": "일지",
+      "match_tokens": [
+        "일지"
+      ],
+      "expected_kind": "file",
+      "allowed_extensions": [
+        ".pdf"
+      ],
+      "filename_regex": "^{student}_\\d{8}_{slug}_일지\\.pdf$",
+      "required_min_count": 1
+    },
+    {
+      "key": "source_code",
+      "label": "소스코드",
+      "match_tokens": [
+        "소스코드"
+      ],
+      "expected_kind": "dir",
+      "allowed_extensions": [],
+      "filename_regex": "^{student}_\\d{8}_{slug}_소스코드$",
+      "required_min_count": 1
+    },
+    {
+      "key": "final_report",
+      "label": "완료보고서",
+      "match_tokens": [
+        "완료보고서"
+      ],
+      "expected_kind": "file",
+      "allowed_extensions": [
+        ".pdf",
+        ".docx"
+      ],
+      "filename_regex": "^{student}_\\d{8}_{slug}_완료보고서\\.(pdf|docx)$",
+      "required_min_count": 1
+    },
+    {
+      "key": "slides",
+      "label": "발표자료",
+      "match_tokens": [
+        "발표자료"
+      ],
+      "expected_kind": "file",
+      "allowed_extensions": [
+        ".pptx"
+      ],
+      "filename_regex": "^{student}_\\d{8}_{slug}_발표자료\\.pptx$",
+      "required_min_count": 1
+    },
+    {
+      "key": "schedule",
+      "label": "일정표",
+      "match_tokens": [
+        "일정표"
+      ],
+      "expected_kind": "file",
+      "allowed_extensions": [
+        ".xlsx"
+      ],
+      "filename_regex": "^{student}_\\d{8}_{slug}_일정표\\.xlsx$",
+      "required_min_count": 1
+    }
+  ]
+}
