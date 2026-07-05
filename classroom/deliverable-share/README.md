@@ -1,94 +1,96 @@
+영문 버전은 [README.en.md](README.en.md)를 확인하세요.
+
 # classroom-deliverable-share
 
-Part of `kccistc-semiconductor-academy/classroom`.
+`kccistc-semiconductor-academy/classroom`에 포함된 Google Classroom / Drive 제출물 운영 도구입니다.
 
-Prepare Google Classroom deliverables from a local Google Drive sync folder.
+로컬 Google Drive 동기화 폴더에 있는 Classroom 제출물을 검증하고, 제출 폴더 공유와 비공개 댓글용 copybook 생성을 준비합니다.
 
-This project is for teachers or operators who:
+이 도구는 다음 상황을 위한 것입니다.
 
-- keep a local mirror of Google Drive / Classroom submission folders
-- need to validate required artifacts by filename, extension, and type
-- want to share extracted deliverable folders back to each student on Drive
-- need a copy-paste workbook for Classroom private comments
+- Google Drive / Classroom 제출 폴더를 로컬에 동기화해 관리하는 경우
+- 필수 산출물을 파일명, 확장자, 유형 기준으로 검증해야 하는 경우
+- 압축 해제된 제출 폴더를 학생에게 다시 Drive로 공유해야 하는 경우
+- Classroom 비공개 댓글을 직접 붙여 넣기 위한 workbook이 필요한 경우
 
-It is designed for a local, operator-driven workflow:
+로컬에서 운영자가 확인하고 실행하는 workflow를 전제로 합니다.
 
-- `scan`: inspect local submission folders against a roster
-- `normalize-names`: normalize Hangul-heavy filenames for safer macOS / Windows handling
-- `extract-missing-zips`: extract zip-only submissions with mojibake recovery
-- `share-drive`: create or update Drive permissions for each student's folder
-- `classroom-build-comment-plan`: build a workbook for private-comment copy/paste
+- `scan`: 명단 기준으로 로컬 제출 폴더 검사
+- `normalize-names`: macOS / Windows 간 처리를 위해 한글 중심 파일명 정규화
+- `extract-missing-zips`: zip만 제출된 경우 압축 해제 및 mojibake 복구
+- `share-drive`: 학생별 제출 폴더 Drive 권한 생성 또는 갱신
+- `classroom-build-comment-plan`: 비공개 댓글 붙여넣기용 workbook 생성
 
-The tool does **not** post Classroom private comments directly. It generates a workbook instead.
+이 도구는 Classroom 비공개 댓글을 API로 직접 게시하지 않습니다. 대신 수동 붙여넣기용 workbook을 생성합니다.
 
-## Features
+## 기능
 
-- Google Drive folder resolution by local sync path
-- Google Classroom coursework / submission matching
-- macOS Hangul NFC normalization and zip filename recovery
-- grouped validation messages for missing artifacts, bad filenames, and bad formats
-- Drive permission switching between `writer` and `viewer`
+- 로컬 동기화 경로 기준 Google Drive 폴더 해석
+- Google Classroom coursework / submission 매칭
+- macOS 한글 NFC 정규화와 zip 파일명 복구
+- 누락 산출물, 잘못된 파일명, 잘못된 형식에 대한 그룹화된 검증 메시지
+- Drive 권한을 `writer` / `viewer`로 전환
 
-## Quick Start
+## 빠른 시작
 
-### 1. Enable Google APIs
+### 1. Google API 활성화
 
-Enable these APIs in Google Cloud:
+Google Cloud에서 다음 API를 활성화합니다.
 
 - Google Drive API
 - Google Classroom API
 
-Create an OAuth client for a desktop app and keep the client secret JSON outside Git.
+Desktop app용 OAuth client를 만들고, client secret JSON은 Git 밖에 보관합니다.
 
-### 2. Set up the environment
+### 2. 환경 준비
 
 ```bash
 ./setup.sh
 ```
 
-### 3. Copy the sample config
+### 3. sample config 복사
 
 ```bash
 cp examples/config.sample.json config.local.json
 ```
 
-Then edit:
+이후 다음 항목을 수정합니다.
 
-- local Classroom / Drive sync paths
-- roster workbook path and columns
-- course / coursework IDs
+- 로컬 Classroom / Drive 동기화 경로
+- 명단 workbook 경로와 column
+- course / coursework ID
 - output directory
-- OAuth token / client-secret paths
+- OAuth token / client-secret 경로
 
-Do not commit `config.local.json` or token files.
+`config.local.json`과 token 파일은 커밋하지 않습니다.
 
-### 4. Scan a deliverable folder
+### 4. 제출 폴더 스캔
 
 ```bash
 ./run.sh scan --config config.local.json --scope all
 ```
 
-### 5. Share folders on Drive
+### 5. Drive 폴더 공유
 
-Grant edit access:
+편집 권한을 부여합니다.
 
 ```bash
 ./run.sh share-drive --config config.local.json --scope all --role writer --apply
 ```
 
-Downgrade to view access later:
+이후 보기 권한으로 낮출 수 있습니다.
 
 ```bash
 ./run.sh share-drive --config config.local.json --scope all --role viewer --apply
 ```
 
-### 6. Build the Classroom comment workbook
+### 6. Classroom 댓글 workbook 생성
 
 ```bash
 ./run.sh classroom-build-comment-plan --config config.local.json --scope all
 ```
 
-Generated files include:
+생성 파일 예시는 다음과 같습니다.
 
 - `share-plan.csv`
 - `validation-report.csv`
@@ -97,24 +99,24 @@ Generated files include:
 - `classroom-private-comment-copybook-submitters.xlsx`
 - `classroom-private-comment-copybook-ready.xlsx`
 
-## Example Workflow
+## 예시 workflow
 
-1. Sync Classroom submissions into a local Google Drive mirror.
-2. Extract zip-only submissions if needed.
-3. Normalize names for safer cross-platform handling.
-4. Scan and inspect `validation-report.csv`.
-5. Share extracted folders back to each student on Drive.
-6. Open the workbook and paste private comments manually into Classroom.
+1. Classroom 제출물을 로컬 Google Drive mirror로 동기화합니다.
+2. zip만 제출된 항목이 있으면 압축을 풉니다.
+3. cross-platform 처리를 위해 이름을 정규화합니다.
+4. `validation-report.csv`를 생성하고 확인합니다.
+5. 압축 해제된 폴더를 학생에게 Drive로 공유합니다.
+6. workbook을 열고 Classroom 비공개 댓글을 수동으로 붙여 넣습니다.
 
-## Limitations
+## 제한사항
 
-- This tool assumes a local Google Drive sync root exists on disk.
-- Classroom private comments are prepared as drafts in a workbook; they are not submitted through the API here.
-- Filename normalization on macOS Google Drive mounts may still appear decomposed in Finder or shell listings even when the filesystem treats NFC and NFD as the same file.
+- 로컬 디스크에 Google Drive 동기화 root가 있다고 가정합니다.
+- Classroom 비공개 댓글은 workbook 초안으로만 준비하며, 여기서 API로 제출하지 않습니다.
+- macOS Google Drive mount에서는 파일시스템이 NFC/NFD를 같은 파일로 처리하더라도 Finder나 shell 표시가 decomposed처럼 보일 수 있습니다.
 
-## Development
+## 개발
 
-Run tests with:
+테스트 실행:
 
 ```bash
 ./.venv/bin/python -m unittest discover -s tests
