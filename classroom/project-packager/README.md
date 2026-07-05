@@ -1,167 +1,169 @@
+영문 버전은 [README.en.md](README.en.md)를 확인하세요.
+
 # classroom-project-packager
 
-Config-driven helper for building classroom project submission folders like:
+설정 파일을 기준으로 다음과 같은 수업 project 제출 폴더를 구성하는 도구입니다.
 
 - `김연우_20260420_stopwatch+watch`
 - `김연우_20260427_UART_LOOPBACK`
 
-This tool is meant for recurring FPGA / Verilog class submissions where the folder layout is stable but the project-specific content changes.
+폴더 구조는 반복되지만 project별 내용이 바뀌는 FPGA / Verilog 수업 제출물에 맞춰 사용합니다.
 
-## What It Generates
+## 생성 항목
 
-- target submission folder
-- copied presentation/video/source bundle
-- completion report `.docx` from the official template
-- schedule `.xlsx` from the official template
-- journal `.md`
+- 제출 대상 폴더
+- 발표자료, 영상, source bundle 복사본
+- 공식 template 기반 완료보고서 `.docx`
+- 공식 template 기반 일정표 `.xlsx`
+- 일지 `.md`
 
-It intentionally does **not** export final `.pdf` files.
+최종 `.pdf` export는 의도적으로 자동화하지 않습니다.
 
-PDF export is a manual user step.
+PDF export는 사용자가 직접 수행하는 단계입니다.
 
-## Why This Exists
+## 목적
 
-The recurring task pattern is:
+반복되는 작업 흐름은 다음과 같습니다.
 
-1. follow a known folder layout from the student's own prior project
-2. keep source code Vivado-openable
-3. align report/schedule/journal with the final presentation deck
-4. preserve naming conventions
-5. avoid redoing the same packaging work by hand
+1. 학생 본인의 이전 project 폴더 구조를 따른다.
+2. source code를 Vivado에서 바로 열 수 있게 유지한다.
+3. 완료보고서, 일정표, 일지를 최종 발표자료와 맞춘다.
+4. 파일명과 폴더명 규칙을 유지한다.
+5. 같은 패키징 작업을 매번 손으로 반복하지 않는다.
 
-This tool turns that into a repeatable workflow.
+이 도구는 위 작업을 반복 가능한 workflow로 만듭니다.
 
-## Rules
+## 규칙
 
-Read [rules.md](rules.md) before using the tool.
+도구를 사용하기 전에 [rules.md](rules.md)를 읽습니다.
 
-Those rules are part of the workflow, not optional notes.
+해당 규칙은 선택적 메모가 아니라 workflow의 일부입니다.
 
-## Templates
+## 템플릿
 
-- `templates/daily-log/TYPE_MIX_복합_일지_양식.docx`: mixed work-type daily-log DOCX template.
+- `templates/daily-log/TYPE_MIX_복합_일지_양식.docx`: 복합 작업 유형 일지 DOCX template.
 
-## Setup
+## 설정
 
 ```sh
 cd ~/git/kccistc-semiconductor-academy/classroom/project-packager
 ./setup.sh
 ```
 
-## Usage
+## 사용법
 
-### Build a package
+### package 생성
 
 ```sh
 ./run.sh build examples/uart_loopback/config.json
 ```
 
-Override only the output folder:
+출력 폴더만 override:
 
 ```sh
 ./run.sh build examples/uart_loopback/config.json \
   --target-dir ~/Downloads/김연우_20260427_UART_LOOPBACK_test
 ```
 
-Override variables used inside the config:
+config 내부 변수 override:
 
 ```sh
 ./run.sh build examples/uart_loopback/config.json \
   --var package_name=김연우_20260427_UART_LOOPBACK_test
 ```
 
-### Inspect a DOCX template
+### DOCX template 검사
 
-This is useful when preparing paragraph/table index mappings for the official report template.
+공식 보고서 template의 paragraph/table index mapping을 준비할 때 사용합니다.
 
 ```sh
 ./run.sh inspect-docx "/path/to/template.docx"
 ```
 
-### Inspect an XLSX template
+### XLSX template 검사
 
-This helps when understanding merged ranges, row layout, and schedule cells.
+merged range, row layout, schedule cell 구조를 파악할 때 사용합니다.
 
 ```sh
 ./run.sh inspect-xlsx "/path/to/template.xlsx"
 ```
 
-### Extract slide text from a PPTX
+### PPTX slide text 추출
 
-This is useful because the final presentation is the source of truth for report/schedule/journal content.
+최종 발표자료가 완료보고서, 일정표, 일지 내용의 기준이므로 slide text를 먼저 뽑아 확인할 때 사용합니다.
 
 ```sh
 ./run.sh outline-pptx "/path/to/final_presentation.pptx"
 ```
 
-Write the extracted outline to a markdown file:
+추출한 outline을 markdown 파일로 저장:
 
 ```sh
 ./run.sh outline-pptx "/path/to/final_presentation.pptx" \
   --output ~/Downloads/final_presentation_outline.md
 ```
 
-## Config Structure
+## Config 구조
 
-The main config file is JSON.
+main config 파일은 JSON입니다.
 
-Typical sections:
+주요 section:
 
-- `variables`: reusable naming/path variables
-- `target_dir`: final output folder
-- `copies`: presentation/video/file copies
-- `directories`: source bundle copies
-- `text_files`: generated text files such as `README.md`
-- `regex_replacements`: post-copy path cleanup, especially for `.xpr`
-- `delete_globs`: cleanup like `.DS_Store`
-- `report_docx`: completion report generation
-- `schedule_xlsx`: schedule generation
-- `journal_md`: journal generation
+- `variables`: 재사용할 이름/경로 변수
+- `target_dir`: 최종 출력 폴더
+- `copies`: 발표자료, 영상, 파일 복사
+- `directories`: source bundle 디렉터리 복사
+- `text_files`: `README.md` 같은 text 파일 생성
+- `regex_replacements`: 복사 후 path cleanup, 특히 `.xpr`
+- `delete_globs`: `.DS_Store` 같은 cleanup 대상
+- `report_docx`: 완료보고서 생성
+- `schedule_xlsx`: 일정표 생성
+- `journal_md`: 일지 생성
 
-Useful `schedule_xlsx` options:
+유용한 `schedule_xlsx` option:
 
-- `keep_sheets`: keep only the named sheets and delete the rest
-- `remove_sheets`: delete only the named sheets
+- `keep_sheets`: 지정 sheet만 남기고 나머지 삭제
+- `remove_sheets`: 지정 sheet만 삭제
 
-This is useful when the source workbook contains unrelated practice or template sheets that should not remain in the final submission.
+source workbook에 최종 제출물에 남기면 안 되는 실습용/template sheet가 있을 때 사용합니다.
 
-Large content blocks can live in separate files and be referenced from the config:
+큰 content block은 별도 파일에 두고 config에서 참조할 수 있습니다.
 
 - `paragraph_updates_file`
 - `tables_file`
 - `rows_file`
 - `source_markdown`
 
-This keeps the main config short and makes edits safer.
+이렇게 하면 main config가 짧아지고 수정 범위가 안전해집니다.
 
-In practice there are two useful modes:
+실무적으로는 두 가지 mode가 유용합니다.
 
-- copy-forward mode: reuse the current editable `.docx` / `.xlsx` masters as sources
-- template-update mode: start from the official template and fill specific paragraph/table/cell indices
+- copy-forward mode: 현재 편집 가능한 `.docx` / `.xlsx` master를 source로 재사용
+- template-update mode: 공식 template에서 시작해 특정 paragraph/table/cell index를 채움
 
-The UART example below uses copy-forward mode for the report and schedule, because those editable masters already reflect the final presentation.
+아래 UART 예시는 완료보고서와 일정표에 copy-forward mode를 사용합니다. 해당 editable master가 이미 최종 발표자료 내용을 반영하고 있기 때문입니다.
 
-## Example
+## 예시
 
-See:
+참고:
 
 - [examples/uart_loopback/config.json](examples/uart_loopback/config.json)
 - [examples/uart_loopback/journal.md](examples/uart_loopback/journal.md)
 - [examples/uart_loopback/source_bundle_readme.md](examples/uart_loopback/source_bundle_readme.md)
 - [examples/uart_loopback/source_bundle_gitignore.txt](examples/uart_loopback/source_bundle_gitignore.txt)
 
-When you want to move a future project to template-update mode, first inspect the official template files:
+향후 project를 template-update mode로 옮기려면 먼저 공식 template 파일을 검사합니다.
 
 ```sh
 ./run.sh inspect-docx "/path/to/official-report-template.docx"
 ./run.sh inspect-xlsx "/path/to/schedule-template.xlsx"
 ```
 
-Then add `paragraph_updates_file`, `tables_file`, or `rows_file` to the config once the index mapping is known.
+index mapping이 확인되면 config에 `paragraph_updates_file`, `tables_file`, `rows_file` 등을 추가합니다.
 
-## Notes
+## 주의사항
 
-- The tool only overwrites files and directories that the config explicitly manages.
-- It does not try to generate PDF output.
-- It assumes the report and schedule templates are stable and controlled by the user.
-- It is designed for the user's own project folders and naming conventions, not class-wide generic submissions.
+- 이 도구는 config가 명시적으로 관리하는 파일과 디렉터리만 덮어씁니다.
+- PDF output은 생성하지 않습니다.
+- 완료보고서와 일정표 template이 안정적이고 사용자가 관리한다고 가정합니다.
+- 반 전체의 generic 제출물이 아니라, 사용자 본인의 project 폴더와 naming convention에 맞게 설계되어 있습니다.
