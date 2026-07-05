@@ -1,145 +1,39 @@
-# clear-spreadsheet
+# kccistc-semiconductor-academy
 
-This tool is for the case where you never intentionally applied a theme, only colored the white cells you needed, and then got surprised when Google Sheets suddenly showed extra background colors or stripes after opening the file.
+Utilities, templates, and operating materials built while running the KCCI semiconductor academy course workflow.
 
-It is especially useful for `.xlsx` files where manually colored cells carry meaning, such as schedules, work trackers, or study plans that need to be shared with other people.
+This repository is intentionally course-facing. Keep reusable classroom automation, assignment packaging helpers, deliverable templates, and shared materials here. Keep personal machine automation and unrelated operator tools in `~/git/tool`.
 
-## Usage
+## Layout
 
-```bash
+- `clear-spreadsheet/`: clean `.xlsx` files whose Google Sheets view shows unintended table or theme background colors.
+- `classroom/deliverable-share/`: validate Google Classroom deliverables, share Drive folders, and generate private-comment copybooks.
+- `classroom/project-packager/`: build project submission folders from stable KCCI report, schedule, journal, media, and source-bundle patterns.
+
+## Boundaries
+
+- Course/classroom-specific automation belongs here.
+- Credentials, OAuth tokens, local `config.local.json`, generated submission reports, and virtualenvs stay out of Git.
+- Personal utilities, session management, STT helpers, archive tooling, and non-course operator scripts stay in `~/git/tool`.
+
+## Quick Start
+
+Each tool keeps its own setup and run script.
+
+```sh
+cd clear-spreadsheet
 ./setup.sh
-./run.sh /path/to/file.xlsx
+./run.sh /path/to/workbook.xlsx
 ```
 
-You can also run it directly without the virtualenv wrapper.
-
-```bash
-python3 clear_spreadsheet.py /path/to/file.xlsx
+```sh
+cd classroom/deliverable-share
+./setup.sh
+./run.sh scan --config config.local.json --scope all
 ```
 
-By default, the tool creates `filename.cleaned.xlsx` in the same directory as the input file.
-
-Example:
-
-```bash
-./run.sh ~/Downloads/your_file.xlsx
-```
-
-Output:
-
-```text
-Done.
-Output file: /Users/you/Downloads/your_file.cleaned.xlsx
-Removed theme/table artifacts: 6 parts, 4 table links, 8 theme color refs
-```
-
-If you want to install it as a local package instead of using `run.sh`, `setuptools` is used through `pyproject.toml`.
-
-## Windows EXE
-
-For non-technical Windows users, the intended distribution format is a standalone `.exe`.
-
-- Drag one or more `.xlsx` files onto the app window
-- Or drop files directly onto the built `.exe`
-- Each cleaned file is written next to the original as `filename.cleaned.xlsx`
-
-To build the Windows executable on a Windows machine:
-
-```bat
-build_windows_exe.bat
-```
-
-If Python 3 is not installed on the build machine, install it first:
-
-```powershell
-winget install -e --id Python.Python.3.12 --accept-package-agreements --accept-source-agreements
-```
-
-That batch file installs the GUI/build dependencies from `requirements-build.txt` and creates:
-
-```text
-dist\clear-spreadsheet.exe
-```
-
-The GUI uses `tkinterdnd2` for drag-and-drop, following its documented `TkinterDnD.Tk()` / `DND_FILES` usage on PyPI, and the included `hook-tkinterdnd2.py` follows the project's official PyInstaller hook guidance.
-
-## Before and After
-
-### Before
-
-Google Sheets reinterprets the hidden `theme` and `table style`, so background colors or stripes reappear on top of the cell colors you originally applied by hand.
-
-![Before: hidden table and theme styling reappears in Google Sheets](docs/images/before-google-sheets.png)
-
-### After
-
-Only the explicit cell colors remain, while the striped table background and theme-based background are removed.
-
-![After: only explicit cell colors remain](docs/images/after-google-sheets.png)
-
-## Why this happens
-
-An `.xlsx` file can contain an extra styling layer beyond the visible cell fill colors.
-
-- Colors you apply manually are stored in the cell `fill`.
-- Excel table banding is stored through `tableStyle` and `tableParts`.
-- Some default colors are stored as `theme` indexes instead of concrete RGB values.
-- Google Sheets can reinterpret that hidden style information and reapply background styling that is less noticeable in Excel.
-
-So the problem is not that the cell colors were saved incorrectly. The real issue is that hidden table/theme styling can come back in a different viewer.
-
-## What this tool does
-
-- Converts `theme` color references into explicit `rgb` values
-- Removes Excel `table` definitions and `table style`
-- Removes banding driven by `showRowStripes` / `showColumnStripes`
-- Removes Google Sheets round-trip metadata
-
-## What it tries to preserve
-
-- Explicit cell background colors
-- Cell values
-- Merged cells
-- Column widths / row heights
-- Most worksheet / drawing structure
-
-## Options
-
-Set the output filename explicitly:
-
-```bash
-python3 clear_spreadsheet.py input.xlsx --output output.xlsx
-```
-
-Change the default suffix:
-
-```bash
-python3 clear_spreadsheet.py input.xlsx --suffix fixed
-```
-
-Overwrite the original file in place:
-
-```bash
-python3 clear_spreadsheet.py input.xlsx --in-place
-```
-
-Overwrite an existing output file:
-
-```bash
-python3 clear_spreadsheet.py input.xlsx --overwrite
-```
-
-## Limitations
-
-- Only `.xlsx` is supported right now.
-- If a workbook relies heavily on theme-colored charts or shapes, it is still worth checking the result visually once.
-
-## License
-
-MIT
-
-## Test
-
-```bash
-python3 -m unittest discover -s tests
+```sh
+cd classroom/project-packager
+./setup.sh
+./run.sh build examples/uart_loopback/config.json
 ```

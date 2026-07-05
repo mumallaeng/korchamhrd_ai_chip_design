@@ -7,3 +7,12 @@ dist/
 *.egg-info/
 *.cleaned.xlsx
 *.exe
+config.local.json
+*.local.json
+google-oauth-token.json
+google-oauth-client-secret.json
+oauth-token*.json
+token*.json
+tmp/
+output/
+reports/generated/

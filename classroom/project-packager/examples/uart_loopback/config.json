@@ -1,0 +1,83 @@
+{
+  "variables": {
+    "student_name": "김연우",
+    "project_date": "20260427",
+    "project_name": "UART_LOOPBACK",
+    "project_title": "UART LOOPBACK",
+    "package_name": "{student_name}_{project_date}_{project_name}",
+    "output_root": "~/Downloads",
+    "presentation_input": "/Users/mumallaeng/Library/CloudStorage/GoogleDrive-yonnmilk@gmail.com/My Drive/Classroom/Verilog/과제/김연우-UART-LOOPBACK-260427.pptx",
+    "video_input": "/Users/mumallaeng/Library/CloudStorage/GoogleDrive-yonnmilk@gmail.com/My Drive/Classroom/Verilog/과제/uart_loopback.mp4",
+    "report_source": "/Users/mumallaeng/Downloads/김연우_20260427_UART_LOOPBACK/김연우_20260427_UART_LOOPBACK_완료보고서.docx",
+    "schedule_source": "/Users/mumallaeng/Downloads/김연우_20260427_UART_LOOPBACK/김연우_20260427_UART_LOOPBACK_일정표.xlsx",
+    "hello_uart_root": "/Users/mumallaeng/git/Vault/activities/korcham/notes/verilog-hdl/HelloVerilog/uart_fsm"
+  },
+  "target_dir": "{output_root}/{package_name}",
+  "copies": [
+    {
+      "source": "{presentation_input}",
+      "target": "{target_dir}/{package_name}_발표자료.pptx"
+    },
+    {
+      "source": "{video_input}",
+      "target": "{target_dir}/{package_name}_동영상.mp4"
+    },
+    {
+      "source": "{hello_uart_root}/uart_fsm.xpr",
+      "target": "{target_dir}/{package_name}_소스코드/uart_fsm.xpr"
+    },
+    {
+      "source": "{hello_uart_root}/uart_loopback_presentation.md",
+      "target": "{target_dir}/{package_name}_소스코드/uart_loopback_presentation.md"
+    }
+  ],
+  "directories": [
+    {
+      "source": "{hello_uart_root}/uart_fsm.srcs",
+      "target": "{target_dir}/{package_name}_소스코드/uart_fsm.srcs"
+    },
+    {
+      "source": "{hello_uart_root}/wcfg",
+      "target": "{target_dir}/{package_name}_소스코드/wcfg"
+    }
+  ],
+  "text_files": [
+    {
+      "source_text": "source_bundle_readme.md",
+      "target": "{target_dir}/{package_name}_소스코드/README.md"
+    },
+    {
+      "source_text": "source_bundle_gitignore.txt",
+      "target": "{target_dir}/{package_name}_소스코드/.gitignore"
+    }
+  ],
+  "journal_md": {
+    "source_markdown": "journal.md",
+    "target": "{target_dir}/{package_name}_일지.md"
+  },
+  "report_docx": {
+    "source": "{report_source}",
+    "target": "{target_dir}/{package_name}_완료보고서.docx"
+  },
+  "schedule_xlsx": {
+    "source": "{schedule_source}",
+    "target": "{target_dir}/{package_name}_일정표.xlsx",
+    "keep_sheets": [
+      "UART_LOOPBACK"
+    ]
+  },
+  "regex_replacements": [
+    {
+      "path": "{target_dir}/{package_name}_소스코드/uart_fsm.xpr",
+      "pattern": "\\s*<File Path=\"\\$PSRCDIR/sources_1/imports/new/button_debounce\\.v\">.*?</File>\\s*",
+      "replacement": "",
+      "flags": [
+        "DOTALL"
+      ],
+      "require_match": true
+    }
+  ],
+  "delete_globs": [
+    "{target_dir}/**/.DS_Store"
+  ]
+}
