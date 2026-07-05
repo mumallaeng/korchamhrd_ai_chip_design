@@ -37,6 +37,10 @@ Read [rules.md](rules.md) before using the tool.
 
 Those rules are part of the workflow, not optional notes.
 
+## Templates
+
+- `templates/daily-log/TYPE_MIX_복합_일지_양식.docx`: mixed work-type daily-log DOCX template.
+
 ## Setup
 
 ```sh
