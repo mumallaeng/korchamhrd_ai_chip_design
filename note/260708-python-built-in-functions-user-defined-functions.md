@@ -15,7 +15,7 @@
 | 원본 파일 | [Py_Lab_for_VS_Code.py](<Google Drive/My Drive/Classroom/대한상공회의소_반도체설계/담당강사-C_and_Python/상공회의소_KDT_실습자료(C_Python_M4)/2.Python/Py_Lab_for_VS_Code.py>) |
 | 예제 범위 | `[5-1]`부터 `[6-15]`까지 |
 | 이전 범위 | 2장 `Object Name Binding`, 3장 `Container`, 4장 `Container 구조 및 연산` |
-| 다음 범위 | 8장 비교, generator, comprehension 이후 |
+| 다음 범위 | 8장 `Comprehensions` |
 
 ## 실습 자료와 진행 범위
 
@@ -25,7 +25,7 @@
 | 5장 | `[5-3]` | dynamic execution | `eval`, `exec` 차이와 주의점 |
 | 5장 | `[5-4]`~`[5-5]` | container built-in과 sequence method | `len`, `sum`, `sorted`, `index`, `count` |
 | 5장 | `[5-6]`~`[5-7]` | tuple lookup과 dict lookup | index 기반 조회와 key 기반 조회 비교 |
-| 5장 | `[5-8]`~`[5-16]` | iterator 생성 함수 | `map`, `zip`, `enumerate`, iterator 1회 소비 |
+| 5장 | `[5-8]`~`[5-16]` | iterator 생성 함수 | `map`, `filter`, `zip`, `enumerate`, iterator 1회 소비 |
 | 5장 | `[5-17]`~`[5-20]` | 입력 처리와 정렬 | `max`, `index`, `set`, `sorted(reverse=True)` |
 | 6장 | `[6-1]`~`[6-6]` | 함수 정의, 호출, return | function object, return 종료, tuple return |
 | 6장 | `[6-7]`~`[6-10]` | namespace와 argument 전달 | local/global namespace, mutable/immutable object 전달 |
@@ -54,6 +54,7 @@ print(abs(-10))
 | `max` | maximum | 최댓값 약어 |
 | `eval` | evaluate | expression 평가 약어 |
 | `exec` | execute | statement 실행 약어 |
+| `filter` | filter | 조건을 통과한 item만 거르는 의미 |
 | `iter` | iterator 또는 iterate | iterator 생성 관련 약어 |
 | `repr` | representation | 개발자용 표현 문자열 약어 |
 | `str` | string | 문자열 type 이름 약어 |
@@ -367,6 +368,71 @@ map(int, ...)으로 각 문자열을 integer instance로 생성하는 iterator �
 sum()이 iterator를 소비하며 합산
 ```
 
+### `filter()`
+
+`filter()`는 iterable에서 조건을 통과한 item만 남기는 iterator를 만든다. 기본 형태는 `filter(function, iterable)`이고, 각 item에 대해 `function(item)`을 호출한 결과가 truthy인 item만 통과시킨다.
+
+```python
+nums = [0, 1, 2, 3, 4, 5, 6]
+
+def is_even(n):
+    return n % 2 == 0
+
+result = filter(is_even, nums)
+
+print(type(result))  # <class 'filter'>
+print(list(result))  # [0, 2, 4, 6]
+```
+
+`lambda`를 사용하면 짧은 조건 함수를 바로 전달할 수 있다.
+
+```python
+nums = [1, 2, 3, 4, 5]
+
+result = filter(lambda x: x >= 3, nums)
+
+print(list(result))  # [3, 4, 5]
+```
+
+첫 번째 인자로 `None`을 전달하면 별도의 조건 함수를 호출하지 않고 item 자체의 truth value로 거른다.
+
+```python
+values = [0, 1, "", "python", [], [1, 2], None, True, False]
+
+result = filter(None, values)
+
+print(list(result))  # [1, 'python', [1, 2], True]
+```
+
+`filter` object도 `map` object처럼 list가 아니라 iterator다. 한 번 소비하면 다시 처음부터 사용할 수 없다.
+
+```python
+nums = [1, 2, 3, 4]
+
+f = filter(lambda x: x > 2, nums)
+
+print(list(f))  # [3, 4]
+print(list(f))  # []
+```
+
+같은 조건 걸러내기는 list comprehension으로도 자주 작성한다.
+
+```python
+nums = [1, 2, 3, 4]
+
+result = [x for x in nums if x > 2]
+
+print(result)  # [3, 4]
+```
+
+| 방식 | 반환 | 평가 방식 | 쓰기 좋은 경우 |
+| :--- | :--- | :--- | :--- |
+| `filter(function, iterable)` | `filter` iterator | 필요할 때 하나씩 조건 검사 | iterator pipeline 유지 |
+| `filter(None, iterable)` | `filter` iterator | item 자체의 truth value 사용 | falsy 값 제거 |
+| `[x for x in iterable if condition]` | `list` | list를 즉시 생성 | 결과를 여러 번 사용 |
+
+핵심은 `filter`가 '조건 함수로 걸러낸다'는 점이다. 반면 list comprehension은 '조건을 만족하는 item으로 새 list를 만든다'는 형태가 코드에 직접 드러난다.
+
 ### `zip()`과 `dict(zip(...))`
 
 `[5-10]`, `[5-11]`은 여러 iterable을 같은 index끼리 묶는 `zip()`을 다룬다. `zip`은 zipper처럼 여러 줄의 data를 같은 위치끼리 맞물려 묶는다는 의미로 이해하면 된다.
@@ -416,6 +482,25 @@ print(*enumerate(t, 10))
 | `enumerate(t)` | `(0, "kim")`, `(1, "lee")`, `(2, "park")` |
 | `enumerate(t, 10)` | `(10, "kim")`, `(11, "lee")`, `(12, "park")` |
 
+`enumerate(t)`는 학습 관점에서 `zip(range(len(t)), t)`처럼 이해할 수 있다. 두 표현이 같은 object를 만드는 것은 아니지만, 위 예제처럼 생성되는 pair의 값은 같다.
+
+```python
+t = ("kim", "lee", "park")
+
+x1 = zip(range(len(t)), t)
+x2 = enumerate(t)
+x3 = enumerate(t, 10)
+
+print(type(x1))  # <class 'zip'>
+print(type(x2))  # <class 'enumerate'>
+
+print(*x1)  # (0, 'kim') (1, 'lee') (2, 'park')
+print(*x2)  # (0, 'kim') (1, 'lee') (2, 'park')
+print(*x3)  # (10, 'kim') (11, 'lee') (12, 'park')
+```
+
+`start` 값을 지정한 `enumerate(t, start)`는 개념적으로 `zip(range(start, start + len(t)), t)`처럼 index 시작값을 바꿔 item과 묶는 형태다. 그래서 `enumerate()`는 `range`와 `zip`을 직접 조합하지 않고, 'index 생성 + item 묶기'를 한 번에 표현하는 전용 built-in으로 볼 수 있다.
+
 fruit에 일련번호를 붙여 dict로 만들 때는 다음처럼 쓴다.
 
 ```python
@@ -426,7 +511,7 @@ print(tag)
 
 ### Iterator는 한 번 흐르는 object
 
-`[5-15]`, `[5-16]`의 핵심은 `map`, `zip`, `enumerate`가 결과를 한 번에 모두 담은 container가 아니라 iterator라는 점이다.
+`[5-15]`, `[5-16]`의 핵심은 `map`, `filter`, `zip`, `enumerate`가 결과를 한 번에 모두 담은 container가 아니라 iterator라는 점이다.
 
 ```python
 x = map(int, [3.14, -5.25, -128])
@@ -576,6 +661,31 @@ print(result)       # (13, 7, 30, 3)
 | parameter | 함수 정의부 | 함수 내부에서 사용할 local name |
 | argument | 함수 호출부 | parameter에 binding할 실제 object |
 
+한글 용어는 자료마다 조금씩 섞여 쓰이므로, 이 노트에서는 아래 기준으로 읽는다.
+
+| 영어 용어 | 권장 한글 | 위치 | Python 예시 | 메모 |
+| :--- | :--- | :--- | :--- | :--- |
+| parameter | 매개변수 | 함수 정의부 | `def add(a, b):`의 `a`, `b` | 함수가 받을 local name |
+| formal parameter | 형식 매개변수 | 함수 정의부 | `a`, `b` | C/C++ 교재에서 자주 쓰는 표현 |
+| argument | 인수, 전달인자 | 함수 호출부 | `add(10, 20)`의 `10`, `20` | 매개변수에 전달되는 실제 object |
+| actual argument | 실제 인수 | 함수 호출부 | `10`, `20` | formal parameter와 대비되는 표현 |
+| positional argument | 위치 인수 | 함수 호출부 | `add(10, 20)` | 위치 순서로 parameter에 binding |
+| keyword argument | 키워드 인수 | 함수 호출부 | `add(a=10, b=20)` | parameter 이름으로 binding |
+| 인자 | 문맥 의존 | 정의부 또는 호출부 | 자료마다 다름 | parameter/argument 양쪽에 섞여 쓰이는 경우 많음 |
+
+따라서 엄밀하게 구분할 때는 `parameter`를 `매개변수`, `argument`를 `인수` 또는 `전달인자`로 읽는 편이 안전하다. `인자`라는 단어는 한국어 자료에서 매우 자주 쓰이지만, 어떤 자료에서는 parameter를 뜻하고 다른 자료에서는 argument를 뜻하기 때문에 문맥을 확인해야 한다.
+
+| 언어/문맥 | `parameter` 쪽 표현 | `argument` 쪽 표현 | 주의 |
+| :--- | :--- | :--- | :--- |
+| Python 공식 문서 | parameter | argument | parameter kind와 argument kind를 명확히 구분 |
+| Python 한국어 학습 자료 | 매개변수, 파라미터 | 인수, 인자, 전달인자 | `인자`가 argument 의미로 많이 사용 |
+| C/C++ 교재 | 형식 매개변수, 매개변수 | 실인수, 실제 인수 | formal parameter와 actual argument 대비 |
+| Java/C# 계열 | parameter | argument | Python과 큰 흐름 유사 |
+| SystemVerilog/HDL | parameter는 module compile-time 설정값 의미도 강함 | task/function argument, actual 값 | `parameter`가 함수 매개변수보다 module parameter 의미로 자주 등장 |
+| Shell/CLI | parameter, option, flag 혼용 | command-line argument | `argv` 항목 전체를 argument로 보는 경우 많음 |
+
+예를 들어 아래 코드에서 `a`, `b`는 function object가 호출될 때 local namespace에 생기는 parameter name이고, `10`, `20`은 호출 시 전달되는 argument object다.
+
 ```python
 def func2(a, b):
     c = a + b
@@ -585,6 +695,8 @@ func2(30, 40)
 func2("kim", "lew")
 func2([1, 2, 3], [4, 5, 6])
 ```
+
+`func2(a=30, b=40)`처럼 호출하면 `a=30`, `b=40`은 keyword argument다. 여기서 `a`, `b`는 여전히 parameter 이름이고, `30`, `40`이 parameter에 binding되는 argument object다.
 
 같은 `+` 연산도 argument object의 type에 따라 다르게 동작한다. 숫자면 덧셈이고, 문자열/list면 연결이다.
 
@@ -835,6 +947,6 @@ Keyword-only parameter는 호출부의 의미를 명확히 하고, argument 순�
 
 ## 정리
 
-5장의 핵심은 built-in 함수가 단순 편의 함수가 아니라 iterable, iterator, mapping, sequence method와 연결되어 Python다운 data 처리 흐름을 만든다는 점이다. 특히 `map`, `zip`, `enumerate`는 결과 container가 아니라 iterator이므로 한 번 소비하면 다시 사용할 수 없다는 점을 기억해야 한다.
+5장의 핵심은 built-in 함수가 단순 편의 함수가 아니라 iterable, iterator, mapping, sequence method와 연결되어 Python다운 data 처리 흐름을 만든다는 점이다. 특히 `map`, `filter`, `zip`, `enumerate`는 결과 container가 아니라 iterator이므로 한 번 소비하면 다시 사용할 수 없다는 점을 기억해야 한다.
 
 6장의 핵심은 함수 정의가 function object 생성과 name binding이라는 점이다. parameter는 호출 시 argument object에 binding되는 local name이고, 함수 내부 assignment는 local namespace를 만든다. mutable object를 전달했을 때는 name 재binding과 object mutation을 구분해야 한다.
