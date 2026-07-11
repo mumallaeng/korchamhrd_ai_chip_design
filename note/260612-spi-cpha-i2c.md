@@ -156,7 +156,7 @@ Vivado에서 한 번 발생했던 오류는 reset edge와 reset 조건이 서로
 
 통신에서 handshake는 본격적인 data 전송 전에 서로 통신할 준비가 되었는지 확인하거나, 전송 중 data가 정상적으로 받아들여졌는지 확인하는 절차를 말한다. 네트워크에서 TCP(Transmission Control Protocol)가 `SYN`(Synchronize) -> `SYN/ACK`(Synchronize/Acknowledgement) -> `ACK`(Acknowledgement) 순서로 연결을 여는 것이 대표적인 handshake 예시다.
 
-다만 SPI/I2C에서 말하는 handshake는 TCP handshake와 같은 연결 수립 절차라기보다, bus나 protocol 수준에서 "상대가 선택되었는가", "이 byte를 받았는가", "다음 전송을 진행해도 되는가"를 확인하는 의미에 가깝다.
+다만 SPI/I2C에서 말하는 handshake는 bus나 protocol 수준에서 "상대가 선택되었는가", "이 byte를 받았는가", "다음 전송을 진행해도 되는가"를 확인하는 의미에 가깝다.
 
 | 구분 | handshake 관점 |
 | :--- | :--- |

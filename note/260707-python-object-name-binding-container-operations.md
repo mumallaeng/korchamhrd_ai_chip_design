@@ -223,7 +223,7 @@ print(round(10.434, 1))
 
 ### Name binding
 
-Python에서 name은 object를 가리킨다. 변수명은 값을 담는 상자라기보다, 현재 namespace 안에서 object를 가리키는 이름표에 가깝다.
+Python에서 name은 object를 가리킨다. 변수명은 현재 namespace 안에서 object를 가리키는 이름표에 가깝다.
 
 대입문은 오른쪽 expression을 먼저 평가한 뒤, 왼쪽 target name을 현재 namespace에 binding한다.
 
@@ -768,7 +768,7 @@ soft keyword는 완전한 예약어와 다르지만, 혼동을 줄이려면 수�
 # a += 1    # NameError
 ```
 
-`del`은 namespace에서 name binding을 제거한다. object 자체를 직접 지우는 명령이라기보다, name이 object를 가리키는 연결을 끊는 동작으로 이해하면 된다. 연결이 끊긴 object가 더 이상 접근 가능하지 않으면 이후 garbage collection 대상이 될 수 있다.
+`del`은 namespace에서 name binding을 제거한다. 즉 name이 object를 가리키는 연결을 끊는 동작이다. 연결이 끊긴 object가 더 이상 접근 가능하지 않으면 이후 garbage collection 대상이 될 수 있다.
 
 ## 3. Container
 

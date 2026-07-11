@@ -515,7 +515,7 @@ Python의 special attribute와 special method는 Python 공식 문서의 [Data m
 | `__package__` | module attribute | `__package__` | package context, relative import 기준 |
 | `__class__` | special attribute | `obj.__class__` | object가 속한 class |
 
-`__builtins__`는 일반 instance attribute라기보다 module global namespace에 들어오는 built-in 접근용 name이다. built-in name resolution에서 마지막으로 찾는 namespace와 연결되지만, 일반 application code에서 직접 수정하는 대상으로 보지는 않는다.
+`__builtins__`는 module global namespace에 들어오는 built-in 접근용 name이다. built-in name resolution에서 마지막으로 찾는 namespace와 연결되지만, 일반 application code에서 직접 수정하는 대상으로 보지는 않는다.
 
 object를 문자열로 표현하거나 built-in 함수와 연결하는 special method는 다음과 같다.
 
@@ -641,7 +641,7 @@ print(child.a)      # instance와 Child_CLS에 없으므로 Parent_CLS.a 사용
 child.f(100)        # Parent_CLS.f를 method로 사용
 ```
 
-parent class의 초기화자를 호출하려면 `super()`를 사용한다. 단순히 '부모 class object'를 그대로 가리키는 표현이라기보다, 현재 class의 MRO 기준으로 다음 class의 method를 찾아 호출할 수 있게 해 주는 proxy라고 이해하는 편이 정확하다. 단일 상속에서는 실질적으로 parent class의 method를 호출하는 것처럼 동작하므로, `super().__init__(x)`로 parent의 초기화자를 호출해 parent가 담당하는 instance 초기화 코드를 재사용할 수 있다.
+parent class의 초기화자를 호출하려면 `super()`를 사용한다. `super()`는 현재 class의 MRO 기준으로 다음 class의 method를 찾아 호출할 수 있게 해 주는 proxy다. 단일 상속에서는 실질적으로 parent class의 method를 호출하는 것처럼 동작하므로, `super().__init__(x)`로 parent의 초기화자를 호출해 parent가 담당하는 instance 초기화 코드를 재사용할 수 있다.
 
 ```python
 class New_Calc(Mart_Calc):

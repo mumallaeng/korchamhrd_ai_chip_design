@@ -161,7 +161,7 @@ digit을 바꾸기 전에 `FND_DispAllOff()`로 common 하위 4bit를 모두 비
 
 ## Common Delay와 Polling Tick
 
-`common/delay`는 특정 장치 driver라기보다 여러 application과 driver에서 같이 쓰는 공통 함수 묶음이다. `delay_sec()`, `delay_ms()`, `delay_us()`는 Xilinx bare-metal 환경의 `sleep()`과 `usleep()`을 감싸서 이름을 맞춘 함수이고, `millis()`와 `incTick()`은 main loop에서 software tick을 누적하기 위한 함수다.
+`common/delay`는 여러 application과 driver에서 같이 쓰는 공통 함수 묶음이다. `delay_sec()`, `delay_ms()`, `delay_us()`는 Xilinx bare-metal 환경의 `sleep()`과 `usleep()`을 감싸서 이름을 맞춘 함수이고, `millis()`와 `incTick()`은 main loop에서 software tick을 누적하기 위한 함수다.
 
 | 함수 | 현재 역할 |
 | :--- | :--- |
