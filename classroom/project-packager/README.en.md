@@ -46,7 +46,7 @@ Those rules are part of the workflow, not optional notes.
 ## Setup
 
 ```sh
-cd ~/git/kccistc-semiconductor-academy/classroom/project-packager
+cd ~/git/korchamhrd_ai_chip_design/classroom/project-packager
 ./setup.sh
 ```
 

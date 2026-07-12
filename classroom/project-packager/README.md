@@ -46,7 +46,7 @@ PDF export는 사용자가 직접 수행하는 단계입니다.
 ## 설정
 
 ```sh
-cd ~/git/kccistc-semiconductor-academy/classroom/project-packager
+cd ~/git/korchamhrd_ai_chip_design/classroom/project-packager
 ./setup.sh
 ```
 
