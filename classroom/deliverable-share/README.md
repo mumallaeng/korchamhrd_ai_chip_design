@@ -2,7 +2,7 @@
 
 # classroom-deliverable-share
 
-`kccistc-semiconductor-academy/classroom`에 포함된 Google Classroom / Drive 제출물 운영 도구입니다.
+`korchamhrd_ai_chip_design/classroom`에 포함된 Google Classroom / Drive 제출물 운영 도구입니다.
 
 로컬 Google Drive 동기화 폴더에 있는 Classroom 제출물을 검증하고, 제출 폴더 공유와 비공개 댓글용 copybook 생성을 준비합니다.
 

@@ -2,7 +2,7 @@
 
 [한국어](README.md) | English
 
-Part of `kccistc-semiconductor-academy/classroom`.
+Part of `korchamhrd_ai_chip_design/classroom`.
 
 Prepare Google Classroom deliverables from a local Google Drive sync folder.
 

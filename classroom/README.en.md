@@ -2,7 +2,7 @@
 
 [한국어](README.md) | English
 
-Course-facing automation for KCCI classroom submissions.
+Course-facing automation for Korcham HRD on-device AI chip design classroom submissions.
 
 ## Tools
 
