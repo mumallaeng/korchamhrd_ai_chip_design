@@ -141,7 +141,7 @@ cipher = pow(message, e, n)
 plain = pow(cipher, d, n)
 ```
 
-즉 `pow(x, y, z)`는 `x ** y`를 보기 좋게 줄이는 함수라기보다, 큰 거듭제곱을 modulo 공간의 대표값으로 계산하는 함수다.
+즉 `pow(x, y, z)`는 큰 거듭제곱을 modulo 공간의 대표값으로 계산하는 함수다.
 
 `round()`는 단순히 항상 `.5`를 위로 올리는 방식으로 외우면 틀릴 수 있다. Python의 `round()`는 정확히 중간인 경우 가까운 짝수 쪽으로 가는 tie-to-even 규칙을 따른다.
 
@@ -179,7 +179,7 @@ print(min(l))
 
 `eval()`과 `exec()`는 현재 namespace의 name을 사용할 수 있고, 별도의 `globals`, `locals` mapping도 받을 수 있다. 외부 입력 문자열을 그대로 넣으면 임의 코드 실행이 되므로 실제 서비스 코드에서는 매우 위험하다.
 
-`ast.literal_eval()`은 `eval()`에서 기능 몇 개만 끈 보안 옵션이라기보다, Python literal 또는 container display만 해석하는 별도 함수로 보는 편이 정확하다. 공식 문서 기준으로 `ast.literal_eval()`이 허용하는 구조는 string, bytes, number, tuple, list, dict, set, boolean, `None`, `Ellipsis` 같은 literal data다. 반대로 name lookup, 함수 호출, 연산자 계산, indexing처럼 Python 실행 규칙이 필요한 expression은 허용하지 않는다.
+`ast.literal_eval()`은 Python literal 또는 container display만 해석하는 별도 함수로 보는 편이 정확하다. 공식 문서 기준으로 `ast.literal_eval()`이 허용하는 구조는 string, bytes, number, tuple, list, dict, set, boolean, `None`, `Ellipsis` 같은 literal data다. 반대로 name lookup, 함수 호출, 연산자 계산, indexing처럼 Python 실행 규칙이 필요한 expression은 허용하지 않는다.
 
 | 구분 | `eval()` | `ast.literal_eval()` |
 | :--- | :--- | :--- |
@@ -367,6 +367,40 @@ map(int, ...)으로 각 문자열을 integer instance로 생성하는 iterator �
     ↓
 sum()이 iterator를 소비하며 합산
 ```
+
+### `lambda` expression과 `map()`
+
+`lambda` expression은 이름을 따로 붙이지 않고 function object를 만드는 expression이다. 기본 문법은 `lambda parameter: expression`이며, 마지막 expression의 평가 결과가 호출 결과가 된다. `return` statement는 쓰지 않고 body에는 expression 하나를 둔다.
+
+일반 `def` 함수가 tuple 하나를 반환하는 경우도 lambda로 표현할 수 있다. 여러 값을 돌려주는 것처럼 보이는 결과는 tuple packing으로 만들어진 tuple object다.
+
+```python
+def calc(x, y):
+    return x + y, x - y
+
+print(calc(10, 20))
+print((lambda x, y: (x + y, x - y))(30, 40))
+
+# (30, -10)
+# (70, -10)
+```
+
+`map()`에는 각 item에 적용할 짧은 변환 함수를 직접 전달할 수 있다.
+
+```python
+def scale(x):
+    return abs(x) / 2 * 10
+
+values = [-10, -20, -30]
+
+print(*map(scale, values))
+print(*map(lambda x: abs(x) / 2 * 10, values))
+
+# 50.0 100.0 150.0
+# 50.0 100.0 150.0
+```
+
+두 `map()` 호출은 같은 변환을 수행한다. `map` 결과는 iterator이므로 `print(*...)`처럼 값을 꺼내 쓰면 그 iterator는 소비된다.
 
 ### `filter()`
 
@@ -574,6 +608,49 @@ print(sorted(n, reverse=True))
 ```
 
 `sorted()`는 새 list를 반환한다. 원본 list 자체를 바꾸고 싶으면 `list.sort()` method를 사용한다.
+
+### 다중 기준 정렬: 생산년 → 생산월
+
+생산 정보가 `(생산월, 생산년)` pair로 저장되어 있고 생산년이 빠른 순서, 같은 생산년 안에서는 생산월이 작은 순서가 필요할 수 있다. pair 자체를 그대로 정렬하면 첫 번째 값인 생산월부터 비교하므로 원하는 기준과 다르다.
+
+`sorted()`의 `key` parameter에는 각 item에서 비교용 key를 만드는 function을 전달한다. 아래에서는 `(생산월, 생산년)`을 `(생산년, 생산월)` key로 바꿔 비교한다. tuple은 왼쪽 item부터 차례대로 비교하므로 생산년이 먼저, 생산월이 다음 기준이 된다.
+
+```python
+l = [(12, 2021), (8, 2023), (7, 2023)]
+
+def production_date_key(item):
+    month, year = item
+    return year, month
+
+y = sorted(l, key=production_date_key)
+print(y)
+
+# [(12, 2021), (7, 2023), (8, 2023)]
+```
+
+같은 key function은 lambda expression으로 바로 전달할 수 있다.
+
+```python
+l = [(12, 2021), (8, 2023), (7, 2023)]
+
+y = sorted(l, key=lambda item: (item[1], item[0]))
+print(y)
+
+# [(12, 2021), (7, 2023), (8, 2023)]
+```
+
+pair의 순서를 바꾼 뒤 정렬하고 다시 되돌리는 방법도 동작한다. 다만 `key` 방식은 원본 pair 구조를 유지한 채 비교 기준만 바꾸므로 정렬 의도가 호출식에 직접 드러난다.
+
+```python
+l = [(12, 2021), (8, 2023), (7, 2023)]
+
+l2 = sorted([(year, month) for month, year in l])
+y = [(month, year) for year, month in l2]
+
+print(y)
+
+# [(12, 2021), (7, 2023), (8, 2023)]
+```
 
 ## 6. 사용자 정의 함수
 
