@@ -6,8 +6,8 @@ English | [한국어](README.ko.md)
 
 > A personal project carried out in the Embedded class of *[Consortium] On-Device AI System Semiconductor Design, 2nd Cohort*.
 
-| <img width="400" alt="UART_시연_x2" src="https://github.com/user-attachments/assets/56c92ac6-aeb6-40dc-9957-612330413db7" /> | <img width="400" alt="04-full-joint-operation-run_x2" src="https://github.com/user-attachments/assets/21451fbc-f939-4713-9644-71db28565c1f" /> |
-|:---:|:---:|
+| <img width="400" alt="UART_시연_x2" src="https://github.com/user-attachments/assets/56c92ac6-aeb6-40dc-9957-612330413db7" /> | <img width="240" alt="04-full-joint-operation-run_x2" src="https://github.com/user-attachments/assets/21451fbc-f939-4713-9644-71db28565c1f" /> | <img width="240" alt="06-joystick-operation-check_x2" src="https://github.com/user-attachments/assets/aae3fefc-f085-40de-90ad-835fefde9422" /> |
+|:---:|:---:|:---:|
 
 | Name | Responsibilities |
 | --- | --- |
