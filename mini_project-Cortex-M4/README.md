@@ -2,11 +2,18 @@ English | [한국어](README.ko.md)
 
 # G51 Robot Arm — Cortex-M4 Bare-Metal PWM/UART/ADC Control
 
-Kim Yeonwoo
+2026.07.23 ~ 2026.07.27
 
-2026.07.23~2026.07.27
+> A personal project carried out in the Embedded class of *[Consortium] On-Device AI System Semiconductor Design, 2nd Cohort*.
 
-## 1. Overview (Overview)
+| <img width="400" alt="UART_시연_x2" src="https://github.com/user-attachments/assets/56c92ac6-aeb6-40dc-9957-612330413db7" /> | <img width="400" alt="04-full-joint-operation-run_x2" src="https://github.com/user-attachments/assets/21451fbc-f939-4713-9644-71db28565c1f" /> |
+|:---:|:---:|
+
+| Name | Responsibilities |
+| --- | --- |
+| Yeonwoo Gim ([@mumallaeng](https://github.com/mumallaeng)) | Register-level bare-metal firmware: startup, linker and Makefile build, 6-channel servo PWM on TIM1-TIM4, USART2 key console, ADC1 joystick input, per-joint raw pulse calibration |
+
+## 1. Overview
 
 ### 1.1 Purpose and Objectives
 

@@ -2,9 +2,16 @@
 
 # G51 Robot Arm — Cortex-M4 Bare-Metal PWM/UART/ADC Control
 
-김연우
+2026.07.23 ~ 2026.07.27
 
-2026.07.23~2026.07.27
+> *[컨소시엄] 온디바이스AI 시스템반도체 설계 2기* 교육과정 Embedded 수업에서 진행된 개인 과제입니다.
+
+| <img width="400" alt="UART_시연_x2" src="https://github.com/user-attachments/assets/56c92ac6-aeb6-40dc-9957-612330413db7" /> | <img width="400" alt="04-full-joint-operation-run_x2" src="https://github.com/user-attachments/assets/21451fbc-f939-4713-9644-71db28565c1f" /> |
+|:---:|:---:|
+
+| 이름 | 담당 |
+| --- | --- |
+| 김연우 ([@mumallaeng](https://github.com/mumallaeng)) | register-level bare-metal firmware: startup·linker·Makefile 빌드 구성, TIM1~TIM4 6채널 servo PWM, USART2 키 콘솔, ADC1 joystick 입력, 관절별 raw pulse 보정 |
 
 ## 1. 개요 (Overview)
 
