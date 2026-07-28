@@ -292,5 +292,5 @@ prototype은 함수의 이름, parameter 타입, return 타입을 알려 주는 
 | :--- | :--- |
 | `260701-vscode-gnu-c-basics.md` | 환경 설정과 C 기초 수업 본문 |
 | `260702-c-programming-continuation.md` | 5장 이후 C 예제 본문 |
-| `_staging/260702-python-lab-source-outline.md` | Python 전체 실습자료 본문 후보 |
-| `_staging/260702-m4-arm-lab-source-outline.md` | M4/ARM 전체 실습자료 본문 후보 |
+| [260702 Python 실습자료 후속 범위 정리](260702-python-lab-source-outline.md) | Python 전체 실습자료 본문 후보 |
+| [260702 M4 ARM Lab 예제 정리](260702-m4-arm-lab-source-outline.md) | M4/ARM 전체 실습자료 본문 후보 |

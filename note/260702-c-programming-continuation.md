@@ -856,5 +856,5 @@ p->score == (*p).score
 | `260702-c-control-flow-arrays-structs.md` | 조건문, 반복문, 배열, 문자열, 구조체 본문 |
 | `260703-c-number-system-conversion.md` | 진법 변환, 8진수/16진수 표현, 포인터 기본, endian, `union` 본문 |
 | `260701-c-lab-basics-source-outline.md` | C Lab 1~4장 본문 |
-| `_staging/260702-python-lab-source-outline.md` | Python 실습자료 본문 후보 |
-| `_staging/260702-m4-arm-lab-source-outline.md` | M4/ARM 실습자료 본문 후보 |
+| [260702 Python 실습자료 후속 범위 정리](260702-python-lab-source-outline.md) | Python 실습자료 본문 후보 |
+| [260702 M4 ARM Lab 예제 정리](260702-m4-arm-lab-source-outline.md) | M4/ARM 실습자료 본문 후보 |
