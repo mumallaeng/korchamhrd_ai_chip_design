@@ -34,7 +34,7 @@ GPIO는 `General Purpose Input & Output`의 약어다. 출력으로 사용할 �
 
 STM32F411에는 Port A~E, H가 있으며, 각 port는 최대 16개 pin을 가진다. F와 G port는 해당 실습 대상에는 없음.
 
-GPIO는 C code가 물리 pin을 직접 만지는 것이 아니라, register 값을 바꾸면 내부 회로가 pin 전압을 바꾸는 구조다.
+GPIO는 C code가 register 값을 바꾸면 내부 회로가 pin 전압을 바꾸는 구조다.
 
 ```text
 C code
@@ -143,6 +143,8 @@ PA5 output mode:
 
 ### `GPIOx_OTYPER`
 
+관련 노트: [[domains/semiconductor/ai-npu-system-integration/gpio-register-mmio-cr-idr-odr]]
+
 `GPIOx_OTYPER`는 출력으로 설정된 pin의 출력 type을 1bit씩 설정한다.
 
 | 값 | output type |
@@ -168,22 +170,20 @@ PA5 ODR[5]       = 1   -> high output, LED ON
 
 PA5 User LED는 active-high 구조로 이해하면 된다.
 
-```text
-GPIOA_ODR[5] = 1
-        |
-        v
-PA5 = 3.3V ---- R ---->| ---- GND
-                       LED
+#### CircuitJS: PA5 push-pull active-high LED
 
-결과: LED ON
+Reading view에서 `H`·`L` logic input을 click한다. `H`는 `GPIOA_ODR[5] = 1`로 PA5가 `3.3V`를 source하는 상태이고 LED가 켜진다. `L`는 `GPIOA_ODR[5] = 0`으로 PA5가 `0V`를 구동하는 상태이고 LED가 꺼진다.
 
-GPIOA_ODR[5] = 0
-        |
-        v
-PA5 = 0V
-
-결과: LED OFF
+```circuitjs
+$ 1 5.0E-6 10.0 50 5.0 50
+L 64 128 96 128 0 1 false 3.3 0
+w 64 128 144 128 0
+r 144 128 240 128 0 330
+162 240 128 336 128 0 1 0 0 0.01
+g 336 128 336 160 0
 ```
+
+이 model은 GPIO 내부의 complementary P-channel·N-channel driver가 만들어 내는 `3.3V`·`0V` 결과를 logic source로 단순화한다. Nucleo onboard LED의 실제 resistor 값이나 board 회로 전체를 그대로 복제한 것은 아니다.
 
 ### 출력 설정 순서와 외부 LED 비교
 
@@ -206,17 +206,12 @@ Open-drain에서 `ODR = 0`이면 N-channel switch가 동작하여 low를 만든�
 
 GPIO output driver 안에는 위쪽 전원 쪽으로 연결하는 P-channel MOSFET과 아래쪽 GND 쪽으로 연결하는 N-channel MOSFET이 있다. software가 `ODR`에 쓴 값은 이 driver가 어느 쪽을 연결할지 결정하는 입력이다.
 
-```text
-push-pull, ODR = 1                 push-pull, ODR = 0
+| push-pull 상태 | P-channel | N-channel | pin의 전기적 결과 |
+| :--- | :--- | :--- | :--- |
+| `ODR = 1` | ON | OFF | VDD 쪽에서 source하여 high를 만듦 |
+| `ODR = 0` | OFF | ON | GND 쪽으로 sink하여 low를 만듦 |
 
-VDD -- P-channel ON -- pin         VDD -- P-channel OFF -- pin
-                         |                                  |
-                      external load                       N-channel ON
-                         |                                  |
-                        GND                                GND
-
-pin을 high로 source                   pin을 low로 sink
-```
+위 CircuitJS model의 `H`는 첫 행의 source 상태를, `L`는 둘째 행의 low-driving 결과를 보여 준다.
 
 | output mode | GPIO가 직접 하는 일 | 외부 회로에 필요한 것 | 대표 용도 |
 | :--- | :--- | :--- | :--- |
@@ -226,6 +221,44 @@ pin을 high로 source                   pin을 low로 sink
 | open-drain release | 두 switch를 끔 | external pull-up이 high 결정 | 여러 장치 공유 bus |
 
 `source`와 `sink`는 전류 관점의 말이다. GPIO가 high일 때 load 쪽으로 전류를 내보내면 source, GPIO가 low일 때 load에서 온 전류를 GND로 받아들이면 sink다. datasheet의 pin 최대 source/sink current와 port 전체 전류 제한을 넘기지 않도록 LED에는 resistor를 둔다.
+
+#### `OTYPER` 값에 따른 LED 배선·code·전류 경로
+
+`OTYPER[n]`는 pin `n`의 output driver 회로를 고른다. `ODR[n]`는 원하는 논리값을 기록하지만, 실제 pin이 high·low를 만드는 방식은 `OTYPER[n]`에 따라 달라짐.
+
+| `OTYPER[n]` | output type | `ODR[n] = 0` | `ODR[n] = 1` |
+| :---: | :--- | :--- | :--- |
+| `0` | push-pull | N-channel MOSFET이 GND로 능동적으로 sink | P-channel MOSFET이 VDD로 능동적으로 source |
+| `1` | open-drain | N-channel MOSFET이 GND로 능동적으로 sink | 두 output switch가 꺼지고 pin release, high는 외부 회로가 결정 |
+
+위 PA5 CircuitJS model은 push-pull active-high LED 배선이다. `ODR = 1`에서 `VDD -> P-channel -> PAx -> R_LED -> LED -> GND` current path가 닫힌다.
+
+#### CircuitJS: open-drain active-low external LED
+
+이 model은 VDD 쪽 LED load와 GPIO의 N-channel sink를 보인다. CircuitJS의 `H`·`L` input은 NMOS gate를 직접 제어하므로 STM32 `ODR`과 논리가 반대다.
+
+| CircuitJS gate | N-channel | STM32 open-drain 대응 | LED |
+| :--- | :--- | :--- | :--- |
+| `H` | ON | `ODR = 0` | ON. `VDD -> R_LED -> LED -> PAx -> N-channel -> GND` |
+| `L` | OFF | `ODR = 1`, release | OFF. current loop가 열림 |
+
+```circuitjs
+$ 1 5.0E-6 10.0 50 5.0 50
+R 400 64 352 64 0 0 40.0 3.3 0.0 0.0 0.5
+w 400 64 400 128 0
+r 400 128 400 192 0 330
+162 400 192 400 256 0 1 0 0 0.01
+w 400 256 400 288 0
+f 288 304 400 304 0 1.5 0.02
+w 400 320 400 352 0
+g 400 352 400 384 0
+L 208 304 256 304 0 1 false 3.3 0
+w 208 304 288 304 0
+```
+
+두 배선 모두 LED와 직렬인 `R_LED`가 필요하다. 이 resistor는 LED current를 제한한다. Open-drain I2C line에서 `VDD -- R_pullup -- SDA/SCL`로 연결하는 pull-up resistor는 release된 signal을 high로 만드는 별도 부품임.
+
+P-channel MOSFET이 ON이라는 사실만으로 static power가 항상 더 커지는 것은 아니다. 전류는 external load를 포함한 닫힌 경로가 있을 때 흐른다. CMOS push-pull output은 안정된 high·low 상태에서 외부 load가 없으면 이상적으로 매우 작은 static current만 소비한다. Open-drain은 보편적인 저전력 대체재가 아니라, low만 구동하고 high를 release해야 하는 active-low load·I2C shared bus·wired-AND 회로에 맞는 output type이다.
 
 ### Memory-Mapped I/O와 직접 주소 접근
 
@@ -755,6 +788,8 @@ void inspect(const int *src)
 
 ### CMSIS 방식의 레지스터 정의
 
+관련 노트: [[domains/semiconductor/ai-npu-system-integration/c-pointer-struct-mmio-gpio-register-access]], [[domains/semiconductor/ai-npu-system-integration/embedded-layered-architecture-hal-driver]]
+
 CMSIS는 `Cortex Microcontroller Software Interface Standard`의 약어다. Arm이 Cortex-M core register의 공통 interface와 header 작성 규칙을 정의하고, MCU 제조사는 그 CMSIS 방식에 맞춘 target별 device header로 자기 peripheral register map을 제공한다. 물리 address를 없애는 규정이 아니라, 같은 register map을 구조체와 access qualifier로 표현해 code가 address 계산을 직접 반복하지 않도록 만드는 규정임.
 
 #### 개별 주소 macro와 peripheral group
@@ -1044,6 +1079,28 @@ a &= ~(1u << n);     /* n번 bit clear */
 
 Set은 원래 값이 무엇이든 선택 bit를 `1`로 만들고, clear는 `0`으로 만든다. Invert는 원래 `0`이면 `1`, 원래 `1`이면 `0`으로 뒤집는다. mask의 나머지 bit는 `0`이므로 OR·XOR에서는 유지되고, clear 식에서는 `~` 뒤집기 결과가 `1`이 되어 AND에서 유지됨.
 
+#### `&= mask`, `&= ~mask`, `^= mask`를 구분하기
+
+여기서 `mask`는 바꾸거나 고를 위치에 `1`을 둔 선택 pattern이다. 같은 `mask`라도 연산자가 달라지면 역할이 달라진다.
+
+| code | 선택 bit, 즉 `mask = 1`인 곳 | 나머지 bit, 즉 `mask = 0`인 곳 | 주된 용도 |
+| :--- | :--- | :--- | :--- |
+| `a = mask` | `1` 기록 | `0` 기록 | register 전체 초기화. 모든 field를 이 code가 소유할 때만 사용 |
+| `a \|= mask` | `1`로 set | 기존값 보존 | 한 bit 또는 여러 bit set |
+| `a &= mask` | 기존값 보존 | `0`으로 clear | 선택 field만 남기는 filter·추출용 temporary value 처리 |
+| `a &= ~mask` | `0`으로 clear | 기존값 보존 | 선택 bit clear |
+| `a ^= mask` | 현재값 반전 | 기존값 보존 | 선택 bit toggle |
+
+`~mask`는 register를 바꾸는 연산이 아니라, mask의 모든 bit를 뒤집어 만든 보수값이다. 따라서 `a &= ~mask`는 보수 mask를 이용해 목표 bit만 clear하는 식이고, `a ^= mask`는 `a`의 목표 bit를 실제로 반전하는 식이다.
+
+여러 bit를 한 번에 clear하는 식도 같은 원리다.
+
+```c
+a &= ~((1u << 1) | (1u << 3) | (1u << 7));
+```
+
+안쪽 `|`는 bit `1`, `3`, `7`을 하나의 선택 mask로 합친다. `~`는 그 세 위치만 `0`으로 뒤집고, 마지막 `&=`는 그 세 bit만 clear하면서 나머지 bit를 보존한다. 같은 register를 세 번 read-modify-write하지 않고 한 번 갱신하려는 표현이다.
+
 STM32의 32-bit register에서는 `n`을 `0` 이상 `32` 미만으로 사용한다. type 폭 이상으로 shift하면 C에서 정의되지 않은 동작이 될 수 있으므로, pin 번호나 bit position이 register 폭 안에 있는지 확인해야 함.
 
 ### Shift 방향, `MSB`·`LSB`, unsigned type
@@ -1220,6 +1277,20 @@ dest = (dest & ~(bits << position)) | ((data & bits) << position);
 | field write | `MODER[11:10]` 전체 clear 후 `data` write | 여러 bit field를 다양한 값으로 설정 |
 
 `ODR |= (1u << 5)`는 이 실습의 bit 연산 예시다. interrupt와 ODR 공유 가능성까지 고려하는 code에서는 앞 절의 `GPIOA->BSRR = (1u << 5)`가 output bit set에 더 적합함.
+
+### Register 갱신식을 고르는 기준
+
+한 가지 식이 모든 register에 가장 좋은 것은 아니다. register의 성격과 바꾸려는 범위로 선택한다.
+
+| 대상과 목적 | 우선 표현 | 이유 |
+| :--- | :--- | :--- |
+| port 전체를 명시적으로 초기화 | `reg = value` | 모든 bit의 목표값을 이 code가 책임질 때 가장 단순하다. 다른 pin 설정도 함께 덮어쓰므로 shared port에는 사용하지 않음 |
+| 한 bit configuration 변경 | `reg \|= mask`, `reg &= ~mask` | 다른 configuration bit를 보존하면서 해당 bit만 set 또는 clear한다 |
+| 여러 bit field configuration | `reg = (reg & ~(bits << position)) \| ((data & bits) << position)` | `MODER`, `PUPDR`, `AFR`처럼 field 전체를 정확히 원하는 값으로 만든다 |
+| runtime GPIO output set/reset | `GPIOx->BSRR = command_mask` | `ODR` read-modify-write 없이 한 write로 원하는 pin만 바꾼다 |
+| 단순 실습의 output toggle | `GPIOx->ODR ^= mask` | 현재 state를 바로 반전하기 쉽다. interrupt 등 다른 흐름이 같은 ODR을 만질 때는 software state를 관리한 뒤 `BSRR` set/reset으로 내보낸다 |
+
+`BSRR`의 `=`은 일반 register 전체 대입과 뜻이 다르다. `BSRR`은 write-only command register이므로, `1`인 command bit만 실행하고 `0`인 bit는 아무 동작도 하지 않는다.
 
 ### `macro.h`: 반복되는 bit 처리식을 이름으로 묶기
 

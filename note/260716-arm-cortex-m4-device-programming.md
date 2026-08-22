@@ -577,6 +577,8 @@ timer의 본질은 counter다. 일정한 주기의 clock pulse를 세면 '개수
 
 ### SysTick Timer
 
+관련 노트: [[domains/semiconductor/ai-npu-system-integration/hardware-time-clock-counter-timer-interrupt]]
+
 `SysTick`은 제조사가 만든 주변장치가 아니라 Cortex-M core 자체에 포함된 24bit down counter다. RTOS의 scheduling tick 발생용으로 core에 표준 장착되어 있으며, 그래서 출력 채널이나 PWM 같은 부가 기능 없이 구조가 단순하다. 간단한 지연 시간 측정이나 timeout 확인용 범용 timer로도 사용할 수 있음.
 
 동작 구조는 다음처럼 보면 된다.

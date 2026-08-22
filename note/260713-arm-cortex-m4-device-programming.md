@@ -2,7 +2,8 @@
 
 관련 노트:
 
-- [26-07-01 - VSCode/GNU C 환경과 C 언어 기초](260701-vscode-gnu-c-basics.md)
+- [PC GNU 컴파일 환경 설치 가이드](pc-gnu-compiler-environment.md)
+- [_staging/arm-cortex-m4-device-programming-01.md](_staging/arm-cortex-m4-device-programming-01.md)
 
 ## 수업 흐름
 
@@ -743,7 +744,7 @@ Data center는 대형 model의 training·serving과 많은 request를 동시에 
 
 ### 회사 이름을 분류할 때의 주의점
 
-회사와 제품의 현재 위치는 변하므로, 아래 표는 `2026-07` 공식 제품·회사 정보 기준의 읽는 방법이다. 자세한 근거와 직군 지도는 [[domains/semiconductor/verilog-hdl/study-reference-23-ai-semiconductor-product-and-career-map]]에서 관리함.
+회사와 제품의 현재 위치는 변하므로, 아래 표는 `2026-07` 공식 제품·회사 정보 기준의 읽는 방법이다. 자세한 근거와 직군 지도는 [[domains/semiconductor/ai-npu-system-integration/ai-semiconductor-product-and-career-map]]에서 관리함.
 
 | 이름 | 현재 위치를 읽는 방법 | 왜 같은 표에서 겹쳐 보이는가 |
 | :--- | :--- | :--- |
@@ -913,10 +914,11 @@ Cortex-M 표준 memory map과 STM32F411xE의 주요 영역은 다음과 같이 �
 
 부팅 시 `BOOT0` 핀 상태에 따라 `0x00000000`에 mirror 되는 영역이 달라진다.
 
-| `BOOT0` | mirror 대상 |
-| :--- | :--- |
-| `0` | Flash ROM, `0x08000000` |
-| `1` | System Memory, `0x1FFFF000` |
+| `BOOT1` | `BOOT0` | boot mode |
+| :--- | :--- | :--- |
+| `x` | `0` | Main Flash, `0x08000000` |
+| `0` | `1` | System Memory, `0x1FFF0000` |
+| `1` | `1` | Embedded SRAM, `0x20000000` |
 
 Nucleo 보드에서는 `BOOT0`이 GND에 연결되어 Flash ROM 부팅이 기본임.
 

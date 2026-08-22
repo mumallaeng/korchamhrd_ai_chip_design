@@ -73,6 +73,8 @@ void Main(void)
 
 ### LED Driver code 작성
 
+관련 노트: [[domains/semiconductor/ai-npu-system-integration/gpio-register-mmio-cr-idr-odr]]
+
 driver 과제는 [`0702.LED_DRIVER_LAB/led.c`](../helloEmbedded/0702.LED_DRIVER_LAB/led.c)에 구현한다. PA5 User LED는 active-high push-pull 연결이므로 외부 LED의 active-low 반전과 open-drain 설정을 사용하지 않는다.
 
 ```c
@@ -157,14 +159,81 @@ CPU는 clock edge를 기준으로 instruction과 peripheral 동작을 진행하�
 
 | 구분 | 특징 |
 | :--- | :--- |
-| Resonator | 저가, 저정밀, 저주파 source |
-| X-TAL | crystal 기반, 고정밀 source |
-| Oscillator | crystal과 필요한 부가 회로를 포함한 clock source |
-| PLL | 기준 clock으로부터 더 높은 목표 주파수 합성 |
+| Resonator | 특정 주파수에서 잘 진동하는 수동 주파수 선택 부품. quartz crystal·ceramic·MEMS가 예 |
+| X-TAL | `crystal`의 현장 약칭. quartz crystal resonator 자체이며 oscillator 회로와 구분 |
+| Oscillator | RC 또는 resonator와 feedback·amplifier를 사용해 주기 신호를 유지·생성하는 active circuit/block |
+| XO | crystal과 oscillator circuit을 한 package에 넣어 clock output을 내는 external oscillator module |
+| PLL | `Phase-Locked Loop`. 기준 clock과 feedback을 비교해 안정된 비율의 목표 주파수 합성 |
+
+#### Resonator, X-TAL crystal, oscillator의 관계
+
+`crystal`은 보석을 비유한 말이 아니라 quartz(이산화규소) 결정을 얇게 가공한 실제 전자부품이다. 수정이 일정 주파수에서 잘 기계적으로 진동하는 성질과 piezoelectric effect를 이용한다. 전압을 가하면 수정이 미세하게 진동하고, 진동하면 전기 신호가 생긴다. 가공된 모양·크기·결정 절단 방향이 공진 주파수를 정한다.
+
+`X-TAL`은 `crystal`을 줄여 부르는 실무 표기다. 보통 2-pin quartz crystal resonator를 뜻하며, 혼자서 digital clock을 적극적으로 출력하는 부품은 아니다. MCU 내부 oscillator amplifier와 feedback path, 필요하면 외부 load capacitor가 이 resonator를 계속 진동시키면 crystal oscillator가 된다.
+
+```text
+quartz X-TAL
+  -> 특정 주파수를 고르는 resonator
+  -> MCU 내부 또는 외부 oscillator circuit이 진동을 유지
+  -> 주기적인 electrical waveform 생성
+  -> buffer·clock tree
+  -> CPU·bus·peripheral이 쓰는 digital clock
+```
+
+따라서 `X-TAL oscillator`는 독립된 세 번째 부품 이름이 아니라, 문맥에 따라 'crystal을 이용한 oscillator 회로' 또는 crystal과 oscillator circuit을 함께 넣은 `XO` module을 뜻한다. resonator에는 quartz crystal 외에 ceramic resonator와 MEMS resonator도 있으며, oscillator는 resonator 없이 RC 회로만으로도 만들 수 있다.
+
+STM32F411에서 CPU core가 clock을 직접 생성하지는 않는다. internal RC oscillator인 `HSI` 또는 external source 경로인 `HSE`가 기준 clock을 제공하고, `PLL`이 필요하면 주파수를 합성하며, `RCC`가 이를 `SYSCLK`·bus·peripheral에 선택·분배한다. 현재 실습의 기본 `#if 1` 경로는 X-TAL/HSE가 아니라 reset 뒤 internal `HSI 16MHz`를 사용한다. `Clock_Init()`을 호출하는 분기에서는 HSI를 PLL의 기준 source로 쓴다.
+
+#### HSI, HSE, X-TAL, MCO와 NUCLEO-F411RE board의 두 MCU
+
+`HSI`는 `High-Speed Internal`, `HSE`는 `High-Speed External`, `MCO`는 `Microcontroller Clock Output`의 약자다. `RC oscillator`의 `RC`는 resistor-capacitor를 뜻하며, STM32F411의 HSI는 칩 내부 RC 성질을 이용해 기준 clock을 만드는 oscillator다.
+
+| 이름 | STM32F411에서의 역할 | physical source 예 |
+| :--- | :--- | :--- |
+| `HSI` | 칩 내부 high-speed clock source | internal RC oscillator `16MHz` |
+| `HSE` | 외부 high-speed clock을 받는 source 경로 | X-TAL 기반 oscillator, XO, 다른 MCU의 MCO |
+| X-TAL | 특정 주파수를 고르는 passive resonator | `OSC_IN`·`OSC_OUT`에 연결, MCU 내부 oscillator circuit과 함께 사용 |
+| `MCO` | 다른 MCU가 이미 만든 clock을 output pin으로 내보내는 기능 | ST-LINK MCU의 `8MHz` clock output |
+
+`HSE`는 X-TAL이라는 부품 이름이 아니라, STM32가 외부 clock source를 받아 쓰는 경로다. X-TAL 방식에서는 board의 crystal과 capacitor, STM32 내부 HSE oscillator circuit이 함께 clock을 만든다. MCO 방식에서는 이미 만들어진 square clock이 `OSC_IN`으로 들어오므로 STM32는 이를 HSE source로 사용한다.
+
+```text
+X-TAL 방식
+X3 crystal + load capacitor
+        -> STM32 HSE oscillator circuit
+        -> HSE clock
+
+MCO 방식
+ST-LINK MCU의 자체 clock
+        -> MCO 8MHz output
+        -> board trace / solder bridge
+        -> STM32F411 HSE input (`PH0/OSC_IN`)
+```
+
+NUCLEO-F411RE에는 두 MCU가 있다. target `STM32F411RET6`은 user firmware를 internal Flash에서 실행하는 칩이고, USB 쪽의 ST-LINK MCU는 program download, SWD debug, virtual COM port, 필요 시 MCO clock 공급을 맡는다. ST-LINK MCU도 자기 firmware용 Flash와 RAM을 갖지만, 이것은 target STM32F411의 program memory가 아니다.
+
+```text
+PC -> USB -> ST-LINK MCU -> SWD -> STM32F411 internal Flash -> Cortex-M4 user firmware 실행
+                         -> MCO 8MHz -> HSE input (HSE를 선택한 경우)
+```
+
+NUCLEO-64 `MB1136 C-02` 이상 board revision은 기본 HSE 경로로 ST-LINK MCO `8MHz`를 연결할 수 있다. X3 `8MHz` crystal footprint는 존재하지만 기본 부품에는 crystal·관련 capacitor와 resistor가 실장되지 않는다. 현재 실습 `Clock_Init()`은 HSI를 PLL input으로 고르므로, board에 MCO 연결이 있어도 firmware가 HSE를 선택하지 않으면 HSI 경로로 동작한다. 실제 board revision은 PCB 뒷면의 `MB1136 C-xx` sticker로 확인한다. [UM1724, OSC clock supply](https://www.st.com/resource/en/user_manual/um1724-stm32-nucleo64-boards-mb1136-stmicroelectronics.pdf)
 
 발진의 기본 개념은 inverter 출력을 지연시켜 다시 입력으로 되돌리는 되먹임 회로다. 출력이 뒤집혀 돌아오기를 반복하므로 신호가 스스로 진동하며, ring oscillator가 이 원리를 사용한다.
 
-crystal은 얇게 가공할수록 높은 주파수를 내는데, 가공 한계 때문에 수십 MHz를 넘는 고주파 crystal은 수율이 떨어지고 비싸진다. 그래서 CPU가 요구하는 높은 clock은 낮은 기준 주파수를 PLL로 곱해 만든다. PLL은 본래 주파수의 틀어짐을 기준 신호에 맞춰 보정하는 장치이며, 이를 응용해 기준보다 높은 목표 주파수를 합성하는 데 쓴다.
+crystal은 얇게 가공할수록 높은 주파수를 내는데, 가공 한계 때문에 수십 MHz를 넘는 고주파 crystal은 수율이 떨어지고 비싸진다. 그래서 CPU가 요구하는 높은 clock은 낮은 기준 주파수를 PLL로 곱해 만든다.
+
+#### PLL: `Phase-Locked Loop`
+
+`phase`는 반복 waveform 안에서 현재 edge가 놓인 시간상 위치다. `locked`는 기준 clock과 feedback clock의 edge 관계가 일정하게 유지되는 상태를 뜻한다. PLL은 기준 clock과 출력의 일부를 나눈 feedback clock을 계속 비교하고, 차이가 생기면 VCO(`Voltage-Controlled Oscillator`)를 보정한다.
+
+```text
+reference clock -> phase/frequency compare -> loop filter -> VCO -> PLL output
+                     ^                                      |
+                     +---------- feedback divider <---------+
+```
+
+출력 자체는 기준보다 여러 배 빠를 수 있다. 예를 들어 VCO output이 divider를 거친 PLL input의 `192`배라면 feedback divider가 output을 `192`로 나누어 비교 기준과 같은 비율로 되돌린다. 이 feedback 관계가 맞도록 보정하므로, PLL은 단순 곱셈기가 아니라 일정한 주파수 비율과 timing 관계를 유지하는 hardware loop다.
 
 #### PLL을 왜 계산하는가
 
@@ -173,6 +242,8 @@ CPU와 digital peripheral은 clock edge마다 다음 동작으로 넘어간다. 
 #### Frequency와 한 clock cycle을 숫자로 연결하기
 
 frequency는 1초에 반복되는 clock edge의 횟수다. `f = 1 / T`에서 `f`는 frequency, `T`는 한 cycle의 시간이다. 숫자를 시간 감각으로 바꾸면 clock 설정이 왜 memory timing과 peripheral baud rate에 영향을 주는지 이해하기 쉽다.
+
+`frequency`, `period`, `oscillator`는 각각 약자가 아니다. `Hz`는 Hertz의 단위 기호이고, `MHz`는 megahertz, 즉 초당 1,000,000 cycle 단위다. oscillator가 만든 반복 waveform 하나를 cycle이라 하며, digital logic은 보통 rising edge를 상태 변경의 기준으로 사용한다.
 
 | clock | 1초당 cycle 수 | 한 cycle 시간 |
 | :--- | :--- | :--- |
@@ -209,7 +280,7 @@ PLL은 기준 clock과 설정값을 비교하며 목표 주파수에 맞춘다. 
 
 STM32F411은 HSI 16MHz 또는 HSE를 PLL 입력으로 선택하여 SYSCLK, AHB, APB1, APB2, USB 48MHz clock을 구성한다.
 
-현재 실습 board는 외부 HSE source를 사용하지 않고 internal HSI 16MHz를 PLL input으로 사용한다. STM32F411 core는 최대 100MHz까지 동작할 수 있지만, USB를 함께 사용하려면 PLLQ output을 정확히 48MHz로 만들어야 한다. PLL divider가 integer 값만 사용하므로, 실습 설정은 100MHz 대신 `96MHz / 2 = 48MHz`가 가능한 SYSCLK 96MHz를 선택함.
+현재 실습의 `Clock_Init()`은 HSE가 아니라 internal HSI 16MHz를 PLL input으로 사용한다. STM32F411 core는 최대 100MHz까지 동작할 수 있지만, USB를 함께 사용하려면 PLLQ output을 정확히 48MHz로 만들어야 한다. PLL divider가 integer 값만 사용하므로, 실습 설정은 100MHz 대신 `96MHz / 2 = 48MHz`가 가능한 SYSCLK 96MHz를 선택함.
 
 #### Board schematic으로 HSE 사용 가능 여부 확인
 
@@ -749,6 +820,8 @@ tact switch contact는 한 번에 완전히 붙거나 떨어지지 않는다. �
 일반 CMOS input은 threshold 하나 근처에서 noise가 오가면 high/low 판단이 반복될 수 있다. Schmitt trigger input은 low에서 high가 되려면 높은 `V_T+`를 넘어야 하고, high에서 low가 되려면 낮은 `V_T-` 아래로 내려와야 한다. 두 threshold 차이를 hysteresis라 하며, threshold 사이에서 흔들리는 신호가 출력 상태를 반복해서 바꾸지 않게 한다. STM32F411의 GPIO input configuration도 input buffer에 Schmitt trigger를 표시한다. 이것은 noise margin에 도움이 되지만 switch bounce 조건과 application 요구를 모두 자동으로 해결하는 debounce 기능은 아니다.
 
 ### Key driver API로 입력 의도를 분리하기
+
+관련 노트: [[domains/semiconductor/ai-npu-system-integration/embedded-layered-architecture-hal-driver]]
 
 GPIO register를 application 곳곳에서 직접 읽으면 active-low 반전, port·pin 번호, wait 동작이 흩어진다. key driver는 전기적 세부 사항을 `key.c`에 모으고 application에는 '현재 눌렸는가'와 'event가 올 때까지 기다리는가'라는 의도만 남긴다.
 

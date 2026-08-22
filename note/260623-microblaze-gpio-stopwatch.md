@@ -113,7 +113,7 @@ Vivado의 Address Editor에서는 AXI peripheral마다 자동 할당된 base add
 
 ## Custom GPIO Register 의미
 
-관련 노트: [[domains/semiconductor/verilog-hdl/study-reference-13-gpio-register-mmio-cr-idr-odr]]
+관련 노트: [[domains/semiconductor/ai-npu-system-integration/gpio-register-mmio-cr-idr-odr]]
 
 직접 만든 GPIO IP는 AXI4-Lite slave register를 통해 mode와 data를 제어한다. Software에서는 `base address + offset`으로 register에 접근하고, custom GPIO 내부에서는 해당 register write/read가 `io_port` 방향과 출력값으로 이어진다. 이번 코드에서는 `GPIO_TypeDef` 구조체 순서가 곧 register offset 기준이므로, `CR`, `IDR`, `ODR` 순서를 소스와 맞춰 보는 것이 중요하다.
 
@@ -209,7 +209,7 @@ Application Project에서는 template code에 의존하지 않고 Empty file을 
 
 ## C 포인터와 MMIO 접근
 
-관련 노트: [[domains/semiconductor/verilog-hdl/study-reference-14-c-pointer-struct-mmio-gpio-register-access]]
+관련 노트: [[domains/semiconductor/ai-npu-system-integration/c-pointer-struct-mmio-gpio-register-access]]
 
 이 수업의 firmware 부분은 C pointer, 자료형 크기, 구조체 layout을 GPIO register 접근으로 연결해서 보는 흐름이다. 자세한 보강은 위 관련 노트에 정리하고, 이 노트에서는 `base address + offset`으로 register 주소를 만들고, pointer cast와 dereference로 실제 hardware register에 read/write하는 흐름만 잡는다.
 
@@ -245,7 +245,7 @@ GPIO access를 함수로 감싸면 register offset 숫자나 bit 연산을 main 
 
 ## Firmware Layer와 Driver 호출 방향
 
-관련 노트: [[domains/semiconductor/verilog-hdl/study-reference-12-embedded-layered-architecture-hal-driver]]
+관련 노트: [[domains/semiconductor/ai-npu-system-integration/embedded-layered-architecture-hal-driver]]
 
 GPIO helper 함수를 만든 다음에는 application code가 hardware register를 직접 만지는 구조를 줄이고, 기능 단위 driver를 거쳐 제어하는 방향으로 정리한다. 예를 들어 LED를 켜고 끄는 동작은 application에서 `GPIOC->ODR` 또는 `GPIOD->ODR`를 직접 쓰는 방식보다, LED driver가 GPIO driver를 사용해 처리하는 구조가 유지보수에 유리하다.
 
