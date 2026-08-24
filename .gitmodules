@@ -7,9 +7,6 @@
 [submodule "KorchamLogis"]
 	path = KorchamLogis
 	url = https://github.com/mumallaeng/KorchamLogis.git
-[submodule "testudines"]
-	path = testudines
-	url = https://github.com/mumallaeng/testudines.git
 [submodule "Timepiecer"]
 	path = Timepiecer
 	url = https://github.com/mumallaeng/Timepiecer.git
