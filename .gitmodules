@@ -1,3 +1,19 @@
+[submodule "AXI_Peripheral"]
+	path = AXI_Peripheral
+	url = https://github.com/mumallaeng/AXI_Peripheral.git
+[submodule "ascii-uart-sensor-pipeline"]
+	path = ascii-uart-sensor-pipeline
+	url = https://github.com/mumallaeng/ascii-uart-sensor-pipeline.git
+[submodule "KorchamLogis"]
+	path = KorchamLogis
+	url = https://github.com/mumallaeng/KorchamLogis.git
+[submodule "testudines"]
+	path = testudines
+	url = https://github.com/mumallaeng/testudines.git
+[submodule "Timepiecer"]
+	path = Timepiecer
+	url = https://github.com/mumallaeng/Timepiecer.git
+
 [submodule "wardy"]
 	path = wardy
 	url = https://github.com/mumallaeng/wardy.git

@@ -14,7 +14,11 @@ GitHub: <https://github.com/mumallaeng/korchamhrd_ai_chip_design>
 
 - `note/`: semiconductor design class notes, lab writeups, diagrams, and staging notes.
 - `mini_project-*`: personal FPGA/RTL/verification/processor mini projects built during the course.
-- `AXI_Peripheral/`, `ascii-uart-sensor-pipeline/`, `KorchamLogis/`, `testudines/`: projects tied to the course timeline whose implementation source lives in a separate GitHub repository. Only course context and the repository link live here.
+- `AXI_Peripheral/`, `ascii-uart-sensor-pipeline/`, `KorchamLogis/`, `testudines/`: projects tied to the course timeline whose implementation source lives in a separate GitHub repository, wired in as git submodules.
+  - `AXI_Peripheral`: AXI peripheral design project from the `260618`-`260630` AXI/MicroBlaze class period.
+  - `ascii-uart-sensor-pipeline`: Basys 3 UART sensor pipeline project from the `260421`-`260430` UART/FIFO class period. `mini_project-UART_FIFO` preserves the original commits for the early result in this repository; this project is the cleaned-up follow-up moved to its own repository.
+  - `KorchamLogis`: team project (Team 8, "Paljo") building an autonomous-robot-based store logistics automation system.
+  - `testudines`: started as the G51 robot-arm Cortex-M4 bare-metal PWM/UART/ADC control project (`260723`-`260727`), now a longer-running personal project extending into ROS2 + FPGA NPU integration.
 - `clear-spreadsheet/`: clean `.xlsx` files whose Google Sheets view shows unintended table or theme background colors.
 - `classroom/deliverable-share/`: validate Google Classroom deliverables, share Drive folders, and generate private-comment copybooks.
 - `classroom/project-packager/`: build project submission folders from stable report, schedule, journal, media, and source-bundle patterns.
