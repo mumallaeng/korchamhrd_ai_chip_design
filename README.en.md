@@ -14,6 +14,7 @@ GitHub: <https://github.com/mumallaeng/korchamhrd_ai_chip_design>
 
 - `note/`: semiconductor design class notes, lab writeups, diagrams, and staging notes.
 - `mini_project-*`: personal FPGA/RTL/verification/processor mini projects built during the course.
+- `AXI_Peripheral/`, `ascii-uart-sensor-pipeline/`, `KorchamLogis/`, `testudines/`: projects tied to the course timeline whose implementation source lives in a separate GitHub repository. Only course context and the repository link live here.
 - `clear-spreadsheet/`: clean `.xlsx` files whose Google Sheets view shows unintended table or theme background colors.
 - `classroom/deliverable-share/`: validate Google Classroom deliverables, share Drive folders, and generate private-comment copybooks.
 - `classroom/project-packager/`: build project submission folders from stable report, schedule, journal, media, and source-bundle patterns.

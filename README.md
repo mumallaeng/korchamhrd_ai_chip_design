@@ -14,6 +14,7 @@ GitHub: <https://github.com/mumallaeng/korchamhrd_ai_chip_design>
 
 - `note/`: 반도체 설계 수업 노트, 실습 정리, 다이어그램, 임시 staging 자료를 둡니다.
 - `mini_project-*`: 수업 중 작성한 개인 FPGA/RTL/검증/프로세서 미니 프로젝트를 둡니다.
+- `AXI_Peripheral/`, `ascii-uart-sensor-pipeline/`, `KorchamLogis/`, `testudines/`: 수업 기간과 맞물리지만 구현 소스를 별도 GitHub 저장소로 관리하는 프로젝트입니다. 여기에는 수업 맥락과 저장소 링크만 둡니다.
 - `clear-spreadsheet/`: Google Sheets에서 의도하지 않은 표/테마 배경색이 보이는 `.xlsx` 파일을 정리합니다.
 - `classroom/deliverable-share/`: Google Classroom 산출물을 검증하고, Drive 폴더 공유와 비공개 댓글용 copybook 생성을 처리합니다.
 - `classroom/project-packager/`: 과제 제출 폴더를 보고서, 일정표, 일지, 미디어, 소스 번들 규칙에 맞춰 구성합니다.
