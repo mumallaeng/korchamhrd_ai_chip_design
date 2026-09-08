@@ -16,3 +16,11 @@ token*.json
 tmp/
 output/
 reports/generated/
+
+# final/vibro-acoustic-fault-diagnosis: datasets, Python environments and run outputs stay out of Git
+final/**/.venv*/
+final/**/data/raw/
+final/**/data/processed/
+final/**/data/*.download.log
+final/**/artifacts/
+final/**/*.log
