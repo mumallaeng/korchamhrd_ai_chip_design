@@ -1,6 +1,6 @@
 # 논리회로 시험 대비 05 - Counter/Timer와 Counter Register
 
-> 분류: 2026-04-06부터 2026-05-29까지의 Korcham 수업·시험 범위에 종속된 activity note
+> 분류: 2026-04-06부터 2026-05-29까지의 수업·시험 범위에 종속된 activity note
 
 범위
 - `register`

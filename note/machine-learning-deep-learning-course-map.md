@@ -1,12 +1,12 @@
-# Korcham ON-Device AI 1~3부 고정 범위
+# 온디바이스 AI 수업 1~3부 고정 범위
 
-> 이 파일은 Korcham AI 수업의 `1부 ML/DL → 2부 CNN → 3부 Jetson Orin
+> 이 파일은 AI 수업의 `1부 ML/DL → 2부 CNN → 3부 Jetson Orin
 > Nano` 직접 범위와 실제 학습일을 기록하는 activity map이다.
 >
 > 전체 ML·DL 큰그림은
 > [[domains/data-science/ai/on-device-ai-ml-dl-yolo-curriculum|On-Device AI ML·DL·YOLO 통합 학습 커리큘럼]]에서
 > 관리한다. 그 안에서 Codeit·Addinedu·Udemy·기타 보유 자료는 같은 개념을
-> 배우는 pass에서 병행하되, 이 activity map에는 Korcham 직접 범위와 실제
+> 배우는 pass에서 병행하되, 이 activity map에는 수업 직접 범위와 실제
 > 진도를 남긴다.
 
 ## 관련 학습 노트
@@ -29,7 +29,7 @@ Work 보존본:
 - `/Volumes/Work/Safekeep/source-media/korcham/260707-image-extracts/260707-on-device-ai-deep-learning-1-jpg`
 - `/Volumes/Work/Safekeep/source-media/korcham/260707-image-extracts/260707-on-device-ai-deep-learning-2-jpg`
 
-Korcham 실습 notebook:
+수업 실습 notebook:
 
 - `Google Drive/My Drive/Classroom/대한상공회의소_반도체설계/기호민-ON_Device_AI_Deep_Learning_AND_Embedded_Linux_Jetson_Orin_Nano/상공회의소_KDT_실습자료(딥러닝_CNN)/01.DL(CNN)_Examples`
 
@@ -37,7 +37,7 @@ Korcham 실습 notebook:
 `7`개와 `02_CNN`의 `3`개다. 저장된 output은 수업 source evidence이며
 그 output을 본 사실만으로는 학습 완료 evidence가 아니다. 같은 개념을 다른
 보유 자료와 병행해 실제 설명·계산·code trace·실습 근거를 만들었다면 해당
-Korcham 단원 TODO를 갱신하며, Korcham notebook만 완료용으로 반복하지 않는다.
+수업 단원 TODO를 갱신하며, 수업 notebook만 완료용으로 반복하지 않는다.
 
 두 묶음은 사진 `76`장이다. 첫 묶음은 `47`장, 두 번째 묶음은 `29`장이다.
 교재 `5쪽`은 두 번 촬영되었고, 중복 촬영을 제외한 본문은 `5~77쪽`으로
@@ -60,7 +60,7 @@ Korcham 단원 TODO를 갱신하며, Korcham notebook만 완료용으로 반복�
 
 ## 3부 Jetson Orin Nano 직접 범위
 
-3부는 별도 개인 확장이 아니라 같은 Korcham AI 수업의 application·deployment
+3부는 별도 개인 확장이 아니라 같은 AI 수업의 application·deployment
 구간이다.
 
 | 과 | 단원 | 직접 수업 산출물 |
@@ -99,17 +99,17 @@ AI·ML·DL 배경
 - `2026-07-29`: 3부 Windows·WSL·NVIDIA SDK Manager 환경 확인 중 종료
 
 자료를 정리한 사실은 단원 완료가 아니다. 통합 curriculum에서 실제 설명·계산·
-code trace·실습 근거가 생기면 그 근거가 충족하는 Korcham 단원의 학습 상태와
+code trace·실습 근거가 생기면 그 근거가 충족하는 수업 단원의 학습 상태와
 TODO를 함께 갱신한다. 출처별로 별도 완료 근거를 만들지 않는다.
 
 ## 범위 경계
 
-Korcham AI 직접 범위는 `Perceptron → regression·classification → MLP →
+AI 수업 직접 범위는 `Perceptron → regression·classification → MLP →
 CNN·MobileNetV2 → Jetson webcam·RPS·TensorRT → Object Detection·YOLO →
 local LLM·Ollama`까지다.
 
 - Codeit·Addinedu·Udemy·기타 보유 자료에서 같은 개념을 설명하는 부분은
-  해당 Korcham 단원을 배우는 같은 pass에서 병행한다.
+  해당 수업 단원을 배우는 같은 pass에서 병행한다.
 - Addinedu YOLOv8과 Work 배포 자료는 3부의 OpenCV·YOLO·runtime·profiling을
   함께 이해하는 자료이며, 출처만 구분한다.
 - 전통 ML 폭·시계열처럼 1~3부와 겹치지 않는 내용은 수업 뒤에 진행한다.

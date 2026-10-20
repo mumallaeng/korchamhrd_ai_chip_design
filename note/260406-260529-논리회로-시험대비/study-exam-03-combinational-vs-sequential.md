@@ -1,6 +1,6 @@
 # 논리회로 시험 대비 03 - 조합논리에서 순차논리로
 
-> 분류: 2026-04-06부터 2026-05-29까지의 Korcham 수업·시험 범위에 종속된 activity note
+> 분류: 2026-04-06부터 2026-05-29까지의 수업·시험 범위에 종속된 activity note
 
 목적:
 - `gate -> 조합논리 -> flip-flop -> clock -> register -> counter -> FSM` 흐름만 짧게 연결

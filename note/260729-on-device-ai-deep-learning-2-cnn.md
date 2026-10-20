@@ -4,7 +4,7 @@
 
 - [26-07-28 - ON-Device AI를 위한 Deep Learning 1부](260728-on-device-ai-deep-learning-1.md)
 - [26-07-29 - ON-Device AI를 위한 Deep Learning 1부 마무리](260729-on-device-ai-deep-learning-1-continuation.md)
-- [Korcham Machine Learning·Deep Learning 고정 범위](machine-learning-deep-learning-course-map.md)
+- [Machine Learning·Deep Learning 고정 범위](machine-learning-deep-learning-course-map.md)
 
 > 수업일: `2026-07-29`
 >
@@ -422,7 +422,7 @@ On-device target에서는 정확도만 보면 안 되고 model size, parameter �
 - Codeit·Addinedu·기타 자료의 CNN 설명과 실습은 이 CNN 단원을 배우는
   같은 pass에서 병행하고,
   [[domains/data-science/ai/on-device-ai-ml-dl-yolo-curriculum|AI·ML·DL 통합 큰그림]]의
-  CNN 개념과 Korcham TODO를 하나의 학습 결과로 갱신한다.
+  CNN 개념과 수업 TODO를 하나의 학습 결과로 갱신한다.
 - Object Detection·YOLO는 이어지는 3부 Jetson Orin Nano 직접 수업
   범위에서 배우며, 시계열처럼 1~3부와 겹치지 않는 내용만 그 뒤로 둔다.
 

@@ -2,7 +2,7 @@
 
 [한국어](README.md) | English
 
-Course-facing automation for Korcham HRD on-device AI chip design classroom submissions.
+Automation for classroom submissions in *[Consortium] On-Device AI System Semiconductor Design, 2nd Cohort*.
 
 ## Tools
 

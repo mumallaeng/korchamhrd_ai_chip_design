@@ -1,6 +1,6 @@
 # 논리회로 실전 예제 01 - counter_10000, tick_counter, clk_tick_gen, FND 흐름
 
-> 분류: Korcham 수업 코드와 프로젝트 구조에 종속된 activity note
+> 분류: 수업 코드와 프로젝트 구조에 종속된 activity note
 
 목적:
 - `counter`, `tick generator`, `wire`, `reg`, `assign`, `top/datapath` 구조를 실제 코드 한 묶음으로 익히기

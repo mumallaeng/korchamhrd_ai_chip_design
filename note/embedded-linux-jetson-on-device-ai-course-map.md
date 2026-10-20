@@ -1,4 +1,4 @@
-# Korcham AI 3부: Embedded Linux·Jetson On-Device AI 전체 지도
+# AI 수업 3부: Embedded Linux·Jetson On-Device AI 전체 지도
 
 관련 노트:
 
@@ -12,7 +12,7 @@
 
 ## 과정의 위치와 범위
 
-이 과정은 Korcham AI 수업의 3부다. 1부 ML/DL과 2부 CNN에서 학습한 model을
+이 과정은 AI 수업의 3부다. 1부 ML/DL과 2부 CNN에서 학습한 model을
 `Jetson Orin Nano`라는 Linux hardware platform에서 camera input, inference
 runtime, application 기능과 연결한다. Target board에서 model을 실행하고
 latency·memory·device I/O를 함께 다룬다.
@@ -287,12 +287,12 @@ Jetson·TensorRT 작업은 on-device AI deployment와 embedded AI system integra
 
 | 3부 단원 | 병행 자료 | 함께 확인할 내용 |
 | :--- | :--- | :--- |
-| Webcam·RPS | Korcham MobileNetV2 notebook·board script, DUDL CNN, Addinedu ML·OpenCV | transfer learning, ROI·augmentation, preprocessing parity |
+| Webcam·RPS | 수업 MobileNetV2 notebook·board script, DUDL CNN, Addinedu ML·OpenCV | transfer learning, ROI·augmentation, preprocessing parity |
 | ONNX·TensorRT | Work Build On-Device AI, NVIDIA 문서; Raspberry Pi 배포 archive는 TFLite backend 비교에만 사용 | graph export·compile·validate·profile, runtime·target 경계; TFLite 결과를 TensorRT의 직접 근거로 사용하지 않음 |
-| Object Detection·YOLO | Korcham YOLO11n, Addinedu YOLOv8, Ultralytics·COCOeval 문서 | label·box·IoU·NMS·AP/mAP, version별 output·loss·export |
+| Object Detection·YOLO | 수업 YOLO11n, Addinedu YOLOv8, Ultralytics·COCOeval 문서 | label·box·IoU·NMS·AP/mAP, version별 output·loss·export |
 | local LLM·Ollama | Jetson 수업 자료와 local-runtime 문서 | container·memory·context·tokens/s·REST/Python API |
 
-통합 학습 근거가 해당 개념을 충족하면 3부 Korcham TODO를 함께 체크하며,
+통합 학습 근거가 해당 개념을 충족하면 3부 수업 TODO를 함께 체크하며,
 출처별로 같은 실습을 다시 완료하지 않는다. 3부 직후에는 수업 model과 board를
 그대로 사용해 상세 device profiling과 NPU data movement를 최우선으로 확장한다.
 

@@ -1,6 +1,6 @@
-# Korcham Notes
+# 수업 노트
 
-Korcham 수업에서 실제로 발생한 날짜별 학습, 수업 순서, 과제, 시험 범위,
+수업에서 실제로 발생한 날짜별 학습, 수업 순서, 과제, 시험 범위,
 수업 코드, 강사 강조점을 보존하는 activity note 경로다.
 
 ## Boundary
@@ -10,7 +10,7 @@ Korcham 수업에서 실제로 발생한 날짜별 학습, 수업 순서, 과제
 | `activities/korcham/notes` | 수업 날짜, 진행 순서, 시험·과제 범위, 실제 수업 코드와 관찰 |
 | `domains` | 출처와 날짜를 넘어 다시 쓰는 개념 모델, 일반화된 예제, summary-first 정본 |
 
-같은 개념이 Korcham 수업과 domain note에 모두 필요하면 수업 증거는 이
+같은 개념이 수업과 domain note에 모두 필요하면 수업 증거는 이
 경로에 유지하고, domain 정본에서 activity note를 출처로 연결한다.
 activity note 자체를 domain의 `요점 → 상세 설명` 형식으로 강제하지 않는다.
 

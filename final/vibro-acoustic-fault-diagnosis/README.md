@@ -1,6 +1,6 @@
 # Vibro-acoustic fault diagnosis
 
-Software golden models and RTL-feasibility artifacts for the Korcham final project.
+Software golden models and RTL-feasibility artifacts for the course final project.
 
 See `HANDOFF.md` for verified local state, unfinished work, and exact continuation commands.
 
