@@ -14,3 +14,9 @@
 [submodule "wardy"]
 	path = wardy
 	url = https://github.com/mumallaeng/wardy.git
+[submodule "VGA-Pan-Tilt-CCTV"]
+	path = VGA-Pan-Tilt-CCTV
+	url = https://github.com/mumallaeng/VGA-Pan-Tilt-CCTV.git
+[submodule "LightLetter"]
+	path = LightLetter
+	url = https://github.com/mumallaeng/LightLetter.git

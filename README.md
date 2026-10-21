@@ -18,6 +18,8 @@
 | [AXI_Peripheral](AXI_Peripheral) | 2026.06.22 ~ 06.30 | AXI·MicroBlaze | 팀 (submodule) |
 | [G51 Robot Arm Cortex-M4 제어](mini_project-Cortex-M4) | 2026.07.23 ~ 07.27 | Embedded | 개인 |
 | [Wardy](wardy) | 2026.08.05 ~ 08.19 | On-Device AI | 팀 (submodule) |
+| [VGA Pan-Tilt Vision Tracker](VGA-Pan-Tilt-CCTV) | 2026.08.31 ~ 09.08 | VGA | 팀 (submodule) |
+| [LightLetter](LightLetter) | 2026.09.09 ~ 10.15 | 파이널 프로젝트 | 팀 (submodule) |
 
 팀 프로젝트는 각각 별도 저장소에서 관리하고, 이 저장소에는 git submodule로 연결해 두었습니다.
 
