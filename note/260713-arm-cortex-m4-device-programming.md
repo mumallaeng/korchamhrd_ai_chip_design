@@ -3,7 +3,7 @@
 관련 노트:
 
 - [PC GNU 컴파일 환경 설치 가이드](pc-gnu-compiler-environment.md)
-- [_staging/arm-cortex-m4-device-programming-01.md](_staging/arm-cortex-m4-device-programming-01.md)
+- _staging/arm-cortex-m4-device-programming-01.md
 
 ## 수업 흐름
 

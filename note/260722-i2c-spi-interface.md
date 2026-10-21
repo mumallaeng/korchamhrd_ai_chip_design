@@ -3,8 +3,8 @@
 관련 노트:
 
 - [26-07-21 - Startup·Interrupt·Event-Driven Firmware](260721-interrupt-event-driven.md)
-- [13과 I2C `main.c`](../helloEmbedded/1301.I2C_IF_EX/main.c) · [I2C driver](../helloEmbedded/1301.I2C_IF_EX/i2c.c)
-- [14과 SPI `main.c`](../helloEmbedded/1401.SPI_IF_EX/main.c) · [SPI driver](../helloEmbedded/1401.SPI_IF_EX/spi.c)
+- 13과 I2C `main.c` · I2C driver
+- 14과 SPI `main.c` · SPI driver
 
 ## 수업 범위
 
@@ -149,7 +149,7 @@ flag 이름만 보고 임의로 read/write 순서를 바꾸면 `ADDR`, `STOP`, �
 
 `TXE = 1`은 `DR`가 비어서 다음 byte를 받을 수 있다는 뜻이다. 이때 shift register는 직전 byte를 아직 SCL에 맞춰 전송하거나 target의 ACK를 기다릴 수 있다. 반면 `BTF = 1`은 `DR`와 shift register가 모두 비어 전송 byte의 완료 경계까지 도달했다는 뜻이다. 따라서 여러 byte를 연속으로 보낼 때는 `TXE`마다 다음 byte를 `DR`에 공급할 수 있고, 마지막 byte 뒤에는 `BTF`를 확인한 뒤 `STOP` 또는 repeated `START`를 요청한다.
 
-현재 [`I2C1_SC16IS752_Write_Reg()`](../helloEmbedded/1301.I2C_IF_EX/i2c.c)는 pipeline을 최대한 채우기보다 상태를 눈으로 따라가기 쉬운 polling 순서를 사용한다. register address는 `TXE` 뒤 `DR`에 쓰고, `BTF`로 그 byte의 전송 경계를 확인한 뒤 write data를 보낸다. 마지막 data의 `BTF` 뒤에만 `CR1.STOP`을 set한다. 이 순서에서 `TXE`는 다음 `DR` write 허가, `BTF`는 transaction을 닫아도 되는 완료 경계로 읽는다.
+현재 `I2C1_SC16IS752_Write_Reg()`는 pipeline을 최대한 채우기보다 상태를 눈으로 따라가기 쉬운 polling 순서를 사용한다. register address는 `TXE` 뒤 `DR`에 쓰고, `BTF`로 그 byte의 전송 경계를 확인한 뒤 write data를 보낸다. 마지막 data의 `BTF` 뒤에만 `CR1.STOP`을 set한다. 이 순서에서 `TXE`는 다음 `DR` write 허가, `BTF`는 transaction을 닫아도 되는 완료 경계로 읽는다.
 
 #### polling 대기의 실습 범위와 확장 방향
 
@@ -224,7 +224,7 @@ read : (address7 << 1) | 1
 
 ### 현재 실습 code 기준 확인
 
-[13과 `i2c.c`](../helloEmbedded/1301.I2C_IF_EX/i2c.c)는 `SC16IS752_I2CADDR = 0x9A`를 두고 write byte `0x9A`를 `I2C1->DR`에 쓴다. `SC16IS752_I2CADDR_RD`는 bit `0`을 set한 `0x9B`다. 두 값의 상위 7bit는 모두 `0x4D`이므로, write와 read가 서로 다른 device address라는 뜻이 아니다.
+13과 `i2c.c`는 `SC16IS752_I2CADDR = 0x9A`를 두고 write byte `0x9A`를 `I2C1->DR`에 쓴다. `SC16IS752_I2CADDR_RD`는 bit `0`을 set한 `0x9B`다. 두 값의 상위 7bit는 모두 `0x4D`이므로, write와 read가 서로 다른 device address라는 뜻이 아니다.
 
 현재 `Main()`은 `I2C1_SC16IS752_Init(400000)`을 호출한다. 이 값은 `CR2.FREQ`에 들어가지 않고, `CCR = PCLK1 / (2 × freq)` 계산에만 쓰인다. 따라서 `PCLK1 = 48 MHz`에서는 `CR2.FREQ = 48`, `CCR = 60`, `TRISE = 49`가 된다.
 
@@ -249,7 +249,7 @@ read : (address7 << 1) | 1
 
 fast mode는 register 값만의 문제가 아니라 physical waveform 조건이기도 하다. extension board에 pull-up resistor가 있어도 jumper 길이·bus capacitance·pull-up 값 때문에 실제 `SCL/SDA` rise time이 `300 ns`를 넘으면 `400 kHz`가 불안정할 수 있다. 따라서 `100 kHz` 통과는 배선과 protocol의 1차 확인이고, `400 kHz` 전환 뒤에는 fast-mode register 설정과 waveform을 함께 확인한다.
 
-[13과 `main.c`](../helloEmbedded/1301.I2C_IF_EX/main.c)는 `IODIR = 0xFF`를 쓴 뒤 `~(1u << i)`를 `IOSTATE`에 보내 LED를 이동시킨다. 이동 간격은 `TIM2_Delay()`가 아니라 source의 busy loop가 만든다.
+13과 `main.c`는 `IODIR = 0xFF`를 쓴 뒤 `~(1u << i)`를 `IOSTATE`에 보내 LED를 이동시킨다. 이동 간격은 `TIM2_Delay()`가 아니라 source의 busy loop가 만든다.
 
 ### STM32 I2C1 설정
 
@@ -278,7 +278,7 @@ I2C1 register 설정 흐름은 다음과 같다.
 
 #### I2C1 초기화 write 순서
 
-[`i2c.c`](../helloEmbedded/1301.I2C_IF_EX/i2c.c)의 초기화는 peripheral reset 뒤 `CR2.FREQ`에 `PCLK1` 값을 먼저 기록한다. 이어 `CR1.PE = 0`을 명시해 peripheral을 멈춘 상태로 만들고, `TRISE`와 `CCR` timing을 설정한다. 마지막으로 `CR1.SMBUS = 0`으로 I2C mode를 선택한 뒤, `PE = 1`, `ACK = 1`을 순서대로 set한다.
+`i2c.c`의 초기화는 peripheral reset 뒤 `CR2.FREQ`에 `PCLK1` 값을 먼저 기록한다. 이어 `CR1.PE = 0`을 명시해 peripheral을 멈춘 상태로 만들고, `TRISE`와 `CCR` timing을 설정한다. 마지막으로 `CR1.SMBUS = 0`으로 I2C mode를 선택한 뒤, `PE = 1`, `ACK = 1`을 순서대로 set한다.
 
 `CR1.ACK`는 master가 receive할 때 ACK를 낼지 정하는 peripheral 정책이다. 현재 `Write_Reg()`는 master-transmit 경로이므로, address와 data 뒤에 target가 bus에 내는 ACK와 같은 bit가 아니다. 이후 read path를 추가할 때는 마지막 byte에서 ACK를 끄고 NACK으로 read를 끝내는 동작까지 연결해 본다.
 
@@ -336,7 +336,7 @@ write register sequence는 다음처럼 진행된다.
 10. CR1.STOP set
 ```
 
-`ADDR`는 단순히 flag 하나를 지우는 것이 아니라 `SR1` read 뒤 `SR2` read라는 순서를 요구한다. 현재 [`i2c.c`](../helloEmbedded/1301.I2C_IF_EX/i2c.c)의 `while(Macro_Check_Bit_Clear(I2C1->SR1, 1));`가 먼저 `SR1`을 읽고, 바로 다음 `(void)I2C1->SR2;`가 두 번째 read를 수행해 이 규칙을 만족한다. 이 polling 구조를 다른 helper나 interrupt handler로 바꿀 때도 두 read의 순서를 유지한다.
+`ADDR`는 단순히 flag 하나를 지우는 것이 아니라 `SR1` read 뒤 `SR2` read라는 순서를 요구한다. 현재 `i2c.c`의 `while(Macro_Check_Bit_Clear(I2C1->SR1, 1));`가 먼저 `SR1`을 읽고, 바로 다음 `(void)I2C1->SR2;`가 두 번째 read를 수행해 이 규칙을 만족한다. 이 polling 구조를 다른 helper나 interrupt handler로 바꿀 때도 두 read의 순서를 유지한다.
 
 LED 이동 실습은 다음 흐름으로 구성할 수 있음.
 
@@ -389,7 +389,7 @@ void Main(void)
 
 ### device register를 선택하는 sub-address
 
-I2C device는 IC 선택용 7bit address와 별도로 내부 register·memory 위치를 고르는 sub-address를 가질 수 있다. 현재 실습에서는 `IODIR`·`IOSTATE` 같은 SC16IS752 register가 그 대상이다. [`I2C1_SC16IS752_Write_Reg()`](../helloEmbedded/1301.I2C_IF_EX/i2c.c)는 device write byte 뒤에 `addr << 3`으로 만든 register address byte, 이어서 write data를 보낸다.
+I2C device는 IC 선택용 7bit address와 별도로 내부 register·memory 위치를 고르는 sub-address를 가질 수 있다. 현재 실습에서는 `IODIR`·`IOSTATE` 같은 SC16IS752 register가 그 대상이다. `I2C1_SC16IS752_Write_Reg()`는 device write byte 뒤에 `addr << 3`으로 만든 register address byte, 이어서 write data를 보낸다.
 
 ```text
 S → 0x9A (SC16IS752 + W) → ACK
@@ -423,7 +423,7 @@ ACK도 open-drain line에서 receiver가 `SDA`를 low로 당겨 만드는 응답
 
 ### Firmware 설정과 실제 signal route
 
-`I2C1`은 STM32F411 안의 hardware peripheral이고, `PB6`·`PB7`은 그 signal을 밖으로 내보낼 MCU pad다. [`I2C1_SC16IS752_Init()`](../helloEmbedded/1301.I2C_IF_EX/i2c.c)는 두 pin을 alternate function `AF4`, open-drain, fast speed로 설정한다.
+`I2C1`은 STM32F411 안의 hardware peripheral이고, `PB6`·`PB7`은 그 signal을 밖으로 내보낼 MCU pad다. `I2C1_SC16IS752_Init()`는 두 pin을 alternate function `AF4`, open-drain, fast speed로 설정한다.
 
 | Signal | extension board | STM32F411 firmware 설정 | 역할 |
 | :--- | :--- | :--- | :--- |
@@ -442,7 +442,7 @@ ACK도 open-drain line에서 receiver가 `SDA`를 low로 당겨 만드는 응답
 
 `SC16IS752`는 I2C 또는 SPI로 접근하는 dual UART·8bit GPIO bridge다. `ITF_MODE`를 high로 두면 I2C mode가 선택되고, `SCL`·`SDA`와 `A0`·`A1` signal이 사용된다. 이 확장 board에는 I2C line의 pull-up resistor가 포함되어 있어 수업 배선에서 별도 pull-up resistor를 추가하지 않는다. firmware source는 `PB6`·`PB7`의 internal pull-up도 enable한다.
 
-GPIO `0`부터 `7`은 active-low LED에 연결된다. [`main.c`](../helloEmbedded/1301.I2C_IF_EX/main.c)는 먼저 `IODIR = 0xFF`로 GPIO output을 설정하고, `IOSTATE`에 `~(1u << i)`를 쓴다. 선택한 bit만 `0`이 되어 해당 LED가 켜진다.
+GPIO `0`부터 `7`은 active-low LED에 연결된다. `main.c`는 먼저 `IODIR = 0xFF`로 GPIO output을 설정하고, `IOSTATE`에 `~(1u << i)`를 쓴다. 선택한 bit만 `0`이 되어 해당 LED가 켜진다.
 
 ```text
 STM32F411 I2C1
@@ -542,7 +542,7 @@ SPI1 주요 register는 다음과 같다.
 | `SPI1->SR` | `BSY` | SPI busy |
 | `SPI1->DR` | data register | 송수신 data |
 
-SPI peripheral의 `NSS` 설정과 외부 IC를 선택하는 `PA8` `CS`는 source에서 분리되어 있다. [14과 `spi.c`](../helloEmbedded/1401.SPI_IF_EX/spi.c)는 `PA8`을 GPIO output으로 직접 low/high 하면서, `SPI1->CR2.SSOE = 1`, `CR1.SSM = 0`, `CR1.SSI = 0`도 설정한다. `SSOE`는 SPI peripheral의 `NSS` output을 enable하는 bit이며, `PA8`의 target `CS` pulse를 만들어 주는 bit가 아니다. 따라서 `SSOE`를 single/multi-master 선택 bit로 읽거나 `PA8` manual `CS`와 같은 signal로 합치면 안 된다.
+SPI peripheral의 `NSS` 설정과 외부 IC를 선택하는 `PA8` `CS`는 source에서 분리되어 있다. 14과 `spi.c`는 `PA8`을 GPIO output으로 직접 low/high 하면서, `SPI1->CR2.SSOE = 1`, `CR1.SSM = 0`, `CR1.SSI = 0`도 설정한다. `SSOE`는 SPI peripheral의 `NSS` output을 enable하는 bit이며, `PA8`의 target `CS` pulse를 만들어 주는 bit가 아니다. 따라서 `SSOE`를 single/multi-master 선택 bit로 읽거나 `PA8` manual `CS`와 같은 signal로 합치면 안 된다.
 
 `SSM = 1`은 external `NSS` input 대신 software가 정한 `SSI` level을 SPI 내부 NSS 판단에 쓰는 선택이다. 반대로 현재 source의 `SSM = 0`, `SSOE = 1`은 peripheral NSS output 경로를 사용한다. 실제 target을 선택하는 frame boundary는 여전히 `SPI1_CS_LOW()`·`SPI1_CS_HIGH()`가 만드는 `PA8` signal이다. 다른 board나 multi-master 구성으로 옮길 때는 target `CS`, MCU peripheral `NSS`, `SSM`·`SSI`·`SSOE`를 각각 분리해 datasheet와 reference manual 조건을 확인한다.
 
@@ -587,13 +587,13 @@ void SPI1_SC16IS752_Write_Reg(unsigned int addr, unsigned int data)
 
 ### 현재 실습 code 기준 확인
 
-[14과 `main.c`](../helloEmbedded/1401.SPI_IF_EX/main.c)는 `SPI1_SC16IS752_Init(32)`를 호출한다. `PCLK2 = 96 MHz`에서 source의 `__builtin_ctz(32)` 계산은 `BR = /32`, 즉 `3 MHz`를 만든다. 이 helper는 `2`의 거듭제곱 분주값을 입력으로 사용한다.
+14과 `main.c`는 `SPI1_SC16IS752_Init(32)`를 호출한다. `PCLK2 = 96 MHz`에서 source의 `__builtin_ctz(32)` 계산은 `BR = /32`, 즉 `3 MHz`를 만든다. 이 helper는 `2`의 거듭제곱 분주값을 입력으로 사용한다.
 
-[14과 `spi.c`](../helloEmbedded/1401.SPI_IF_EX/spi.c)는 16bit frame, master, mode 0, MSB first로 `DR`에 command word를 쓰고 `TXE` set·`BSY` clear만 기다린다. SPI physical transfer는 full-duplex이므로 receive `DR`를 읽거나 `RXNE`·overrun을 처리하는 경로는 현재 최소 write 예제에 포함되지 않는다. 반복 transfer 또는 receive 기능으로 확장할 때는 receive flag와 overrun clear sequence를 추가한다.
+14과 `spi.c`는 16bit frame, master, mode 0, MSB first로 `DR`에 command word를 쓰고 `TXE` set·`BSY` clear만 기다린다. SPI physical transfer는 full-duplex이므로 receive `DR`를 읽거나 `RXNE`·overrun을 처리하는 경로는 현재 최소 write 예제에 포함되지 않는다. 반복 transfer 또는 receive 기능으로 확장할 때는 receive flag와 overrun clear sequence를 추가한다.
 
 #### `__builtin_ctz()`로 `BR` field를 만드는 조건
 
-[`SPI1_SC16IS752_Init()`](../helloEmbedded/1401.SPI_IF_EX/spi.c)는 `div`를 `/2`, `/4`, `/8`처럼 `2`의 거듭제곱 분주값으로 받고 `__builtin_ctz(div)`를 이용해 `BR[2:0]` encoding을 만든다. `ctz`는 'count trailing zeros'로, `0`번 bit부터 연속된 `0`의 개수를 반환한다. `div`가 `2^k`이면 `ctz(div) = k`이고, SPI의 `BR = 0`이 `/2`를 뜻하므로 원하는 field 값은 `k - 1`이다.
+`SPI1_SC16IS752_Init()`는 `div`를 `/2`, `/4`, `/8`처럼 `2`의 거듭제곱 분주값으로 받고 `__builtin_ctz(div)`를 이용해 `BR[2:0]` encoding을 만든다. `ctz`는 'count trailing zeros'로, `0`번 bit부터 연속된 `0`의 개수를 반환한다. `div`가 `2^k`이면 `ctz(div) = k`이고, SPI의 `BR = 0`이 `/2`를 뜻하므로 원하는 field 값은 `k - 1`이다.
 
 | `div` | binary 끝의 `0` 개수 | source가 만드는 `BR` | SCK |
 | :---: | :---: | :---: | :--- |
@@ -606,7 +606,7 @@ void SPI1_SC16IS752_Write_Reg(unsigned int addr, unsigned int data)
 
 #### source가 첫 `TXE` 대기를 생략한 이유
 
-[`SPI1_SC16IS752_Write_Reg()`](../helloEmbedded/1401.SPI_IF_EX/spi.c)는 함수 시작에서 바로 `DR`에 16bit word를 쓴 뒤 `TXE`와 `BSY`를 기다린다. 이 순서는 초기화 직후 `TXE = 1`인 상태, 또는 이전 호출이 `BSY = 0`까지 확인하고 반환한 상태를 전제로 한다. 현재 `main.c`는 한 transaction이 끝난 뒤 다음 함수를 호출하므로 이 전제가 성립한다.
+`SPI1_SC16IS752_Write_Reg()`는 함수 시작에서 바로 `DR`에 16bit word를 쓴 뒤 `TXE`와 `BSY`를 기다린다. 이 순서는 초기화 직후 `TXE = 1`인 상태, 또는 이전 호출이 `BSY = 0`까지 확인하고 반환한 상태를 전제로 한다. 현재 `main.c`는 한 transaction이 끝난 뒤 다음 함수를 호출하므로 이 전제가 성립한다.
 
 이 전제는 단일 polling 실습의 단순화다. 다른 task·ISR·DMA가 같은 SPI를 동시에 사용할 수 있는 driver에서는 다음 `DR` write 전에 ownership과 `TXE`를 확인하고, full-duplex로 쌓인 receive data도 처리해야 한다. 현재 source의 직렬 호출 구조를 일반적인 concurrent SPI driver의 안전 조건으로 확대 해석하지 않는다.
 

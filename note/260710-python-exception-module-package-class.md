@@ -14,7 +14,7 @@
 | 구분 | 내용 |
 | :--- | :--- |
 | 진행 범위 | Python 전체 마무리, 11장 `Exception, Module, Package`, 12장 `사용자 Class 생성` |
-| 원본 파일 | [Py_Lab_for_VS_Code.py](<Google Drive/My Drive/Classroom/대한상공회의소_반도체설계/담당강사-C_and_Python/상공회의소_KDT_실습자료(C_Python_M4)/2.Python/Py_Lab_for_VS_Code.py>) |
+| 원본 파일 | Py_Lab_for_VS_Code.py |
 | 이전 범위 | 8장 `Comprehensions`, 9장 `제어문, 반복문`, 10장 `주요 Container 메서드` |
 | 작성 상태 | 수업 중 실제 진행 범위에 맞춰 계속 보완 |
 

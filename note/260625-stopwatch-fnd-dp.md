@@ -12,15 +12,15 @@ FND의 segment data는 active-low 구조이므로, 특정 segment를 켜려면 �
 
 | 위치 | 내용 |
 | :--- | :--- |
-| [260625_MicroBlaze_GPIO](../helloHDL/260625_MicroBlaze_GPIO) | 0624 project를 복제해 만든 0625 MicroBlaze GPIO/StopWatch 작업본 |
-| [StopWatch/src/main.c](../helloHDL/260625_MicroBlaze_GPIO/vitis_repo/StopWatch/src/main.c) | `StopWatch_Execute()`, `FND_Excute()`, `incTick()`, `delay_ms(1)` polling loop |
-| [StopWatch.c](../helloHDL/260625_MicroBlaze_GPIO/vitis_repo/StopWatch/src/ap/StopWatch.c) | stopwatch time 구조체, DP 점멸, clear 처리, LED 상태 제어 |
-| [StopWatch.h](../helloHDL/260625_MicroBlaze_GPIO/vitis_repo/StopWatch/src/ap/StopWatch.h) | stopwatch state enum, time 구조체, application API |
-| [FND.c](../helloHDL/260625_MicroBlaze_GPIO/vitis_repo/StopWatch/src/driver/FND/FND.c) | FND digit multiplexing, DP state 저장, DP bit 반영 |
-| [FND.h](../helloHDL/260625_MicroBlaze_GPIO/vitis_repo/StopWatch/src/driver/FND/FND.h) | FND digit define, `FND_DP_ON/OFF`, DP API 선언 |
-| [button.c](../helloHDL/260625_MicroBlaze_GPIO/vitis_repo/StopWatch/src/driver/button/button.c) | run/stop, clear button 입력 처리 |
-| [GPIO.c](../helloHDL/260625_MicroBlaze_GPIO/vitis_repo/StopWatch/src/HAL/GPIO/GPIO.c) | GPIO register 접근 HAL |
-| [delay.c](../helloHDL/260625_MicroBlaze_GPIO/vitis_repo/StopWatch/src/common/delay/delay.c) | software tick과 delay 함수 |
+| 260625_MicroBlaze_GPIO | 0624 project를 복제해 만든 0625 MicroBlaze GPIO/StopWatch 작업본 |
+| StopWatch/src/main.c | `StopWatch_Execute()`, `FND_Excute()`, `incTick()`, `delay_ms(1)` polling loop |
+| StopWatch.c | stopwatch time 구조체, DP 점멸, clear 처리, LED 상태 제어 |
+| StopWatch.h | stopwatch state enum, time 구조체, application API |
+| FND.c | FND digit multiplexing, DP state 저장, DP bit 반영 |
+| FND.h | FND digit define, `FND_DP_ON/OFF`, DP API 선언 |
+| button.c | run/stop, clear button 입력 처리 |
+| GPIO.c | GPIO register 접근 HAL |
+| delay.c | software tick과 delay 함수 |
 
 ## FND 제어 구조
 

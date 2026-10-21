@@ -12,21 +12,21 @@
 
 | 위치 | 내용 |
 | :--- | :--- |
-| [260615_I2C_Master](../helloHDL/260615_I2C_Master) | 0615 기준 Vivado I2C Master 실습 프로젝트 |
-| [I2C_Master.sv](../helloHDL/260615_I2C_Master/260615_I2C_Master.srcs/sources_1/new/I2C_Master.sv) | command 기반 I2C Master, open-drain `SDA`, quarter tick FSM |
-| [I2C_demo_counter.sv](../helloHDL/260615_I2C_Master/260615_I2C_Master.srcs/sources_1/new/I2C_demo_counter.sv) | 스위치 입력으로 counter 값을 I2C write하는 demo wrapper |
-| [tb_I2C_Master.sv](../helloHDL/260615_I2C_Master/260615_I2C_Master.srcs/sim_1/new/tb_I2C_Master.sv) | `START -> write -> STOP` command task를 둔 기본 I2C testbench |
-| [I2c_demo.xdc](../helloHDL/260615_I2C_Master/260615_I2C_Master.srcs/constrs_1/new/I2c_demo.xdc) | Basys3 clock, switch, reset, PMOD JB `SCL/SDA` pin mapping |
-| [SPI_I2C_UVM](../helloHDL/260618_SPI_I2C_UVM) | SPI/I2C controller-target 구조와 검증 testbench를 묶기 위한 프로젝트 |
-| [src/rtl/spi](../helloHDL/260618_SPI_I2C_UVM/src/rtl/spi) | `SPI`, `SPI_controller`, `SPI_target` 작성 위치 |
-| [src/rtl/i2c](../helloHDL/260618_SPI_I2C_UVM/src/rtl/i2c) | `I2C`, `I2C_controller`, `I2C_target` 작성 위치 |
-| [src/tb](../helloHDL/260618_SPI_I2C_UVM/src/tb) | `tb_SPI`, `tb_I2C`, 통합 TB placeholder 위치 |
+| 260615_I2C_Master | 0615 기준 Vivado I2C Master 실습 프로젝트 |
+| I2C_Master.sv | command 기반 I2C Master, open-drain `SDA`, quarter tick FSM |
+| I2C_demo_counter.sv | 스위치 입력으로 counter 값을 I2C write하는 demo wrapper |
+| tb_I2C_Master.sv | `START -> write -> STOP` command task를 둔 기본 I2C testbench |
+| I2c_demo.xdc | Basys3 clock, switch, reset, PMOD JB `SCL/SDA` pin mapping |
+| SPI_I2C_UVM | SPI/I2C controller-target 구조와 검증 testbench를 묶기 위한 프로젝트 |
+| src/rtl/spi | `SPI`, `SPI_controller`, `SPI_target` 작성 위치 |
+| src/rtl/i2c | `I2C`, `I2C_controller`, `I2C_target` 작성 위치 |
+| src/tb | `tb_SPI`, `tb_I2C`, 통합 TB placeholder 위치 |
 
 0615 소스는 두 갈래로 보면 된다. `260615_I2C_Master`는 수업 중 I2C Master와 counter demo를 빠르게 확인하기 위한 Vivado 프로젝트이고, `SPI_I2C_UVM`은 SPI/I2C controller-target 구조를 발표와 검증 과제로 확장하기 위한 정리 프로젝트다. 수업 노트에서는 Vivado 생성물 전체가 아니라 직접 작성한 RTL/TB 파일만 기준으로 본다.
 
 ## 260615 I2C Master 코드 구조
 
-[I2C_Master.sv](../helloHDL/260615_I2C_Master/260615_I2C_Master.srcs/sources_1/new/I2C_Master.sv)는 `I2C_Master_top`과 `I2C_Master`로 나뉜다. `I2C_Master_top`은 board level의 `inout sda`를 내부 `sda_i`, `sda_o`로 분리하고, `assign sda = sda_o ? 1'bz : 1'b0`로 open-drain 동작을 표현한다. 내부 master는 `cmd_start`, `cmd_write`, `cmd_read`, `cmd_stop` 명령을 받아 `SCL/SDA`를 protocol 순서대로 움직인다.
+I2C_Master.sv는 `I2C_Master_top`과 `I2C_Master`로 나뉜다. `I2C_Master_top`은 board level의 `inout sda`를 내부 `sda_i`, `sda_o`로 분리하고, `assign sda = sda_o ? 1'bz : 1'b0`로 open-drain 동작을 표현한다. 내부 master는 `cmd_start`, `cmd_write`, `cmd_read`, `cmd_stop` 명령을 받아 `SCL/SDA`를 protocol 순서대로 움직인다.
 
 | 코드 요소 | 역할 |
 | :--- | :--- |
@@ -50,11 +50,11 @@ I2C FSM은 아래 흐름이다.
 | `DATA_ACK` | write ACK sample 또는 read ACK/NACK drive |
 | `STOP` | `SCL` high 상태에서 `SDA` rising edge 생성 |
 
-[tb_I2C_Master.sv](../helloHDL/260615_I2C_Master/260615_I2C_Master.srcs/sim_1/new/tb_I2C_Master.sv)는 `SDA`에 `pullup`을 두고 `i2c_start`, `i2c_write`, `i2c_read`, `i2c_stop` task로 command를 순서대로 넣는다. `SCL`은 DUT output이 직접 구동하므로 별도 pullup을 두지 않는다. 현재 `initial` block의 의도는 `START`, slave address write, `8'h55`, `8'hAA`, `STOP` 순서다. 다만 현재 `i2c_write(byte data)` task 내부는 인자 `data`를 쓰지 않고 `tx_data = (SLA << 1) | 1'b0`로 고정되어 있으므로, 실제 data byte 파형을 확인하려면 이 부분을 먼저 수정해야 한다.
+tb_I2C_Master.sv는 `SDA`에 `pullup`을 두고 `i2c_start`, `i2c_write`, `i2c_read`, `i2c_stop` task로 command를 순서대로 넣는다. `SCL`은 DUT output이 직접 구동하므로 별도 pullup을 두지 않는다. 현재 `initial` block의 의도는 `START`, slave address write, `8'h55`, `8'hAA`, `STOP` 순서다. 다만 현재 `i2c_write(byte data)` task 내부는 인자 `data`를 쓰지 않고 `tx_data = (SLA << 1) | 1'b0`로 고정되어 있으므로, 실제 data byte 파형을 확인하려면 이 부분을 먼저 수정해야 한다.
 
 ## I2C counter demo 코드 구조
 
-[I2C_demo_counter.sv](../helloHDL/260615_I2C_Master/260615_I2C_Master.srcs/sources_1/new/I2C_demo_counter.sv)는 스위치 입력을 받아 I2C write transaction으로 counter 값을 내보내는 demo wrapper다. `SLA_W = {7'h12, 1'b0}`로 slave address와 write bit를 만들고, `I2C_Master_top`에 command를 넣어 address byte와 counter byte를 전송한다.
+I2C_demo_counter.sv는 스위치 입력을 받아 I2C write transaction으로 counter 값을 내보내는 demo wrapper다. `SLA_W = {7'h12, 1'b0}`로 slave address와 write bit를 만들고, `I2C_Master_top`에 command를 넣어 address byte와 counter byte를 전송한다.
 
 | 코드 요소 | 역할 |
 | :--- | :--- |
@@ -69,7 +69,7 @@ I2C FSM은 아래 흐름이다.
 
 ## Basys3 XDC 연결
 
-[I2c_demo.xdc](../helloHDL/260615_I2C_Master/260615_I2C_Master.srcs/constrs_1/new/I2c_demo.xdc)는 `I2C_demo_counter`를 Basys3 보드에서 확인하기 위한 제약 파일이다. Vivado 프로젝트의 top module도 `I2C_demo_counter`로 맞춰져 있고, XDC는 synthesis/implementation에 포함되도록 등록되어 있다.
+I2c_demo.xdc는 `I2C_demo_counter`를 Basys3 보드에서 확인하기 위한 제약 파일이다. Vivado 프로젝트의 top module도 `I2C_demo_counter`로 맞춰져 있고, XDC는 synthesis/implementation에 포함되도록 등록되어 있다.
 
 | 포트 | 핀 | 보드 연결 | 확인 내용 |
 | :--- | :--- | :--- | :--- |
@@ -83,18 +83,18 @@ I2C FSM은 아래 흐름이다.
 
 ## SPI/I2C UVM 프로젝트 코드 구조
 
-[SPI_I2C_UVM](../helloHDL/260618_SPI_I2C_UVM)은 이름은 UVM 프로젝트지만, 현재 소스 기준으로는 protocol RTL과 self-checking testbench의 기초 구조가 먼저 들어가 있다.
+SPI_I2C_UVM은 이름은 UVM 프로젝트지만, 현재 소스 기준으로는 protocol RTL과 self-checking testbench의 기초 구조가 먼저 들어가 있다.
 
 | 파일 | 역할 |
 | :--- | :--- |
-| [SPI.sv](../helloHDL/260618_SPI_I2C_UVM/src/rtl/spi/SPI.sv) | 1 controller : N target SPI top |
-| [SPI_controller.sv](../helloHDL/260618_SPI_I2C_UVM/src/rtl/spi/SPI_controller.sv) | CPOL/CPHA 4 mode, target select, 1-byte transfer |
-| [SPI_target.sv](../helloHDL/260618_SPI_I2C_UVM/src/rtl/spi/SPI_target.sv) | selected target의 `MOSI` sample, `MISO` shift, `rx_valid` 생성 |
-| [I2C.sv](../helloHDL/260618_SPI_I2C_UVM/src/rtl/i2c/I2C.sv) | N controller : N target I2C top, open-drain bus resolve |
-| [I2C_controller.sv](../helloHDL/260618_SPI_I2C_UVM/src/rtl/i2c/I2C_controller.sv) | 7-bit address, 1-byte write/read, ACK, arbitration lost |
-| [I2C_target.sv](../helloHDL/260618_SPI_I2C_UVM/src/rtl/i2c/I2C_target.sv) | address match, write data receive, read data shift, ACK drive |
-| [tb_SPI.sv](../helloHDL/260618_SPI_I2C_UVM/src/tb/tb_SPI.sv) | SPI target 0/1 선택과 controller/target data 비교 |
-| [tb_I2C.sv](../helloHDL/260618_SPI_I2C_UVM/src/tb/tb_I2C.sv) | controller 0/1이 target 0/1에 write하는 self-checking TB |
+| SPI.sv | 1 controller : N target SPI top |
+| SPI_controller.sv | CPOL/CPHA 4 mode, target select, 1-byte transfer |
+| SPI_target.sv | selected target의 `MOSI` sample, `MISO` shift, `rx_valid` 생성 |
+| I2C.sv | N controller : N target I2C top, open-drain bus resolve |
+| I2C_controller.sv | 7-bit address, 1-byte write/read, ACK, arbitration lost |
+| I2C_target.sv | address match, write data receive, read data shift, ACK drive |
+| tb_SPI.sv | SPI target 0/1 선택과 controller/target data 비교 |
+| tb_I2C.sv | controller 0/1이 target 0/1에 write하는 self-checking TB |
 
 SPI 쪽은 `target_sel`로 하나의 target을 선택하고, 선택된 target의 `tgt_sdo`만 controller의 `ctrl_sdi`로 되돌린다. `SPI_controller`는 `cpol`, `cpha`, `clk_div`, `target_sel`, `start`, `tx_data`를 transaction 설정으로 받고, `cs_n`, `sclk`, `ctrl_sdo`를 만든다. `SPI_target`은 `cs_n` falling edge에서 선택되고, CPOL/CPHA에 맞춰 sample edge와 shift edge를 분리한다.
 

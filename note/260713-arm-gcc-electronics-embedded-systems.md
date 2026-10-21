@@ -926,9 +926,9 @@ STM32F411 MCU는 Arm의 Cortex-M4 core 위에 ST가 만든 memory, GPIO, timer, 
 
 | 확인 범위 | 주된 기준 | 실습 소스의 header | 예시 |
 | :--- | :--- | :--- | :--- |
-| Cortex-M4 core | Arm Cortex-M4 문서와 CMSIS-Core | [`core_cm4.h`](../helloEmbedded/0601.TYPE_QUALIFIER_EX/core_cm4.h) | `NVIC`, `SysTick`, `SCB`, core register, exception |
-| STM32F411 peripheral | ST `RM0383`과 CMSIS-Device header | [`stm32f411xe.h`](../helloEmbedded/0601.TYPE_QUALIFIER_EX/stm32f411xe.h) | `GPIO`, `RCC`, `USART`, timer, DMA, base address |
-| STM32F4 family의 진입 header | ST CMSIS-Device package | [`stm32f4xx.h`](../helloEmbedded/0601.TYPE_QUALIFIER_EX/stm32f4xx.h) | target device 선택과 해당 device header include |
+| Cortex-M4 core | Arm Cortex-M4 문서와 CMSIS-Core | `core_cm4.h` | `NVIC`, `SysTick`, `SCB`, core register, exception |
+| STM32F411 peripheral | ST `RM0383`과 CMSIS-Device header | `stm32f411xe.h` | `GPIO`, `RCC`, `USART`, timer, DMA, base address |
+| STM32F4 family의 진입 header | ST CMSIS-Device package | `stm32f4xx.h` | target device 선택과 해당 device header include |
 
 `CMSIS`는 Cortex-M software interface와 header 작성 방식의 공통 규약이다. GPIO, RCC, USART의 실제 register 배치까지 Arm이 정하는 것은 아니다. ST는 이 규약을 따라 STM32F411의 register map을 C 구조체·base address·pointer macro로 옮긴 device header를 제공한다. 따라서 `GPIOA->MODER` 같은 code를 쓸 수 있지만, `MODER`의 bit 의미와 read/write 규칙은 여전히 ST reference manual에서 확인해야 함.
 
@@ -963,7 +963,7 @@ application C source
 
 #### `GPIO_TypeDef`와 GPIO register map의 대응
 
-[`stm32f411xe.h`](../helloEmbedded/0601.TYPE_QUALIFIER_EX/stm32f411xe.h)의 `GPIO_TypeDef`는 GPIO port 하나의 register map을 C 구조체로 옮긴 type이다. 수업 참조본 `2.Reference_Manual_stm32f411re.pdf`는 `RM0383 Rev 4`이며, 8.4절은 같은 register를 `MODER`부터 `AFRH`까지 같은 순서로 설명한다. 8.4.11 Table 26의 `164/842`~`165/842`는 각 offset을 정한다. header의 구조체 멤버 순서와 `uint32_t` 크기 4byte를 이용하면 C member가 어느 hardware 주소를 가리키는지 바로 알 수 있음.
+`stm32f411xe.h`의 `GPIO_TypeDef`는 GPIO port 하나의 register map을 C 구조체로 옮긴 type이다. 수업 참조본 `2.Reference_Manual_stm32f411re.pdf`는 `RM0383 Rev 4`이며, 8.4절은 같은 register를 `MODER`부터 `AFRH`까지 같은 순서로 설명한다. 8.4.11 Table 26의 `164/842`~`165/842`는 각 offset을 정한다. header의 구조체 멤버 순서와 `uint32_t` 크기 4byte를 이용하면 C member가 어느 hardware 주소를 가리키는지 바로 알 수 있음.
 
 | `GPIO_TypeDef` member | `RM0383` 8.4 register 이름 | GPIO port base 기준 offset | `GPIOA` 실제 주소 |
 | :--- | :--- | :--- | :--- |
@@ -1111,7 +1111,7 @@ STM32F411xE의 GPIO는 AHB1 영역에 배치된다. 자료에 나온 GPIO base �
 
 #### Peripheral block 주소도 base + offset으로 조합
 
-수업 참조본 `RM0383 Rev 4`의 Table 1은 각 peripheral block의 실제 boundary address를 제시한다. [`stm32f411xe.h`](../helloEmbedded/0601.TYPE_QUALIFIER_EX/stm32f411xe.h)는 그 주소를 모두 숫자로 반복하지 않고, `PERIPH_BASE`와 bus별 offset을 먼저 정의한 뒤 각 device의 offset을 더하는 형태로 작성함.
+수업 참조본 `RM0383 Rev 4`의 Table 1은 각 peripheral block의 실제 boundary address를 제시한다. `stm32f411xe.h`는 그 주소를 모두 숫자로 반복하지 않고, `PERIPH_BASE`와 bus별 offset을 먼저 정의한 뒤 각 device의 offset을 더하는 형태로 작성함.
 
 | bus 영역 | header 정의 | 계산된 bus base | Table 1의 대표 peripheral |
 | :--- | :--- | :--- | :--- |

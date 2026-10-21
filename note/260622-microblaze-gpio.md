@@ -29,16 +29,16 @@ MicroBlaze 기반 AXI GPIO system을 만들기 위해서는 bus protocol, AXI sl
 
 | 위치 | 내용 |
 | :--- | :--- |
-| [260622_AXI_Template](../helloHDL/260622_AXI_Template) | Vivado AXI4-Lite template 분석 및 TB 실습 프로젝트 |
-| [axi_template_v1_0.v](../helloHDL/260622_AXI_Template/260622_AXI_Template.srcs/sources_1/imports/hdl/axi_template_v1_0.v) | AXI template top wrapper, `S00_AXI` instance 연결 |
-| [axi_template_v1_0_S00_AXI.v](../helloHDL/260622_AXI_Template/260622_AXI_Template.srcs/sources_1/imports/hdl/axi_template_v1_0_S00_AXI.v) | AXI4-Lite slave template 본체, `slv_reg0~3` register 포함 |
-| [tb_axi_slave.sv](../helloHDL/260622_AXI_Template/260622_AXI_Template.srcs/sim_1/new/tb_axi_slave.sv) | template slave에 write/read transaction을 직접 넣는 TB |
-| [ip_repo/axi_template_1.0](../helloHDL/ip_repo/axi_template_1.0) | Vivado가 생성한 AXI template IP repository |
-| [ip_repo/gpio_1.0](../helloHDL/ip_repo/gpio_1.0) | GPIO custom IP로 확장하기 위해 새로 만든 IP draft |
-| [gpio driver Makefile](../helloHDL/ip_repo/gpio_1.0/drivers/gpio_v1_0/src/Makefile) | custom IP C driver header copy 규칙 수정 대상 |
-| [260622_MicroBlaze_GPIO](../helloHDL/260622_MicroBlaze_GPIO) | MicroBlaze 기반 GPIO 테스트 block design 프로젝트 |
-| [GPIO_Test.bd](../helloHDL/260622_MicroBlaze_GPIO/260622_MicroBlaze_GPIO.srcs/sources_1/bd/GPIO_Test/GPIO_Test.bd) | MicroBlaze, UART Lite, custom GPIO block design |
-| [Basys-3-Master.xdc](../helloHDL/260622_MicroBlaze_GPIO/260622_MicroBlaze_GPIO.srcs/constrs_1/imports/Basys-3-Master.xdc) | Basys3 clock, reset, UART, GPIOA LED pin 제약 |
+| 260622_AXI_Template | Vivado AXI4-Lite template 분석 및 TB 실습 프로젝트 |
+| axi_template_v1_0.v | AXI template top wrapper, `S00_AXI` instance 연결 |
+| axi_template_v1_0_S00_AXI.v | AXI4-Lite slave template 본체, `slv_reg0~3` register 포함 |
+| tb_axi_slave.sv | template slave에 write/read transaction을 직접 넣는 TB |
+| ip_repo/axi_template_1.0 | Vivado가 생성한 AXI template IP repository |
+| ip_repo/gpio_1.0 | GPIO custom IP로 확장하기 위해 새로 만든 IP draft |
+| gpio driver Makefile | custom IP C driver header copy 규칙 수정 대상 |
+| 260622_MicroBlaze_GPIO | MicroBlaze 기반 GPIO 테스트 block design 프로젝트 |
+| GPIO_Test.bd | MicroBlaze, UART Lite, custom GPIO block design |
+| Basys-3-Master.xdc | Basys3 clock, reset, UART, GPIOA LED pin 제약 |
 
 ## AXI4-Lite Template 생성 흐름
 
@@ -73,7 +73,7 @@ write transaction은 `AW`와 `W`가 모두 처리된 뒤 `B` response로 끝난�
 
 ## S00_AXI 코드 구조
 
-[axi_template_v1_0.v](../helloHDL/260622_AXI_Template/260622_AXI_Template.srcs/sources_1/imports/hdl/axi_template_v1_0.v)는 top wrapper다. 외부의 `s00_axi_*` port를 하위 [axi_template_v1_0_S00_AXI.v](../helloHDL/260622_AXI_Template/260622_AXI_Template.srcs/sources_1/imports/hdl/axi_template_v1_0_S00_AXI.v)에 그대로 연결하고, 실제 AXI4-Lite 동작은 `S00_AXI` module에서 처리한다.
+axi_template_v1_0.v는 top wrapper다. 외부의 `s00_axi_*` port를 하위 axi_template_v1_0_S00_AXI.v에 그대로 연결하고, 실제 AXI4-Lite 동작은 `S00_AXI` module에서 처리한다.
 
 `S00_AXI` 내부에서 가장 먼저 봐야 할 부분은 4개의 memory-mapped register다. `slv_reg0~3`는 CPU 또는 MicroBlaze가 AXI4-Lite로 접근할 수 있는 register bank이고, 주소는 32-bit register 기준으로 4 byte 단위로 증가한다.
 
@@ -120,7 +120,7 @@ read response도 `RRESP=2'b00`으로 OKAY만 반환한다. master는 `RVALID`가
 
 ## Testbench와 Simulation 확인
 
-[tb_axi_slave.sv](../helloHDL/260622_AXI_Template/260622_AXI_Template.srcs/sim_1/new/tb_axi_slave.sv)는 `axi_write`와 `axi_read` task를 만들어 template slave에 직접 transaction을 넣는다. write task는 `AWADDR/AWVALID`, `WDATA/WVALID`, `WSTRB`, `BREADY`를 올리고, `AWREADY/WREADY`와 `BVALID`를 기다린다. read task는 `ARADDR/ARVALID`, `RREADY`를 올리고, `ARREADY`와 `RVALID`를 기다린다.
+tb_axi_slave.sv는 `axi_write`와 `axi_read` task를 만들어 template slave에 직접 transaction을 넣는다. write task는 `AWADDR/AWVALID`, `WDATA/WVALID`, `WSTRB`, `BREADY`를 올리고, `AWREADY/WREADY`와 `BVALID`를 기다린다. read task는 `ARADDR/ARVALID`, `RREADY`를 올리고, `ARREADY`와 `RVALID`를 기다린다.
 
 현재 소스를 `iverilog`/`vvp`로 실행하면 write 4회와 read 4회가 모두 같은 값으로 readback된다. TB 자체에는 PASS assertion은 없고, `$display` 출력으로 결과를 확인하는 구조다.
 
@@ -143,7 +143,7 @@ AXI4-Lite template 분석 이후에는 같은 구조를 GPIO custom IP로 확장
 
 수업에서는 STM32 계열 문서의 GPIO register 설명도 참고 대상으로 언급했다. MCU datasheet나 reference manual에서 GPIO control register, input data register, output data register가 어떤 의미를 갖는지 보고, 비슷한 관점으로 FPGA custom IP register map을 설계하는 흐름이다.
 
-현재 [ip_repo/gpio_1.0](../helloHDL/ip_repo/gpio_1.0)에는 GPIO IP draft가 생겨 있다. [gpio_v1_0.v](../helloHDL/ip_repo/gpio_1.0/hdl/gpio_v1_0.v)는 AXI4-Lite wrapper에 외부 `io_port`를 추가하고, 하위 [gpio_v1_0_S00_AXI.v](../helloHDL/ip_repo/gpio_1.0/hdl/gpio_v1_0_S00_AXI.v)에서 나온 `cr`, `idr`, `odr`를 내부 `gpio` module과 연결하는 방향으로 수정 중이다.
+현재 ip_repo/gpio_1.0에는 GPIO IP draft가 생겨 있다. gpio_v1_0.v는 AXI4-Lite wrapper에 외부 `io_port`를 추가하고, 하위 gpio_v1_0_S00_AXI.v에서 나온 `cr`, `idr`, `odr`를 내부 `gpio` module과 연결하는 방향으로 수정 중이다.
 
 수업에서는 GPIO pin을 입력으로 쓸지 출력으로 쓸지 결정하는 설정값이 필요하다고 설명했다. 이 설정을 control register인 `cr`로 두고, `cr[i]`가 1이면 해당 bit를 output mode로, 0이면 input mode로 해석하는 구조다. output mode에서는 `odr[i]` 값을 `io_port[i]`로 내보내고, input mode에서는 output driver를 high impedance인 `1'bz`로 만들어 외부 입력을 받을 수 있게 한다.
 
@@ -178,7 +178,7 @@ assign idr[i]     = cr[i] ? 1'bz   : io_port[i];
 
 `gpio_1.0`은 `Edit IP`로 연 IP project에서 HDL을 수정한 뒤 다시 package해야 한다. `Package IP` 화면의 `Packaging Steps`에서 변경된 파일을 merge하면 항목이 초록색 상태로 바뀌고, re-package 후 edit IP 창을 닫으면 local IP repository 쪽에 수정된 IP가 반영된다. 수업에서는 이 merge 단계를 빠뜨리면 `io_port` 같은 새 port가 repository에 반영되지 않아 이후 block design에서 보이지 않을 수 있다고 강조했다.
 
-packaging 결과로 [component.xml](../helloHDL/ip_repo/gpio_1.0/component.xml)에는 `hdl/gpio_v1_0.v`, `hdl/gpio_v1_0_S00_AXI.v`, driver source, xgui 파일이 IP 구성 파일로 등록된다. 이 중 software driver 쪽은 [drivers/gpio_v1_0/src/Makefile](../helloHDL/ip_repo/gpio_1.0/drivers/gpio_v1_0/src/Makefile)을 함께 확인해야 한다.
+packaging 결과로 component.xml에는 `hdl/gpio_v1_0.v`, `hdl/gpio_v1_0_S00_AXI.v`, driver source, xgui 파일이 IP 구성 파일로 등록된다. 이 중 software driver 쪽은 drivers/gpio_v1_0/src/Makefile을 함께 확인해야 한다.
 
 | 항목 | 확인 내용 |
 | :--- | :--- |
@@ -227,7 +227,7 @@ MicroBlaze는 block design 안에서 CPU 역할을 한다. `Run Block Automation
 
 `Clocking Wizard`는 board의 system clock을 받아 내부 clock으로 분배하는 역할이다. 수업에서는 입력 clock을 100 MHz 기준으로 쓰거나 필요하면 낮출 수 있다고 설명했고, 이번 실습에서는 board interface를 `sys clock`으로 맞추는 정도만 진행했다. 이후 `Run Connection Automation`에서 clock/reset 관련 항목을 전체 선택하면 Vivado가 자동으로 선을 연결한다.
 
-현재 [GPIO_Test.bd](../helloHDL/260622_MicroBlaze_GPIO/260622_MicroBlaze_GPIO.srcs/sources_1/bd/GPIO_Test/GPIO_Test.bd)에는 `microblaze_0`, `microblaze_0_local_memory`, `clk_wiz_1`, `rst_clk_wiz_1_100M`, `axi_uartlite_0`, `microblaze_0_axi_periph`, `gpio_0`가 저장되어 있다. 외부 interface는 `usb_uart`, `diff_clock_rtl`, 일반 port는 `reset`, `GPIOA`가 잡혀 있으므로, 이후 wrapper/XDC 단계에서는 이 top-level port 이름과 constraint의 `get_ports` 이름을 맞춰야 한다.
+현재 GPIO_Test.bd에는 `microblaze_0`, `microblaze_0_local_memory`, `clk_wiz_1`, `rst_clk_wiz_1_100M`, `axi_uartlite_0`, `microblaze_0_axi_periph`, `gpio_0`가 저장되어 있다. 외부 interface는 `usb_uart`, `diff_clock_rtl`, 일반 port는 `reset`, `GPIOA`가 잡혀 있으므로, 이후 wrapper/XDC 단계에서는 이 top-level port 이름과 constraint의 `get_ports` 이름을 맞춰야 한다.
 
 ## UART Lite와 AXI Interconnect 연결
 
@@ -281,7 +281,7 @@ external port까지 정리한 뒤에는 block design의 output products를 생�
 
 block design output products를 만든 뒤에는 design sources에 있는 `GPIO_Test`를 top-level HDL로 감싸는 wrapper를 만든다. `Sources -> Design Sources`에서 `GPIO_Test`를 오른쪽 마우스로 클릭하고 `Create HDL Wrapper`를 선택한다. 옵션은 `Let Vivado manage wrapper and auto-update`로 두면 Vivado가 block design 변경에 맞춰 wrapper를 자동 갱신한다. wrapper 생성 후 sources view를 새로고침하면 `GPIO_Test_wrapper.v`가 보인다.
 
-현재 생성된 [GPIO_Test_wrapper.v](../helloHDL/260622_MicroBlaze_GPIO/260622_MicroBlaze_GPIO.gen/sources_1/bd/GPIO_Test/hdl/GPIO_Test_wrapper.v)는 block design의 외부 port를 Verilog top module port로 내보내는 역할이다. 여기에는 `GPIOA[7:0]`, differential clock, reset, USB UART RX/TX가 top-level port로 선언되어 있다.
+현재 생성된 GPIO_Test_wrapper.v는 block design의 외부 port를 Verilog top module port로 내보내는 역할이다. 여기에는 `GPIOA[7:0]`, differential clock, reset, USB UART RX/TX가 top-level port로 선언되어 있다.
 
 | Wrapper port | 방향 | 역할 |
 | :--- | :--- | :--- |
@@ -375,7 +375,7 @@ Vitis에서는 XSA로부터 hardware platform을 만들고, 그 위에 applicati
 
 C code에서는 시작 시 `init_platform()`을 호출하고, `#define`으로 register address 또는 offset을 정리한 뒤 pointer write로 register 값을 바꾸는 방식으로 GPIO를 제어한다. 이때 register offset은 AXI slave template의 address decode와 맞아야 하며, `CR=0x00`, `IDR=0x04`, `ODR=0x08`처럼 정의했다면 RTL의 `slv_reg` 연결도 같은 의미로 맞춰야 한다.
 
-GPIOA만 먼저 확인할 때의 C code는 [helloworld.c](../helloHDL/260622_MicroBlaze_GPIO/vitis_repo/ledBlink/src/helloworld.c)에 정리했다. `GPIOA_BASEADDR`는 `xparameters.h`에 생성되는 `XPAR_GPIO_0_S00_AXI_BASEADDR`를 사용하고, `GPIOA_CR`에 `0xff`를 써서 8개 pin을 output mode로 둔다. 이후 `GPIOA_ODR`에 `0xff`와 `0x00`을 번갈아 쓰면 GPIOA에 연결된 LED 8개가 0.2초 간격으로 모두 켜졌다 꺼지는 blink 동작을 확인할 수 있다.
+GPIOA만 먼저 확인할 때의 C code는 helloworld.c에 정리했다. `GPIOA_BASEADDR`는 `xparameters.h`에 생성되는 `XPAR_GPIO_0_S00_AXI_BASEADDR`를 사용하고, `GPIOA_CR`에 `0xff`를 써서 8개 pin을 output mode로 둔다. 이후 `GPIOA_ODR`에 `0xff`와 `0x00`을 번갈아 쓰면 GPIOA에 연결된 LED 8개가 0.2초 간격으로 모두 켜졌다 꺼지는 blink 동작을 확인할 수 있다.
 
 보드에 bitstream과 application이 정상적으로 올라가면 LED가 깜빡이는 것으로 1차 동작을 확인한다. 수업에서는 LED blink가 한 번에 되지 않을 수 있으므로, block design 저장, wrapper port, XDC port, bitstream 포함 XSA, Vitis platform, C code base address를 순서대로 확인해야 한다고 설명했다.
 
@@ -395,7 +395,7 @@ GPIOA만 먼저 확인할 때의 C code는 [helloworld.c](../helloHDL/260622_Mic
 | 구현 위치 | Vitis C application에서 GPIO register write |
 | 제출물 | 코드와 동작 영상 업로드 |
 
-과제용 정리 파일은 [260622-MicroBlaze-GPIO-LED-shift](../assignment/260622-MicroBlaze-GPIO-LED-shift)에 두었다. 여기에는 Vitis C application 예시와 `GPIOA/GPIOB` 16 LED용 XDC 기준을 함께 정리했다.
+과제용 정리 파일은 260622-MicroBlaze-GPIO-LED-shift에 두었다. 여기에는 Vitis C application 예시와 `GPIOA/GPIOB` 16 LED용 XDC 기준을 함께 정리했다.
 
 ## 다음에 확인할 것
 

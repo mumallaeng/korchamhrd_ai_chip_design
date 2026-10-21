@@ -4,7 +4,7 @@
 
 0619 수업은 전날 정리한 AXI 개념을 실제 AXI4-Lite master/slave 코드와 Vivado IP packaging 흐름에 연결하는 방향이었다. 핵심은 AXI4-Lite에서 write transaction이 `AW`, `W`, `B` channel로 나뉘고, read transaction이 `AR`, `R` channel로 나뉜다는 점을 코드의 FSM과 파형에서 확인하는 것이다.
 
-직접 작성한 [260619_AXI_Mater_Slave](../helloHDL/260619_AXI_Mater_Slave) 프로젝트는 `transfer`, `write`, `addr`, `wdata` 같은 간단한 CPU-side 제어 신호를 AXI4-Lite channel handshake로 바꾸는 master와, 4개 register bank를 가진 slave를 연결한다. 별도로 [ip_repo/260619_myip_1.0](../helloHDL/ip_repo/260619_myip_1.0)은 Vivado의 `Create and Package New IP` 흐름에서 생성된 AXI4-Lite slave template로, 수업 코드와 비교해서 Xilinx template이 어떤 구조로 write/read를 처리하는지 볼 때 사용한다.
+직접 작성한 260619_AXI_Mater_Slave 프로젝트는 `transfer`, `write`, `addr`, `wdata` 같은 간단한 CPU-side 제어 신호를 AXI4-Lite channel handshake로 바꾸는 master와, 4개 register bank를 가진 slave를 연결한다. 별도로 ip_repo/260619_myip_1.0은 Vivado의 `Create and Package New IP` 흐름에서 생성된 AXI4-Lite slave template로, 수업 코드와 비교해서 Xilinx template이 어떤 구조로 write/read를 처리하는지 볼 때 사용한다.
 
 수업에서 작성한 master/slave 코드는 AXI4-Lite 동작을 이해하기 위한 교육용 구조이고, 실제 상용 수준 IP 코드로 바로 쓰기 위한 완성본은 아니다. 대신 `valid/ready` handshake, address/data latch, response 생성, register bank 접근을 손으로 구현해 보면서 Vivado가 생성하는 AXI peripheral template을 읽을 수 있게 만드는 것이 목표다.
 
@@ -14,13 +14,13 @@
 
 | 위치 | 내용 |
 | :--- | :--- |
-| [260619_AXI_Mater_Slave](../helloHDL/260619_AXI_Mater_Slave) | AXI4-Lite master/slave 직접 작성 Vivado 프로젝트 |
-| [axi_master.sv](../helloHDL/260619_AXI_Mater_Slave/260619_AXI_Mater_Slave.srcs/sources_1/new/axi_master.sv) | CPU-side 요청을 AXI4-Lite `AW/W/B/AR/R` channel로 변환 |
-| [axi_slave.sv](../helloHDL/260619_AXI_Mater_Slave/260619_AXI_Mater_Slave.srcs/sources_1/new/axi_slave.sv) | AXI4-Lite 요청을 받아 `slv_reg0~3` register bank read/write |
-| [tb_axi_master_slave.sv](../helloHDL/260619_AXI_Mater_Slave/260619_AXI_Mater_Slave.srcs/sim_1/new/tb_axi_master_slave.sv) | write 4회, read 4회 transaction을 넣는 기본 testbench |
-| [ip_repo/260619_myip_1.0](../helloHDL/ip_repo/260619_myip_1.0) | Vivado AXI4-Lite peripheral 생성 결과 |
-| [260619_myip_v1_0.v](../helloHDL/ip_repo/260619_myip_1.0/hdl/260619_myip_v1_0.v) | 생성 IP top wrapper, `S00_AXI` slave instance 연결 |
-| [260619_myip_v1_0_S00_AXI.v](../helloHDL/ip_repo/260619_myip_1.0/hdl/260619_myip_v1_0_S00_AXI.v) | 생성 AXI4-Lite slave template, `slv_reg0~3` 포함 |
+| 260619_AXI_Mater_Slave | AXI4-Lite master/slave 직접 작성 Vivado 프로젝트 |
+| axi_master.sv | CPU-side 요청을 AXI4-Lite `AW/W/B/AR/R` channel로 변환 |
+| axi_slave.sv | AXI4-Lite 요청을 받아 `slv_reg0~3` register bank read/write |
+| tb_axi_master_slave.sv | write 4회, read 4회 transaction을 넣는 기본 testbench |
+| ip_repo/260619_myip_1.0 | Vivado AXI4-Lite peripheral 생성 결과 |
+| 260619_myip_v1_0.v | 생성 IP top wrapper, `S00_AXI` slave instance 연결 |
+| 260619_myip_v1_0_S00_AXI.v | 생성 AXI4-Lite slave template, `slv_reg0~3` 포함 |
 
 ## AXI4-Lite IP 생성 흐름
 
@@ -34,7 +34,7 @@ Vivado의 `Create and Package New IP`에서 `Create a new AXI4 peripheral`을 �
 | `slv_reg0~3` | AXI4-Lite로 접근 가능한 내부 register bank |
 | `component.xml` | Vivado IP repository에서 IP를 인식하기 위한 metadata |
 
-생성된 top wrapper [260619_myip_v1_0.v](../helloHDL/ip_repo/260619_myip_1.0/hdl/260619_myip_v1_0.v)는 `s00_axi_*` port를 그대로 하위 [260619_myip_v1_0_S00_AXI.v](../helloHDL/ip_repo/260619_myip_1.0/hdl/260619_myip_v1_0_S00_AXI.v)에 연결한다. 실제 register write/read 동작은 `S00_AXI` module 내부에 들어 있다.
+생성된 top wrapper 260619_myip_v1_0.v는 `s00_axi_*` port를 그대로 하위 260619_myip_v1_0_S00_AXI.v에 연결한다. 실제 register write/read 동작은 `S00_AXI` module 내부에 들어 있다.
 
 수업에서 설명한 Vivado 흐름은 `Tools -> Create and Package New IP -> Create AXI Peripheral` 순서다. 이번에는 직접 IP 내용을 완성하기보다 template을 얻는 목적이었고, interface는 AXI4-Lite, mode는 slave, data width는 32-bit, register 수는 기본 4개로 둔다. 생성 결과는 프로젝트 주변의 `ip_repo` 아래에 생기며, 그 안의 `hdl` 폴더에서 top wrapper와 `S00_AXI` template을 확인한다.
 
@@ -50,7 +50,7 @@ Vivado의 `Create and Package New IP`에서 `Create a new AXI4 peripheral`을 �
 
 ## 직접 작성 Master 코드
 
-[axi_master.sv](../helloHDL/260619_AXI_Mater_Slave/260619_AXI_Mater_Slave.srcs/sources_1/new/axi_master.sv)는 간단한 CPU-side 입력을 AXI4-Lite transaction으로 바꾼다.
+axi_master.sv는 간단한 CPU-side 입력을 AXI4-Lite transaction으로 바꾼다.
 
 | CPU-side 신호 | 역할 |
 | :--- | :--- |
@@ -75,7 +75,7 @@ Master는 write와 read channel을 별도 FSM으로 나누어 둔다.
 
 ## 직접 작성 Slave 코드
 
-[axi_slave.sv](../helloHDL/260619_AXI_Mater_Slave/260619_AXI_Mater_Slave.srcs/sources_1/new/axi_slave.sv)는 4개의 32-bit register를 갖는 AXI4-Lite slave 구조다.
+axi_slave.sv는 4개의 32-bit register를 갖는 AXI4-Lite slave 구조다.
 
 | 내부 신호 | 역할 |
 | :--- | :--- |
@@ -100,7 +100,7 @@ AXI4-Lite에서는 full AXI의 burst 관련 신호가 빠지므로, 수업 범�
 
 ## Vivado 생성 Slave Template 비교
 
-[260619_myip_v1_0_S00_AXI.v](../helloHDL/ip_repo/260619_myip_1.0/hdl/260619_myip_v1_0_S00_AXI.v)는 Vivado가 생성한 AXI4-Lite slave 예제다. 직접 작성한 `axi_slave.sv`와 같은 4-register 구조를 쓰지만, AXI4-Lite template답게 handshake와 register write enable을 더 정형화해서 만든다.
+260619_myip_v1_0_S00_AXI.v는 Vivado가 생성한 AXI4-Lite slave 예제다. 직접 작성한 `axi_slave.sv`와 같은 4-register 구조를 쓰지만, AXI4-Lite template답게 handshake와 register write enable을 더 정형화해서 만든다.
 
 | 생성 template 요소 | 의미 |
 | :--- | :--- |
@@ -116,7 +116,7 @@ AXI4-Lite에서는 full AXI의 burst 관련 신호가 빠지므로, 수업 범�
 
 ## Testbench 시나리오
 
-[tb_axi_master_slave.sv](../helloHDL/260619_AXI_Mater_Slave/260619_AXI_Mater_Slave.srcs/sim_1/new/tb_axi_master_slave.sv)는 10 ns 주기 clock을 만들고, reset을 3 cycle 유지한 뒤 write 4회와 read 4회를 순서대로 실행한다.
+tb_axi_master_slave.sv는 10 ns 주기 clock을 만들고, reset을 3 cycle 유지한 뒤 write 4회와 read 4회를 순서대로 실행한다.
 
 | 순서 | Task | Address | Data |
 | :--- | :--- | :--- | :--- |

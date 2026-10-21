@@ -20,23 +20,23 @@
 
 | 위치 | 내용 |
 | :--- | :--- |
-| [260624_MicroBlaze_GPIO](../helloHDL/260624_MicroBlaze_GPIO) | 0624 작업본으로 분리한 MicroBlaze GPIO/StopWatch project |
-| [StopWatch/src/main.c](../helloHDL/260624_MicroBlaze_GPIO/vitis_repo/StopWatch/src/main.c) | `StopWatch_Execute()`, `FND_Excute()`, `incTick()` polling loop |
-| [StopWatch.c](../helloHDL/260624_MicroBlaze_GPIO/vitis_repo/StopWatch/src/ap/StopWatch.c) | stopwatch state, counter, LED 이동, button 제어 |
-| [StopWatch.h](../helloHDL/260624_MicroBlaze_GPIO/vitis_repo/StopWatch/src/ap/StopWatch.h) | stopwatch state enum과 application API |
-| [GPIO.c](../helloHDL/260624_MicroBlaze_GPIO/vitis_repo/StopWatch/src/HAL/GPIO/GPIO.c) | GPIO HAL 함수 구현 |
-| [GPIO.h](../helloHDL/260624_MicroBlaze_GPIO/vitis_repo/StopWatch/src/HAL/GPIO/GPIO.h) | GPIO register 구조체, base address, pin mask, HAL prototype |
-| [LED.c](../helloHDL/260624_MicroBlaze_GPIO/vitis_repo/StopWatch/src/driver/LED/LED.c) | 16bit LED port 출력과 pin 제어 |
-| [LED.h](../helloHDL/260624_MicroBlaze_GPIO/vitis_repo/StopWatch/src/driver/LED/LED.h) | LED low/high GPIO 연결과 API 선언 |
-| [FND.c](../helloHDL/260624_MicroBlaze_GPIO/vitis_repo/StopWatch/src/driver/FND/FND.c) | FND digit 선택, font 출력, 자리 순환 |
-| [FND.h](../helloHDL/260624_MicroBlaze_GPIO/vitis_repo/StopWatch/src/driver/FND/FND.h) | FND data/common GPIO 연결과 digit define |
-| [button.c](../helloHDL/260624_MicroBlaze_GPIO/vitis_repo/StopWatch/src/driver/button/button.c) | button handler 초기화, edge 상태 판단, debounce |
-| [button.h](../helloHDL/260624_MicroBlaze_GPIO/vitis_repo/StopWatch/src/driver/button/button.h) | button 상태 enum, `hbutton` 구조체, run/stop 및 clear handle |
-| [delay.c](../helloHDL/260624_MicroBlaze_GPIO/vitis_repo/StopWatch/src/common/delay/delay.c) | `millis()`, `incTick()`, `delay_ms/us/sec()` 공통 시간 함수 |
-| [delay.h](../helloHDL/260624_MicroBlaze_GPIO/vitis_repo/StopWatch/src/common/delay/delay.h) | common delay API 선언 |
-| [ip_repo/gpio_1.0](../helloHDL/ip_repo/gpio_1.0) | 직접 만든 AXI4-Lite GPIO custom IP |
+| 260624_MicroBlaze_GPIO | 0624 작업본으로 분리한 MicroBlaze GPIO/StopWatch project |
+| StopWatch/src/main.c | `StopWatch_Execute()`, `FND_Excute()`, `incTick()` polling loop |
+| StopWatch.c | stopwatch state, counter, LED 이동, button 제어 |
+| StopWatch.h | stopwatch state enum과 application API |
+| GPIO.c | GPIO HAL 함수 구현 |
+| GPIO.h | GPIO register 구조체, base address, pin mask, HAL prototype |
+| LED.c | 16bit LED port 출력과 pin 제어 |
+| LED.h | LED low/high GPIO 연결과 API 선언 |
+| FND.c | FND digit 선택, font 출력, 자리 순환 |
+| FND.h | FND data/common GPIO 연결과 digit define |
+| button.c | button handler 초기화, edge 상태 판단, debounce |
+| button.h | button 상태 enum, `hbutton` 구조체, run/stop 및 clear handle |
+| delay.c | `millis()`, `incTick()`, `delay_ms/us/sec()` 공통 시간 함수 |
+| delay.h | common delay API 선언 |
+| ip_repo/gpio_1.0 | 직접 만든 AXI4-Lite GPIO custom IP |
 
-0624 내용은 0623 `260623_MicroBlaze_GPIO` project에서 이어진 firmware 계층화 작업이다. 현재 작업본은 [260624_MicroBlaze_GPIO](../helloHDL/260624_MicroBlaze_GPIO)로 복제해 분리했으므로, 이후 노트의 소스 연결은 260624 project를 기준으로 둔다.
+0624 내용은 0623 `260623_MicroBlaze_GPIO` project에서 이어진 firmware 계층화 작업이다. 현재 작업본은 260624_MicroBlaze_GPIO로 복제해 분리했으므로, 이후 노트의 소스 연결은 260624 project를 기준으로 둔다.
 
 ## SoC에서 C Application이 필요한 이유
 
@@ -54,7 +54,7 @@ SoC에서 CPU와 peripheral hardware만 만들어 두면 그 자체로는 의미
 
 ## 발표 요구사항 연결
 
-260630 AXI project 발표 요구사항은 [26-06-24 - AXI Project 발표 요구사항](../assignment/_project/260630-axi-peripherial/10-presentation-requirements-260624.md)에 따로 정리했다. 발표 쪽 문서는 AXI peripheral을 메인으로 두고, system architecture, Xilinx AXI template와 custom IP 연동, register map, firmware, UVM 검증 범위, UART/SPI/I2C demo 방향을 구체적으로 다룬다.
+260630 AXI project 발표 요구사항은 26-06-24 - AXI Project 발표 요구사항에 따로 정리했다. 발표 쪽 문서는 AXI peripheral을 메인으로 두고, system architecture, Xilinx AXI template와 custom IP 연동, register map, firmware, UVM 검증 범위, UART/SPI/I2C demo 방향을 구체적으로 다룬다.
 
 ## Firmware 계층 구조
 

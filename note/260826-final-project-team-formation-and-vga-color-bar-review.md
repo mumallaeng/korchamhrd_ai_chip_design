@@ -6,8 +6,8 @@
 
 실습 소스:
 
-- [260826 VGA ColorBar](../helloHDL/260826_VGA_ColorBar/)
-- [260826 VGA Image ROM](../helloHDL/260826_VGA_IMAGE/)
+- 260826 VGA ColorBar
+- 260826 VGA Image ROM
 
 > 수업일: `2026-08-26`
 >

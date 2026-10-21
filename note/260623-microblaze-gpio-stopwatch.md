@@ -14,12 +14,12 @@
 
 | 위치 | 내용 |
 | :--- | :--- |
-| [260623_MicroBlaze_GPIO](../helloHDL/260623_MicroBlaze_GPIO) | MicroBlaze stopwatch block design project |
-| [260623_MicroBlaze_GPIO.xpr](../helloHDL/260623_MicroBlaze_GPIO/260623_MicroBlaze_GPIO.xpr) | Vivado project, top module `stopwatch_design_wrapper` |
-| [stopwatch_design.bd](../helloHDL/260623_MicroBlaze_GPIO/260623_MicroBlaze_GPIO.srcs/sources_1/bd/stopwatch_design/stopwatch_design.bd) | MicroBlaze, local memory, UART Lite, AXI interconnect, custom GPIO 4개 |
-| [Basys-3-Master.xdc](../helloHDL/260623_MicroBlaze_GPIO/260623_MicroBlaze_GPIO.srcs/constrs_1/imports/imports/Basys-3-Master.xdc) | `sys_clock`, `reset`, `usb_uart`, `GPIOA~D` board pin 제약 |
-| [ip_repo/gpio_1.0](../helloHDL/ip_repo/gpio_1.0) | 수업에서 만든 AXI4-Lite GPIO custom IP repository |
-| [StopWatch/src/main.c](../helloHDL/260623_MicroBlaze_GPIO/vitis_repo/StopWatch/src/main.c) | Vitis Application Project에서 작성한 MicroBlaze firmware |
+| 260623_MicroBlaze_GPIO | MicroBlaze stopwatch block design project |
+| 260623_MicroBlaze_GPIO.xpr | Vivado project, top module `stopwatch_design_wrapper` |
+| stopwatch_design.bd | MicroBlaze, local memory, UART Lite, AXI interconnect, custom GPIO 4개 |
+| Basys-3-Master.xdc | `sys_clock`, `reset`, `usb_uart`, `GPIOA~D` board pin 제약 |
+| ip_repo/gpio_1.0 | 수업에서 만든 AXI4-Lite GPIO custom IP repository |
+| StopWatch/src/main.c | Vitis Application Project에서 작성한 MicroBlaze firmware |
 
 현재 `260623_MicroBlaze_GPIO`에는 Vivado project와 block design, XDC, XCI, Vitis workspace가 함께 있다. Vitis 쪽에서는 Application Project에서 Empty file을 C source로 생성하고, `StopWatch/src/main.c`에 `GPIOC/GPIOD`를 16-bit LED port처럼 다루는 firmware를 작성해 build했다.
 

@@ -3,7 +3,7 @@
 관련 노트:
 
 - [26-07-14 - GPIO, Type Qualifier, CMSIS, Bit 연산](260714-gpio-volatile-cmsis-bit-operations.md)
-- [26-07-14 ARM Cortex-M4 디바이스 프로그래밍 실습 과제](../assignment/260714-arm-cortex-m4-device-programming-homework.md)
+- 26-07-14 ARM Cortex-M4 디바이스 프로그래밍 실습 과제
 
 ## 실습 과제
 
@@ -75,7 +75,7 @@ void Main(void)
 
 관련 노트: [[domains/semiconductor/ai-npu-system-integration/gpio-register-mmio-cr-idr-odr]]
 
-driver 과제는 [`0702.LED_DRIVER_LAB/led.c`](../helloEmbedded/0702.LED_DRIVER_LAB/led.c)에 구현한다. PA5 User LED는 active-high push-pull 연결이므로 외부 LED의 active-low 반전과 open-drain 설정을 사용하지 않는다.
+driver 과제는 `0702.LED_DRIVER_LAB/led.c`에 구현한다. PA5 User LED는 active-high push-pull 연결이므로 외부 LED의 active-low 반전과 open-drain 설정을 사용하지 않는다.
 
 ```c
 void LED_Init(void)

@@ -567,7 +567,7 @@ void Main(void)
 
 #### Timer Access 실습: 출력문을 빼면 왜 값이 같아질까
 
-[`0601.TYPE_QUALIFIER_EX/main.c`](../helloEmbedded/0601.TYPE_QUALIFIER_EX/main.c)의 Timer Access 실습은 같은 System Timer 주소를 열 번 읽는 code를 세 가지로 비교한다. System Timer가 동작하는 동안 `0xE000E018`의 현재값은 계속 감소하지만, compiler는 그 주소가 hardware register라는 사실을 source만 보고 알 수 없음.
+`0601.TYPE_QUALIFIER_EX/main.c`의 Timer Access 실습은 같은 System Timer 주소를 열 번 읽는 code를 세 가지로 비교한다. System Timer가 동작하는 동안 `0xE000E018`의 현재값은 계속 감소하지만, compiler는 그 주소가 hardware register라는 사실을 source만 보고 알 수 없음.
 
 | 실습 | code 형태 | 관찰할 핵심 |
 | :--- | :--- | :--- |
@@ -843,7 +843,7 @@ GPIOA->ODR = value;
 
 #### CMSIS access qualifier: `__I`, `__O`, `__IO`
 
-현재 실습 source의 [`core_cm4.h`](../helloEmbedded/0601.TYPE_QUALIFIER_EX/core_cm4.h)는 peripheral register access를 다음처럼 정의한다. C source에서는 `__I`가 `volatile const`로 확장된다.
+현재 실습 source의 `core_cm4.h`는 peripheral register access를 다음처럼 정의한다. C source에서는 `__I`가 `volatile const`로 확장된다.
 
 ```c
 #define __I   volatile const  /* software read only */
@@ -871,14 +871,14 @@ GPIOA->ODR = value;
 
 | header | 역할 | 현재 source의 예 |
 | :--- | :--- | :--- |
-| [`core_cm4.h`](../helloEmbedded/0601.TYPE_QUALIFIER_EX/core_cm4.h) | Cortex-M4 core register와 CMSIS qualifier | `SysTick_Type`, `__IM`, `__IOM` |
-| [`stm32f411xe.h`](../helloEmbedded/0601.TYPE_QUALIFIER_EX/stm32f411xe.h) | STM32F411 peripheral 구조체·base address | `GPIO_TypeDef`, `GPIOA_BASE`, `GPIOA` |
+| `core_cm4.h` | Cortex-M4 core register와 CMSIS qualifier | `SysTick_Type`, `__IM`, `__IOM` |
+| `stm32f411xe.h` | STM32F411 peripheral 구조체·base address | `GPIO_TypeDef`, `GPIOA_BASE`, `GPIOA` |
 
 보통 toolchain 또는 제조사 CMSIS device package가 이 두 header를 함께 제공한다. `core_cm4.h`만으로 STM32 GPIO register를 알 수 있는 것은 아니며, target MCU에 맞는 device header가 함께 필요함.
 
 #### STM32F4 family header에서 target을 고르는 흐름
 
-ST의 [`stm32f4xx.h`](../helloEmbedded/0601.TYPE_QUALIFIER_EX/stm32f4xx.h)는 여러 STM32F4 model이 공통으로 include하는 family header다. 이 실습 source에서는 `STM32F411xE` macro가 선택되어 있고, conditional compilation이 그 결과로 `stm32f411xe.h`를 include한다. 그러므로 `GPIO_TypeDef`, `GPIOA_BASE`, `GPIOA`는 Cortex-M4 공통 header가 아니라 선택된 STM32F411 device header에서 오는 정의임.
+ST의 `stm32f4xx.h`는 여러 STM32F4 model이 공통으로 include하는 family header다. 이 실습 source에서는 `STM32F411xE` macro가 선택되어 있고, conditional compilation이 그 결과로 `stm32f411xe.h`를 include한다. 그러므로 `GPIO_TypeDef`, `GPIOA_BASE`, `GPIOA`는 Cortex-M4 공통 header가 아니라 선택된 STM32F411 device header에서 오는 정의임.
 
 ```text
 #include "stm32f4xx.h"
@@ -991,7 +991,7 @@ void Main(void)
 
 #### `Main`이라는 이름과 firmware의 시작 함수
 
-이 실습 code는 소문자 `main` 대신 `void Main(void)`를 사용한다. `Main`이 C 언어에 미리 정해진 특별한 함수명인 것은 아니다. 이 project의 startup source인 [`crt0.s`](../helloEmbedded/0602.CMSIS_LAB/crt0.s)가 reset 뒤 `__start`에서 초기화 작업을 수행하고, 마지막에 `Main` symbol로 branch하도록 작성되어 있기 때문에 `Main`이 application code의 시작 함수가 됨.
+이 실습 code는 소문자 `main` 대신 `void Main(void)`를 사용한다. `Main`이 C 언어에 미리 정해진 특별한 함수명인 것은 아니다. 이 project의 startup source인 `crt0.s`가 reset 뒤 `__start`에서 초기화 작업을 수행하고, 마지막에 `Main` symbol로 branch하도록 작성되어 있기 때문에 `Main`이 application code의 시작 함수가 됨.
 
 ```asm
 .extern Main
@@ -1006,7 +1006,7 @@ BL     Main
 
 ### 전체 register 대입이 만드는 문제
 
-현재 실습 source의 [`0701.BIT_OP_LAB/main.c`](../helloEmbedded/0701.BIT_OP_LAB/main.c)는 먼저 PA5 LED를 켜는 가장 단순한 출발 code를 둔다.
+현재 실습 source의 `0701.BIT_OP_LAB/main.c`는 먼저 PA5 LED를 켜는 가장 단순한 출발 code를 둔다.
 
 ```c
 GPIOA->MODER = 0x1u << 10;
@@ -1294,7 +1294,7 @@ dest = (dest & ~(bits << position)) | ((data & bits) << position);
 
 ### `macro.h`: 반복되는 bit 처리식을 이름으로 묶기
 
-현재 실습 source의 [`macro.h`](../helloEmbedded/0701.BIT_OP_LAB/macro.h)는 반복되는 bit 식을 function처럼 보이는 macro 호출로 바꾼다. macro는 function 호출이 아니라 preprocessing 단계의 text substitution이다. 호출 위치에 식이 그대로 펼쳐지므로 call/return 구조가 없고, 호출할 때마다 code 크기가 늘 수 있으며 type 검사도 function만큼 엄격하지 않음.
+현재 실습 source의 `macro.h`는 반복되는 bit 식을 function처럼 보이는 macro 호출로 바꾼다. macro는 function 호출이 아니라 preprocessing 단계의 text substitution이다. 호출 위치에 식이 그대로 펼쳐지므로 call/return 구조가 없고, 호출할 때마다 code 크기가 늘 수 있으며 type 검사도 function만큼 엄격하지 않음.
 
 macro의 핵심 안전 규칙은 parameter와 결과 식 전체를 괄호로 감싸는 것이다.
 
@@ -1367,7 +1367,7 @@ PA5부터 PA7까지 외부 LED 세 개를 제어할 때도 같은 field write를
 
 ### 매크로를 이용한 LED Toggle
 
-이 실습은 [`0701.BIT_OP_LAB`의 `main.c`](../helloEmbedded/0701.BIT_OP_LAB/main.c)에서 PA5 User LED를 macro만으로 제어하는 문제다. 목표는 PA5를 output으로 설정하고 처음에는 LED를 off로 만든 뒤, 무한 loop에서 PA5의 output level을 반전하여 LED가 반복해서 on/off되게 만드는 것이다.
+이 실습은 `0701.BIT_OP_LAB`의 `main.c`에서 PA5 User LED를 macro만으로 제어하는 문제다. 목표는 PA5를 output으로 설정하고 처음에는 LED를 off로 만든 뒤, 무한 loop에서 PA5의 output level을 반전하여 LED가 반복해서 on/off되게 만드는 것이다.
 
 | 단계 | 대상 | 필요한 상태 |
 | :--- | :--- | :--- |
@@ -1403,7 +1403,7 @@ void Main(void)
 
 ### LED Driver 함수 설계
 
-[`0702.LED_DRIVER_LAB`의 `led.c`](../helloEmbedded/0702.LED_DRIVER_LAB/led.c)는 application code에서 GPIO register와 PA5 field 위치를 직접 다루지 않도록 LED 제어를 driver 함수로 분리하는 문제다. 상위 code는 `LED_Init()`·`LED_On()`·`LED_Off()`만 호출하고, PA5의 mode·type·output level은 `led.c`가 책임진다.
+`0702.LED_DRIVER_LAB`의 `led.c`는 application code에서 GPIO register와 PA5 field 위치를 직접 다루지 않도록 LED 제어를 driver 함수로 분리하는 문제다. 상위 code는 `LED_Init()`·`LED_On()`·`LED_Off()`만 호출하고, PA5의 mode·type·output level은 `led.c`가 책임진다.
 
 | 함수 | 역할 | register 동작 |
 | :--- | :--- | :--- |
@@ -1435,7 +1435,7 @@ void LED_Off(void)
 
 lab skeleton의 `Macro_Set_Bit(RCC->AHB1ENR, 0)`은 Port-A clock enable을 담당하므로 수정하지 않는다. `LED_Init`은 초기 상태를 off로 확정하고, `LED_On`·`LED_Off`은 output level만 바꾼다. mode나 output type을 on/off 함수마다 다시 설정하지 않는 이유는 initialization과 동작 제어의 역할을 분리하기 위함임.
 
-[`0702.LED_DRIVER_LAB`의 `main.c`](../helloEmbedded/0702.LED_DRIVER_LAB/main.c)처럼 application code는 다음 수준으로 단순해진다.
+`0702.LED_DRIVER_LAB`의 `main.c`처럼 application code는 다음 수준으로 단순해진다.
 
 ```c
 LED_Init();
@@ -1463,4 +1463,4 @@ for (;;)
 | LED 왕복 shift | 끝에서 방향을 바꾸는 LED 이동 | `001 → 010 → 100 → 010 → 001` 반복 |
 | LED driver | `LED_Init`·`LED_On`·`LED_Off` 작성 | application이 register 대신 함수 호출로 LED 제어 |
 
-세 과제의 구현 조건과 확인 항목은 [26-07-14 ARM Cortex-M4 디바이스 프로그래밍 실습 과제 공지](../assignment/260714-arm-cortex-m4-device-programming-homework.md)에 정리했다.
+세 과제의 구현 조건과 확인 항목은 26-07-14 ARM Cortex-M4 디바이스 프로그래밍 실습 과제 공지에 정리했다.

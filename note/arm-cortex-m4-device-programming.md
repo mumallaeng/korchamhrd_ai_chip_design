@@ -6,7 +6,7 @@
 
 | 범위 | 파일 | 내용 |
 | :--- | :--- | :--- |
-| 1과 | [ARM Cortex-M4 디바이스 프로그래밍 1과](../../../domains/semiconductor/ai-npu-system-integration/arm-cortex-m4-device-programming-01.md) | 디바이스 프로그래밍 개요, 개발환경, compile test |
+| 1과 | ARM Cortex-M4 디바이스 프로그래밍 1과 | 디바이스 프로그래밍 개요, 개발환경, compile test |
 | 2과 | [26-07-13](260713-arm-gcc-electronics-embedded-systems.md) | 능동 소자와 집적 회로 |
 | 3과 | [26-07-13](260713-arm-gcc-electronics-embedded-systems.md) | 컴퓨터와 임베디드 시스템 |
 | 4과 | [26-07-13](260713-arm-gcc-electronics-embedded-systems.md) | STM32F411xE MCU와 실습보드 |

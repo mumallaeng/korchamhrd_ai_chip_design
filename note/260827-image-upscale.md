@@ -4,7 +4,7 @@
 
 - [26-08-26 - 최종 프로젝트 팀 구성 공지와 VGA 컬러바 실습 리뷰](260826-final-project-team-formation-and-vga-color-bar-review.md)
 
-실습 소스: [260827 IMAGE_UPSCALE](../helloHDL/260827_IMAGE_UPSCALE/)
+실습 소스: 260827 IMAGE_UPSCALE
 
 > 수업일: `2026-08-27`
 >

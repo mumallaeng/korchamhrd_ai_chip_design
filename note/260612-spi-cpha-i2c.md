@@ -12,12 +12,12 @@ I2C 쪽에서는 master의 기준을 `SCL` clock을 만들어 주는 쪽으로 �
 
 | 위치 | 내용 |
 | :--- | :--- |
-| [260612_SPI_Master](../helloHDL/260612_SPI_Master) | 0612 기준 Vivado SPI Master 프로젝트 |
-| [spi_master.sv](../helloHDL/260612_SPI_Master/260612_SPI_Master.srcs/sources_1/new/spi_master.sv) | `cpol`, `cpha`, `clk_div`, `tx_data`, SPI line을 가진 SPI Master RTL |
-| [tb_spi_master.sv](../helloHDL/260612_SPI_Master/260612_SPI_Master.srcs/sim/new/tb_spi_master.sv) | SPI mode 0~3 loopback testbench |
-| [260612_I2C_Master](../helloHDL/260612_I2C_Master) | 0612 기준 Vivado I2C Master 프로젝트 |
-| [I2C_Master.sv](../helloHDL/260612_I2C_Master/260612_I2C_Master.srcs/sources_1/new/I2C_Master.sv) | command port, open-drain `SDA`, quarter tick 기반 I2C Master RTL |
-| [tb_I2C_Mater.sv](../helloHDL/260612_I2C_Master/260612_I2C_Master.srcs/sim_1/new/tb_I2C_Mater.sv) | 현재 비어 있는 I2C simulation shell |
+| 260612_SPI_Master | 0612 기준 Vivado SPI Master 프로젝트 |
+| spi_master.sv | `cpol`, `cpha`, `clk_div`, `tx_data`, SPI line을 가진 SPI Master RTL |
+| tb_spi_master.sv | SPI mode 0~3 loopback testbench |
+| 260612_I2C_Master | 0612 기준 Vivado I2C Master 프로젝트 |
+| I2C_Master.sv | command port, open-drain `SDA`, quarter tick 기반 I2C Master RTL |
+| tb_I2C_Mater.sv | 현재 비어 있는 I2C simulation shell |
 
 현재 `260612_SPI_Master` 폴더에서는 직접 작성 소스로 `spi_master.sv`와 `tb_spi_master.sv`가 확인된다. 0611 코드가 `CPOL` 중심이었다면, 0612 코드는 `CPHA` 입력과 mode별 testbench 시나리오까지 붙은 상태로 보는 것이 맞다. `260612_I2C_Master` 폴더에서는 직접 작성 소스로 `I2C_Master.sv`와 빈 testbench shell인 `tb_I2C_Mater.sv`가 확인된다. 따라서 I2C 쪽은 RTL 구조와 compile 가능 여부까지 정리하고, 구체적인 test scenario는 이후 작성 대상으로 남긴다.
 
@@ -25,11 +25,11 @@ I2C 쪽에서는 master의 기준을 `SCL` clock을 만들어 주는 쪽으로 �
 
 | 순서 | 파일 | 확인할 내용 |
 | :--- | :--- | :--- |
-| 1 | [spi_master.sv](../helloHDL/260612_SPI_Master/260612_SPI_Master.srcs/sources_1/new/spi_master.sv) | `CPOL/CPHA`, `half_tick`, `step`, `rx_data` 마무리 방식 |
-| 2 | [tb_spi_master.sv](../helloHDL/260612_SPI_Master/260612_SPI_Master.srcs/sim/new/tb_spi_master.sv) | mode 0~3 loopback, `8'hAA`, `done` 대기 |
-| 3 | [I2C_Master.sv](../helloHDL/260612_I2C_Master/260612_I2C_Master.srcs/sources_1/new/I2C_Master.sv)의 `I2C_Master_top` | `inout sda`, `sda_i/sda_o`, open-drain 연결 |
-| 4 | [I2C_Master.sv](../helloHDL/260612_I2C_Master/260612_I2C_Master.srcs/sources_1/new/I2C_Master.sv)의 `I2C_Master` | `START`, `WAIT_CMD`, `DATA`, `DATA_ACK`, `STOP` FSM |
-| 5 | [tb_I2C_Mater.sv](../helloHDL/260612_I2C_Master/260612_I2C_Master.srcs/sim_1/new/tb_I2C_Mater.sv) | 현재 빈 shell, 이후 command sequence 작성 대상 |
+| 1 | spi_master.sv | `CPOL/CPHA`, `half_tick`, `step`, `rx_data` 마무리 방식 |
+| 2 | tb_spi_master.sv | mode 0~3 loopback, `8'hAA`, `done` 대기 |
+| 3 | I2C_Master.sv의 `I2C_Master_top` | `inout sda`, `sda_i/sda_o`, open-drain 연결 |
+| 4 | I2C_Master.sv의 `I2C_Master` | `START`, `WAIT_CMD`, `DATA`, `DATA_ACK`, `STOP` FSM |
+| 5 | tb_I2C_Mater.sv | 현재 빈 shell, 이후 command sequence 작성 대상 |
 
 ## SPI CPOL/CPHA 정리
 
@@ -46,7 +46,7 @@ SPI mode는 `CPOL`과 `CPHA` 조합으로 정해진다.
 
 ## 0612 SPI Master 코드 기준
 
-현재 [spi_master.sv](../helloHDL/260612_SPI_Master/260612_SPI_Master.srcs/sources_1/new/spi_master.sv)는 0611 코드에 비해 `cpha` 입력, `cpha_r` latch, mode별 edge 동작 분기가 추가된 형태다.
+현재 spi_master.sv는 0611 코드에 비해 `cpha` 입력, `cpha_r` latch, mode별 edge 동작 분기가 추가된 형태다.
 
 | 코드 요소 | 현재 역할 |
 | :--- | :--- |
@@ -66,7 +66,7 @@ SPI mode는 `CPOL`과 `CPHA` 조합으로 정해진다.
 
 ## 0612 SPI Master Testbench 기준
 
-현재 [tb_spi_master.sv](../helloHDL/260612_SPI_Master/260612_SPI_Master.srcs/sim/new/tb_spi_master.sv)는 `mosi`와 `miso`를 `loop_wire`로 연결한 loopback 구조다. 실제 slave 동작 검증은 아니지만, master가 내보낸 serial data가 다시 master input으로 들어와 `rx_data`가 구성되는지 확인하기 위한 기본 testbench다.
+현재 tb_spi_master.sv는 `mosi`와 `miso`를 `loop_wire`로 연결한 loopback 구조다. 실제 slave 동작 검증은 아니지만, master가 내보낸 serial data가 다시 master input으로 들어와 `rx_data`가 구성되는지 확인하기 위한 기본 testbench다.
 
 | TB 요소 | 현재 역할 |
 | :--- | :--- |
@@ -115,7 +115,7 @@ I2C의 기본 전송 단위는 8-bit, 즉 1 byte이다. 처음 byte는 보통 `S
 
 ## 0612 I2C Master 코드 기준
 
-현재 [I2C_Master.sv](../helloHDL/260612_I2C_Master/260612_I2C_Master.srcs/sources_1/new/I2C_Master.sv)는 CPU/host가 I2C Master에게 command를 내려 주고, I2C Master가 `SCL`과 `SDA`를 protocol timing에 맞게 움직이는 구조다. 위쪽 `I2C_Master_top`은 board level의 `inout sda`를 내부 `sda_i`, `sda_o`로 나누고, 아래쪽 `I2C_Master`가 실제 FSM과 timing을 담당한다.
+현재 I2C_Master.sv는 CPU/host가 I2C Master에게 command를 내려 주고, I2C Master가 `SCL`과 `SDA`를 protocol timing에 맞게 움직이는 구조다. 위쪽 `I2C_Master_top`은 board level의 `inout sda`를 내부 `sda_i`, `sda_o`로 나누고, 아래쪽 `I2C_Master`가 실제 FSM과 timing을 담당한다.
 
 | 코드 요소 | 현재 역할 |
 | :--- | :--- |
@@ -150,7 +150,7 @@ SCL frequency도 quarter-clock 기준으로 계산해야 한다. Standard mode 1
 
 Vivado에서 한 번 발생했던 오류는 reset edge와 reset 조건이 서로 맞지 않았기 때문이다. 첫 번째 always block이 `negedge reset`으로 되어 있으면서 내부에서는 `if (reset)`을 사용하면 active-low edge와 active-high 조건이 충돌한다. 현재 코드는 두 always block 모두 `posedge reset`과 `if (reset)`으로 맞춰 active-high reset 구조가 되었다.
 
-현재 [tb_I2C_Mater.sv](../helloHDL/260612_I2C_Master/260612_I2C_Master.srcs/sim_1/new/tb_I2C_Mater.sv)는 module shell만 있는 상태다. 따라서 I2C Master는 RTL compile 기준으로는 정리되었지만, start/write/read/stop command sequence와 SDA ACK 모델을 넣는 testbench는 다음 단계에서 작성해야 한다.
+현재 tb_I2C_Mater.sv는 module shell만 있는 상태다. 따라서 I2C Master는 RTL compile 기준으로는 정리되었지만, start/write/read/stop command sequence와 SDA ACK 모델을 넣는 testbench는 다음 단계에서 작성해야 한다.
 
 ## 부가 개념: handshake
 

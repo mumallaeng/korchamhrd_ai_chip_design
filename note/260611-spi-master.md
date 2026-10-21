@@ -2,7 +2,7 @@
 
 ## 수업 흐름
 
-오전 초반에는 전날 진행한 RAM UVM 예제인 [260610_ram](../helloHDL/260610_ram)을 다시 가져와 sequence와 test scenario 관점으로 보강했다. 세부 내용은 0610 수업의 연장선이므로 [260610-uvm-ram.md](./260610-uvm-ram.md)의 `0611 오전 보강: sequence와 test scenario 관점`에 합쳐 두었다.
+오전 초반에는 전날 진행한 RAM UVM 예제인 260610_ram을 다시 가져와 sequence와 test scenario 관점으로 보강했다. 세부 내용은 0610 수업의 연장선이므로 [260610-uvm-ram.md](./260610-uvm-ram.md)의 `0611 오전 보강: sequence와 test scenario 관점`에 합쳐 두었다.
 
 오후에는 SPI 통신을 중심으로 master RTL 구조를 보고, 이후 SPI slave와 I2C slave를 직접 구현해 FPGA 보드 동작과 UVM 검증까지 연결하는 방향을 정리했다. 목표는 단순히 RTL을 작성하는 것이 아니라, 어떤 값을 보내고 어떤 결과가 나와야 하는지 test scenario로 설명할 수 있게 만드는 것이다.
 
@@ -10,10 +10,10 @@
 
 | 위치 | 내용 |
 | :--- | :--- |
-| [260610_ram](../helloHDL/260610_ram) | RAM UVM 예제. 0611 오전 보강 내용은 0610 노트에 연결한다. |
-| [260611_SPI_Master](../helloHDL/260611_SPI_Master) | Vivado 프로젝트 형태로 저장된 SPI master 실습 코드 |
-| [spi_master.sv](../helloHDL/260611_SPI_Master/20260611_SPI_Master.srcs/sources_1/new/spi_master.sv) | SPI master RTL |
-| [tb_spi_master.sv](../helloHDL/260611_SPI_Master/20260611_SPI_Master.srcs/sim_1/new/tb_spi_master.sv) | SPI master loopback testbench |
+| 260610_ram | RAM UVM 예제. 0611 오전 보강 내용은 0610 노트에 연결한다. |
+| 260611_SPI_Master | Vivado 프로젝트 형태로 저장된 SPI master 실습 코드 |
+| spi_master.sv | SPI master RTL |
+| tb_spi_master.sv | SPI master loopback testbench |
 
 현재 `260611_SPI_Master`는 Vivado 프로젝트 디렉토리 형태로 들어와 있다. 수업 노트에서는 생성물 전체가 아니라 직접 작성한 RTL/TB 파일을 기준으로 내용을 정리한다.
 
@@ -54,7 +54,7 @@ SPI mode는 `CPOL`과 `CPHA` 조합으로 정의된다.
 | `CPOL` | clock idle level. `0`이면 idle low, `1`이면 idle high |
 | `CPHA` | data sampling edge 선택. 첫 번째 edge에서 샘플링할지, 두 번째 edge에서 샘플링할지 결정 |
 
-현재 [spi_master.sv](../helloHDL/260611_SPI_Master/20260611_SPI_Master.srcs/sources_1/new/spi_master.sv)는 `cpol` 입력을 받아 `sclk`의 idle level을 바꾸는 구조다. `CPHA`를 별도 port로 받지는 않고, 내부 `step` 신호로 첫 번째 edge와 두 번째 edge를 나눠 `miso` sampling과 다음 `mosi` shift를 처리한다. 따라서 현재 수업 코드 설명에서는 "CPOL을 설정할 수 있는 SPI master 구조"로 보는 것이 정확하다.
+현재 spi_master.sv는 `cpol` 입력을 받아 `sclk`의 idle level을 바꾸는 구조다. `CPHA`를 별도 port로 받지는 않고, 내부 `step` 신호로 첫 번째 edge와 두 번째 edge를 나눠 `miso` sampling과 다음 `mosi` shift를 처리한다. 따라서 현재 수업 코드 설명에서는 "CPOL을 설정할 수 있는 SPI master 구조"로 보는 것이 정확하다.
 
 ## SPI Master RTL 구조
 
@@ -86,7 +86,7 @@ SPI mode는 `CPOL`과 `CPHA` 조합으로 정의된다.
 
 ## Testbench 시나리오
 
-[tb_spi_master.sv](../helloHDL/260611_SPI_Master/20260611_SPI_Master.srcs/sim_1/new/tb_spi_master.sv)는 `mosi`와 `miso`를 `loop_wire`로 연결해서 master가 보낸 값을 다시 master가 읽는 loopback 구조로 확인한다.
+tb_spi_master.sv는 `mosi`와 `miso`를 `loop_wire`로 연결해서 master가 보낸 값을 다시 master가 읽는 loopback 구조로 확인한다.
 
 | 요소 | 내용 |
 | :--- | :--- |
@@ -147,4 +147,4 @@ I2C도 같은 방향으로 slave 구현을 먼저 생각한다. 이후 SPI/I2C �
 
 ## 다음 연결
 
-다음 단계에서는 SPI slave 또는 I2C slave 구현 범위를 정하고, 그에 맞춰 UVM transaction과 sequence를 설계해야 한다. 발표 일정과 준비 기준은 [presentation_operations_final_by_date.md](/Users/mumallaeng/git/Vault/activities/korcham/presentation_operations_final_by_date.md)에 따로 정리한다.
+다음 단계에서는 SPI slave 또는 I2C slave 구현 범위를 정하고, 그에 맞춰 UVM transaction과 sequence를 설계해야 한다. 발표 일정과 준비 기준은 presentation_operations_final_by_date.md에 따로 정리한다.

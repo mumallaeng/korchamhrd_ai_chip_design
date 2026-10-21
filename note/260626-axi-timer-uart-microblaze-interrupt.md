@@ -10,23 +10,23 @@
 
 | 위치 | 내용 |
 | :--- | :--- |
-| [260626_AXI_TimerCounter](../helloHDL/260626_AXI_TimerCounter) | 0626 AXI TimerCounter 수업 작업본 |
-| [TimerCounter.v](../helloHDL/260626_AXI_TimerCounter/260626_AXI_TimerCounter.srcs/sources_1/new/TimerCounter.v) | timer counter RTL |
-| [axi_template_v1_0.v](../helloHDL/260626_AXI_TimerCounter/260626_AXI_TimerCounter.srcs/sources_1/imports/hdl/axi_template_v1_0.v) | AXI custom IP top |
-| [axi_template_v1_0_S00_AXI.v](../helloHDL/260626_AXI_TimerCounter/260626_AXI_TimerCounter.srcs/sources_1/imports/hdl/axi_template_v1_0_S00_AXI.v) | AXI4-Lite slave register map |
-| [tb_TimerCounter.sv](../helloHDL/260626_AXI_TimerCounter/260626_AXI_TimerCounter.srcs/sim_1/new/tb_TimerCounter.sv) | TimerCounter 단독 testbench |
-| [tb_axi_timer.sv](../helloHDL/260626_AXI_TimerCounter/260626_AXI_TimerCounter.srcs/sim_1/new/tb_axi_timer.sv) | AXI write/read 통합 testbench |
-| [260626_AXI_UART](../helloHDL/260626_AXI_UART) | UART AXI custom IP 작성용 프로젝트 |
-| [260626_MicroBlaze_Timer_UART_Intr](../helloHDL/260626_MicroBlaze_Timer_UART_Intr) | Timer, UART, GPIO, MicroBlaze, interrupt controller 통합 프로젝트 |
-| [ip_repo/uart_1.0](../helloHDL/ip_repo/uart_1.0) | 직접 작성한 UART custom IP 패키징 결과 |
-| [ip_repo/timer_1.0](../helloHDL/ip_repo/timer_1.0) | 직접 작성한 Timer custom IP 패키징 결과 |
-| [MicroBlazeTimerUARTIntr_wrapper.v](../helloHDL/260626_MicroBlaze_Timer_UART_Intr/260626_MicroBlaze_Timer_UART_Intr.srcs/sources_1/imports/hdl/MicroBlazeTimerUARTIntr_wrapper.v) | block design HDL wrapper |
-| [MicroBlazeTimerUARTIntr_wrapper.xsa](../helloHDL/260626_MicroBlaze_Timer_UART_Intr/XSA/MicroBlazeTimerUARTIntr_wrapper.xsa) | Vitis platform 생성용 hardware export |
-| [StopWatch/src](../helloHDL/260626_MicroBlaze_Timer_UART_Intr/vitis_repo/StopWatch/src) | Vitis application source |
-| [HAL/TMR](../helloHDL/260626_MicroBlaze_Timer_UART_Intr/vitis_repo/StopWatch/src/HAL/TMR) | Timer register 접근 HAL |
-| [HAL/UART](../helloHDL/260626_MicroBlaze_Timer_UART_Intr/vitis_repo/StopWatch/src/HAL/UART) | UART register 접근 HAL |
-| [common/interrupt](../helloHDL/260626_MicroBlaze_Timer_UART_Intr/vitis_repo/StopWatch/src/common/interrupt) | AXI INTC 초기화와 ISR 연결 |
-| [main.c](../helloHDL/260626_MicroBlaze_Timer_UART_Intr/vitis_repo/StopWatch/src/main.c) | Timer/UART interrupt enable과 application loop |
+| 260626_AXI_TimerCounter | 0626 AXI TimerCounter 수업 작업본 |
+| TimerCounter.v | timer counter RTL |
+| axi_template_v1_0.v | AXI custom IP top |
+| axi_template_v1_0_S00_AXI.v | AXI4-Lite slave register map |
+| tb_TimerCounter.sv | TimerCounter 단독 testbench |
+| tb_axi_timer.sv | AXI write/read 통합 testbench |
+| 260626_AXI_UART | UART AXI custom IP 작성용 프로젝트 |
+| 260626_MicroBlaze_Timer_UART_Intr | Timer, UART, GPIO, MicroBlaze, interrupt controller 통합 프로젝트 |
+| ip_repo/uart_1.0 | 직접 작성한 UART custom IP 패키징 결과 |
+| ip_repo/timer_1.0 | 직접 작성한 Timer custom IP 패키징 결과 |
+| MicroBlazeTimerUARTIntr_wrapper.v | block design HDL wrapper |
+| MicroBlazeTimerUARTIntr_wrapper.xsa | Vitis platform 생성용 hardware export |
+| StopWatch/src | Vitis application source |
+| HAL/TMR | Timer register 접근 HAL |
+| HAL/UART | UART register 접근 HAL |
+| common/interrupt | AXI INTC 초기화와 ISR 연결 |
+| main.c | Timer/UART interrupt enable과 application loop |
 
 ## AXI TimerCounter 확인 흐름
 

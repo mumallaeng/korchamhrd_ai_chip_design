@@ -4,10 +4,10 @@
 
 - [26-07-20 - Timer 제어](260720-timer-control.md)
 - [26-07-16 - UART와 Timer 제어 선행 정리](260716-arm-cortex-m4-device-programming.md)
-- [1201.EXTI_IRQ_LAB](../helloEmbedded/1201.EXTI_IRQ_LAB/)
-- [1202.EXTI_EVENT_EX](../helloEmbedded/1202.EXTI_EVENT_EX/)
-- [1203.UART_EVENT_LAB](../helloEmbedded/1203.UART_EVENT_LAB/)
-- [1204.TIMER_EVENT_LAB](../helloEmbedded/1204.TIMER_EVENT_LAB/)
+- 1201.EXTI_IRQ_LAB
+- 1202.EXTI_EVENT_EX
+- 1203.UART_EVENT_LAB
+- 1204.TIMER_EVENT_LAB
 
 ## 실습 코드 연결
 
@@ -15,15 +15,15 @@
 
 | 실습 | 실제 source | hardware event → ISR | main loop가 맡는 일 |
 | :--- | :--- | :--- | :--- |
-| `1201 EXTI` | [main.c](../helloEmbedded/1201.EXTI_IRQ_LAB/main.c) · [key.c](../helloEmbedded/1201.EXTI_IRQ_LAB/key.c) · [exception.c](../helloEmbedded/1201.EXTI_IRQ_LAB/exception.c) | `PC13` falling edge → `EXTI13` → IRQ `40` → `EXTI15_10_IRQHandler()` | ISR route 확인용 주기 출력 |
-| `1203 UART` | [main.c](../helloEmbedded/1203.UART_EVENT_LAB/main.c) · [uart.c](../helloEmbedded/1203.UART_EVENT_LAB/uart.c) · [exception.c](../helloEmbedded/1203.UART_EVENT_LAB/exception.c) | USART2 receive → IRQ `38` → `USART2_IRQHandler()` | `Uart_Data`를 출력하고 event flag 해제 |
-| `1204 Timer` | [main.c](../helloEmbedded/1204.TIMER_EVENT_LAB/main.c) · [timer.c](../helloEmbedded/1204.TIMER_EVENT_LAB/timer.c) · [exception.c](../helloEmbedded/1204.TIMER_EVENT_LAB/exception.c) | TIM4 update → IRQ `30` → `TIM4_IRQHandler()` | `TIM4_Expired`를 소비해 LED 상태 변경 |
+| `1201 EXTI` | main.c · key.c · exception.c | `PC13` falling edge → `EXTI13` → IRQ `40` → `EXTI15_10_IRQHandler()` | ISR route 확인용 주기 출력 |
+| `1203 UART` | main.c · uart.c · exception.c | USART2 receive → IRQ `38` → `USART2_IRQHandler()` | `Uart_Data`를 출력하고 event flag 해제 |
+| `1204 Timer` | main.c · timer.c · exception.c | TIM4 update → IRQ `30` → `TIM4_IRQHandler()` | `TIM4_Expired`를 소비해 LED 상태 변경 |
 
 ### `1201`: PC13 EXTI가 ISR에 도달하는 최소 경로
 
-[1201 `main.c`](../helloEmbedded/1201.EXTI_IRQ_LAB/main.c)는 `Sys_Init(115200)` 뒤 `Key_ISR_Enable(1)`을 호출하고, main loop에서는 `.`를 출력하면서 `TIM2_Delay(300)`으로 반복한다. 따라서 key를 누르지 않아도 main loop가 계속 실행되는 상태에서 EXTI가 CPU 실행을 잠시 끼어드는지 확인한다.
+1201 `main.c`는 `Sys_Init(115200)` 뒤 `Key_ISR_Enable(1)`을 호출하고, main loop에서는 `.`를 출력하면서 `TIM2_Delay(300)`으로 반복한다. 따라서 key를 누르지 않아도 main loop가 계속 실행되는 상태에서 EXTI가 CPU 실행을 잠시 끼어드는지 확인한다.
 
-[1201 `key.c`](../helloEmbedded/1201.EXTI_IRQ_LAB/key.c)의 `Key_ISR_Enable(1)`은 다음 register 설정을 실제로 수행한다.
+1201 `key.c`의 `Key_ISR_Enable(1)`은 다음 register 설정을 실제로 수행한다.
 
 ```text
 GPIOC clock enable·PC13 input
@@ -35,13 +35,13 @@ GPIOC clock enable·PC13 input
 → `NVIC_EnableIRQ(40)`
 ```
 
-[1201 `exception.c`](../helloEmbedded/1201.EXTI_IRQ_LAB/exception.c)의 `EXTI15_10_IRQHandler()`는 key message 출력 호출 뒤 `EXTI->PR = 1 << 13`으로 peripheral 원인을 clear하고, `NVIC_ClearPendingIRQ(40)`으로 controller pending 상태도 정리한다. 여기서 재진입을 막는 핵심은 `EXTI->PR`의 EXTI13 pending clear다. `40`은 `EXTI15_10_IRQn`이므로 source 주석에 남아 있는 `EXTI15_9` 표기와 분리해 IRQ group을 읽는다.
+1201 `exception.c`의 `EXTI15_10_IRQHandler()`는 key message 출력 호출 뒤 `EXTI->PR = 1 << 13`으로 peripheral 원인을 clear하고, `NVIC_ClearPendingIRQ(40)`으로 controller pending 상태도 정리한다. 여기서 재진입을 막는 핵심은 `EXTI->PR`의 EXTI13 pending clear다. `40`은 `EXTI15_10_IRQn`이므로 source 주석에 남아 있는 `EXTI15_9` 표기와 분리해 IRQ group을 읽는다.
 
 ### `1203`: UART byte를 ISR에서 받아 main으로 넘기기
 
-[1203 `main.c`](../helloEmbedded/1203.UART_EVENT_LAB/main.c)는 `volatile unsigned char Uart_Data`와 `volatile int Uart_Data_In`을 ISR-main 공유 state로 둔다. `Uart2_RX_Interrupt_Enable(1)` 뒤 main loop는 `Uart_Data_In`이 set됐을 때만 `RX Data = ...`를 출력하고 flag를 `0`으로 돌린다.
+1203 `main.c`는 `volatile unsigned char Uart_Data`와 `volatile int Uart_Data_In`을 ISR-main 공유 state로 둔다. `Uart2_RX_Interrupt_Enable(1)` 뒤 main loop는 `Uart_Data_In`이 set됐을 때만 `RX Data = ...`를 출력하고 flag를 `0`으로 돌린다.
 
-[1203 `uart.c`](../helloEmbedded/1203.UART_EVENT_LAB/uart.c)의 `Uart2_RX_Interrupt_Enable(1)`은 `USART2->CR1` bit `5`의 RXNE interrupt enable을 set하고, IRQ `38` pending clear와 `NVIC_EnableIRQ(38)`을 수행한다. byte가 도착하면 [1203 `exception.c`](../helloEmbedded/1203.UART_EVENT_LAB/exception.c)의 `USART2_IRQHandler()`가 `USART2->DR`을 `Uart_Data`에 저장한 뒤 `Uart_Data_In = 1`만 남기고 return한다.
+1203 `uart.c`의 `Uart2_RX_Interrupt_Enable(1)`은 `USART2->CR1` bit `5`의 RXNE interrupt enable을 set하고, IRQ `38` pending clear와 `NVIC_EnableIRQ(38)`을 수행한다. byte가 도착하면 1203 `exception.c`의 `USART2_IRQHandler()`가 `USART2->DR`을 `Uart_Data`에 저장한 뒤 `Uart_Data_In = 1`만 남기고 return한다.
 
 ```text
 terminal byte arrival
@@ -55,9 +55,9 @@ terminal byte arrival
 
 ### `1204`: TIM4 주기 event로 LED를 바꾸기
 
-[1204 `timer.c`](../helloEmbedded/1204.TIMER_EVENT_LAB/timer.c)의 `TIM4_Repeat_Interrupt_Enable(1, 200)`은 TIM4 clock, `PSC`, `ARR`, `EGR.UG`, `SR.UIF` clear, `DIER.UIE`, NVIC IRQ `30`, `CR1.CEN`을 순서대로 설정한다. 이 함수가 `TIM4` hardware에 200 ms 주기의 update event 생성을 요청한다.
+1204 `timer.c`의 `TIM4_Repeat_Interrupt_Enable(1, 200)`은 TIM4 clock, `PSC`, `ARR`, `EGR.UG`, `SR.UIF` clear, `DIER.UIE`, NVIC IRQ `30`, `CR1.CEN`을 순서대로 설정한다. 이 함수가 `TIM4` hardware에 200 ms 주기의 update event 생성을 요청한다.
 
-[1204 `exception.c`](../helloEmbedded/1204.TIMER_EVENT_LAB/exception.c)의 `TIM4_IRQHandler()`는 먼저 `TIM4->SR` bit `0`인 `UIF`를 clear하고 `TIM4_Expired = 1`을 기록한다. 이어 [1204 `main.c`](../helloEmbedded/1204.TIMER_EVENT_LAB/main.c)가 이 flag를 소비해 `(d ^= 1)`로 LED를 on/off 한다.
+1204 `exception.c`의 `TIM4_IRQHandler()`는 먼저 `TIM4->SR` bit `0`인 `UIF`를 clear하고 `TIM4_Expired = 1`을 기록한다. 이어 1204 `main.c`가 이 flag를 소비해 `(d ^= 1)`로 LED를 on/off 한다.
 
 ```text
 TIM4 update event
@@ -70,7 +70,7 @@ TIM4 update event
 
 ### code 기준 확인 지점
 
-- [1204 `TIM4_Repeat_Interrupt_Enable()`](../helloEmbedded/1204.TIMER_EVENT_LAB/timer.c)의 `ARR` 계산은 같은 file의 polling `TIM4_Repeat()`와 달리 `- 1`이 없다. `ARR + 1` count 규칙과 실제 요청 period를 비교하는 timer 검증 지점이다.
+- 1204 `TIM4_Repeat_Interrupt_Enable()`의 `ARR` 계산은 같은 file의 polling `TIM4_Repeat()`와 달리 `- 1`이 없다. `ARR + 1` count 규칙과 실제 요청 period를 비교하는 timer 검증 지점이다.
 
 ## Build image와 reset startup
 
@@ -162,7 +162,7 @@ vector table은 예외·interrupt마다 CPU가 갈 handler 주소를 순서대�
 | `2`~`15` | NMI·fault·SVC·PendSV·SysTick handler | Cortex-M core exception |
 | `16+` | `*_IRQHandler` | STM32 peripheral IRQ handler |
 
-[1201 `crt0.s`](../helloEmbedded/1201.EXTI_IRQ_LAB/crt0.s)는 첫 word에 `0x20020000`, 두 번째 word에 `__start`를 둔다. 즉 reset 직후 CPU는 첫 word를 MSP로 읽고, 두 번째 word가 가리키는 startup code를 실행한다. vector table의 handler 주소가 홀수로 보이면 마지막 bit는 Cortex-M의 Thumb state 표시다. 실제 instruction address는 alignment를 유지한다.
+1201 `crt0.s`는 첫 word에 `0x20020000`, 두 번째 word에 `__start`를 둔다. 즉 reset 직후 CPU는 첫 word를 MSP로 읽고, 두 번째 word가 가리키는 startup code를 실행한다. vector table의 handler 주소가 홀수로 보이면 마지막 bit는 Cortex-M의 Thumb state 표시다. 실제 instruction address는 alignment를 유지한다.
 
 이 startup code는 ST-LINK 관련 pin 준비 뒤 다음 runtime 초기화를 수행한다.
 
@@ -243,7 +243,7 @@ PC13 falling edge
 → `EXTI15_10_IRQHandler()`
 ```
 
-[1202 `Key_ISR_Enable()`](../helloEmbedded/1202.EXTI_EVENT_EX/key.c)는 다음 순서로 `PC13` key interrupt를 구성한다.
+1202 `Key_ISR_Enable()`는 다음 순서로 `PC13` key interrupt를 구성한다.
 
 ```text
 GPIOC clock·PC13 input 설정
@@ -290,15 +290,15 @@ void Main(void)
 
 | source lab | peripheral event | ISR이 최소로 하는 일 | main 전달 state |
 | :--- | :--- | :--- | :--- |
-| [1202 EXTI](../helloEmbedded/1202.EXTI_EVENT_EX/) | `PC13` falling edge·`EXTI->PR` | pending clear | `Key_Pressed` |
-| [1203 UART](../helloEmbedded/1203.UART_EVENT_LAB/) | `USART2->SR.RXNE` | `DR` read | `Uart_Data`, `Uart_Data_In` |
-| [1204 Timer](../helloEmbedded/1204.TIMER_EVENT_LAB/) | `TIM4->SR.UIF` | UIF clear | `TIM4_Expired` |
+| 1202 EXTI | `PC13` falling edge·`EXTI->PR` | pending clear | `Key_Pressed` |
+| 1203 UART | `USART2->SR.RXNE` | `DR` read | `Uart_Data`, `Uart_Data_In` |
+| 1204 Timer | `TIM4->SR.UIF` | UIF clear | `TIM4_Expired` |
 
 UART polling에서는 main loop가 늦으면 수신 register를 비우는 시점도 늦어진다. RX interrupt는 byte 도착 시점에 ISR이 `DR`을 읽고 data를 넘기는 경로다. timer polling에서는 main loop가 `UIF`를 확인해야 했지만, timer interrupt는 update event가 ISR을 호출하고 `TIM4_Expired` 같은 flag로 main에 전달한다.
 
 ## 0721 실습 순서
 
-1. [1201 `crt0.s`](../helloEmbedded/1201.EXTI_IRQ_LAB/crt0.s)의 vector entry와 weak default handler를 확인한다.
+1. 1201 `crt0.s`의 vector entry와 weak default handler를 확인한다.
 2. `PC13 → EXTI13 → EXTI15_10_IRQn → EXTI15_10_IRQHandler()` 경로를 `1201`에서 완성한다.
 3. `1202`에서 ISR을 짧게 만들고 `volatile` flag를 main loop에서 소비한다.
 4. `1203`에서 USART2 RX event를 같은 구조로 연결한다.

@@ -2,11 +2,11 @@
 
 관련 학습:
 
-- [UVM Verification Guide](../../../domains/semiconductor/ai-npu-system-integration/uvm-verification-guide.md)
-- [SPI·I2C UVM Verification Plan](../assignment/_project/260618_SPI_I2C_UVM/30-uvm-verification-plan/README.md)
-- [디지털 설계·검증 종합 노트](../../../domains/semiconductor/ai-npu-system-integration/digital-design-verification-fpga-vga-and-on-device-ai.md)
-- [08-synthesis: elaboration, inference, netlist, optimization, constraints](../../../domains/semiconductor/digital-electronics-foundations/08-synthesis.md)
-- [09-physical-design: place, route, timing, parasitic, closure](../../../domains/semiconductor/digital-electronics-foundations/09-physical-design.md)
+- UVM Verification Guide
+- SPI·I2C UVM Verification Plan
+- 디지털 설계·검증 종합 노트
+- 08-synthesis: elaboration, inference, netlist, optimization, constraints
+- 09-physical-design: place, route, timing, parasitic, closure
 - [26-06-18 - AXI](260618-axi.md)
 
 ## 특강 범위
