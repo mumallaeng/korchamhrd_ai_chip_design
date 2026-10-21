@@ -1,8 +1,6 @@
 # clear-spreadsheet
 
-This tool is for the case where you never intentionally applied a theme, only colored the white cells you needed, and then got surprised when Google Sheets suddenly showed extra background colors or stripes after opening the file.
-
-It is especially useful for `.xlsx` files where manually colored cells carry meaning, such as schedules, work trackers, or study plans that need to be shared with other people.
+Removes the table and theme background colors that Google Sheets shows on an `.xlsx` file, and keeps the cell colors you set by hand. Useful for schedules and trackers where cell colors carry meaning.
 
 ## Usage
 
@@ -11,13 +9,13 @@ It is especially useful for `.xlsx` files where manually colored cells carry mea
 ./run.sh /path/to/file.xlsx
 ```
 
-You can also run it directly without the virtualenv wrapper.
+Without the virtualenv wrapper:
 
 ```bash
 python3 clear_spreadsheet.py /path/to/file.xlsx
 ```
 
-By default, the tool creates `filename.cleaned.xlsx` in the same directory as the input file.
+The output is `filename.cleaned.xlsx` next to the input.
 
 Example:
 
@@ -33,60 +31,55 @@ Output file: /Users/you/Downloads/your_file.cleaned.xlsx
 Removed theme/table artifacts: 6 parts, 4 table links, 8 theme color refs
 ```
 
-If you want to install it as a local package instead of using `run.sh`, `setuptools` is used through `pyproject.toml`.
+It can also be installed as a package through `pyproject.toml`.
 
 ## Windows EXE
 
-For non-technical Windows users, the intended distribution format is a standalone `.exe`.
+On Windows, a standalone `.exe` is available.
 
-- Drag one or more `.xlsx` files onto the app window
-- Or drop files directly onto the built `.exe`
-- Each cleaned file is written next to the original as `filename.cleaned.xlsx`
+- Drag `.xlsx` files onto the app window or onto the `.exe`
+- Each cleaned file is saved next to the original as `filename.cleaned.xlsx`
 
-To build the Windows executable on a Windows machine:
+Build it on Windows:
 
 ```bat
 build_windows_exe.bat
 ```
 
-If Python 3 is not installed on the build machine, install it first:
+Install Python 3 first if it is missing:
 
 ```powershell
 winget install -e --id Python.Python.3.12 --accept-package-agreements --accept-source-agreements
 ```
 
-That batch file installs the GUI/build dependencies from `requirements-build.txt` and creates:
+The batch file installs the dependencies in `requirements-build.txt` and creates:
 
 ```text
 dist\clear-spreadsheet.exe
 ```
 
-The GUI uses `tkinterdnd2` for drag-and-drop, following its documented `TkinterDnD.Tk()` / `DND_FILES` usage on PyPI, and the included `hook-tkinterdnd2.py` follows the project's official PyInstaller hook guidance.
+Drag-and-drop uses `tkinterdnd2`; `hook-tkinterdnd2.py` is its PyInstaller hook.
 
 ## Before and After
 
 ### Before
 
-Google Sheets reinterprets the hidden `theme` and `table style`, so background colors or stripes reappear on top of the cell colors you originally applied by hand.
+Google Sheets applies the hidden `theme` and `table style`, so stripes and background colors show over the hand-set cell colors.
 
 ![Before: hidden table and theme styling reappears in Google Sheets](docs/images/before-google-sheets.png)
 
 ### After
 
-Only the explicit cell colors remain, while the striped table background and theme-based background are removed.
+Only the hand-set cell colors remain.
 
 ![After: only explicit cell colors remain](docs/images/after-google-sheets.png)
 
 ## Why this happens
 
-An `.xlsx` file can contain an extra styling layer beyond the visible cell fill colors.
-
-- Colors you apply manually are stored in the cell `fill`.
-- Excel table banding is stored through `tableStyle` and `tableParts`.
-- Some default colors are stored as `theme` indexes instead of concrete RGB values.
-- Google Sheets can reinterpret that hidden style information and reapply background styling that is less noticeable in Excel.
-
-So the problem is not that the cell colors were saved incorrectly. The real issue is that hidden table/theme styling can come back in a different viewer.
+- Hand-set colors are stored in the cell `fill`.
+- Excel table banding is stored in `tableStyle` and `tableParts`.
+- Some colors are stored as `theme` indexes instead of RGB values.
+- Google Sheets draws this table and theme styling, which Excel barely shows.
 
 ## What this tool does
 
@@ -95,7 +88,7 @@ So the problem is not that the cell colors were saved incorrectly. The real issu
 - Removes banding driven by `showRowStripes` / `showColumnStripes`
 - Removes Google Sheets round-trip metadata
 
-## What it tries to preserve
+## What it keeps
 
 - Explicit cell background colors
 - Cell values
@@ -132,7 +125,7 @@ python3 clear_spreadsheet.py input.xlsx --overwrite
 ## Limitations
 
 - Only `.xlsx` is supported right now.
-- If a workbook relies heavily on theme-colored charts or shapes, it is still worth checking the result visually once.
+- Check the result by eye if the workbook has theme-colored charts or shapes.
 
 ## License
 
