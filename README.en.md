@@ -37,7 +37,7 @@ Dated notes live in [`note/`](note). Grouped by class:
 | AXI and MicroBlaze | 2026.06.18 ~ 06.30 | [AXI](note/260618-axi.md), [AXI4-Lite IP](note/260619-axi4-lite-ip-packaging.md), [MicroBlaze GPIO](note/260622-microblaze-gpio.md), [Timer and UART interrupt](note/260626-axi-timer-uart-microblaze-interrupt.md) |
 | C and Python | 2026.07.01 ~ 07.10 | [C basics](note/260701-vscode-gnu-c-basics.md), [Python syntax](note/260706-python-basic-syntax.md), [Course outline](note/kdt-c-python-m4-ai-course-outline.md) |
 | Embedded Cortex-M4 | 2026.07.13 ~ 07.24 | [Device programming](note/260713-arm-cortex-m4-device-programming.md), [Timer](note/260720-timer-control.md), [Interrupt](note/260721-interrupt-event-driven.md), [I2C and SPI](note/260722-i2c-spi-interface.md), [Course map](note/cortex-m4-firmware-course-map.md) |
-| On-Device AI | 2026.07.28 ~ 08.04 | [Deep learning 1](note/260728-on-device-ai-deep-learning-1.md), [CNN](note/260729-on-device-ai-deep-learning-2-cnn.md), [Jetson remote development](note/260730-jetson-remote-development-and-opencv-face-detection.md), [TensorRT](note/260803-on-device-ai-tensorrt-deployment-and-rps-camera-preprocessing.md), [Course map](note/embedded-linux-jetson-on-device-ai-course-map.md) |
+| On-Device AI | 2026.07.28 ~ 08.04 | [Deep learning 1](note/260728-on-device-ai-deep-learning-1.md), [Deep learning 2 (CNN)](note/260729-on-device-ai-deep-learning-2-cnn.md), [Jetson remote development](note/260730-jetson-remote-development-and-opencv-face-detection.md), [TensorRT](note/260803-on-device-ai-tensorrt-deployment-and-rps-camera-preprocessing.md), [Course map](note/embedded-linux-jetson-on-device-ai-course-map.md) |
 
 ## Layout
 
