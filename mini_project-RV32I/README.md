@@ -826,7 +826,7 @@ In the standard RISC-V ABI, the stack increases in the direction of lower addres
 
 ### 5.4 C + Assembly + Memory Comparison
 
-This section summarizes representative patterns of how C syntax translates into assembly instructions and memory operations. The core point is that C code syntax itself does not run directly on the CPU; instead, it is converted into an RV32I instruction sequence, fetched from Instruction Memory, and then executed.
+This section lists representative patterns of how C syntax turns into assembly instructions and memory operations. C code is converted into an RV32I instruction sequence, which the CPU fetches from Instruction Memory and executes.
 
 #### 5.4.1 Simple Operations
 

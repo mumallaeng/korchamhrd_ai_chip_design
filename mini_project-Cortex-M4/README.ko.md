@@ -61,7 +61,7 @@
 | 실행 구조 | 단순 polling 초기화 코드 | SysTick 10 ms tick, USART2 RX interrupt/ring buffer, ADC1 polling이 분리된 foreground loop |
 | 검증 | Flash 기록과 LED 점멸만 확인 | 6관절 동시 torque, UART pulse echo, joystick 조작 영상까지 시연 |
 
-이 변화의 핵심은 단일 채널 bring-up에서 시작해, 입력 경로를 두 갈래(UART, ADC)로 분리하면서도 관절 pulse 조정이라는 하나의 공통 API로 합류시켰다는 점이다. 이 구조 덕분에 이후 B10K feedback이나 PID를 추가할 때도 동일한 Servo_AdjustPulse() 경로를 재사용할 수 있다.
+단일 채널 bring-up에서 시작해 입력 경로를 UART와 ADC 두 갈래로 나누고, 두 경로 모두 관절 pulse를 조정하는 공통 API로 모았다. 이후 B10K feedback이나 PID를 추가할 때도 같은 Servo_AdjustPulse() 경로를 쓸 수 있다.
 
 ## 2. 프로젝트 관리 (Project Management)
 

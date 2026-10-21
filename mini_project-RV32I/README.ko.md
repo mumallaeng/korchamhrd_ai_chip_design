@@ -834,7 +834,7 @@ jalr x0, 0(ra)
 
 ### 5.4 C + Assembly + Memory 비교
 
-이 절에서는 C 문법이 어떤 assembly 명령어와 memory 동작으로 바뀌는지 대표 패턴별로 정리한다. 핵심은 C 코드의 문법 자체가 CPU에서 직접 실행되는 것이 아니라, RV32I instruction sequence로 변환된 뒤 Instruction Memory에서 fetch되어 실행된다는 점이다.
+이 절에서는 C 문법이 어떤 assembly 명령어와 memory 동작으로 바뀌는지 대표 패턴별로 정리한다. C 코드는 RV32I instruction sequence로 변환된 뒤 Instruction Memory에서 fetch되어 실행된다.
 
 #### 5.4.1 단순 연산
 

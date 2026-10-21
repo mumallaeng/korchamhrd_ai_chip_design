@@ -445,7 +445,7 @@ Table 23. Issue resolution process
 
 Table 24. Future improvement plan
 
-In summary, this project completed normal transaction verification based on scoreboard pass/fail status and planned functional coverage. However, reviewing code coverage and assertion coverage together revealed that scenarios centered solely on normal writes may leave gaps in branch, FSM, and assertion-based verification. For the next project, we plan to use coverage reports not just as post-verification artifacts but as criteria to refine verification plans, incorporating scenario expansion and protocol assertion additions at earlier stages.
+This project finished normal-transaction verification against scoreboard pass/fail and the planned functional coverage. Code and assertion coverage, however, show that normal-write scenarios alone leave gaps in branch, FSM, and assertion checks. In the next project, I plan to use coverage reports to refine the verification plan and add scenarios and protocol assertions earlier.
 
 ## 7. Conclusion
 

@@ -61,7 +61,7 @@ The final execution structure bundles the SysTick millisecond tick, six-channel 
 | Execution Structure | Simple polling initialization code | Separated foreground loop with SysTick 10 ms tick, USART2 RX interrupt/ring buffer, and ADC1 polling |
 | Verification | Flash recording and LED blinking only | Demonstration of simultaneous torque for 6 joints, UART pulse echo, and joystick operation video |
 
-The core of this change is starting from a single channel bring-up while separating input paths into two branches (UART, ADC), yet converging them into a single common API for joint pulse adjustment. Thanks to this structure, the same Servo_AdjustPulse() path can be reused when adding B10K feedback or PID later.
+Starting from a single-channel bring-up, the input path was split into UART and ADC, and both feed one common API for joint pulse adjustment. B10K feedback or PID can later reuse the same Servo_AdjustPulse() path.
 
 ## 2. Project Management (Project Management)
 

@@ -450,7 +450,7 @@ hierarchy/detail 화면은 I2C controller 60.45, I2C target 66.19, SPI controlle
 
 표 24. 향후 개선 방안
 
-정리하면 이번 프로젝트는 scoreboard pass/fail과 planned functional coverage 기준으로 정상 transaction 검증을 마쳤다. 그러나 code coverage와 assertion coverage를 함께 보니, 정상 write 중심 시나리오만으로는 분기, FSM, assertion 관점의 검증 공백이 남을 수 있다는 점도 확인했다. 다음 프로젝트에서는 coverage report를 사후 확인 자료가 아니라 검증 계획을 보완하는 기준으로 사용해, scenario 확장과 protocol assertion 추가를 더 이른 단계에서 반영할 계획이다.
+이번 프로젝트는 scoreboard pass/fail과 계획한 functional coverage 기준으로 정상 transaction 검증을 마쳤다. 다만 code coverage와 assertion coverage를 보면, 정상 write 중심 시나리오만으로는 분기·FSM·assertion 쪽 검증 공백이 남는다. 다음 프로젝트에서는 coverage report로 검증 계획을 보완해, scenario 확장과 protocol assertion 추가를 더 이른 단계에서 반영할 계획이다.
 
 ## 7. 결론
 

@@ -23,7 +23,7 @@ The purpose of this project is to rewrite the existing UART loopback structure (
 - Improve issues such as the conflation of wire/reg, always blocks, state representation, and TB roles evident in Verilog-style expressions to meet SystemVerilog standards.
 - Configure three module testbenches and one top-level testbench in a self-checking structure with clearly defined PASS/FAIL criteria.
 
-The key change in this project lies not so much in the functional structure itself, but in reorganizing previously learned content according to SystemVerilog standards and clarifying verification criteria.
+This project kept the functional structure mostly the same, rewrote what I had learned in SystemVerilog, and made the verification criteria explicit.
 
 ### 1.2 Disadvantages of Verilog
 
@@ -81,7 +81,7 @@ From a design perspective, the core improvement is that state transitions and ti
 | `coverage` | Checks occurrence of predefined verification conditions and states | Organizes the scope of verification items separately from PASS/FAIL |
 | `covergroup` | Definition and measurement of coverage items | Measures verification items directly in code |
 
-From a verification perspective, the core of SystemVerilog is that input generation, DUT driving, output observation, result comparison, parallel execution, and coverage checks can be structurally connected and expressed within a single language. In other words, the verification flow can be organized more clearly based on "what goes in, what is observed, and on what criteria PASS/FAIL is judged."
+SystemVerilog can express input generation, DUT driving, output observation, result comparison, parallel execution, and coverage checks in one language. That lets the verification flow be organized as "what goes in, what is observed, and how PASS/FAIL is judged."
 
 ### 1.6 AS-IS / TO-BE
 
@@ -483,7 +483,7 @@ Additionally, by configuring three module TBs and one top TB in a self-checking 
 
 This verification environment proceeded by directly configuring structures corresponding to generator, driver, monitor, scoreboard, and environment instead of directly importing and using the UVM Class Library. Through this, it was confirmed that understanding the internal structure of each component—such as roles, data flow, and synchronization methods—is more important than simply learning how to use the library if one wishes to utilize standard methodologies.
 
-Furthermore, in the process of writing verification scenarios more concretely, we had to carefully re-examine the design content, confirming that design and verification are not independent procedures but rather complementary relationships. Moving forward, based on this experience, we aim to expand the scope to include SystemVerilog features not yet used and the actual UVM Class Library, developing more diverse verification structures and reusable testbench configurations.
+Writing the verification scenarios in detail made me recheck the design, and showed that design and verification support each other. Next, I want to use the SystemVerilog features I have not tried yet and the UVM Class Library to build reusable testbenches.
 
 ## References
 
