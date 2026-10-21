@@ -2,95 +2,68 @@
 
 [한국어](README.md) | English
 
-Part of `korchamhrd_ai_chip_design/classroom`.
+Checks Classroom submissions in a local Google Drive sync folder, shares each student's folder on Drive, and builds copybooks for private comments.
 
-Prepare Google Classroom deliverables from a local Google Drive sync folder.
+## Commands
 
-This project is for teachers or operators who:
+- `scan`: check submission folders against the roster
+- `normalize-names`: normalize Korean filenames (macOS and Windows)
+- `extract-missing-zips`: unpack zip-only submissions and repair garbled names
+- `share-drive`: create or change Drive permissions per student folder
+- `classroom-build-comment-plan`: build a workbook for pasting private comments
 
-- keep a local mirror of Google Drive / Classroom submission folders
-- need to validate required artifacts by filename, extension, and type
-- want to share extracted deliverable folders back to each student on Drive
-- need a copy-paste workbook for Classroom private comments
+Private comments are not posted through the API; you paste them into Classroom from the workbook.
 
-It is designed for a local, operator-driven workflow:
+## Setup
 
-- `scan`: inspect local submission folders against a roster
-- `normalize-names`: normalize Hangul-heavy filenames for safer macOS / Windows handling
-- `extract-missing-zips`: extract zip-only submissions with mojibake recovery
-- `share-drive`: create or update Drive permissions for each student's folder
-- `classroom-build-comment-plan`: build a workbook for private-comment copy/paste
+1. In Google Cloud, enable the Google Drive API and Google Classroom API, and create an OAuth client for a desktop app.
+2. Install the environment.
 
-The tool does **not** post Classroom private comments directly. It generates a workbook instead.
+   ```bash
+   ./setup.sh
+   ```
 
-## Features
+3. Copy the config.
 
-- Google Drive folder resolution by local sync path
-- Google Classroom coursework / submission matching
-- macOS Hangul NFC normalization and zip filename recovery
-- grouped validation messages for missing artifacts, bad filenames, and bad formats
-- Drive permission switching between `writer` and `viewer`
+   ```bash
+   cp examples/config.sample.json config.local.json
+   ```
 
-## Quick Start
+   Fill in these values in `config.local.json`:
 
-### 1. Enable Google APIs
+   - Classroom and Drive sync paths
+   - roster workbook path and columns
+   - course and coursework IDs
+   - output folder
+   - OAuth token and client secret paths
 
-Enable these APIs in Google Cloud:
+## Usage
 
-- Google Drive API
-- Google Classroom API
-
-Create an OAuth client for a desktop app and keep the client secret JSON outside Git.
-
-### 2. Set up the environment
-
-```bash
-./setup.sh
-```
-
-### 3. Copy the sample config
-
-```bash
-cp examples/config.sample.json config.local.json
-```
-
-Then edit:
-
-- local Classroom / Drive sync paths
-- roster workbook path and columns
-- course / coursework IDs
-- output directory
-- OAuth token / client-secret paths
-
-Do not commit `config.local.json` or token files.
-
-### 4. Scan a deliverable folder
+Check submission folders:
 
 ```bash
 ./run.sh scan --config config.local.json --scope all
 ```
 
-### 5. Share folders on Drive
-
-Grant edit access:
+Share Drive folders with edit access:
 
 ```bash
 ./run.sh share-drive --config config.local.json --scope all --role writer --apply
 ```
 
-Downgrade to view access later:
+Switch to view access:
 
 ```bash
 ./run.sh share-drive --config config.local.json --scope all --role viewer --apply
 ```
 
-### 6. Build the Classroom comment workbook
+Build the private-comment workbook:
 
 ```bash
 ./run.sh classroom-build-comment-plan --config config.local.json --scope all
 ```
 
-Generated files include:
+Output files:
 
 - `share-plan.csv`
 - `validation-report.csv`
@@ -99,24 +72,21 @@ Generated files include:
 - `classroom-private-comment-copybook-submitters.xlsx`
 - `classroom-private-comment-copybook-ready.xlsx`
 
-## Example Workflow
+## Workflow
 
-1. Sync Classroom submissions into a local Google Drive mirror.
-2. Extract zip-only submissions if needed.
-3. Normalize names for safer cross-platform handling.
-4. Scan and inspect `validation-report.csv`.
-5. Share extracted folders back to each student on Drive.
-6. Open the workbook and paste private comments manually into Classroom.
+1. Sync Classroom submissions to the local Google Drive folder
+2. Unpack zip-only submissions
+3. Normalize filenames
+4. Review `validation-report.csv`
+5. Share each student's folder on Drive
+6. Paste private comments from the workbook
 
-## Limitations
+## Notes
 
-- This tool assumes a local Google Drive sync root exists on disk.
-- Classroom private comments are prepared as drafts in a workbook; they are not submitted through the API here.
-- Filename normalization on macOS Google Drive mounts may still appear decomposed in Finder or shell listings even when the filesystem treats NFC and NFD as the same file.
+- A Google Drive sync folder must exist on the local disk.
+- On macOS Google Drive, Korean names can look decomposed in Finder or the shell even when they are the same file.
 
-## Development
-
-Run tests with:
+## Tests
 
 ```bash
 ./.venv/bin/python -m unittest discover -s tests

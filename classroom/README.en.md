@@ -2,22 +2,18 @@
 
 [한국어](README.md) | English
 
-Automation for classroom submissions in *[Consortium] On-Device AI System Semiconductor Design, 2nd Cohort*.
+Tools for handling Classroom submissions in *[Consortium] On-Device AI System Semiconductor Design, 2nd Cohort*.
 
 ## Tools
 
-- `deliverable-share/`: class-wide Google Classroom and Drive workflow.
-  - scan local Drive-synced submissions
-  - normalize Korean filenames for safer cross-platform handling
-  - validate required deliverables
-  - share folders back to students
-  - generate Classroom private-comment copybooks
+- `deliverable-share/`: class-wide submissions
+  - scan submissions in the Drive sync folder
+  - normalize Korean filenames between macOS and Windows
+  - check required deliverables
+  - share each student's folder on Drive
+  - build copybooks for Classroom private comments
 
-- `project-packager/`: individual project submission pack builder.
-  - copy presentation, media, and source bundles
-  - generate or update report, schedule, and journal artifacts
-  - keep recurring naming and folder conventions consistent
-
-## Local Files
-
-Do not commit local OAuth secrets, Drive tokens, generated class reports, or project-specific private configs. Use `.gitignore` and local config files for those.
+- `project-packager/`: personal project submission folders
+  - copy slides, video, and source
+  - generate the report, schedule, and journal
+  - apply the submission folder and file naming rules

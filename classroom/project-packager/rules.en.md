@@ -1,74 +1,47 @@
-# Classroom Project Packaging Rules
+# Submission Folder Rules
 
 [한국어](rules.md) | English
 
-## Content Source of Truth
+## Content
 
-- The final presentation deck is the primary source of truth.
-- The completion report, schedule, and journal must all match the final presentation.
-- If the presentation changed, regenerate or rewrite the report/schedule/journal from that final version.
+- The final deck sets the content of the report, schedule, and journal. When the deck changes, rebuild the others.
+- The completion report follows the official template and the deck's flow.
+- Name the journal `일지` unless the assignment asks for `개발일지`.
+- Keep dates and work items the same in the schedule and the journal.
+- Follow the style and layout of my earlier submission folders.
 
-## Reference Style
+## Source code
 
-- Use the student's own prior project folder as the style reference.
-- Do not use other students' folders as the writing/style source.
-- Other students' folders may be read for layout awareness only, not for content borrowing.
+- Keep the code close to what the class covered.
+- A Vivado project must open from its `.xpr` in the copied folder. Patch only the paths in `.xpr` that this needs.
 
-## Output Policy
+## Files
 
-- Final PDF export is a manual user step.
-- Automation should write editable sources such as `.docx`, `.xlsx`, `.md`.
-- Do not treat generated PDF as the editable master.
+- Build editable `.docx`, `.xlsx`, and `.md` files; export PDFs by hand.
+- Write output only inside the given submission folder.
+- Do not change other students' submission folders.
 
-## Journal Policy
+## Names
 
-- Default wording is `일지`, not `개발일지`, unless the assignment explicitly requires `개발일지`.
-- Schedule and journal must agree on dates and activity themes.
-- If the schedule says the day was about theory, the journal should not describe unrelated implementation work.
+- `{name}_{YYYYMMDD}_{project}_발표자료.pptx`
+- `{name}_{YYYYMMDD}_{project}_동영상.mp4`
+- `{name}_{YYYYMMDD}_{project}_완료보고서.docx`
+- `{name}_{YYYYMMDD}_{project}_일정표.xlsx`
+- `{name}_{YYYYMMDD}_{project}_일지.md`
+- `{name}_{YYYYMMDD}_{project}_소스코드/`
 
-## Report Policy
-
-- The report should follow the official template.
-- The report should describe the final presentation story, not an unrelated technical summary.
-- If the presentation starts from "previous project limitation", the report should also carry that framing.
-
-## Source Code Policy
-
-- Keep source code close to the class version.
-- Debugging and cleanup are allowed, but do not drift far from what was taught in class.
-- If the project uses Vivado, keep the copied source bundle directly openable from `.xpr`.
-- Patch copied `.xpr` files only as much as needed to make the copied bundle self-contained.
-
-## Safety Policy
-
-- Never edit other students' folders.
-- Read-only inspection is allowed when needed for folder layout comparison.
-- Generated outputs should stay inside the intended target package folder unless the config explicitly says otherwise.
-
-## Naming Policy
-
-- Preserve submission naming style such as:
-  - `{학생명}_{YYYYMMDD}_{프로젝트명}_발표자료.pptx`
-  - `{학생명}_{YYYYMMDD}_{프로젝트명}_동영상.mp4`
-  - `{학생명}_{YYYYMMDD}_{프로젝트명}_완료보고서.docx`
-  - `{학생명}_{YYYYMMDD}_{프로젝트명}_일정표.xlsx`
-  - `{학생명}_{YYYYMMDD}_{프로젝트명}_일지.md`
-  - `{학생명}_{YYYYMMDD}_{프로젝트명}_소스코드/`
-
-## Operating Checklist
+## Checklist
 
 Before building:
 
-- confirm the student's own prior project folder reference
-- confirm the official template paths
-- confirm the final presentation deck path
-- confirm the real source-code project path
-- confirm whether the journal should be called `일지` or `개발일지`
+- earlier submission folder
+- official template paths
+- final deck path
+- source project path
+- whether to use `일지` or `개발일지`
 
-Before finishing:
+Before submitting:
 
-- verify the report reflects the final presentation
-- verify the schedule reflects the same story
-- verify the journal dates and schedule dates agree
-- verify the source bundle opens from `.xpr`
-- verify no PDF export step was silently automated
+- report and schedule match the final deck
+- journal dates match the schedule
+- the source folder opens from `.xpr`

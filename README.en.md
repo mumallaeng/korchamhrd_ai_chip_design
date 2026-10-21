@@ -47,8 +47,6 @@ Dated notes live in [`note/`](note). Grouped by class:
 - `classroom/project-packager/`: bundles reports, schedules, journals, media, and source into the submission folder layout
 - `clear-spreadsheet/`: cleans `.xlsx` files whose Google Sheets view shows unintended table or theme background colors
 
-Credentials, OAuth tokens, `config.local.json`, generated submission reports, and virtualenvs stay out of Git.
-
 ## Running the Tools
 
 Each tool has its own setup and run script.

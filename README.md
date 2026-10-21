@@ -47,8 +47,6 @@
 - `classroom/project-packager/`: 보고서·일정표·일지·미디어·소스를 제출 폴더 규칙에 맞춰 묶는 도구
 - `clear-spreadsheet/`: Google Sheets에서 의도하지 않은 표·테마 배경색이 보이는 `.xlsx` 정리
 
-인증 정보, OAuth 토큰, `config.local.json`, 생성된 제출물 리포트, virtualenv는 커밋하지 않습니다.
-
 ## 도구 실행
 
 각 도구는 자기 디렉터리에 setup/run 스크립트가 있습니다.
