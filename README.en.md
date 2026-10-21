@@ -23,11 +23,26 @@
 
 Team projects live in their own repositories and are linked here as git submodules.
 
+## Class Notes
+
+Dated notes live in [`note/`](note). Grouped by class:
+
+| Class | Period | Main notes |
+| --- | --- | --- |
+| Verilog HDL | 2026.04.06 ~ 04.16 | [OT](note/260406-ot.md), [Adder and FND](note/260407-adder와-첫-fnd-표시.md), [FSM](note/260414-fsm-moore-mealy-버튼입력.md), [Stopwatch datapath](note/260416-stopwatch-datapath-tick-counter.md) |
+| UART and FIFO | 2026.04.21 ~ 04.30 | [UART TX](note/260421-uart-tx-fsm.md), [UART TX/RX](note/260422-uart-tx-rx.md), [FIFO and sensor](note/260430-fifo-sensor-interface.md) |
+| SystemVerilog verification | 2026.05.07 ~ 05.12 | [Intro](note/260507-systemverilog-검증입문.md), [Advanced](note/260508-systemverilog-검증심화.md), [FIFO verification](note/260512-systemverilog-fifo-검증.md) |
+| RISC-V CPU | 2026.05.14 ~ 05.29 | [CPU structure](note/260514-cpu-구조.md), [RV32I datapath](note/260519-rv32i-datapath.md), [Multicycle](note/260527-rv32i-multicycle.md), [APB](note/260529-apb-master-slave.md) |
+| UVM | 2026.06.01 ~ 06.15 | [UVM OT](note/260601-uvm-ot.md), [UVM](note/260609-uvm.md), [SPI master](note/260611-spi-master.md), [SPI/I2C board validation](note/260615-spi-i2c-board-validation.md) |
+| AXI and MicroBlaze | 2026.06.18 ~ 06.30 | [AXI](note/260618-axi.md), [AXI4-Lite IP](note/260619-axi4-lite-ip-packaging.md), [MicroBlaze GPIO](note/260622-microblaze-gpio.md), [Timer and UART interrupt](note/260626-axi-timer-uart-microblaze-interrupt.md) |
+| C and Python | 2026.07.01 ~ 07.10 | [C basics](note/260701-vscode-gnu-c-basics.md), [Python syntax](note/260706-python-basic-syntax.md), [Course outline](note/kdt-c-python-m4-ai-course-outline.md) |
+| Embedded Cortex-M4 | 2026.07.13 ~ 07.24 | [Device programming](note/260713-arm-cortex-m4-device-programming.md), [Timer](note/260720-timer-control.md), [Interrupt](note/260721-interrupt-event-driven.md), [I2C and SPI](note/260722-i2c-spi-interface.md), [Course map](note/cortex-m4-firmware-course-map.md) |
+| On-Device AI | 2026.07.28 ~ 08.04 | [Deep learning 1](note/260728-on-device-ai-deep-learning-1.md), [CNN](note/260729-on-device-ai-deep-learning-2-cnn.md), [Jetson remote development](note/260730-jetson-remote-development-and-opencv-face-detection.md), [TensorRT](note/260803-on-device-ai-tensorrt-deployment-and-rps-camera-preprocessing.md), [Course map](note/embedded-linux-jetson-on-device-ai-course-map.md) |
+
 ## Layout
 
 - `note/`: class notes, lab writeups, and diagrams
 - `mini_project-*`: personal mini projects, one per class
-- `final/vibro-acoustic-fault-diagnosis/`: software golden-model experiments for vibro-acoustic fault diagnosis, made while choosing the final project topic
 - `classroom/deliverable-share/`: validates Google Classroom deliverables, shares Drive folders, and generates private-comment copybooks
 - `classroom/project-packager/`: bundles reports, schedules, journals, media, and source into the submission folder layout
 - `clear-spreadsheet/`: cleans `.xlsx` files whose Google Sheets view shows unintended table or theme background colors
