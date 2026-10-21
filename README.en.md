@@ -8,18 +8,18 @@
 
 | Project | Period | Class | Type |
 | --- | --- | --- | --- |
-| [KorchamLogis](KorchamLogis) | 2026.03.24 ~ 04.03 | Arduino | Team (submodule) |
-| [Timepiecer](Timepiecer) | 2026.04.16 ~ 04.20 | Verilog | Team (submodule) |
+| [KorchamLogis](KorchamLogis) | 2026.03.24 ~ 04.03 | Arduino | Team |
+| [Timepiecer](Timepiecer) | 2026.04.16 ~ 04.20 | Verilog | Team |
 | [UART LOOPBACK](mini_project-UART_FIFO) | 2026.04.22 ~ 04.27 | Verilog | Personal |
-| [ascii-uart-sensor-pipeline](ascii-uart-sensor-pipeline) | 2026.05.01 ~ 05.06 | Verilog | Team (submodule) |
+| [ascii-uart-sensor-pipeline](ascii-uart-sensor-pipeline) | 2026.05.01 ~ 05.06 | Verilog | Team |
 | [SystemVerilog UART FIFO Verification](mini_project-SV_Verification) | 2026.05.12 ~ 05.17 | SystemVerilog | Personal |
 | [RV32I Single-Cycle CPU](mini_project-RV32I) | 2026.05.22 ~ 05.27 | RISC-V CPU | Personal |
 | [SPI/I2C UVM Verification](mini_project-UVM_SPI_I2C) | 2026.06.11 ~ 06.18 | UVM | Personal |
-| [AXI_Peripheral](AXI_Peripheral) | 2026.06.22 ~ 06.30 | AXI and MicroBlaze | Team (submodule) |
+| [AXI_Peripheral](AXI_Peripheral) | 2026.06.22 ~ 06.30 | AXI and MicroBlaze | Team |
 | [G51 Robot Arm Cortex-M4 Control](mini_project-Cortex-M4) | 2026.07.23 ~ 07.27 | Embedded | Personal |
-| [Wardy](wardy) | 2026.08.05 ~ 08.19 | On-Device AI | Team (submodule) |
-| [VGA Pan-Tilt Vision Tracker](VGA-Pan-Tilt-CCTV) | 2026.08.31 ~ 09.08 | VGA | Team (submodule) |
-| [LightLetter](LightLetter) | 2026.09.09 ~ 10.15 | Final project | Team (submodule) |
+| [Wardy](wardy) | 2026.08.05 ~ 08.19 | On-Device AI | Team |
+| [VGA Pan-Tilt Vision Tracker](VGA-Pan-Tilt-CCTV) | 2026.08.31 ~ 09.08 | VGA | Team |
+| [LightLetter](LightLetter) | 2026.09.09 ~ 10.15 | Final project | Team |
 
 Team projects live in their own repositories and are linked here as git submodules.
 
