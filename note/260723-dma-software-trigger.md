@@ -4,7 +4,6 @@
 
 - [26-07-23 - 15과 ADC·Sensor Interface](260723-adc-sensor-interface.md)
 - [26-07-21 - Startup·Interrupt·Event-Driven Firmware](260721-interrupt-event-driven.md)
-- 16과 DMA source · active `main.c` · DMA driver · DMA ISR · `printf` UART retarget · UART driver · register wrapper · device header
 
 ## 수업 범위
 

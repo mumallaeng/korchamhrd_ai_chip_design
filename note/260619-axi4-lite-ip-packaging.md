@@ -10,18 +10,6 @@
 
 0619 과제는 AXI4-Lite slave module을 설계하고 master-slave 연동 simulation을 확인한 뒤 source code와 simulation capture를 제출하는 것이다. 이 노트에서는 0619 수업 소스인 `260619_AXI_Mater_Slave`의 master/slave/TB 파형 확인을 기준으로 정리한다.
 
-## 현재 소스 위치
-
-| 위치 | 내용 |
-| :--- | :--- |
-| 260619_AXI_Mater_Slave | AXI4-Lite master/slave 직접 작성 Vivado 프로젝트 |
-| axi_master.sv | CPU-side 요청을 AXI4-Lite `AW/W/B/AR/R` channel로 변환 |
-| axi_slave.sv | AXI4-Lite 요청을 받아 `slv_reg0~3` register bank read/write |
-| tb_axi_master_slave.sv | write 4회, read 4회 transaction을 넣는 기본 testbench |
-| ip_repo/260619_myip_1.0 | Vivado AXI4-Lite peripheral 생성 결과 |
-| 260619_myip_v1_0.v | 생성 IP top wrapper, `S00_AXI` slave instance 연결 |
-| 260619_myip_v1_0_S00_AXI.v | 생성 AXI4-Lite slave template, `slv_reg0~3` 포함 |
-
 ## AXI4-Lite IP 생성 흐름
 
 Vivado의 `Create and Package New IP`에서 `Create a new AXI4 peripheral`을 선택하면 AXI4-Lite slave interface가 포함된 IP skeleton을 만들 수 있다. 수업에서는 `S00_AXI` slave interface, 32-bit data width, 4개 register 구조를 기준으로 봤다.

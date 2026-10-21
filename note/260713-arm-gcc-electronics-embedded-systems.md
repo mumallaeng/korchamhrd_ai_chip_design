@@ -449,7 +449,6 @@ NPN 또는 N-Ch low-side switch
   N-Ch: `V_GS > V_TH` -> ON
   LOAD 전류가 GND로 흐름
 
-
 PNP 또는 P-Ch high-side switch
 
   VCC ---- [PNP/P-Ch] ---- LOAD ---- GND
@@ -923,12 +922,6 @@ CPU core, MCU chip, evaluation board는 서로 다른 사람이 설계하므로 
 ### CMSIS header에서 core와 STM32 peripheral을 나누어 보기
 
 STM32F411 MCU는 Arm의 Cortex-M4 core 위에 ST가 만든 memory, GPIO, timer, UART 같은 주변장치를 붙인 chip이다. 따라서 'MCU를 공부한다'는 말 안에는 서로 다른 두 범위가 들어 있음. Cortex-M4 core 자체의 동작은 Arm 문서를 기준으로 확인하고, STM32 주변장치의 주소·register·bit 동작은 ST의 reference manual과 ST device header를 기준으로 확인함.
-
-| 확인 범위 | 주된 기준 | 실습 소스의 header | 예시 |
-| :--- | :--- | :--- | :--- |
-| Cortex-M4 core | Arm Cortex-M4 문서와 CMSIS-Core | `core_cm4.h` | `NVIC`, `SysTick`, `SCB`, core register, exception |
-| STM32F411 peripheral | ST `RM0383`과 CMSIS-Device header | `stm32f411xe.h` | `GPIO`, `RCC`, `USART`, timer, DMA, base address |
-| STM32F4 family의 진입 header | ST CMSIS-Device package | `stm32f4xx.h` | target device 선택과 해당 device header include |
 
 `CMSIS`는 Cortex-M software interface와 header 작성 방식의 공통 규약이다. GPIO, RCC, USART의 실제 register 배치까지 Arm이 정하는 것은 아니다. ST는 이 규약을 따라 STM32F411의 register map을 C 구조체·base address·pointer macro로 옮긴 device header를 제공한다. 따라서 `GPIOA->MODER` 같은 code를 쓸 수 있지만, `MODER`의 bit 의미와 read/write 규칙은 여전히 ST reference manual에서 확인해야 함.
 

@@ -6,17 +6,6 @@ StopWatch application에서 software delay 기반으로 시간을 만들던 한�
 
 이 방식은 timer 내부 동작 문제와 AXI register 연결 문제를 분리해서 확인하기 위한 흐름이다. 먼저 prescaler, auto reload counter, interrupt pulse, counter load 기능을 단독 RTL에서 검증하고, 이후 AXI write/read register map으로 제어할 수 있게 확장한다.
 
-## 현재 소스 위치
-
-| 위치 | 내용 |
-| :--- | :--- |
-| 260625_AXI_TimerCounter | AXI TimerCounter custom IP 작업본 |
-| TimerCounter.v | prescaler, auto reload counter, interrupt gate, counter load RTL |
-| tb_TimerCounter.sv | PSC/ARR 설정, interrupt enable, timer disable, counter load 검증용 TB |
-| axi_template_v1_0.v | TimerCounter를 연결할 AXI custom IP top template |
-| axi_template_v1_0_S00_AXI.v | register map과 AXI4-Lite slave 연결 대상 template |
-| tb_axi_timer.sv | AXI write/read transaction 검증용 TB 작성 대상 |
-
 ## Timer Peripheral 방향
 
 정확한 시간 기준을 만들려면 software delay 대신 timer peripheral을 사용하는 방향으로 확장한다. timer는 입력 clock을 prescaler로 나누고, 나뉜 clock마다 counter를 증가시킨 뒤, counter 값이 auto reload 값과 같아지거나 overflow가 발생했을 때 event 또는 interrupt를 만든다.

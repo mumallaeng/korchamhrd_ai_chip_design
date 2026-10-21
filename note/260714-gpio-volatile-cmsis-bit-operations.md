@@ -505,7 +505,6 @@ C 코드 ---- read/write ---- RAM
   |
   +-- 컴파일러가 값 변화 흐름을 대부분 추적 가능
 
-
 하드웨어 레지스터
 
 C 코드 ---- read/write ---- TIMER register
@@ -868,11 +867,6 @@ GPIOA->ODR = value;
 `__O`와 `__IO`는 현재 C type이 모두 `volatile`이므로, compiler가 write-only register read를 자동으로 막지는 않는다. register가 read-only·write-only·read-to-clear·write-one-to-clear 중 무엇인지는 header qualifier와 함께 MCU reference manual의 register 설명을 확인해야 함.
 
 #### Core header와 STM32 device header의 역할
-
-| header | 역할 | 현재 source의 예 |
-| :--- | :--- | :--- |
-| `core_cm4.h` | Cortex-M4 core register와 CMSIS qualifier | `SysTick_Type`, `__IM`, `__IOM` |
-| `stm32f411xe.h` | STM32F411 peripheral 구조체·base address | `GPIO_TypeDef`, `GPIOA_BASE`, `GPIOA` |
 
 보통 toolchain 또는 제조사 CMSIS device package가 이 두 header를 함께 제공한다. `core_cm4.h`만으로 STM32 GPIO register를 알 수 있는 것은 아니며, target MCU에 맞는 device header가 함께 필요함.
 

@@ -3,8 +3,6 @@
 관련 노트:
 
 - [26-07-21 - Startup·Interrupt·Event-Driven Firmware](260721-interrupt-event-driven.md)
-- 13과 I2C `main.c` · I2C driver
-- 14과 SPI `main.c` · SPI driver
 
 ## 수업 범위
 

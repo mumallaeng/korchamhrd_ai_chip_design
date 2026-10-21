@@ -12,7 +12,6 @@
 | 구분 | 내용 |
 | :--- | :--- |
 | 진행 범위 | Python 5장 `주요 Built-in 함수`, 6장 `사용자 정의 함수` |
-| 원본 파일 | Py_Lab_for_VS_Code.py |
 | 예제 범위 | `[5-1]`부터 `[6-15]`까지 |
 | 이전 범위 | 2장 `Object Name Binding`, 3장 `Container`, 4장 `Container 구조 및 연산` |
 | 다음 범위 | 8장 `Comprehensions` |

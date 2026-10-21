@@ -4,20 +4,10 @@
 
 - [26-07-20 - Timer 제어](260720-timer-control.md)
 - [26-07-16 - UART와 Timer 제어 선행 정리](260716-arm-cortex-m4-device-programming.md)
-- 1201.EXTI_IRQ_LAB
-- 1202.EXTI_EVENT_EX
-- 1203.UART_EVENT_LAB
-- 1204.TIMER_EVENT_LAB
 
 ## 실습 코드 연결
 
 현재 작성한 `1201 → 1203 → 1204`는 startup·clock·UART·LED 초기화 틀을 유지한 채 interrupt source를 하나씩 늘리는 흐름이다. `Main()`은 application loop, `key.c`·`uart.c`·`timer.c`는 peripheral 설정, `exception.c`는 vector table이 호출하는 ISR을 맡는다.
-
-| 실습 | 실제 source | hardware event → ISR | main loop가 맡는 일 |
-| :--- | :--- | :--- | :--- |
-| `1201 EXTI` | main.c · key.c · exception.c | `PC13` falling edge → `EXTI13` → IRQ `40` → `EXTI15_10_IRQHandler()` | ISR route 확인용 주기 출력 |
-| `1203 UART` | main.c · uart.c · exception.c | USART2 receive → IRQ `38` → `USART2_IRQHandler()` | `Uart_Data`를 출력하고 event flag 해제 |
-| `1204 Timer` | main.c · timer.c · exception.c | TIM4 update → IRQ `30` → `TIM4_IRQHandler()` | `TIM4_Expired`를 소비해 LED 상태 변경 |
 
 ### `1201`: PC13 EXTI가 ISR에 도달하는 최소 경로
 
@@ -67,10 +57,6 @@ TIM4 update event
 ```
 
 이 code는 `1203`의 UART event와 같은 ISR-main 분리를 timer에도 적용한 예다. ISR 안의 `NVIC_ClearPendingIRQ(30)`과 별도로 `TIM4->SR.UIF`를 clear하는 이유도 여기에 있다. `TIM4` peripheral의 발생 원인은 `SR.UIF`이고, NVIC는 그 request를 CPU에 전달하는 controller다.
-
-### code 기준 확인 지점
-
-- 1204 `TIM4_Repeat_Interrupt_Enable()`의 `ARR` 계산은 같은 file의 polling `TIM4_Repeat()`와 달리 `- 1`이 없다. `ARR + 1` count 규칙과 실제 요청 period를 비교하는 timer 검증 지점이다.
 
 ## Build image와 reset startup
 
@@ -288,17 +274,10 @@ void Main(void)
 
 ## UART·Timer interrupt로 같은 구조 확장
 
-| source lab | peripheral event | ISR이 최소로 하는 일 | main 전달 state |
-| :--- | :--- | :--- | :--- |
-| 1202 EXTI | `PC13` falling edge·`EXTI->PR` | pending clear | `Key_Pressed` |
-| 1203 UART | `USART2->SR.RXNE` | `DR` read | `Uart_Data`, `Uart_Data_In` |
-| 1204 Timer | `TIM4->SR.UIF` | UIF clear | `TIM4_Expired` |
-
 UART polling에서는 main loop가 늦으면 수신 register를 비우는 시점도 늦어진다. RX interrupt는 byte 도착 시점에 ISR이 `DR`을 읽고 data를 넘기는 경로다. timer polling에서는 main loop가 `UIF`를 확인해야 했지만, timer interrupt는 update event가 ISR을 호출하고 `TIM4_Expired` 같은 flag로 main에 전달한다.
 
 ## 0721 실습 순서
 
-1. 1201 `crt0.s`의 vector entry와 weak default handler를 확인한다.
 2. `PC13 → EXTI13 → EXTI15_10_IRQn → EXTI15_10_IRQHandler()` 경로를 `1201`에서 완성한다.
 3. `1202`에서 ISR을 짧게 만들고 `volatile` flag를 main loop에서 소비한다.
 4. `1203`에서 USART2 RX event를 같은 구조로 연결한다.

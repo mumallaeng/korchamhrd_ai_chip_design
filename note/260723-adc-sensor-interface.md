@@ -4,7 +4,6 @@
 
 - [26-07-22 - 13과 I2C·14과 SPI Interface](260722-i2c-spi-interface.md)
 - [26-07-21 - Startup·Interrupt·Event-Driven Firmware](260721-interrupt-event-driven.md)
-- 15과 ADC source · ADC `main.c` · ADC driver · bit-field macro · clock option
 
 ## 수업 범위
 

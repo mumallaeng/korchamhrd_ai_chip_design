@@ -8,7 +8,6 @@
 - [08-04 - Object Detection·Jetson local LLM·Ollama API](260804-object-detection-jetson-local-llm-and-ollama-api.md)
 - [Jetson Orin Nano Developer Kit 장비 기록](jetson-orin-nano-developer-kit.md)
 - [Machine Learning·Deep Learning 전체 지도](machine-learning-deep-learning-course-map.md)
-- CODEXPERT 과목 지도
 
 ## 과정의 위치와 범위
 
@@ -281,7 +280,6 @@ Jetson·TensorRT 작업은 on-device AI deployment와 embedded AI system integra
 | Jetson 수업 노트 | [07-30](260730-jetson-remote-development-and-opencv-face-detection.md), [08-03](260803-on-device-ai-tensorrt-deployment-and-rps-camera-preprocessing.md), [08-04](260804-object-detection-jetson-local-llm-and-ollama-api.md) | webcam·TensorRT·YOLO·local LLM·Ollama 순서 |
 | board hardware | [Jetson Orin Nano Developer Kit](jetson-orin-nano-developer-kit.md) | CPU/GPU/memory/I/O·camera·40-pin header |
 | model-side 선행 | [Machine Learning·Deep Learning 전체 지도](machine-learning-deep-learning-course-map.md) | CNN·transfer learning·input/output contract |
-| software/hardware boundary | Embedded software stack and HW/SW co-design | application·runtime·OS·driver·hardware layer |
 
 같은 개념의 보유 자료는 해당 3부 단원을 배우는 pass에서 병행한다.
 

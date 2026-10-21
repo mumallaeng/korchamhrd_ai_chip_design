@@ -12,7 +12,6 @@
 | 구분 | 내용 |
 | :--- | :--- |
 | 진행 범위 | Python 2장 `Object Name Binding`, 3장 `Container`, 4장 `Container 구조 및 연산` |
-| 원본 파일 | Py_Lab_for_VS_Code.py |
 | 예제 범위 | `[2-1]`부터 4장 container 구조와 연산 예제까지 |
 | 다음 범위 | 5장 `주요 Built-in 함수` 이후 |
 

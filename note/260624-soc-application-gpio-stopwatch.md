@@ -18,24 +18,6 @@
 
 ## 현재 소스 위치
 
-| 위치 | 내용 |
-| :--- | :--- |
-| 260624_MicroBlaze_GPIO | 0624 작업본으로 분리한 MicroBlaze GPIO/StopWatch project |
-| StopWatch/src/main.c | `StopWatch_Execute()`, `FND_Excute()`, `incTick()` polling loop |
-| StopWatch.c | stopwatch state, counter, LED 이동, button 제어 |
-| StopWatch.h | stopwatch state enum과 application API |
-| GPIO.c | GPIO HAL 함수 구현 |
-| GPIO.h | GPIO register 구조체, base address, pin mask, HAL prototype |
-| LED.c | 16bit LED port 출력과 pin 제어 |
-| LED.h | LED low/high GPIO 연결과 API 선언 |
-| FND.c | FND digit 선택, font 출력, 자리 순환 |
-| FND.h | FND data/common GPIO 연결과 digit define |
-| button.c | button handler 초기화, edge 상태 판단, debounce |
-| button.h | button 상태 enum, `hbutton` 구조체, run/stop 및 clear handle |
-| delay.c | `millis()`, `incTick()`, `delay_ms/us/sec()` 공통 시간 함수 |
-| delay.h | common delay API 선언 |
-| ip_repo/gpio_1.0 | 직접 만든 AXI4-Lite GPIO custom IP |
-
 0624 내용은 0623 `260623_MicroBlaze_GPIO` project에서 이어진 firmware 계층화 작업이다. 현재 작업본은 260624_MicroBlaze_GPIO로 복제해 분리했으므로, 이후 노트의 소스 연결은 260624 project를 기준으로 둔다.
 
 ## SoC에서 C Application이 필요한 이유

@@ -8,20 +8,6 @@ FND의 segment data는 active-low 구조이므로, 특정 segment를 켜려면 �
 
 수업의 핵심은 DP를 단순히 전체 FND에 한 번에 적용하는 것이 아니라, 1의 자리, 10의 자리, 100의 자리, 1000의 자리 중 어느 digit의 DP를 켤지 별도 상태값으로 관리하는 것이다. 이를 위해 FND driver 내부에 `fndDPData`를 두고, 각 bit를 각 digit의 DP 상태와 1:1로 대응시켰다.
 
-## 현재 소스 위치
-
-| 위치 | 내용 |
-| :--- | :--- |
-| 260625_MicroBlaze_GPIO | 0624 project를 복제해 만든 0625 MicroBlaze GPIO/StopWatch 작업본 |
-| StopWatch/src/main.c | `StopWatch_Execute()`, `FND_Excute()`, `incTick()`, `delay_ms(1)` polling loop |
-| StopWatch.c | stopwatch time 구조체, DP 점멸, clear 처리, LED 상태 제어 |
-| StopWatch.h | stopwatch state enum, time 구조체, application API |
-| FND.c | FND digit multiplexing, DP state 저장, DP bit 반영 |
-| FND.h | FND digit define, `FND_DP_ON/OFF`, DP API 선언 |
-| button.c | run/stop, clear button 입력 처리 |
-| GPIO.c | GPIO register 접근 HAL |
-| delay.c | software tick과 delay 함수 |
-
 ## FND 제어 구조
 
 FND는 3.3V GPIO로 제어하는 4자리 7-segment display를 한 자리씩 빠르게 선택해 표시한다. 실제로는 한 순간에 한 digit만 켜지만, `FND_DispNum()`이 `fndDigitState`를 계속 바꾸며 1의 자리, 10의 자리, 100의 자리, 1000의 자리를 순환하므로 사람 눈에는 4자리가 동시에 켜진 것처럼 보인다.

@@ -3,8 +3,6 @@
 관련 노트:
 
 - [26-07-16 - UART와 Timer 제어 선행 정리](260716-arm-cortex-m4-device-programming.md)
-- 1102.TIMER_DRIVER_LAB
-- 1103.TIMER_OUTPUT_LAB
 
 ## 11과 - Timer 제어
 

@@ -25,21 +25,6 @@ MicroBlaze 기반 AXI GPIO system을 만들기 위해서는 bus protocol, AXI sl
 
 `AHB/APB`와 `AXI`는 모두 CPU와 peripheral을 연결하는 bus/interface 계층이지만, 수업에서 실제 코드로 다룬 것은 AXI4-Lite slave template이다. AXI4-Lite에서는 read/write data burst 같은 복잡한 기능보다 register access에 초점이 맞춰져 있고, custom IP register를 CPU가 memory-mapped 방식으로 읽고 쓰는 데 적합하다.
 
-## 현재 소스 위치
-
-| 위치 | 내용 |
-| :--- | :--- |
-| 260622_AXI_Template | Vivado AXI4-Lite template 분석 및 TB 실습 프로젝트 |
-| axi_template_v1_0.v | AXI template top wrapper, `S00_AXI` instance 연결 |
-| axi_template_v1_0_S00_AXI.v | AXI4-Lite slave template 본체, `slv_reg0~3` register 포함 |
-| tb_axi_slave.sv | template slave에 write/read transaction을 직접 넣는 TB |
-| ip_repo/axi_template_1.0 | Vivado가 생성한 AXI template IP repository |
-| ip_repo/gpio_1.0 | GPIO custom IP로 확장하기 위해 새로 만든 IP draft |
-| gpio driver Makefile | custom IP C driver header copy 규칙 수정 대상 |
-| 260622_MicroBlaze_GPIO | MicroBlaze 기반 GPIO 테스트 block design 프로젝트 |
-| GPIO_Test.bd | MicroBlaze, UART Lite, custom GPIO block design |
-| Basys-3-Master.xdc | Basys3 clock, reset, UART, GPIOA LED pin 제약 |
-
 ## AXI4-Lite Template 생성 흐름
 
 Vivado에서는 `Tools -> Create and Package New IP -> Create a new AXI4 peripheral` 순서로 AXI peripheral template을 만든다. 수업에서는 이름을 `axi_template`으로 두고, interface는 기본 `S00_AXI` slave, data width는 32-bit, register 수는 기본 4개로 두었다.

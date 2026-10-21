@@ -14,7 +14,6 @@
 | 구분 | 내용 |
 | :--- | :--- |
 | 진행 범위 | Python 전체 마무리, 11장 `Exception, Module, Package`, 12장 `사용자 Class 생성` |
-| 원본 파일 | Py_Lab_for_VS_Code.py |
 | 이전 범위 | 8장 `Comprehensions`, 9장 `제어문, 반복문`, 10장 `주요 Container 메서드` |
 | 작성 상태 | 수업 중 실제 진행 범위에 맞춰 계속 보완 |
 
@@ -288,7 +287,6 @@ class Counter:
     def inc(self):
         self.count += 1
 
-
 a = Counter()
 b = Counter()
 
@@ -371,7 +369,6 @@ class Sample:
         self.value = 20          # instance namespace에 생성/갱신
         Sample.value = 30        # class namespace에 갱신
 
-
 s1 = Sample()
 s2 = Sample()
 
@@ -389,7 +386,6 @@ class Acc:
 
     def add(self, x):
         self.a += x
-
 
 obj = Acc()
 obj.add(5)

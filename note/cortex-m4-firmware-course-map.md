@@ -636,22 +636,6 @@ application intent
 → physical signal 또는 external device 결과
 ```
 
-## 현재 code source 지도
-
-| 범위 | lab source | 먼저 볼 file |
-| :--- | :--- | :--- |
-| GPIO output | 0501.LED_ON_LAB | `main.c`, `macro.h` |
-| qualifier·CMSIS | 0601.TYPE_QUALIFIER_EX · 0602.CMSIS_LAB | `main.c`, `stm32f411xe.h`, `core_cm4.h` |
-| bit operation·LED driver | 0701.BIT_OP_LAB · 0702.LED_DRIVER_LAB | `macro.h`, `led.c` |
-| clock | 0801.CLOCK_CONFIG_EX | `clock.c`, `main.c` |
-| key input | 0901.KEY_IN_LAB · 0902.KEY_DRIVER_LAB | `main.c`, `key.c` |
-| UART | 1001.UART_LOCAL ECHOBACK_LAB | `uart.c`, `main.c` |
-| timer·buzzer | 1101.SYSTICK_TIMER_LAB · 1102.TIMER_DRIVER_LAB · 1103.TIMER_OUTPUT_LAB | `systick.c`, `timer.c`, `main.c` |
-| interrupt·event | 1201.EXTI_IRQ_LAB · 1202.EXTI_EVENT_EX · 1203.UART_EVENT_LAB · 1204.TIMER_EVENT_LAB | `key.c`, `uart.c`, `timer.c`, `exception.c` |
-| I2C | 1301.I2C_IF_EX | `i2c.c`, `main.c` |
-| SPI | 1401.SPI_IF_EX | `spi.c`, `main.c` |
-| ADC | 1501.ADC_EX | `adc.c`, `main.c` |
-
 ## 9~12과 code-first 읽기 순서
 
 9~12과는 같은 firmware skeleton에 event source를 하나씩 추가하는 구간이다. 책 내용을 넓게 보기 전에 아래 순서로 code를 읽으면 register와 구조체의 반복이 보인다.

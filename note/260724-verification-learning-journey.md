@@ -2,11 +2,6 @@
 
 관련 학습:
 
-- UVM Verification Guide
-- SPI·I2C UVM Verification Plan
-- 디지털 설계·검증 종합 노트
-- 08-synthesis: elaboration, inference, netlist, optimization, constraints
-- 09-physical-design: place, route, timing, parasitic, closure
 - [26-06-18 - AXI](260618-axi.md)
 
 ## 특강 범위

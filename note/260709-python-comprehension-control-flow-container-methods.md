@@ -12,7 +12,6 @@
 | 구분 | 내용 |
 | :--- | :--- |
 | 진행 범위 | Python 8장 `Comprehensions`, 9장 `제어문, 반복문`, 10장 `주요 Container 메서드` |
-| 원본 파일 | Py_Lab_for_VS_Code.py |
 | 예제 범위 | `[8-1]`부터 `[10-15]`까지 |
 | 이전 범위 | 5장 `주요 Built-in 함수`, 6장 `사용자 정의 함수` |
 | 다음 범위 | 11장 `Exception, Module, Package` 이후 |

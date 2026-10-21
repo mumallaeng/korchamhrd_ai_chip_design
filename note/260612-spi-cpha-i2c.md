@@ -10,26 +10,7 @@ I2C 쪽에서는 master의 기준을 `SCL` clock을 만들어 주는 쪽으로 �
 
 ## 현재 소스 위치
 
-| 위치 | 내용 |
-| :--- | :--- |
-| 260612_SPI_Master | 0612 기준 Vivado SPI Master 프로젝트 |
-| spi_master.sv | `cpol`, `cpha`, `clk_div`, `tx_data`, SPI line을 가진 SPI Master RTL |
-| tb_spi_master.sv | SPI mode 0~3 loopback testbench |
-| 260612_I2C_Master | 0612 기준 Vivado I2C Master 프로젝트 |
-| I2C_Master.sv | command port, open-drain `SDA`, quarter tick 기반 I2C Master RTL |
-| tb_I2C_Mater.sv | 현재 비어 있는 I2C simulation shell |
-
 현재 `260612_SPI_Master` 폴더에서는 직접 작성 소스로 `spi_master.sv`와 `tb_spi_master.sv`가 확인된다. 0611 코드가 `CPOL` 중심이었다면, 0612 코드는 `CPHA` 입력과 mode별 testbench 시나리오까지 붙은 상태로 보는 것이 맞다. `260612_I2C_Master` 폴더에서는 직접 작성 소스로 `I2C_Master.sv`와 빈 testbench shell인 `tb_I2C_Mater.sv`가 확인된다. 따라서 I2C 쪽은 RTL 구조와 compile 가능 여부까지 정리하고, 구체적인 test scenario는 이후 작성 대상으로 남긴다.
-
-## 260612 소스 코드 읽는 순서
-
-| 순서 | 파일 | 확인할 내용 |
-| :--- | :--- | :--- |
-| 1 | spi_master.sv | `CPOL/CPHA`, `half_tick`, `step`, `rx_data` 마무리 방식 |
-| 2 | tb_spi_master.sv | mode 0~3 loopback, `8'hAA`, `done` 대기 |
-| 3 | I2C_Master.sv의 `I2C_Master_top` | `inout sda`, `sda_i/sda_o`, open-drain 연결 |
-| 4 | I2C_Master.sv의 `I2C_Master` | `START`, `WAIT_CMD`, `DATA`, `DATA_ACK`, `STOP` FSM |
-| 5 | tb_I2C_Mater.sv | 현재 빈 shell, 이후 command sequence 작성 대상 |
 
 ## SPI CPOL/CPHA 정리
 

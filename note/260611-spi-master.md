@@ -8,13 +8,6 @@
 
 ## 현재 소스 위치
 
-| 위치 | 내용 |
-| :--- | :--- |
-| 260610_ram | RAM UVM 예제. 0611 오전 보강 내용은 0610 노트에 연결한다. |
-| 260611_SPI_Master | Vivado 프로젝트 형태로 저장된 SPI master 실습 코드 |
-| spi_master.sv | SPI master RTL |
-| tb_spi_master.sv | SPI master loopback testbench |
-
 현재 `260611_SPI_Master`는 Vivado 프로젝트 디렉토리 형태로 들어와 있다. 수업 노트에서는 생성물 전체가 아니라 직접 작성한 RTL/TB 파일을 기준으로 내용을 정리한다.
 
 ## 소스 코드 읽는 순서

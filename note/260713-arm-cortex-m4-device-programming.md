@@ -3,7 +3,6 @@
 관련 노트:
 
 - [PC GNU 컴파일 환경 설치 가이드](pc-gnu-compiler-environment.md)
-- _staging/arm-cortex-m4-device-programming-01.md
 
 ## 수업 흐름
 
@@ -420,7 +419,6 @@ NPN 또는 N-Ch low-side switch
 
   Base/Gate = High -> ON
   LOAD 전류가 GND로 흐름
-
 
 PNP 또는 P-Ch high-side switch
 

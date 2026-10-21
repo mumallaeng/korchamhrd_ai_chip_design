@@ -6,28 +6,6 @@
 
 오늘 설명의 중심은 직접 만든 custom IP를 datasheet처럼 설명할 수 있게 만드는 것이다. 단순히 코드가 동작했다는 수준이 아니라, register address, bit field, read/write 속성, reset value, 동작 조건을 표와 문장으로 설명해야 한다. 이후에는 TimerCounter와 UART를 따로따로 추가하기보다, UART를 작성한 뒤 TimerCounter와 함께 AXI peripheral에 붙이는 방향으로 진행한다.
 
-## 현재 소스 위치
-
-| 위치 | 내용 |
-| :--- | :--- |
-| 260626_AXI_TimerCounter | 0626 AXI TimerCounter 수업 작업본 |
-| TimerCounter.v | timer counter RTL |
-| axi_template_v1_0.v | AXI custom IP top |
-| axi_template_v1_0_S00_AXI.v | AXI4-Lite slave register map |
-| tb_TimerCounter.sv | TimerCounter 단독 testbench |
-| tb_axi_timer.sv | AXI write/read 통합 testbench |
-| 260626_AXI_UART | UART AXI custom IP 작성용 프로젝트 |
-| 260626_MicroBlaze_Timer_UART_Intr | Timer, UART, GPIO, MicroBlaze, interrupt controller 통합 프로젝트 |
-| ip_repo/uart_1.0 | 직접 작성한 UART custom IP 패키징 결과 |
-| ip_repo/timer_1.0 | 직접 작성한 Timer custom IP 패키징 결과 |
-| MicroBlazeTimerUARTIntr_wrapper.v | block design HDL wrapper |
-| MicroBlazeTimerUARTIntr_wrapper.xsa | Vitis platform 생성용 hardware export |
-| StopWatch/src | Vitis application source |
-| HAL/TMR | Timer register 접근 HAL |
-| HAL/UART | UART register 접근 HAL |
-| common/interrupt | AXI INTC 초기화와 ISR 연결 |
-| main.c | Timer/UART interrupt enable과 application loop |
-
 ## AXI TimerCounter 확인 흐름
 
 TimerCounter는 내부 clock을 그대로 세는 모듈이 아니라 `PSC`로 prescaler tick을 만들고, 그 tick마다 `CNT`를 증가시키는 구조이다. `ARR` 값에 도달하면 다음 tick에서 counter가 0으로 돌아가며 `intr_tick`이 1클럭 발생한다. 외부로 나가는 `intr`는 `intr_tick & intr_en`이므로, overflow가 발생해도 interrupt enable bit가 0이면 외부 interrupt는 발생하지 않는다.

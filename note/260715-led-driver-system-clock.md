@@ -3,7 +3,6 @@
 관련 노트:
 
 - [26-07-14 - GPIO, Type Qualifier, CMSIS, Bit 연산](260714-gpio-volatile-cmsis-bit-operations.md)
-- 26-07-14 ARM Cortex-M4 디바이스 프로그래밍 실습 과제
 
 ## 실습 과제
 
